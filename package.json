@@ -1,0 +1,53 @@
+{
+  "name": "nc-template",
+  "version": "0.5.2",
+  "description": "A template for UWC (United World College) websites. Request permission before use.",
+  "homepage": "https://github.com/uwc/nc-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uwc/nc-template.git"
+  },
+  "keywords": [
+    "wordpress",
+    "wordpress-theme",
+    "uwc",
+    "united-world-colleges",
+    "nc",
+    "national-committee"
+  ],
+  "author": "Connor Bär <hello@connorbaer.io>",
+  "license": "GPL-3.0",
+  "main": "gulpfile.js",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "headroom.js": "^0.9.3",
+    "html5-history-api": "^4.2.5",
+    "merge-stream": "^1.0.0",
+    "normalize.css": "^4.1.1",
+    "require-dir": "^0.3.0",
+    "scut": "^1.4.0",
+    "smooth-scroll": "cferdinandi/smooth-scroll",
+    "spin.js": "^2.3.2",
+    "timeago": "^1.5.2",
+    "wp-ajax-page-loader": "^0.2.1"
+  },
+  "scripts": {
+    "postinstall": "gulp setup"
+  }
+}
