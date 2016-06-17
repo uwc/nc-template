@@ -1,0 +1,34 @@
+// ==== GENERAL ==== //
+
+// Body resets
+/* Update the foundational and global aspects of the page. */
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: $base-fontsize;
+  line-height: 1.5;
+  background-color: palette(gray, xx-dark);
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  background-color: #fff;
+  color: palette(gray, xx-dark);
+  font-family: $sans;
+}
+
+::-moz-selection {
+    color: palette(gray);
+    background: palette(blue, light);
+}
+::selection {
+    color: palette(gray); 
+    background: palette(blue, light);
+}

@@ -1,15 +1,12 @@
 // ==== STYLES ==== //
 
-// Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions
-// Note: `bower_components` is already in Sass's path
+/* Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions */
+/* Note: `bower_components` is already in Sass's path */
 
-// Scut, a Sass utilities library: https://davidtheclark.github.io/scut/
-@import "scut/dist/scut";
-
-// Configuration variables and settings
+/* Configuration variables and settings */
 @import "config";
 
-// Library: mixins, functions, etc. specific to this theme
+/* Library: mixins, functions, etc. specific to this theme */
 @import "library";
 
 /*!
@@ -26,16 +23,25 @@ Text Domain: #{metadata(theme-text-domain)}
 Domain Path: #{metadata(theme-text-domain-path)}
 */
 
-// Normalize: make browsers render things more consistently
+
+// ==== IMPORTS ==== //
+
+/* Note: `bower_components` is already in Sass's path */
+
+/* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
 @import "normalize";
 
-// Reset: eliminate default browser styling (optional; commented out by default)
-//@import "reset";
+/* Styles required by WordPress core */
+@import "wordpress";
 
-// Everything else
-@import "helpers";
-@import "general";
+/* Authored dependencies */
+@import "base";
 @import "layout";
+@import "typography";
+
+/* Patterns */
 @import "menus";
+
+/* Sections */
 @import "navigation";
 @import "sidebar";

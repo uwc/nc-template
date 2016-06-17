@@ -1,39 +1,136 @@
 // ==== CONFIGURATION ==== //
 
-// Set all your configuration variables here!
+/* Set all configuration variables here. */
 
-// Width of the overall site as well as the left and right content columns
+/* 
+ * 1. Colors
+ * 2. Typography
+ * 3. Breakpoints
+ * 4. Spacing?
+ * 5. Metadata
+ */
+
+
+// 1. Colors //
+
+$base-blue: #0064A6;
+$base-turquoise: #009B90;
+$base-purple: #741669;
+$base-pink: #AD1644;
+$base-orange: #DE6328;
+$base-gray: #717073;
+
+$factor-lighten: 8%;
+$factor-darken: 8%;
+
+/*
+ * Sass map for the color palette; see `_library.scss` for the palette() function. 
+ */
+$_palettes: (
+    blue: (
+        base:   $base-blue,
+        light:  lighten($base-blue, $factor-lighten),
+        dark:   darken($base-blue, $factor-darken)
+    ),
+    turquoise: (
+        base:  $base-turquoise,
+        light:  lighten($base-turquoise, $factor-lighten),
+        dark:   darken($base-turquoise, $factor-darken)
+    ),
+    purple: (
+        base:  $base-purple,
+        light:  lighten($base-purple, $factor-lighten),
+        dark:   darken($base-purple, $factor-darken)
+    ),
+    pink: (
+        base:  $base-pink,
+        light:  lighten($base-pink, $factor-lighten),
+        dark:   darken($base-pink, $factor-darken)
+    ),
+    orange: (
+        base:  $base-orange,
+        light:  lighten($base-orange, $factor-lighten),
+        dark:   darken($base-orange, $factor-darken)
+    ),
+    gray: (
+        base:  $base-gray,
+        x-light:  lighten($base-gray, 28%),
+        light:  lighten($base-gray, 14%),
+        dark:   darken($base-gray, 14%),
+        x-dark:   darken($base-gray, 28%)
+    )
+);
+
+
+
+// 2. Typography //
+
+$sans: 'Bliss', 'Freight Sans Pro', 'PT Sans', Helvetica, sans-serif;
+$sans-normal: 500;
+$sans-bold:   700;
+
+$base-fontsize: 16; // Default
+
+
+/* 
+ * Sass map for font sizes
+ * See `_library.scss` for the fontsize() function.
+ */
+$_fontsize: (
+  xxx-large: 3.5rem,
+  xx-large:  2.25rem,
+  x-large:   1.75rem,
+  large:     1.5rem,
+  regular:   1.25rem,
+  small:     1rem,
+  x-small:   0.625rem
+);
+
+
+
+// 3. Breakpoints //
+
+$break-small: 36em; /*576*/
+$break-medium: 50em; /*768px*/
+$break-large: 64em; /*1024px*/
+
+
+
+// 4. Spacing //
+
+/* 
+ * Base value for all spacing. 
+ * Most margins and paddings are multiples of this value. 
+ * See `_library.scss` for the space() function.
+ */
+$space: 0.5rem;
+
+
+
+// 5. Metadata //
+
+/* 
+ * Sass map for the metadata.
+ * See `_library.scss` for the metadata() function. 
+ */
+$_metadata: (
+  theme-name:               "NC Template",
+  theme-uri:                "https://github.com/uwc/nc-template",
+  theme-author:             "Connor Bär",
+  theme-author-uri:         "http://connorbaer.io",
+  theme-description:        "A template for UWC national committee websites. Request permission before use.",
+  theme-version:            "0.5.2",
+  theme-license:            "MIT",
+  theme-license-uri:        "https://opensource.org/licenses/MIT",
+  theme-tags:               (grid-layout, custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready),
+  theme-text-domain:        "nc-template",
+  theme-text-domain-path:   "/languages/"
+);
+
+
+
+// OLD: will be replaced
+
 $width-site:    1000px;
 $width-left:    650px;
 $width-right:   350px;
-
-// Breakpoints
-$break-small:   480px;
-$break-medium:  620px;
-$break-large:   800px;
-
-// A standard margin
-$spacer:        30px;
-
-// A modest palette; see `_library.scss` for the color() function
-$_color: (
-  text: #333,
-  link: steelblue,
-  link-muted: steelblue,
-  body-background: white
-);
-
-// Metadata; use metadata() to access
-$_metadata: (
-  theme-name:               "Voidx"
-, theme-uri:                "https://github.com/synapticism/wordpress-gulp-starter-kit"
-, theme-author:             "Alexander Synaptic"
-, theme-author-uri:         "http://synapticism.com"
-, theme-description:        "A minimally viable theme made with the WordPress/Gulp starter kit"
-, theme-version:            "0.2.5"
-, theme-license:            "GPLv3"
-, theme-license-uri:        "http://www.gnu.org/licenses/gpl.txt"
-, theme-tags:               (light, responsive-layout, right-sidebar, starter-theme, two-columns, translation-ready, white)
-, theme-text-domain:        "voidx"
-, theme-text-domain-path:   "/languages/"
-);

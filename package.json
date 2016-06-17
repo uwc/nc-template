@@ -41,11 +41,7 @@
     "merge-stream": "^1.0.0",
     "normalize.css": "^4.1.1",
     "require-dir": "^0.3.0",
-    "scut": "^1.4.0",
-    "smooth-scroll": "cferdinandi/smooth-scroll",
-    "spin.js": "^2.3.2",
-    "timeago": "^1.5.2",
-    "wp-ajax-page-loader": "^0.2.1"
+    "smooth-scroll": "cferdinandi/smooth-scroll"
   },
   "scripts": {
     "postinstall": "gulp setup"
