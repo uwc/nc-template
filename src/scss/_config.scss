@@ -122,9 +122,11 @@ $_metadata: (
   theme-version:            "0.5.2",
   theme-license:            "MIT",
   theme-license-uri:        "https://opensource.org/licenses/MIT",
-  theme-tags:               (grid-layout, custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready),
+  theme-tags:               (custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready),
   theme-text-domain:        "nc-template",
-  theme-text-domain-path:   "/languages/"
+  theme-text-domain-path:   "/languages/",
+  github-theme-uri:         "https://github.com/uwc/nc-template",
+  github-branch:            "master"
 );
 
 
