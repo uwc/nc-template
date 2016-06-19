@@ -113,6 +113,10 @@ module.exports = {
       src: src+'**/*.php' // This simply copies PHP files over; both this and the previous task could be combined if you like
     , dest: build
     }
+  , readme: {
+      src: src+'readme.*' // This simply copies the readme file over.
+    , dest: build
+    }
   },
 
   utils: {

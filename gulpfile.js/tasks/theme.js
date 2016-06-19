@@ -5,6 +5,13 @@ var gulp        = require('gulp')
   , config      = require('../../gulpconfig').theme
 ;
 
+// Copy readme file to the `build` folder
+gulp.task('theme-readme', function() {
+  return gulp.src(config.readme.src)
+  .pipe(plugins.changed(config.readme.dest))
+  .pipe(gulp.dest(config.readme.dest));
+});
+
 // Copy PHP source files to the `build` folder
 gulp.task('theme-php', function() {
   return gulp.src(config.php.src)
@@ -20,4 +27,4 @@ gulp.task('theme-lang', function() {
 });
 
 // All the theme tasks in one
-gulp.task('theme', ['theme-lang', 'theme-php']);
+gulp.task('theme', ['theme-lang', 'theme-php', 'theme-readme']);
