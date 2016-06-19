@@ -56,7 +56,7 @@ function nc_template_setup() {
   add_theme_support( 'post-thumbnails' );
   set_post_thumbnail_size( 1440, 9999 );
 
-  // Register header and footer menus
+  // Register header menu
   register_nav_menu( 'navigation', __( 'Navigation bar', 'nc-template' ) );
 
   /*
@@ -162,7 +162,7 @@ function nc_template_scripts() {
   wp_enqueue_style( 'nc-template-fonts', nc_template_fonts_url(), array(), null );
 
   // Theme stylesheet.
-  wp_enqueue_style( 'style', get_stylesheet_uri() . '/style.css' );
+  wp_enqueue_style( 'style', get_stylesheet_uri() );
 
   // Load the html5 shiv.
   // wp_enqueue_script( 'nc-template-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
