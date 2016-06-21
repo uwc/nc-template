@@ -63,7 +63,6 @@
 @mixin font($style: null) {
   @if $style == null {
     @warn "Mixin font() received no input! Please provide a style.";
-    font-weight: $sans-normal;
     font-size: fontsize(regular);
     color: red;
   }
@@ -80,24 +79,20 @@
     font-size: fontsize(x-large);
   }
   @else if $style == 'lead' {
-    font-weight: $sans-normal;
     font-size: fontsize(large);
   }
   @else if $style == 'body' {
-    font-weight: $sans-normal;
     font-size: fontsize(regular);
   }
   @else if $style == 'button' {
-    font-weight: $sans-normal;
+    font-weight: $sans-bold;
     font-size: fontsize(small);
   }
   @else if $style == 'navigation' {
-    font-weight: $sans-normal;
     font-size: fontsize(small);
   }
   @else {
     @warn "Mixin font() received invalid input! This style does not exist.";
-    font-weight: $sans-normal;
     font-size: fontsize(regular);
     color: red;
   }
@@ -113,7 +108,7 @@
 @mixin media($min-query: null, $max-query: null) {
   @if $min-query == null and $max-query == null {
     @warn "Mixin media() received two null values; no output.";
-    @content; // Pass content anyway, but it won't be wrapped in a media query
+    @content; /* Pass content anyway, but it won't be wrapped in a media query. */
   }
   @else if $max-query == null {
     @media screen and (min-width: $min-query+0em) { @content; }

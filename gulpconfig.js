@@ -48,23 +48,11 @@ module.exports = {
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks (below) to concatenate; warning: this method offers no dependency management!
       core: ['core']
-    , pageloader: ['pageloader', 'core']
     }
   , chunks: { // Chunks are arrays of paths or globs matching a set of source files; this way you can organize a bunch of scripts that go together into pieces that can then be bundled (above)
       // The core chunk is loaded no matter what; put essential scripts that you want loaded by your theme in here
       core: [
-        modules+'timeago/jquery.timeago.js' // The modules directory contains packages downloaded via npm
-      , src+'js/responsive-menu.js'
-      , src+'js/core.js'
-      ]
-      // The pageloader chunk provides an example of how you would add a user-configurable feature to your theme; you can delete this if you wish
-      // Have a look at the `src/inc/assets.php` to see how script bundles could be conditionally loaded by a theme
-    , pageloader: [
-        modules+'html5-history-api/history.js'
-      , modules+'spin.js/spin.js'
-      , modules+'spin.js/jquery.spin.js'
-      , modules+'wp-ajax-page-loader/wp-ajax-page-loader.js'
-      , src+'js/page-loader.js'
+        src+'js/core.js'
       ]
     }
   , dest: build+'js/' // Where the scripts end up in your theme
@@ -115,6 +103,10 @@ module.exports = {
     }
   , readme: {
       src: src+'readme.*' // This simply copies the readme file over.
+    , dest: build
+    }
+  , travis: {
+      src: src+'travis.*' // This simply copies the travis file over.
     , dest: build
     }
   },
