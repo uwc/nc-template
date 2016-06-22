@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/uwc/nc-template.svg?branch=master)](https://travis-ci.org/uwc/nc-template)
+
 === Twenty Sixteen ===
 Contributors: the WordPress team
 Requires at least: WordPress 4.4
