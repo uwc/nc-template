@@ -105,10 +105,6 @@ module.exports = {
       src: src+'readme.*' // This simply copies the readme file over.
     , dest: build
     }
-  , travis: {
-      src: src+'travis.*' // This simply copies the travis file over.
-    , dest: build
-    }
   },
 
   utils: {

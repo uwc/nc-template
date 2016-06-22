@@ -1,6 +1,9 @@
 # Install by running `npm install`
 node_modules/
 
+# Install by running `./composer.phar update`
+vendor/
+
 # Run `gulp` to generate the build directory.
 build/
 

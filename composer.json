@@ -10,7 +10,7 @@
     "national-committee"
   ],
   "homepage": "https://github.com/uwc/nc-template",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "authors": [
     {
       "name": "Connor Bär",
@@ -18,5 +18,8 @@
       "homepage": "http://connorbaer.io"
     }
   ],
-  "type": "template"
+  "type": "template",
+  "require-dev": {
+      "phpunit/phpunit": "3.7.14"
+  }
 }
