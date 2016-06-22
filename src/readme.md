@@ -1,61 +1,48 @@
 [![Build Status](https://travis-ci.org/uwc/nc-template.svg?branch=master)](https://travis-ci.org/uwc/nc-template)
 
-=== Twenty Sixteen ===
-Contributors: the WordPress team
-Requires at least: WordPress 4.4
-Tested up to: WordPress 4.5
-Version: 1.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, blue, gray, green, white, yellow, dark, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
-== Description ==
-Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your WordPress look beautiful everywhere.
+# A template for UWC national committee websites. 
 
-* Mobile-first, Responsive Layout
-* Custom Colors
-* Custom Header
-* Social Links
-* Post Formats
-* The GPL v2.0 or later license. :) Use it to make something cool.
+*Please [request permission](mailto:uwc@connorbaer.io) before use.*
 
-For more information about Twenty Sixteen please go to https://codex.wordpress.org/Twenty_Sixteen.
+Contributors: [Connor Bär](http://connorbaer.io)
+Requires at least: WordPress 4.5
+Tested up to: WordPress 4.5.3
+Version: 0.5.4-alpha
+License: [MIT](#copyright)
+Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
 
-== Installation ==
+# Description
 
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Twenty Sixteen in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-4. Go to https://codex.wordpress.org/Twenty_Sixteen for a guide on how to customize this theme.
-5. Navigate to Appearance > Customize in your admin panel and customize to taste.
+**This theme is still under development and NOT intended for use yet.** If you are interested in contributing to the development, [drop me a line](mailto:uwc@connorbaer.io).
 
-== Copyright ==
 
-Twenty Sixteen WordPress Theme, Copyright 2014-2015 WordPress.org
-Twenty Sixteen is distributed under the terms of the GNU GPL
+# Installation
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
+*This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.*
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+1. NC Template is not listed publicly on Wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
+2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top. 
+3. Paste the url `https://github.com/uwc/nc-template` into the field 'Theme URI'. You can leave the other fields as they are and click on the 'Install Theme' button.
+4. Click on the 'Activate' button to use your new theme right away.
+5. Go to https:// for a guide on how to customize this theme.
+6. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-Twenty Sixteen Theme bundles the following third-party resources:
+
+# Copyright
+
+The MIT License (MIT)
+Copyright (c) 2016 Connor Bär
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+NC Template theme bundles the following third-party resources:
 
 HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2
 Source: https://github.com/aFarkas/html5shiv
-
-Genericons icon font, Copyright 2013-2015 Automattic.com
-License: GNU GPL, Version 2 (or later)
-Source: http://www.genericons.com
-
-Image used in screenshot.png: A photo by Austin Schmid (https://unsplash.com/schmidy/), licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-
-== Notes ==
-
-Only the default and dark color schemes are accessibility ready.
