@@ -1,25 +1,32 @@
-[![Build Status](https://travis-ci.org/uwc/nc-template.svg?branch=master)](https://travis-ci.org/uwc/nc-template)
+[![Build Status](https://travis-ci.org/uwc/nc-template.svg?branch=development)](https://travis-ci.org/uwc/nc-template)
 
 
 # A template for UWC national committee websites. 
 
-*Please [request permission](mailto:uwc@connorbaer.io) before use.*
+> Please [request permission](mailto:uwc@connorbaer.io) before use.
 
 Contributors: [Connor Bär](http://connorbaer.io)
+
 Requires at least: WordPress 4.5
+
 Tested up to: WordPress 4.5.3
+
 Version: 0.5.4-alpha
+
 License: [MIT](#copyright)
+
 Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
 
 # Description
 
-**This theme is still under development and NOT intended for use yet.** If you are interested in contributing to the development, [drop me a line](mailto:uwc@connorbaer.io).
+### This theme is still under development and NOT intended for use yet.
+
+If you are interested in contributing to the development, [drop me a line](mailto:uwc@connorbaer.io).
 
 
 # Installation
 
-*This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.*
+> This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.
 
 1. NC Template is not listed publicly on Wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
 2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top. 
@@ -40,6 +47,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+---
 
 NC Template theme bundles the following third-party resources:
 
