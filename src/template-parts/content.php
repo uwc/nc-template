@@ -1,55 +1,47 @@
 <?php
 /**
- * The template part for displaying content
+ * Template part for displaying posts.
  *
- * @package NC Template
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package NC_Template
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-			<span class="sticky-post"><?php _e( 'Featured', 'nc-template' ); ?></span>
-		<?php endif; ?>
+		<?php
+			if ( is_single() ) {
+				the_title( '<h1 class="entry-title">', '</h1>' );
+			} else {
+				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			}
 
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		if ( 'post' === get_post_type() ) : ?>
+		<div class="entry-meta">
+			<?php nc_template_posted_on(); ?>
+		</div><!-- .entry-meta -->
+		<?php
+		endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php nc_template_excerpt(); ?>
-
-	<?php nc_template_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
-			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'nc-template' ),
-				get_the_title()
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'nc-template' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'nc-template' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'nc-template' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nc-template' ),
+				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php nc_template_entry_meta(); ?>
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'nc-template' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
+		<?php nc_template_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

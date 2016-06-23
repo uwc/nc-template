@@ -17,14 +17,14 @@ License: [MIT](#copyright)
 
 Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
 
-# Description
+## Description
 
 ### This theme is still under development and NOT intended for use yet.
 
 If you are interested in contributing to the development, [drop me a line](mailto:uwc@connorbaer.io).
 
 
-# Installation
+## Installation
 
 > This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.
 
@@ -36,7 +36,7 @@ If you are interested in contributing to the development, [drop me a line](mailt
 6. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 
-# Copyright
+## Copyright
 
 The MIT License (MIT)
 Copyright (c) 2016 Connor Bär

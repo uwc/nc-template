@@ -1,7 +1,17 @@
-<div id="wrap-sidebar" class="wrap-sidebar">
-  <?php if ( is_active_sidebar( 'sidebar-main' ) ) { ?>
-    <div id="secondary" class="widget-area" role="complementary">
-      <?php dynamic_sidebar( 'sidebar-main' ); ?>
-    </div>
-  <?php } ?>
-</div>
+<?php
+/**
+ * The sidebar containing the main widget area.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package NC_Template
+ */
+
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	return;
+}
+?>
+
+<aside id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</aside><!-- #secondary -->
