@@ -10,10 +10,10 @@
 ?><nav id="site-navigation" class="main-navigation" role="navigation">
 	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php esc_html_e( 'Top Menu', 'nc-template' ); ?></button>
 	<?php if ( has_nav_menu( 'header' ) ) {
-		wp_nav_menu( array( 
-		'theme_location' => 'header', 
-		'depth' => '2' ),
-		);
+		wp_nav_menu( array(
+		'theme_location' => 'header',
+		'depth' => '2',
+		) );
 	} ?>
 
 </nav><!-- #site-navigation -->
