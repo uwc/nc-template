@@ -1,6 +1,6 @@
 {
   "name": "nc-template",
-  "version": "0.5.2",
+  "version": "0.6.0-alpha",
   "description": "A template for UWC (United World College) websites. Request permission before use.",
   "homepage": "https://github.com/uwc/nc-template",
   "repository": {
@@ -37,7 +37,6 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "merge-stream": "^1.0.0",
-    "normalize.css": "^4.1.1",
     "require-dir": "^0.3.0"
   },
   "scripts": {

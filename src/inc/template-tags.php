@@ -27,7 +27,7 @@ function nc_template_custom_logo() {
 		$output = '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>';
 	}
 
-	echo esc_attr( $output );
+	echo $output; // WPCS: XSS ok.
 }
 endif;
 

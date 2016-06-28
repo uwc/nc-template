@@ -32,6 +32,8 @@
     "mappy-breakpoints": "^0.2.3",
     "html5shiv": "^3.7.3",
     "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^9.1.4",
-    "responsive-nav": "viljamis/responsive-nav.js#^1.0.39"
+    "responsive-nav": "viljamis/responsive-nav.js#^1.0.39",
+    "headroom.js": "https://npmcdn.com/headroom.js/bower.zip",
+    "normalize-css": "^4.1.1"
   }
 }
