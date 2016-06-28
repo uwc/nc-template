@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'components/post/content', get_post_format() );
 
 			the_post_navigation();
 
@@ -27,9 +27,8 @@ get_header(); ?>
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+		</main>
+	</div>
 <?php
 get_sidebar();
 get_footer();

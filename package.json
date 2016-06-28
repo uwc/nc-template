@@ -36,12 +36,9 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
-    "headroom.js": "^0.9.3",
-    "html5-history-api": "^4.2.5",
     "merge-stream": "^1.0.0",
     "normalize.css": "^4.1.1",
-    "require-dir": "^0.3.0",
-    "smooth-scroll": "cferdinandi/smooth-scroll"
+    "require-dir": "^0.3.0"
   },
   "scripts": {
     "postinstall": "gulp setup"

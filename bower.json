@@ -25,5 +25,13 @@
     "tests",
     ".sass-cache",
     "build"
-  ]
+  ],
+  "devDependencies": {
+    "typi": "^2.3.0",
+    "modular-scale": "^2.1.3",
+    "mappy-breakpoints": "^0.2.3",
+    "html5shiv": "^3.7.3",
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^9.1.4",
+    "responsive-nav": "viljamis/responsive-nav.js#^1.0.39"
+  }
 }

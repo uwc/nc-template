@@ -12,6 +12,13 @@ gulp.task('theme-readme', function() {
   .pipe(gulp.dest(config.readme.dest));
 });
 
+// Copy custom font files to the `build` folder
+gulp.task('theme-fonts', function() {
+  return gulp.src(config.fonts.src)
+  .pipe(plugins.changed(config.fonts.dest))
+  .pipe(gulp.dest(config.fonts.dest));
+});
+
 // Copy PHP source files to the `build` folder
 gulp.task('theme-php', function() {
   return gulp.src(config.php.src)
@@ -27,4 +34,4 @@ gulp.task('theme-lang', function() {
 });
 
 // All the theme tasks in one
-gulp.task('theme', ['theme-lang', 'theme-php', 'theme-readme']);
+gulp.task('theme', ['theme-lang', 'theme-php', 'theme-fonts', 'theme-readme']);

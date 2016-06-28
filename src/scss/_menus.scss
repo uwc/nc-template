@@ -15,10 +15,3 @@
     }
   }
 }
-
-// Menu toggle for mobile phones and small screens
-#responsive-menu-toggle {
-  @include media($break-medium, null) {
-    display: none;
-  }
-}

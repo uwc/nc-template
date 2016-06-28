@@ -10,6 +10,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if ( '' != get_the_post_thumbnail() ) : ?>
+		<div class="post-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'nc-template-featured-image' ); ?>
+			</a>
+		</div>
+	<?php endif; ?>
+
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -19,13 +27,10 @@
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php nc_template_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		<?php get_template_part( 'components/post/content', 'meta' ); ?>
 		<?php
 		endif; ?>
-	</header><!-- .entry-header -->
-
+	</header>
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -39,9 +44,6 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php nc_template_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	</div>
+	<?php get_template_part( 'components/post/content', 'footer' ); ?>
 </article><!-- #post-## -->

@@ -1,6 +1,6 @@
 // ==== LAYOUT ==== //
 
-// These wrappers allow for backgrounds and layout options to be defined for each of the four sections (header, content, sidebar, and footer)
+/* These wrappers allow for backgrounds and layout options to be defined for each of the three sections (header, content, and footer) */
 
 
 .wrap-header {
@@ -12,9 +12,7 @@
 .wrap-content {
   padding: spacer();
 }
-.wrap-sidebar {
-  padding: spacer();
-}
+
 .wrap-footer {
   background: color(blue);
   padding-bottom: spacer(2);

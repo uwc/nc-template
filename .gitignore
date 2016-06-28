@@ -1,3 +1,6 @@
+# Install by running `bower install`
+bower_components/
+
 # Install by running `npm install`
 node_modules/
 

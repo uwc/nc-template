@@ -7,6 +7,28 @@
  * @package NC_Template
  */
 
+if ( ! function_exists( 'nc_template_custom_logo' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function nc_template_custom_logo() {
+    /* Try to retrieve the Custom Logo. */
+    $output = '';
+    if (function_exists('get_custom_logo'))
+        $output = get_custom_logo();
+
+    /**
+     * Nothing in the output: 
+     * Custom Logo is not supported, or there is no selected logo. 
+     * In both cases we display the site's name. 
+     */
+    if (empty($output))
+        $output = '<h1 class="site-title"><a href="' . esc_url(home_url('/')) . '">' . get_bloginfo('name') . '</a></h1>';
+
+    echo $output;
+}
+endif;
+
 if ( ! function_exists( 'nc_template_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -61,8 +83,7 @@ function nc_template_entry_footer() {
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'nc-template' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'nc-template' ), esc_html__( '1 Comment', 'nc-template' ), esc_html__( '% Comments', 'nc-template' ) );
 		echo '</span>';
 	}
 

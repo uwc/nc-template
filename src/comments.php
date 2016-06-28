@@ -43,8 +43,8 @@ if ( post_password_required() ) {
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'nc-template' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'nc-template' ) ); ?></div>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
+			</div>
+		</nav>
 		<?php endif; // Check for comment navigation. ?>
 
 		<ol class="comment-list">
@@ -54,8 +54,7 @@ if ( post_password_required() ) {
 					'short_ping' => true,
 				) );
 			?>
-		</ol><!-- .comment-list -->
-
+		</ol>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'nc-template' ); ?></h2>
@@ -64,8 +63,8 @@ if ( post_password_required() ) {
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'nc-template' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'nc-template' ) ); ?></div>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
+			</div>
+		</nav>
 		<?php
 		endif; // Check for comment navigation.
 
