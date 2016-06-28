@@ -14,7 +14,7 @@ if ( ! function_exists( 'nc_template_custom_logo' ) ) :
 function nc_template_custom_logo() {
 	/* Try to retrieve the Custom Logo. */
 	$output = '';
-	if (function_exists( 'get_custom_logo' )) {
+	if ( function_exists( 'get_custom_logo' ) ) {
 		$output = get_custom_logo();
 	}
 
@@ -23,11 +23,11 @@ function nc_template_custom_logo() {
 	 * Custom Logo is not supported, or there is no selected logo.
 	 * In both cases we display the site's name.
 	 */
-	if (empty( $output )) {
-		$output = '<h1 class="site-title"><a href="' . esc_url( home_url('/') ) . '">' . get_bloginfo( 'name' ) . '</a></h1>';
+	if ( empty( $output ) ) {
+		$output = '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>';
 	}
 
-	echo $output;
+	echo esc_attr( $output );
 }
 endif;
 

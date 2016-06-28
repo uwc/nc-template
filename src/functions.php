@@ -201,8 +201,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Prevents jQuery from being included in the frontend.
  * It is not needed and would only increase the time to load the page.
  */
-add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );
-function change_default_jquery(){
+function change_default_jquery() {
 		wp_dequeue_script( 'jquery' );
-		wp_deregister_script( 'jquery' );   
+		wp_deregister_script( 'jquery' );
 }
+add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );

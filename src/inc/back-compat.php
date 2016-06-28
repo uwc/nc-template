@@ -42,7 +42,7 @@ function nc_template_upgrade_notice() {
  * @global string $wp_version WordPress version.
  */
 function nc_template_customize() {
-	wp_die( sprintf( esc_attr( __( 'NC Template requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again.', 'nc-template' ) ), esc_attr( $GLOBALS['wp_version'] ) ), '', array(
+	wp_die( sprintf( esc_attr__( 'NC Template requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again.', 'nc-template' ) ), esc_attr( $GLOBALS['wp_version'] ) ), '', array(
 		'back_link' => true,
 	) );
 }
@@ -55,7 +55,7 @@ add_action( 'load-customize.php', 'nc_template_customize' );
  */
 function nc_template_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( esc_attr( __( 'NC Template requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again.', 'nc-template' ) ), esc_attr( $GLOBALS['wp_version'] ) ) );
+		wp_die( sprintf( esc_attr__( 'NC Template requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again.', 'nc-template' ) ), esc_attr( $GLOBALS['wp_version'] ) ) );
 	}
 }
 add_action( 'template_redirect', 'nc_template_preview' );
