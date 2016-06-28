@@ -70,4 +70,4 @@ function nc_template_header_style() {
 	</style>
 	<?php
 }
-endif; // nc_template_header_style
+endif; /* nc_template_header_style */

@@ -11,7 +11,7 @@
  * NC Template only works in WordPress 4.4 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
-  require get_template_directory() . '/inc/back-compat.php';
+	require get_template_directory() . '/inc/back-compat.php';
 }
 
 if ( ! function_exists( 'nc_template_setup' ) ) :
@@ -23,20 +23,20 @@ if ( ! function_exists( 'nc_template_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function nc_template_setup() {
-  /*
-   * Make theme available for translation.
-   * Translations can be filed in the /languages/ directory.
-   */
-  load_theme_textdomain( 'nc-template', trailingslashit( get_template_directory() ) . 'languages' );
-  // Add default posts and comments RSS feed links to head.
-  add_theme_support( 'automatic-feed-links' );
-  /*
-   * Let WordPress manage the document title.
-   * By adding theme support, we declare that this theme does not use a
-   * hard-coded <title> tag in the document head, and expect WordPress to
-   * provide it for us.
-   */
-  add_theme_support( 'title-tag' );
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 */
+	load_theme_textdomain( 'nc-template', trailingslashit( get_template_directory() ) . 'languages' );
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -47,19 +47,19 @@ function nc_template_setup() {
 
 	add_image_size( 'nc-template-featured-image', 640, 9999 );
 
-  // Enable support for custom logo.
-  add_theme_support( 'custom-logo', array(
-    'height'      => 30,
-    'width'       => 360,
-    'flex-width' => true,
-    'header-text' => array( 'site-title', 'site-description' ),
-  ) );
+	// Enable support for custom logo.
+	add_theme_support( 'custom-logo', array(
+		'height'      => 30,
+		'width'       => 360,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'header' => esc_html__( 'Header', 'nc-template' ),
-    'social' => __( 'Social', 'nc-template' ),
-    'footer' => __( 'Footer', 'nc-template' )
+		'social' => __( 'Social', 'nc-template' ),
+		'footer' => __( 'Footer', 'nc-template' )
 		) );
 
 	/*
@@ -74,25 +74,25 @@ function nc_template_setup() {
 		'caption',
 	) );
 
-  /*
-   * Enable support for Post Formats.
-   *
-   * See: https://codex.wordpress.org/Post_Formats
-   */
-  add_theme_support( 'post-formats', array(
-    'aside',
-    'image',
-    'video',
-    'quote',
-    'link',
-    'gallery',
-  ) );
+	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+		'gallery',
+	) );
 
-  /*
-   * This theme styles the visual editor to resemble the theme style,
-   * specifically font, colors, icons, and column width.
-   */
-  add_editor_style( array( 'css/editor-style.css', nc_template_fonts_url() ) );
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, icons, and column width.
+	 */
+	add_editor_style( array( 'css/editor-style.css', nc_template_fonts_url() ) );
 }
 endif;
 add_action( 'after_setup_theme', 'nc_template_setup' );
@@ -105,7 +105,7 @@ add_action( 'after_setup_theme', 'nc_template_setup' );
  * @global int $content_width
  */
 function nc_template_content_width() {
-  $GLOBALS['content_width'] = apply_filters( 'nc_template_content_width', 1280 );
+	$GLOBALS['content_width'] = apply_filters( 'nc_template_content_width', 1280 );
 }
 add_action( 'after_setup_theme', 'nc_template_content_width', 0 );
 
@@ -134,24 +134,24 @@ if ( ! function_exists( 'nc_template_fonts_url' ) ) :
  * @return string Google fonts URL for the theme.
  */
 function nc_template_fonts_url() {
-  $fonts_url = '';
-  $fonts     = array();
-  $subsets   = 'latin,latin-ext';
-  /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'PT Sans font: on or off', 'nc-template' ) ) {
-    $fonts[] = 'PT+Sans:400,700';
-  }
-  /* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'nc-template' ) ) {
-    $fonts[] = 'Montserrat:400,700';
-  }
-  if ( $fonts ) {
-    $fonts_url = add_query_arg( array(
-      'family' => urlencode( implode( '|', $fonts ) ),
-      'subset' => urlencode( $subsets ),
-    ), 'https://fonts.googleapis.com/css' );
-  }
-  return $fonts_url;
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'PT Sans font: on or off', 'nc-template' ) ) {
+		$fonts[] = 'PT+Sans:400,700';
+	}
+	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'nc-template' ) ) {
+		$fonts[] = 'Montserrat:400,700';
+	}
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+	return $fonts_url;
 }
 endif;
 
@@ -161,7 +161,7 @@ endif;
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  */
 function nc_template_javascript_detection() {
-  echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'nc_template_javascript_detection', 0 );
 
@@ -169,13 +169,13 @@ add_action( 'wp_head', 'nc_template_javascript_detection', 0 );
  * Enqueue scripts and styles.
  */
 function nc_template_scripts() {
-  // Add custom fonts, used in the main stylesheet.
-  wp_enqueue_style( 'nc-template-fonts', nc_template_fonts_url(), array(), null );
-  // Theme stylesheet.
+	// Add custom fonts, used in the main stylesheet.
+	wp_enqueue_style( 'nc-template-fonts', nc_template_fonts_url(), array(), null );
+	// Theme stylesheet.
 	wp_enqueue_style( 'nc-template-style', get_stylesheet_uri() );
-  // Load the html5 shiv.
-  // wp_enqueue_script( 'nc-template-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
-  // wp_script_add_data( 'nc-template-html5', 'conditional', 'lt IE 9' );
+	// Load the html5 shiv.
+	// wp_enqueue_script( 'nc-template-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
+	// wp_script_add_data( 'nc-template-html5', 'conditional', 'lt IE 9' );
 
 	wp_enqueue_script( 'nc-template-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -212,6 +212,6 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );
 function change_default_jquery( ){
-    wp_dequeue_script( 'jquery');
-    wp_deregister_script( 'jquery');   
+		wp_dequeue_script( 'jquery' );
+		wp_deregister_script( 'jquery' );   
 }
