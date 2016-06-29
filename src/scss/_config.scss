@@ -3,15 +3,51 @@
 /* Set all configuration variables here. */
 
 /* 
- * 1. Colors
+ * 1. Breakpoints
  * 2. Typography
- * 3. Breakpoints
- * 4. Spacing?
- * 5. Metadata
+ * 3. Colors
+ * 4. Metadata
  */
 
 
-// 1. Colors //
+
+ // 1. Breakpoints //
+
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 1024px,
+);
+
+/* You can use and valid arguments inserted into mappy-bp as the map values. Any of the following would do. */
+$mappy-queries: (
+  phone: mappy-bp(h max-height small),
+  tablet: mappy-bp(small large),
+  desktop: mappy-bp(960px 1200px),
+  change-type: mappy-bp(small, $type: screen),
+);
+
+
+
+// 2. Typography //
+
+$sans: 'Bliss', 'Freight Sans Pro', 'PT Sans', Helvetica, sans-serif;
+$sans-normal: 400;
+$sans-bold:   700;
+
+$ms-base: 1em, 1.25em;
+$ms-ratio: 1.5;
+
+$typi: (
+  null: (16px, 1.4),
+  /*small: 16px,*/
+  medium: 18px,
+  large: (20px, 1.5),
+);
+
+
+
+// 3. Colors //
 
 $base-blue: #0064A6;
 $base-turquoise: #009B90;
@@ -63,51 +99,7 @@ $_palettes: (
 
 
 
-// 2. Typography //
-
-$sans: 'Bliss', 'Freight Sans Pro', 'PT Sans', Helvetica, sans-serif;
-$sans-normal: 500;
-$sans-bold:   700;
-
-$base-fontsize: 16; // Default
-
-
-/* 
- * Sass map for font sizes
- * See `_library.scss` for the fontsize() function.
- */
-$_fontsize: (
-  xxx-large: 3.5rem,
-  xx-large:  2.25rem,
-  x-large:   1.75rem,
-  large:     1.5rem,
-  regular:   1.25rem,
-  small:     1rem,
-  x-small:   0.625rem
-);
-
-
-
-// 3. Breakpoints //
-
-$break-small: 36em; /*576*/
-$break-medium: 50em; /*768px*/
-$break-large: 64em; /*1024px*/
-
-
-
-// 4. Spacing //
-
-/* 
- * Base value for all spacing. 
- * Most margins and paddings are multiples of this value. 
- * See `_library.scss` for the space() function.
- */
-$space: 0.5rem;
-
-
-
-// 5. Metadata //
+// 4. Metadata //
 
 /* 
  * Sass map for the metadata.

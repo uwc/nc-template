@@ -1,7 +1,16 @@
 // ==== STYLES ==== //
 
 /* Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions */
-/* Note: `bower_components` is already in Sass's path */
+/* Note: `bower_components` and `npm_modules` are already in Sass's path */
+
+/* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
+@import "modular-scale/stylesheets/modular-scale";
+
+/* Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi */
+@import "typi/scss/typi";
+
+/* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
+@import "mappy-breakpoints/mappy-breakpoints";
 
 /* Configuration variables and settings */
 @import "config";
@@ -30,14 +39,9 @@ GitHub Branch: #{metadata(github-branch)}
 
 /* Note: `bower_components` and `npm_modules` are already in Sass's path */
 
+
 /* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
 @import "normalize";
-/* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
-@import "modular-scale/stylesheets/modular-scale";
-/* Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi */
-@import "typi/scss/typi";
-/* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
-@import "mappy-breakpoints/mappy-breakpoints";
 /* Responsive Nav: responsive navigation plugin without library dependencies and with fast touch screen support, from http://responsive-nav.com/ */
 @import "responsive-nav";
 

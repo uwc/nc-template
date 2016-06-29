@@ -10,10 +10,9 @@
 }
 
 html {
+  @include typi-base();
   font-family: $sans;
-  font-size: $base-fontsize;
   font-weight: $sans-normal;
-  line-height: 1.5;
   background-color: palette(gray, xx-dark);
 }
 

@@ -47,15 +47,17 @@ module.exports = {
 
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks (below) to concatenate; warning: this method offers no dependency management!
-      core: ['core', 'navigation', 'smoothScroll']
+      scripts: ['accessibility', 'smoothScroll', 'navigation', 'core']
     }
   , chunks: { // Chunks are arrays of paths or globs matching a set of source files; this way you can organize a bunch of scripts that go together into pieces that can then be bundled (above)
       // The core chunk is loaded no matter what; put essential scripts that you want loaded by your theme in here
-      core: [
-        src+'js/scripts.js', 
-        src+'js/skip-link-focus-fix.js', 
-        src+'js/customizer.js', 
-        bower+'html5shiv/dist/html5shiv.js'
+      core: [          
+        bower+'html5shiv/dist/html5shiv.js',
+        src+'js/customizer.js',
+        src+'js/scripts.js',
+      ]
+    , accessibility: [
+        src+'js/skip-link-focus-fix.js'
       ]
     , navigation: [
         bower+'responsive-nav/responsive-nav.js', 
@@ -113,7 +115,7 @@ module.exports = {
     }
   , fonts: {
       src: src+'fonts/*' // This simply copies the custom font files over.
-    , dest: build
+    , dest: build+'fonts/'
     }
   , readme: {
       src: src+'readme.*' // This simply copies the readme file over.

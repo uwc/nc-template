@@ -5,8 +5,7 @@
 /*
  * 1. Settings
  * 2. Typography
- * 3. Media Queries
- * 4. Layout
+ * 3. Layout
  */
 
 
@@ -36,26 +35,16 @@
     @return map-get(map-get($_palettes, $palette), $tone);
 }
 
-/* Master config function */
-@function config($map, $key) {
-  @return map-get($map, $key);
-}
-
 /* A simple function to retrieve theme metadata */
 @function metadata($request) {
-  @return config($_metadata, $request);
-}
-
-/* A simple function to retrieve font sizes */
-@function fontsize($request) {
-  @return config($_fontsize, $request);
+  @return map-get($_metadata, $request);
 }
 
 
 // 2. Typography //
 
 /* 
- * The font() function accepts a style parameter. *
+ * The font() function accepts a style parameter.
  * It is intended to promote consistency in the typography, 
  * therefore the number of styles should be kept to a minimum.
  * Attributes which change between instances should not be defined here (e.g. color). 
@@ -63,74 +52,44 @@
 @mixin font($style: null) {
   @if $style == null {
     @warn "Mixin font() received no input! Please provide a style.";
-    font-size: fontsize(regular);
+    font-size: ms(10);
     color: red;
   }
   @else if $style == 'title1' {
     font-weight: $sans-bold;
-    font-size: fontsize(xxx-large);
+    font-size: ms(5);
   }
   @else if $style == 'title2' {
     font-weight: $sans-bold;
-    font-size: fontsize(xx-large);
+    font-size: ms(4);
   }
   @else if $style == 'title3' {
     font-weight: $sans-bold;
-    font-size: fontsize(x-large);
+    font-size: ms(3);
   }
   @else if $style == 'lead' {
-    font-size: fontsize(large);
+    font-size: ms(1);
   }
   @else if $style == 'body' {
-    font-size: fontsize(regular);
+    font-size: ms(0);
   }
   @else if $style == 'button' {
     font-weight: $sans-bold;
-    font-size: fontsize(small);
+    font-size: ms(-1);
   }
   @else if $style == 'navigation' {
-    font-size: fontsize(small);
+    font-size: ms(0);
   }
   @else {
     @warn "Mixin font() received invalid input! This style does not exist.";
-    font-size: fontsize(regular);
+    font-size: ms(10);
     color: red;
   }
 }
 
 
-// 3. MEDIA QUERIES //
 
-/* 
- * Master media query mixin; only for use with screens, of course
- * should work with raw integers or em values. 
- */
-@mixin media($min-query: null, $max-query: null) {
-  @if $min-query == null and $max-query == null {
-    @warn "Mixin media() received two null values; no output.";
-    @content; /* Pass content anyway, but it won't be wrapped in a media query. */
-  }
-  @else if $max-query == null {
-    @media screen and (min-width: $min-query+0em) { @content; }
-  }
-  @else if $min-query == null {
-    @media screen and (max-width: $max-query+0em) { @content; }
-  }
-  @else {
-    @media screen and (min-width: $min-query+0em) and (max-width: $max-query+0em) { @content; }
-  }
-}
-
-
-// 4. LAYOUT //
-
-/* Margins and paddings helper function. */
-@function space($val: 1) {
-  @return rem($space) * rem($val) + 0rem;
-}
-
-
-
+// 3. LAYOUT //
 
 
 /*.ctnr-wide, .ctnr-golden {
