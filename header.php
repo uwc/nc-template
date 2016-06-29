@@ -18,6 +18,15 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
+<meta name="description" content="<?php if ( is_single() ) {
+				single_post_title( '', true );
+		} else {
+				bloginfo( 'name' );
+				echo ' - ';
+				bloginfo( 'description' );
+		}
+		?>" />
 </head>
 
 <body <?php body_class(); ?>>

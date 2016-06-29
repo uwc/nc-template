@@ -13,10 +13,9 @@
 
 	</div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php get_template_part( 'components/footer/site', 'info' ); ?>
+		<?php get_template_part( 'components/site', 'info' ); ?>
 	</footer>
 </div>
 <?php wp_footer(); ?>
-
 </body>
 </html>
