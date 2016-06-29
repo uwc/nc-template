@@ -174,11 +174,10 @@ function nc_template_scripts() {
 	wp_enqueue_style( 'nc-template-fonts', nc_template_fonts_url(), array(), null );
 	// Theme stylesheet.
 	wp_enqueue_style( 'nc-template-style', get_stylesheet_uri() );
-	// Theme scripts.
-
 	// Load the html5 shiv.
 	wp_enqueue_script( 'nc-template-html5', get_template_directory_uri() . '/js/html5.js' );
 	wp_script_add_data( 'nc-template-html5', 'conditional', 'lt IE 9' );
+	// Theme scripts.
 	wp_enqueue_script( 'nc-template-script', get_template_directory_uri() . '/js/scripts.js' );
 }
 add_action( 'wp_enqueue_scripts', 'nc_template_scripts' );
