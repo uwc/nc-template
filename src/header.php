@@ -22,7 +22,8 @@
 <meta name="description" content="<?php if ( is_single() ) {
 				single_post_title( '', true );
 		} else {
-				bloginfo( 'name' ); echo ' - ';
+				bloginfo( 'name' ); 
+				echo ' - ';
 				bloginfo( 'description' );
 		}
 		?>" />
