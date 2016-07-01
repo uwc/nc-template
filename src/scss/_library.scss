@@ -4,28 +4,14 @@
 
 /*
  * 1. Settings
- * 2. Typography
- * 3. Layout
+ * 2. Gradients
+ * 3. Borders & Underlines
+ * 4. Typography
+ * 5. Layout
  */
 
 
 // 1. Settings //
-
-/* 
- * Small helper function to convert pixels to rems.
- * IMPORTANT: it enables the use of different base fontsizes with differen breakpoints. 
- */
-@function rem($pixels, $context: $base-fontsize) {
-  @if (unitless($pixels)) {
-    $pixels: $pixels * 1px;
-  }
-
-  @if (unitless($context)) {
-    $context: $context * 1px;
-  }
-
-  @return $pixels / $context * 1rem;
-}
 
 /* 
  * A simple function to retrieve a color from the palette.
@@ -41,7 +27,62 @@
 }
 
 
-// 2. Typography //
+
+// 2. Gradients //
+
+@function gradient($direction, $color-stops...) {
+  @return linear-gradient($direction, $color-stops);
+}
+
+
+
+// 3. Borders & Underlines //
+
+$border-gray: 1px solid palette(gray, lighter);
+$border-grey: 1px solid palette(gray, lighter);
+
+@mixin gradient-border($direction, $color-stops...) {
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    background-color: nth($color-stops, 1);
+    background-image: gradient($direction, $color-stops);
+    width: 100%;
+    height: 2px;
+  }
+}
+
+@mixin gradient-underline($direction, $color-stops...) {
+  position: relative;
+  z-index: 1;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: nth($color-stops, 1);
+    background-image: gradient($direction, $color-stops);
+    visibility: hidden;
+    transform: translate(0px,3px);
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: visibility .15s ease-in-out, opacity .15s ease-in-out, transform .15s ease-in-out;
+  }
+  &:hover:after,
+  &:focus:after {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px,1px);
+  }
+}
+
+
+
+// 4. Typography //
 
 /* 
  * The font() function accepts a style parameter.
@@ -55,20 +96,25 @@
     font-size: ms(10);
     color: red;
   }
-  @else if $style == 'title1' {
+  @else if $style == 'title' {
+    font-weight: $sans-bold;
+    font-size: ms(6);
+  }
+  @else if $style == 'header1' {
     font-weight: $sans-bold;
     font-size: ms(5);
   }
-  @else if $style == 'title2' {
+  @else if $style == 'header2' {
     font-weight: $sans-bold;
     font-size: ms(4);
   }
-  @else if $style == 'title3' {
+  @else if $style == 'header3' {
     font-weight: $sans-bold;
     font-size: ms(3);
   }
-  @else if $style == 'lead' {
+  @else if $style == 'large' {
     font-size: ms(1);
+    font-weight: $sans-medium;
   }
   @else if $style == 'body' {
     font-size: ms(0);
@@ -79,6 +125,8 @@
   }
   @else if $style == 'navigation' {
     font-size: ms(0);
+    color: palette(gray);
+    font-weight: $sans-medium;
   }
   @else {
     @warn "Mixin font() received invalid input! This style does not exist.";
@@ -89,26 +137,46 @@
 
 
 
-// 3. LAYOUT //
+// 5. LAYOUT //
 
-
-/*.ctnr-wide, .ctnr-golden {
-  width: 100%;
-  max-width: 85rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  margin: 0 auto;
+/* Simple mixin to clear floats. */
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
-@media (min-width: $phone) {
-  .ctnr-wide {
-    padding-right: 4rem;
-    padding-left: 4rem;
-  }
+/**
+ * Content can take on two different widths on mobile:
+ * full and wide (golden = wide).
+ */
+@mixin ctnr-full {
+  width: 100vw;
+  max-width: 100%;
+}
 
-  .ctnr-golden {
-    width: 61.8%;
-    padding: 0;
-    max-width: 50rem;
+@mixin ctnr-wide {
+  width: auto;
+  margin-right: vr(0.75);
+  margin-left: vr(0.75);
+  @include mappy-query(desktop) {
+    max-width: 1150px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: vr(0.75);
+    padding-left: vr(0.75);
   }
-}*/
+}
+
+@mixin ctnr-golden {
+  width: auto;
+  margin-right: vr(0.75);
+  margin-left: vr(0.75);
+  @include mappy-query(desktop) {
+    max-width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

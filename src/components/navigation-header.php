@@ -7,14 +7,14 @@
  * @package NC_Template
  */
 
-?><div id="site-navigation" class="main-navigation" role="navigation">
-	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php esc_html_e( 'Top Menu', 'nc-template' ); ?></button>
+?><a id="menu-toggle" href="#" aria-controls="top-menu" aria-expanded="false"><?php esc_html_e( 'Top Menu', 'nc-template' ); ?></a>
+<div id="navigation-main" class="navigation-main" role="navigation">
 	<?php if ( has_nav_menu( 'header' ) ) {
 		wp_nav_menu( array(
 		'theme_location' => 'header',
 		'depth' => '2',
 		'container' => 'nav',
-		'container_class' => 'nav-collapse',
+		'container_class' => 'nav-collapse closed',
 		'fallback_cb' => 'false',
 		) );
 	} ?>

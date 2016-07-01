@@ -12,11 +12,12 @@
 /* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
 @import "mappy-breakpoints/mappy-breakpoints";
 
-/* Configuration variables and settings */
+/* Configuration variables and settings. */
 @import "config";
 
-/* Library: mixins, functions, etc. specific to this theme */
+/* Library: mixins, functions, etc. specific to this theme. */
 @import "library";
+
 
 /*!
 Theme Name: #{metadata(theme-name)}
@@ -42,8 +43,9 @@ GitHub Branch: #{metadata(github-branch)}
 
 /* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
 @import "normalize";
-/* Responsive Nav: responsive navigation plugin without library dependencies and with fast touch screen support, from http://responsive-nav.com/ */
-@import "responsive-nav";
+
+/* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
+@import "reset";
 
 /* Styles required by WordPress core */
 @import "wordpress";
@@ -58,11 +60,12 @@ GitHub Branch: #{metadata(github-branch)}
 /*@import "buttons";*/
 /*@import "forms";*/
 /*@import "cards";*/
-/*@import "menus";*/
+@import "menus";
 
 /* Sections */
+@import "navigation";
 @import "header";
 /*@import "overview";*/
-/*@import "article";*/
+@import "article";
 /*@import "contact";*/
 /*@import "search";*/

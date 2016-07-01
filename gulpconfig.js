@@ -48,12 +48,12 @@ module.exports = {
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks (below) to concatenate; warning: this method offers no dependency management!
       scripts: ['accessibility', 'smoothScroll', 'navigation', 'core']
+    , html5: ['ie']
+    , customizer: ['customizer']
     }
   , chunks: { // Chunks are arrays of paths or globs matching a set of source files; this way you can organize a bunch of scripts that go together into pieces that can then be bundled (above)
       // The core chunk is loaded no matter what; put essential scripts that you want loaded by your theme in here
-      core: [          
-        bower+'html5shiv/dist/html5shiv.js',
-        src+'js/customizer.js',
+      core: [
         src+'js/scripts.js',
       ]
     , accessibility: [
@@ -65,6 +65,12 @@ module.exports = {
       ]
     , smoothScroll: [
         bower+'smooth-scroll/dist/js/smooth-scroll.js'
+      ]
+    , ie: [
+        bower+'html5shiv/dist/html5shiv.js',
+      ]
+    , customizer: [
+        src+'js/customizer.js',
       ]
     }
   , dest: build+'js/' // Where the scripts end up in your theme
@@ -134,11 +140,6 @@ module.exports = {
       src: bower+'normalize-css/normalize.css'
     , dest: src+'scss'
     , rename: '_normalize.scss'
-    }
-  , responsiveNav: { // Copies `responsive-nav.css` from `bower_components` to `src/scss` and renames it to allow for it to imported as a Sass file
-      src: bower+'responsive-nav/responsive-nav.css'
-    , dest: src+'scss'
-    , rename: '_responsive-nav.scss'
     }
   },
 

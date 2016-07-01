@@ -14,13 +14,6 @@ gulp.task('utils-normalize', function() {
   .pipe(gulp.dest(config.normalize.dest));
 });
 
-gulp.task('utils-responsiveNav', function() {
-  return gulp.src(config.responsiveNav.src)
-  .pipe(plugins.changed(config.responsiveNav.dest))
-  .pipe(plugins.rename(config.responsiveNav.rename))
-  .pipe(gulp.dest(config.responsiveNav.dest));
-});
-
 // Totally wipe the contents of the `dist` folder to prepare for a clean build; additionally trigger Bower-related tasks to ensure we have the latest source files
 gulp.task('utils-wipe', ['setup'], function() {
   return del(config.wipe);

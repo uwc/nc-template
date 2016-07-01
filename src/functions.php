@@ -51,9 +51,9 @@ function nc_template_setup() {
 	// Enable support for custom logo.
 	add_theme_support( 'custom-logo', array(
 		'height'      => 30,
-		'width'       => 360,
+		'width'       => 240,
 		'flex-width'  => true,
-		'header-text' => array( 'site-title', 'site-description' ),
+		'header-text' => array( 'site-title' ),
 	) );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -81,13 +81,18 @@ function nc_template_setup() {
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
 		'video',
 		'quote',
 		'link',
 		'gallery',
 	) );
+
+	/*
+	 * Add support for Post Formats to pages.
+	 *
+	 * See: https://codex.wordpress.org/Function_Reference/add_post_type_support
+	 */
+    add_post_type_support( 'page', array( 'post-formats', 'excerpt' ) );
 
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
@@ -139,12 +144,8 @@ function nc_template_fonts_url() {
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
 	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'PT Sans font: on or off', 'nc-template' ) ) {
-		$fonts[] = 'PT+Sans:400,700';
-	}
-	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'nc-template' ) ) {
-		$fonts[] = 'Montserrat:400,700';
+	if ( 'off' !== _x( 'on', 'Cabin font: on or off', 'nc-template' ) ) {
+		$fonts[] = 'Cabin:400,500,700';
 	}
 	if ( $fonts ) {
 		$fonts_url = add_query_arg( array(
@@ -162,7 +163,7 @@ endif;
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  */
 function nc_template_javascript_detection() {
-	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>";
 }
 add_action( 'wp_head', 'nc_template_javascript_detection', 0 );
 
@@ -207,7 +208,9 @@ require get_template_directory() . '/inc/jetpack.php';
  * It is not needed and would only increase the time to load the page.
  */
 function change_default_jquery() {
+	if ( !is_admin() && !is_customize_preview() ) {
 		wp_dequeue_script( 'jquery' );
 		wp_deregister_script( 'jquery' );
+	}
 }
 add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );

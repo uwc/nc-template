@@ -1,29 +1,19 @@
 // ==== LAYOUT ==== //
 
-/* These wrappers allow for backgrounds and layout options to be defined for each of the three sections (header, content, and footer) */
 
-
-.wrap-header {
-  background: color(blue);
-  padding-bottom: spacer(2);
-  padding-top: spacer(2);
+/* Limits width on large screens and centers content. */
+.site {
+  max-width: 72rem;
+  margin: 0 auto;
 }
 
-.wrap-content {
-  padding: spacer();
+/* Content can take on three different widths: full, wide and golden. */
+.ctnr-full {
+  @include ctnr-full;
 }
-
-.wrap-footer {
-  background: color(blue);
-  padding-bottom: spacer(2);
-  padding-top: spacer(2);
+.ctnr-wide {
+  @include ctnr-wide;
 }
-.site-title {
-  margin-top: 0;
-}
-.site-navigation {
-  display: none;
-  &.active {
-    display: block;
-  }
+.ctnr-golden {
+  @include ctnr-golden;
 }

@@ -13,7 +13,7 @@ html {
   @include typi-base();
   font-family: $sans;
   font-weight: $sans-normal;
-  background-color: palette(gray, xx-dark);
+  background-color: palette(gray, darker);
 }
 
 body {
@@ -21,7 +21,7 @@ body {
   min-width: 100vw;
   overflow-x: hidden;
   background-color: #fff;
-  color: palette(gray, xx-dark);
+  color: palette(gray, dark);
 }
 
 ::-moz-selection {

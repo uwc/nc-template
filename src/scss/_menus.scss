@@ -1,17 +1,145 @@
 // ==== MENUS ==== //
 
-// Inline menu; used in header and footer navigation
-.menu-inline {
-  &, ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    & > li {
-      float: left;
-      margin-right: rem(8);
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
-  }
+/**
+ * 1. Header
+ * 2. Social
+ * 3. Footer
+ */
+
+
+// 1. Header //
+
+#menu-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+#menu-header a {
+	@include font(navigation);
+	@include gradient-underline(90deg, palette(purple), palette(pink));
+}
+
+#menu-item-search a:before {
+	content: '\6a';
+	display: inline-block;
+	font-family: 'nc-template' !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#menu-header .menu-item {
+	position: relative;
+}
+
+#menu-header ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
+#menu-header > li:hover > ul {
+	display: block;
+}
+
+
+
+// 2. Social //
+
+/**
+ * Social icons displayed in the navigation bar.
+ * A normal WordPress menu with custom links can be used to display the icons.
+ * The trick are the CSS attribute selectors that check for the domain.
+ * Inspired by http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
+ */
+#menu-social {
+	list-style: none;
+	text-align: right;
+	padding: 0;
+	margin: 0;
+	li {
+		display: inline-block;
+		position: relative;
+	}
+}
+
+#menu-social li a {
+	margin-left: vr(0.5);
+}
+
+#menu-social li a:before {
+	content: '\f408';
+	display: inline-block;
+	font-family: 'nc-template' !important;
+	vertical-align: top;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	font-size: ms(1);
+	speak: none;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#menu-social li a[href*="wordpress.org"]::before,
+#menu-social li a[href*="wordpress.com"]::before {
+	content: '\61';
+	color:   #1e8cbe;
+}
+#menu-social li a[href*="facebook.com"]::before {
+	content: '\65';
+	color:   #3b5998;
+}
+#menu-social li a[href*="twitter.com"]::before {
+	content: '\63';
+	color:   #55acee;
+}
+#menu-social li a[href*="plus.google.com"]::before {
+	content: '\62';
+	color:   #dc4e41;
+}
+#menu-social li a[href*="pinterest.com"]::before {
+	content: '\70';
+	color:   #bd081c;
+}
+#menu-social li a[href*="github.com"]::before {
+	content: '\6d';
+	color:   #333333;
+}
+#menu-social li a[href*="tumblr.com"]::before {
+	content: '\6e';
+	color:   #35465c;
+}
+#menu-social li a[href*="youtube.com"]::before {
+	content: '\6f';
+	color:   #cd201f;
+}
+#menu-social li a[href*="flickr.com"]::before {
+	content: '\71';
+	color:   #ff0084;
+}
+#menu-social li a[href*="vimeo.com"]::before {
+	content: '\73';
+	color:   #1ab7ea;
+}
+#menu-social li a[href*="instagram.com"]::before {
+	content: '\72';
+	color:   #3f729b;
+}
+#menu-social li a[href*="linkedin.com"]::before {
+	content: '\64';
+	color:   #0077b5;
+}
+#menu-social li a[href^="mailto:"]::before {
+	content: '\66';
+	color:   #ffa930;
 }

@@ -19,30 +19,28 @@ $breakpoints: (
   large: 1024px,
 );
 
-/* You can use and valid arguments inserted into mappy-bp as the map values. Any of the following would do. */
+/* You can use any valid arguments inserted into mappy-bp as the map values. Any of the following would do. */
 $mappy-queries: (
-  phone: mappy-bp(h max-height small),
-  tablet: mappy-bp(small large),
-  desktop: mappy-bp(960px 1200px),
-  change-type: mappy-bp(small, $type: screen),
+  phone: mappy-bp(max-width small),
+  tablet: mappy-bp(small medium),
+  desktop: mappy-bp(medium),
 );
 
 
 
 // 2. Typography //
 
-$sans: 'Bliss', 'Freight Sans Pro', 'PT Sans', Helvetica, sans-serif;
-$sans-normal: 400;
+$sans: 'Bliss', 'Cabin', 'Freight Sans Pro', Helvetica, sans-serif;
+$sans-normal: 300;
+$sans-medium: 400;
 $sans-bold:   700;
 
-$ms-base: 1em, 1.25em;
-$ms-ratio: 1.5;
+$ms-base: 1rem, 1.25rem;
+$ms-ratio: 1.414;
 
 $typi: (
   null: (16px, 1.4),
-  /*small: 16px,*/
-  medium: 18px,
-  large: (20px, 1.5),
+  medium: (20px, 1.5),
 );
 
 
@@ -90,10 +88,10 @@ $_palettes: (
     ),
     gray: (
         base:  $base-gray,
-        x-light:  lighten($base-gray, 28%),
+        lighter:  lighten($base-gray, 42%),
         light:  lighten($base-gray, 14%),
         dark:   darken($base-gray, 14%),
-        x-dark:   darken($base-gray, 28%)
+        darker:   darken($base-gray, 42%)
     )
 );
 

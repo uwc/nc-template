@@ -7,6 +7,6 @@
  * @package NC_Template
  */
 
-?><div>
+?><div class="navigation-logo">
 	<?php nc_template_custom_logo(); ?>
 </div>
