@@ -19,8 +19,8 @@ get_header(); ?>
 				<div class="page-content">
 					<p><?php
 						$url = 'http://www.ibo.org/en/programmes/diploma-programme/curriculum/theory-of-knowledge/what-is-tok/';
-						$link = sprintf( wp_kses( __( 'Looks like something has gone terribly wrong somewhere in the Internet. As a result, the page you requested isn&rsquo;t available. Or maybe it doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of your imagination. Maybe you are a figment of your own imagination. Did we just blow your mind? Find out more about the <a href="%s">theory of knowledge course</a> at UWC or simply use the search bar below to find what you are looking for.', 'nc-template' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $url ) );
-					echo $link;
+						$link = sprintf( wp_kses( __( 'Looks like something has gone terribly wrong somewhere in the Internet. As a result, the page you requested isn&rsquo;t available. Or maybe it doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of your imagination. Maybe you are a figment of your own imagination. Did we just blow your mind? Find out more about the <a href="%s">theory of knowledge course</a> at UWC or simply use the search bar below to find what you are looking for.', 'nc-template' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( $url ) );
+					echo $link; // WPCS: XSS ok.
 					?></p>
 
 					<?php get_search_form(); ?>

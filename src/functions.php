@@ -92,7 +92,7 @@ function nc_template_setup() {
 	 *
 	 * See: https://codex.wordpress.org/Function_Reference/add_post_type_support
 	 */
-    add_post_type_support( 'page', array( 'post-formats', 'excerpt' ) );
+	add_post_type_support( 'page', array( 'post-formats', 'excerpt' ) );
 
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
@@ -208,7 +208,7 @@ require get_template_directory() . '/inc/jetpack.php';
  * It is not needed and would only increase the time to load the page.
  */
 function change_default_jquery() {
-	if ( !is_admin() && !is_customize_preview() ) {
+	if ( ! is_admin() && ! is_customize_preview() ) {
 		wp_dequeue_script( 'jquery' );
 		wp_deregister_script( 'jquery' );
 	}
