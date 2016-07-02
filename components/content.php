@@ -30,6 +30,7 @@
 		<?php get_template_part( 'components/post/content', 'meta' ); ?>
 		<?php
 		endif; ?>
+		<h2 class="entry-summary"><?php the_excerpt(); ?></h2>
 	</header>
 	<div class="entry-content">
 		<?php
