@@ -49,7 +49,7 @@ add_filter( 'wp_nav_menu_items','nc_template_nav_menu_items', 10, 2 );
  * Limits the length of excerpts to 32 words.
  * See https://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length
  *
- * @param $length Length of the excerpt.
+ * @param int $length Length of the excerpt.
  */
 function nc_template_excerpt_length( $length ) {
 	return 32;
