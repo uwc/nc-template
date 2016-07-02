@@ -5,7 +5,7 @@
 /*
  * 1. Settings
  * 2. Gradients
- * 3. Borders & Underlines
+ * 3. Borders, Underlines & Overlays
  * 4. Typography
  * 5. Layout
  */
@@ -36,7 +36,7 @@
 
 
 
-// 3. Borders & Underlines //
+// 3. Borders, Underlines & Overlays //
 
 $border-gray: 1px solid palette(gray, lighter);
 $border-grey: 1px solid palette(gray, lighter);
@@ -80,6 +80,26 @@ $border-grey: 1px solid palette(gray, lighter);
   }
 }
 
+@mixin text-overlay {
+  color: #fff;
+  text-shadow: 0px 0px 4px palette(gray);
+}
+
+@mixin gradient-overlay {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    background: gradient(0deg, rgba(0,0,0,0.66), transparent);
+    @include mappy-query(phone) {
+      background: rgba(0,0,0,0.33);
+      height: 100%;
+    }
+  }
+}
 
 
 // 4. Typography //

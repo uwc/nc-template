@@ -35,20 +35,20 @@ $sans-normal: 300;
 $sans-medium: 400;
 $sans-bold:   700;
 
-$ms-base: 1rem, 1.25rem;
-$ms-ratio: 1.414;
+$ms-base: 1rem, 1.2rem;
+$ms-ratio: 1.4;
 
 $typi: (
   null: (16px, 1.4),
-  medium: (20px, 1.5),
+  medium: (21px, 1.5),
 );
 
 
 
 // 3. Colors //
 
-$base-blue: #0064A6;
-$base-turquoise: #009B90;
+$base-blue: #1366a9; /* #0064A6 */
+$base-turquoise: #21a7ac; /* #009B90 */
 $base-purple: #741669;
 $base-pink: #AD1644;
 $base-orange: #DE6328;

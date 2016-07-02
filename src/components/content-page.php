@@ -10,10 +10,28 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<h2 class="entry-summary"><?php the_excerpt(); ?></h2>
-	</header>
+
+	<?php if ( has_post_thumbnail() ) : ?>
+		<header class="entry-header featured-image">
+			<div class="entry-photo">
+				<?php the_post_thumbnail(); ?>
+			</div>
+			<div class="header-outer">
+				<div class="header-inner">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<h2 class="entry-summary"><?php the_excerpt(); ?></h2>
+				</div>
+			</div>
+		</header>
+	<?php else : ?>
+		<header class="entry-header">
+			<div class="header-outer">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<h2 class="entry-summary"><?php the_excerpt(); ?></h2>
+			</div>
+		</header>
+	<?php endif; ?>
+
 	<div class="entry-content">
 		<?php
 			the_content();
