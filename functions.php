@@ -116,7 +116,7 @@ function nc_template_content_width() {
 add_action( 'after_setup_theme', 'nc_template_content_width', 0 );
 
 /**
- * Register widget area.
+ * Register widget areas.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
@@ -124,6 +124,33 @@ function nc_template_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'nc-template' ),
 		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer left', 'nc-template' ),
+		'id'            => 'footer-left',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer center', 'nc-template' ),
+		'id'            => 'footer-center',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer right', 'nc-template' ),
+		'id'            => 'footer-right',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
