@@ -32,7 +32,7 @@
 		</div>
 		<div class="footer-info">
 			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'nc-template' ); ?>
-				<?php printf( esc_html__( 'Website by %s.', 'nc-template' ), '<a href="http://connorbaer.io/" rel="designer">Connor B&#228;r</a>' ); ?>
+				<?php printf( esc_html__( 'Website by %s.', 'nc-template' ), '<a href="http://connorbaer.io/" rel="designer" target="_blank">Connor B&#228;r</a>' ); ?>
 			</p>
 		</div>
 

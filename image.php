@@ -42,7 +42,7 @@ get_header(); ?>
 								echo wp_get_attachment_image( get_the_ID(), $image_size );
 							?>
 
-							<?php nc_template_excerpt( 'entry-caption' ); ?>
+							<?php the_excerpt( 'entry-caption' ); ?>
 
 						</div><!-- .entry-attachment -->
 
@@ -60,7 +60,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 
 					<footer class="entry-footer">
-						<?php nc_template_entry_meta(); ?>
+						<?php the_meta(); ?>
 						<?php
 							// Retrieve attachment metadata.
 							$metadata = wp_get_attachment_metadata();
@@ -73,26 +73,10 @@ get_header(); ?>
 								);
 							}
 						?>
-						<?php
-							edit_post_link(
-								sprintf(
-									/* translators: %s: Name of current post */
-									__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'nc-template' ),
-									get_the_title()
-								),
-								'<span class="edit-link">',
-								'</span>'
-							);
-						?>
 					</footer><!-- .entry-footer -->
 				</article><!-- #post-## -->
 
 				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
-
 					// Parent post navigation.
 					the_post_navigation( array(
 						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'nc-template' ),

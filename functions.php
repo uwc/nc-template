@@ -46,7 +46,7 @@ function nc_template_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'nc-template-featured-image', 640, 9999 );
+	set_post_thumbnail_size( 1280, 9999, false );
 
 	// Enable support for custom logo.
 	add_theme_support( 'custom-logo', array(
@@ -98,7 +98,7 @@ function nc_template_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'css/editor-style.css', nc_template_fonts_url() ) );
+	add_editor_style( array( 'editor-style.css', nc_template_fonts_url() ) );
 }
 endif;
 add_action( 'after_setup_theme', 'nc_template_setup' );
