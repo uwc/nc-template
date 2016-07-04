@@ -1,0 +1,27 @@
+// ==== FORMS ==== //
+
+/* Style form inputs and labels here. Depends on the 'buttons' stylesheet. */
+
+@mixin inputs {
+	@include font(body);
+	padding: vr(0.25) vr(0.75);
+	border: 1px solid transparent;
+	border-radius: 2px;
+	background-color: palette(gray, lighter);
+	color: palette(gray, darker);
+	outline: none;
+	width: 100%;
+	text-align: left;
+	resize: none;
+	transition: border 0.15s ease-in-out, box-shadow 0.1s ease-out;
+	&:focus,
+	&:active {
+		box-shadow: 0px 0px 5px 1px palette(orange, light);
+	}
+}
+
+
+textarea {
+	resize: vertical;
+	max-width: 100%;
+}

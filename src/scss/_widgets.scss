@@ -1,0 +1,12 @@
+// ==== WIDGETS ==== //
+
+/* Mixins, functions, and other non-declarative things */
+
+.widget {
+	@include font(small);
+	color: palette(gray, dark);
+	.widget-title {
+		@include font(header4);
+		color: palette(gray);
+	}
+}

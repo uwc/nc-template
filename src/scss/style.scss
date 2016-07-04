@@ -15,7 +15,7 @@
 /* Configuration variables and settings. */
 @import "config";
 
-/* Library: mixins, functions, etc. specific to this theme. */
+/* Library: basic mixins, functions, etc. specific to this theme. */
 @import "library";
 
 
@@ -38,8 +38,13 @@ GitHub Branch: #{metadata(github-branch)}
 
 // ==== IMPORTS ==== //
 
-/* Note: `bower_components` and `npm_modules` are already in Sass's path */
+/**
+ * Note: `bower_components` and `npm_modules` are already in Sass's path.
+ * The order of the imports is crucial, since they build on each other. 
+ * For example, a form contains buttons, a menu can contain a form, etc.
+ */
 
+// 1. Dependencies //
 
 /* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
 @import "normalize";
@@ -50,22 +55,29 @@ GitHub Branch: #{metadata(github-branch)}
 /* Styles required by WordPress core */
 @import "wordpress";
 
-/* Authored dependencies */
+
+// 2. Authored dependencies //
+
 @import "fonts";
 @import "base";
 @import "layout";
 @import "typography";
 
-/* Patterns */
-/*@import "buttons";*/
-/*@import "forms";*/
+
+// 3. Patters //
+
+@import "buttons";
+@import "forms";
 /*@import "cards";*/
 @import "menus";
 
-/* Sections */
+
+// 4. Sections //
+
+@import "search";
+@import "widgets";
 @import "navigation";
-@import "header";
 /*@import "overview";*/
 @import "article";
 /*@import "contact";*/
-/*@import "search";*/
+@import "footer";

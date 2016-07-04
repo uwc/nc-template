@@ -1,5 +1,47 @@
 // ==== LAYOUT ==== //
 
+/* Simple mixin to clear floats. */
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/**
+ * Content can take on two different widths on mobile:
+ * full and wide (golden = wide).
+ */
+@mixin ctnr-full {
+  width: 100vw;
+  max-width: 100%;
+}
+
+@mixin ctnr-wide {
+  width: auto;
+  margin-right: vr(0.75);
+  margin-left: vr(0.75);
+  @include mappy-query(desktop) {
+    max-width: 1150px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: vr(0.75);
+    padding-left: vr(0.75);
+  }
+}
+
+@mixin ctnr-golden {
+  width: auto;
+  margin-right: vr(0.75);
+  margin-left: vr(0.75);
+  @include mappy-query(desktop) {
+    max-width: 720px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 
 /* Limits width on large screens and centers content. */
 .site {

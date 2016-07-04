@@ -1,5 +1,7 @@
 // ==== ARTICLE ==== //
 
+/* Style post and page content here, including the header and footer. */
+
 /**
  * 1. Header
  * 2. Content
@@ -11,8 +13,8 @@
 .entry-header {
   .header-outer {
     @include ctnr-golden;
-    margin-top: vr(2.5);
-    margin-bottom: vr(2.5);
+    margin-top: vr(3);
+    margin-bottom: vr(2);
   }
   .entry-title {
     @include font(title);
@@ -76,7 +78,8 @@
   dd,
   address,
   pre,
-  code {
+  code,
+  hr {
     @include ctnr-golden;
   }
   p {
@@ -120,6 +123,10 @@
 
 
 // Footer
+
+.entry-footer {
+  @include ctnr-golden;
+}
 
 .widget-area {
   @include ctnr-golden;

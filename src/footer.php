@@ -13,7 +13,29 @@
 
 	</div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php get_template_part( 'components/site', 'info' ); ?>
+		<div class="footer-widgets">
+			<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
+				<div class="footer-widget footer-left">
+					<?php dynamic_sidebar( 'footer-left' ); ?>
+				</div>
+			<?php endif; ?>
+			<?php if ( is_active_sidebar( 'footer-center' ) ) : ?>
+				<div class="footer-widget footer-center">
+					<?php dynamic_sidebar( 'footer-center' ); ?>
+				</div>
+			<?php endif; ?>
+			<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
+				<div class="footer-widget footer-right">
+					<?php dynamic_sidebar( 'footer-right' ); ?>
+				</div>
+			<?php endif; ?>
+		</div>
+		<div class="footer-info">
+			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'nc-template' ); ?>
+				<?php printf( esc_html__( 'Website by %s.', 'nc-template' ), '<a href="http://connorbaer.io/" rel="designer">Connor B&#228;r</a>' ); ?>
+			</p>
+		</div>
+
 	</footer>
 </div>
 <?php wp_footer(); ?>

@@ -1,0 +1,40 @@
+// ==== FORMS ==== //
+
+/* Style the various button types here. */
+
+input[type="submit"].button, 
+button.button {
+	display: block;
+	outline: none;
+	font-size: .825rem;
+	font-family: $sans;
+	font-weight: $sans-bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.12rem;
+	padding: .4rem .9rem;
+	margin-top: 1rem;
+	border: 2px solid blue;
+	color: blue;
+	background-color: #fff;
+	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+	&:hover,
+	&:focus,
+	&:active {
+		color: #fff;
+		background-color: blue;
+		cursor: pointer;
+	}
+}
+
+@include mappy-query(phone) {
+	input, textarea {
+	  	font-size: 1.375rem;
+	}
+
+	input[type="submit"].button, 
+	button.button {
+		font-size: 1.125rem;
+		border: 3px solid blue;
+	}
+}

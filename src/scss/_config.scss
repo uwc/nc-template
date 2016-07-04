@@ -35,8 +35,8 @@ $sans-normal: 300;
 $sans-medium: 400;
 $sans-bold:   700;
 
-$ms-base: 1rem, 1.2rem;
-$ms-ratio: 1.4;
+$ms-base: 1rem;
+$ms-ratio: 1.2;
 
 $typi: (
   null: (16px, 1.4),
@@ -47,12 +47,11 @@ $typi: (
 
 // 3. Colors //
 
-$base-blue: #1366a9; /* #0064A6 */
-$base-turquoise: #21a7ac; /* #009B90 */
-$base-purple: #741669;
-$base-pink: #AD1644;
-$base-orange: #DE6328;
-$base-gray: #717073;
+$base-blue: #1366A9;      /* #0064A6 */
+$base-turquoise: #21A7AC; /* #009B90 */
+$base-purple: #741868;    /* #741669 */
+$base-pink: #AC1743;      /* #AD1644 */
+$base-orange: #E06f3B;    /* #DE6328 */
 
 $factor-lighten: 8%;
 $factor-darken: 8%;
@@ -62,36 +61,36 @@ $factor-darken: 8%;
  */
 $_palettes: (
     blue: (
-        base:   $base-blue,
-        light:  lighten($base-blue, $factor-lighten),
-        dark:   darken($base-blue, $factor-darken)
+        base:  $base-blue,
+        light: lighten($base-blue, $factor-lighten),
+        dark:  darken($base-blue, $factor-darken)
     ),
     turquoise: (
         base:  $base-turquoise,
-        light:  lighten($base-turquoise, $factor-lighten),
-        dark:   darken($base-turquoise, $factor-darken)
+        light: lighten($base-turquoise, $factor-lighten),
+        dark:  darken($base-turquoise, $factor-darken)
     ),
     purple: (
         base:  $base-purple,
-        light:  lighten($base-purple, $factor-lighten),
-        dark:   darken($base-purple, $factor-darken)
+        light: lighten($base-purple, $factor-lighten),
+        dark:  darken($base-purple, $factor-darken)
     ),
     pink: (
         base:  $base-pink,
-        light:  lighten($base-pink, $factor-lighten),
-        dark:   darken($base-pink, $factor-darken)
+        light: lighten($base-pink, $factor-lighten),
+        dark:  darken($base-pink, $factor-darken)
     ),
     orange: (
         base:  $base-orange,
-        light:  lighten($base-orange, $factor-lighten),
-        dark:   darken($base-orange, $factor-darken)
+        light: lighten($base-orange, $factor-lighten),
+        dark:  darken($base-orange, $factor-darken)
     ),
     gray: (
-        base:  $base-gray,
-        lighter:  lighten($base-gray, 42%),
-        light:  lighten($base-gray, 14%),
-        dark:   darken($base-gray, 14%),
-        darker:   darken($base-gray, 42%)
+        base:    #717073,
+        lighter: #F5F5F5,
+        light:   #D6D6D7,
+        dark:    #515152,
+        darker:  #333234
     )
 );
 

@@ -1,0 +1,61 @@
+// ==== FOOTER ==== //
+
+/* Mixins, functions, and other non-declarative things */
+
+.site-footer {
+	@include gradient-border(90deg, palette(blue, light), palette(turquoise, light));
+	margin-top: vr(2);
+}
+
+.footer-widgets {
+	@include ctnr-golden;
+	@include clearfix;
+	padding-top: vr(1);
+	padding-bottom: vr(1);
+	.footer-widget {
+		float: left;
+	}
+	.footer-left {
+		width: 48%;
+	}
+	.footer-center,
+	.footer-right {
+		width: 26%;
+		padding-left: vr(1);
+	}
+	.widget-title {
+		color: palette(blue);
+	}
+	@include mappy-query(phone) {
+		.footer-left {
+			width: 100%;
+		}
+		.footer-center,
+		.footer-right {
+			width: 50%;
+			padding-top: vr(0.75);
+		}
+		.footer-center {
+			padding-left: 0;
+			padding-right: vr(0.5);
+		}
+		.footer-right {
+			padding-left: vr(0.5);
+			padding-right: 0;
+		}
+	}
+}
+
+.footer-info {
+	@include ctnr-golden;
+	font-size: ms(-2);
+	color: palette(gray);
+	text-align: center;
+	padding-bottom: vr(0.75);
+	a:hover,
+	a:focus {
+		text-decoration: underline;
+	}
+}
+
+/* Rewrite layout with floats and a 2-1-1 approach. */

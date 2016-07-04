@@ -1,6 +1,68 @@
 // ==== TYPOGRAPHY ==== //
 
+/* 
+ * The font() function accepts a style parameter.
+ * It is intended to promote consistency in the typography, 
+ * therefore the number of styles should be kept to a minimum.
+ * Attributes which change between instances should not be defined here (e.g. color). 
+ */
+@mixin font($style: null) {
+  @if $style == null {
+    @warn "Mixin font() received no input! Please provide a style.";
+    font-size: ms(10);
+    color: red;
+  }
+  @else if $style == 'title' {
+    font-weight: $sans-bold;
+    font-size: ms(6);
+  }
+  @else if $style == 'header1' {
+    font-weight: $sans-bold;
+    font-size: ms(4);
+  }
+  @else if $style == 'header2' {
+    font-weight: $sans-bold;
+    font-size: ms(3);
+  }
+  @else if $style == 'header3' {
+    font-weight: $sans-bold;
+    font-size: ms(2);
+  }
+  @else if $style == 'header4' {
+    font-weight: $sans-bold;
+    font-size: ms(1);
+  }
+  @else if $style == 'large' {
+    font-size: ms(1);
+    font-weight: $sans-medium;
+  }
+  @else if $style == 'body' {
+    font-size: ms(0);
+  }
+  @else if $style == 'small' {
+    font-weight: $sans-medium;
+    font-size: ms(-1);
+  }
+  @else if $style == 'button' {
+    font-weight: $sans-bold;
+    font-size: ms(-1);
+  }
+  @else if $style == 'navigation' {
+    font-size: ms(-1);
+    color: palette(gray, dark);
+    font-weight: $sans-medium;
+    letter-spacing: 0.015rem;
+  }
+  @else {
+    @warn "Mixin font() received invalid input! This style does not exist.";
+    font-size: ms(10);
+    color: red;
+  }
+}
+
+
 /* Headings, body text, lists, and other misc typographic elements. */
+
 
 a {
   border: 0;

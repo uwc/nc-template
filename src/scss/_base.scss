@@ -23,12 +23,3 @@ body {
   background-color: #fff;
   color: palette(gray, dark);
 }
-
-::-moz-selection {
-    color: palette(gray);
-    background: palette(blue, light);
-}
-::selection {
-    color: palette(gray); 
-    background: palette(blue, light);
-}

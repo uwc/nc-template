@@ -1,0 +1,41 @@
+// ==== SEARCH ==== //
+
+/* Style the search form and search results here. */
+
+/**
+ * 1. Search Form
+ * 2. Search Results
+ */
+
+
+ // 1. Search Form //
+
+.search-form {
+	label {
+		position: relative;
+		&:before {
+			content: '\6a';
+			display: inline-block;
+			position: absolute;
+			padding: vr(0.5) vr(0.75);
+			font-family: 'nc-template' !important;
+			font-style: normal !important;
+			font-weight: normal !important;
+			font-variant: normal !important;
+			text-transform: none !important;
+			speak: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+	.search-field {
+		@include inputs;
+		padding-left: vr(1.75);
+	}
+}
+
+
+// 2. Search Results //
+
+

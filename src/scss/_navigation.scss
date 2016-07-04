@@ -11,6 +11,7 @@
 /* Styles the top navigation bar. */
 .navigation {
   @include gradient-border(90deg, palette(blue, light), palette(turquoise, light));
+  border-bottom: $border-grey;
 }
 
 .navigation-ctnr {
@@ -19,8 +20,9 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-content: space-around;
-  padding-top: vr(0.33);
-  padding-bottom: vr(0.33);
+  padding-top: vr(0.125);
+  padding-bottom: vr(0.125);
+  height: 100px;
 }
 
 .navigation-logo {
