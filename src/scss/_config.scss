@@ -15,8 +15,9 @@
 
 $breakpoints: (
   small: 576px,
-  medium: 768px,
-  large: 1024px,
+  medium: 769px,
+  large: 1025px,
+  x-large: 1441px,
 );
 
 /* You can use any valid arguments inserted into mappy-bp as the map values. Any of the following would do. */
@@ -41,6 +42,7 @@ $ms-ratio: 1.2;
 $typi: (
   null: (16px, 1.4),
   medium: (21px, 1.5),
+  x-large: (26px),
 );
 
 

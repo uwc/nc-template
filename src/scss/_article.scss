@@ -87,11 +87,11 @@
     margin-bottom: vr(0.5);
   }
   a {
-    @include gradient-underline(90deg, palette(pink, light));
-    color: palette(pink);
+    @include gradient-underline(90deg, palette(orange, light));
+    color: palette(orange);
     &:hover,
     &:focus {
-      color: palette(pink, light);
+      color: palette(orange, light);
     }
   }
   blockquote {

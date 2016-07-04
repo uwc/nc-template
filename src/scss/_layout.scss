@@ -23,7 +23,7 @@
   margin-right: vr(0.75);
   margin-left: vr(0.75);
   @include mappy-query(desktop) {
-    max-width: 1150px;
+    max-width: 56rem;
     margin-right: auto;
     margin-left: auto;
     padding-right: vr(0.75);
@@ -36,7 +36,7 @@
   margin-right: vr(0.75);
   margin-left: vr(0.75);
   @include mappy-query(desktop) {
-    max-width: 720px;
+    max-width: 35rem;
     margin-right: auto;
     margin-left: auto;
   }
