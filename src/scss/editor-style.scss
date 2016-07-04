@@ -1,0 +1,64 @@
+// ==== EDITOR STYLES ==== //
+
+/**
+ * This stylesheet is loaded automatically by Wordpress when compiled and placed in the root theme directory folder as editor-style.css.
+ * For more info, check out the codex: http://codex.wordpress.org/Editor_Style
+ */
+
+/**
+ * Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions.
+ * Note: `bower_components` and `npm_modules` are already in Sass's path.
+ */
+
+/* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
+@import "modular-scale/stylesheets/modular-scale";
+
+/* Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi */
+@import "typi/scss/typi";
+
+/* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
+@import "mappy-breakpoints/mappy-breakpoints";
+
+/* Configuration variables and settings. */
+@import "config";
+
+/* Library: basic mixins, functions, etc. specific to this theme. */
+@import "library";
+
+
+/* Wrap the entire post style inside the TinyMCE selector, as suggested
+here http://codex.wordpress.org/Function_Reference/add_editor_style */
+body#tinymce.wp-editor {
+	font-family: $sans;
+	font-weight: $sans-normal;
+	color: palette(gray, dark);
+
+	// ==== IMPORTS ==== //
+
+	/**
+	 * Note: `bower_components` and `npm_modules` are already in Sass's path.
+	 * The order of the imports is crucial since they build on top of each other. 
+	 * For example, a form contains buttons, a menu can contain a form, etc.
+	 */
+
+	// 1. Dependencies //
+
+	/* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
+	@import "normalize";
+
+	/* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
+	@import "reset";
+
+	/* Styles required by WordPress core */
+	@import "wordpress";
+
+
+	// 2. Authored dependencies //
+
+	@import "layout";
+	@import "typography";
+
+	// 3. Editor styles //
+
+	@import "content";
+}

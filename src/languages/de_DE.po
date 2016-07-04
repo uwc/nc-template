@@ -1,0 +1,248 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: NC Template\n"
+"POT-Creation-Date: 2016-07-04 09:04+0200\n"
+"PO-Revision-Date: 2016-07-04 09:14+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: de_DE\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:17
+msgid "404 Oh crumbs."
+msgstr "404 Oh Krümel."
+
+#: 404.php:22
+#, php-format
+msgid ""
+"Looks like something has gone terribly wrong somewhere in the Internet. As a "
+"result, the page you requested isn&rsquo;t available. Or maybe it "
+"doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of "
+"your imagination. Maybe you are a figment of your own imagination. Did we "
+"just blow your mind? Find out more about the <a href=\"%s\">theory of "
+"knowledge course</a> at UWC or simply use the search bar below to find what "
+"you are looking for."
+msgstr ""
+"Sieht aus wie etwas schrecklich falsch irgendwo im Internet gegangen ist. "
+"Als Ergebnis ist die von Ihnen angeforderte Seite nicht zur Verfügung. Oder "
+"vielleicht existiert es nicht. Vielleicht gab es nie. Vielleicht ist diese "
+"Seite eine Ausgeburt der Phantasie. Vielleicht sind Sie eine Ausgeburt der "
+"eigenen Phantasie. Haben wir blasen einfach nur die Seele? Erfahren Sie mehr "
+"über die <a href=\"%s\">Theorie des Wissens natürlich</a> bei UWC oder "
+"verwenden Sie einfach die Suchleiste unten zu finden , was Sie suchen."
+
+#: comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "1 Kommentar zu &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr "Navigation der Kommentare"
+
+#: comments.php:43 comments.php:63
+msgid "Older Comments"
+msgstr "Ältere Kommentare"
+
+#: comments.php:44 comments.php:64
+msgid "Newer Comments"
+msgstr "Neuere Einträge"
+
+#: comments.php:77
+msgid "Comments are closed."
+msgstr "Es können keine Kommentare abgegeben werden."
+
+#: components/content-none.php:14
+msgid "Nothing Found"
+msgstr "Es wurde nichts gefunden."
+
+#: components/content-none.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Sind Sie bereit, Ihren ersten Beitrag zu veröffentlichen? <a "
+"href=“%s”>Beginnen Sie hier</a>."
+
+#: components/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Es tut uns leid. Ihre Suche ergab keinen Treffer. Bitte versuchen Sie es mit "
+"einem anderen Begriff!"
+
+#: components/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Wir konnten keine Ergebnisse finden. Vielleicht hilft das Suchfeld."
+
+#: components/content-page.php:40 components/content.php:54 image.php:52
+msgid "Pages:"
+msgstr "Seiten: "
+
+#: components/content.php:49
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "„%s“ weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+#: components/navigation-header.php:10
+msgid "Top Menu"
+msgstr "Hauptnavigation"
+
+#: footer.php:34
+msgid "All rights reserved."
+msgstr "Alle Rechte vorbehalten."
+
+#: footer.php:35
+#, php-format
+msgid "Website by %s."
+msgstr "Webseite von %s."
+
+#: functions.php:61
+msgid "Header"
+msgstr "Kopfzeile"
+
+#: functions.php:62
+msgid "Social"
+msgstr "Soziale Netzwerke"
+
+#: functions.php:63
+msgid "Footer"
+msgstr "Fußzeile"
+
+#: functions.php:125
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: functions.php:134
+msgid "Footer left"
+msgstr "Fußzeile links"
+
+#: functions.php:143
+msgid "Footer center"
+msgstr "Fußzeile mitte"
+
+#: functions.php:152
+msgid "Footer right"
+msgstr "Fußzeile rechts"
+
+#: functions.php:174
+msgctxt "Cabin font: on or off"
+msgid "on"
+msgstr "on"
+
+#: header.php:34
+msgid "Skip to content"
+msgstr "Zum Inhalt springen"
+
+#: image.php:22
+msgid "Previous Image"
+msgstr "Voriges Bild"
+
+#: image.php:23
+msgid "Next Image"
+msgstr "Nächstes Bild"
+
+#: image.php:56
+msgid "Page"
+msgstr "Seite"
+
+#: image.php:69
+msgctxt "Used before full size attachment link."
+msgid "Full size"
+msgstr "Originalgröße"
+
+#: image.php:80
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Bearbeiten<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: image.php:98
+msgctxt "Parent post link"
+msgid ""
+"<span class=\"meta-nav\">Published in</span><span class=\"post-title\">"
+"%title</span>"
+msgstr ""
+"<span class=\"meta-nav\">Veröffentlicht in</span><span class=\"post-title\">"
+"%title</span>"
+
+#: inc/back-compat.php:35 inc/back-compat.php:45 inc/back-compat.php:58
+#, php-format
+msgid ""
+"NC Template requires at least WordPress version 4.4. You are running version "
+"%s. Please upgrade and try again."
+msgstr ""
+"NC Template setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
+"%s. Bitte aktualisiere und probiere es dann noch einmal."
+
+#: inc/extras.php:40
+msgid "Search"
+msgstr "Suche"
+
+#: inc/template-tags.php:52
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Gepostet am %s"
+
+#: inc/template-tags.php:57
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "von %s."
+
+#: search.php:20
+#, php-format
+msgid "Search results for &#x201c;%s&#x201d;"
+msgstr "Suchergebnisse für %s"
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "Suche nach:"
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search..."
+msgstr "Suche..."
+
+#. Theme Name of the plugin/theme
+msgid "NC Template"
+msgstr "NC Template"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/uwc/nc-template"
+msgstr "https://github.com/uwc/nc-template"
+
+#. Description of the plugin/theme
+msgid ""
+"A template for UWC national committee websites. Please request permission "
+"before use."
+msgstr ""
+"Eine Vorlage für die UWC Nationalkomitee Webseiten. Bitte fragen Sie vor dem "
+"Gebrauch nach die Erlaubnis."
+
+#. Author of the plugin/theme
+msgid "Connor Bär"
+msgstr "Connor Bär"
+
+#. Author URI of the plugin/theme
+msgid "http://connorbaer.io"
+msgstr "http://connorbaer.io"

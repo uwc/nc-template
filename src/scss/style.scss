@@ -1,7 +1,9 @@
 // ==== STYLES ==== //
 
-/* Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions */
-/* Note: `bower_components` and `npm_modules` are already in Sass's path */
+/**
+ * Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions.
+ * Note: `bower_components` and `npm_modules` are already in Sass's path.
+ */
 
 /* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
 @import "modular-scale/stylesheets/modular-scale";
@@ -40,7 +42,7 @@ GitHub Branch: #{metadata(github-branch)}
 
 /**
  * Note: `bower_components` and `npm_modules` are already in Sass's path.
- * The order of the imports is crucial, since they build on each other. 
+ * The order of the imports is crucial since they build on top of each other. 
  * For example, a form contains buttons, a menu can contain a form, etc.
  */
 
@@ -79,5 +81,8 @@ GitHub Branch: #{metadata(github-branch)}
 @import "navigation";
 /*@import "overview";*/
 @import "article";
+.entry-content {
+	@import "content";
+}
 /*@import "contact";*/
 @import "footer";

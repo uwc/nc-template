@@ -8,7 +8,7 @@
  * 3. Footer
  */
 
-// Header
+// 1. Header //
 
 .entry-header {
   .header-outer {
@@ -29,11 +29,11 @@
 
 .entry-header.featured-image {
   margin-bottom: vr(1);
+  @include gradient-overlay;
   .entry-photo {
     @include ctnr-full;
     height: vr(20);
     overflow: hidden;
-    @include gradient-overlay;
     img {
       object-fit: cover;
       width: 100%;
@@ -44,6 +44,7 @@
     margin-top: 0;
     margin-bottom: 0;
     position: relative;
+    z-index: 15;
   }
   .header-inner {
     position: absolute;
@@ -60,59 +61,11 @@
 
 
 
-// Content
+// 2. Content //
+
+/* See '_content.scss' for the content styling. */
 
 .entry-content {
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  blockquote,
-  ul,
-  ol,
-  table,
-  dt,
-  dd,
-  address,
-  pre,
-  code,
-  hr {
-    @include ctnr-golden;
-  }
-  p {
-    margin-top: vr(0.5);
-    margin-bottom: vr(0.5);
-  }
-  a {
-    @include gradient-underline(90deg, palette(orange, light));
-    color: palette(orange);
-    &:hover,
-    &:focus {
-      color: palette(orange, light);
-    }
-  }
-  blockquote {
-    @include font(large);
-    color: palette(purple);
-    padding-top: vr(1);
-    padding-bottom: vr(1);
-    &:before,
-    &:after {
-      content: "";
-      background-color: palette(gray, lighter);
-      width: vr(6);
-      height: 2px;
-      display: block;
-      z-index: 10;
-    }
-    p {
-      margin-right: 0;
-      margin-left: 0;
-    }
-  }
   .shariff {
     @include ctnr-golden;
     margin-top: vr(1.5);
@@ -122,7 +75,7 @@
 
 
 
-// Footer
+// 3. Footer //
 
 .entry-footer {
   @include ctnr-golden;

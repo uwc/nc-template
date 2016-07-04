@@ -91,6 +91,7 @@ $border-grey: $border-gray;
     bottom: 0;
     height: 50%;
     width: 100%;
+    z-index: 10;
     background: gradient(0deg, rgba(0,0,0,0.66), transparent);
     @include mappy-query(phone) {
       background: rgba(0,0,0,0.33);

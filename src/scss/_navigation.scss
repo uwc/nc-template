@@ -9,7 +9,7 @@
 // 1. Main navigation //
 
 /* Styles the top navigation bar. */
-.navigation {
+#navigation {
   @include gradient-border(90deg, palette(blue, light), palette(turquoise, light));
   border-bottom: $border-grey;
 }

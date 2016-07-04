@@ -1,0 +1,177 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+ul,
+ol,
+table,
+dt,
+dd,
+address,
+pre,
+code,
+hr {
+	@include ctnr-golden;
+}
+
+h1 {
+	@include font(header1);
+	color: palette(blue);
+}
+
+h2 {
+	@include font(header2);
+	color: palette(blue);
+}
+
+h3 {
+	@include font(header3);
+	color: palette(gray);
+}
+
+h4, h5, h6 {
+	@include font(header4);
+	color: palette(gray);
+}
+
+p {
+	margin-top: vr(0.5);
+	margin-bottom: vr(0.5);
+}
+
+a {
+	@include gradient-underline(90deg, palette(orange, light));
+	color: palette(orange);
+}
+
+blockquote {
+	@include font(large);
+	color: palette(purple);
+	padding-top: vr(1);
+	padding-bottom: vr(1);
+	&:before,
+	&:after {
+		content: "";
+		background-color: palette(gray, light);
+		width: vr(6);
+		height: 2px;
+		display: block;
+		z-index: 10;
+	}
+	p {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	cite,
+	small {
+		font-size: ms(0);
+		color: palette(gray);
+		display: block;
+		&:before {
+			content: "\2014\00a0";
+		}
+	}
+	em,
+	i,
+	cite {
+		font-style: normal;
+	}
+	strong,
+	b {
+		font-weight: $sans-normal;
+	}
+}
+
+ul,
+ol {
+	padding: 0 0 1.75em 1.25em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	padding-bottom: 0;
+}
+
+.gallery {
+  @include ctnr-wide;
+}
+
+dl {
+	margin-top: vr(0.5);
+	margin-bottom: vr(0.5);
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin-top: vr(0.5);
+  margin-bottom: vr(0.5);
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+	vertical-align: middle;
+}
+
+del {
+	opacity: 0.8;
+}
+
+table,
+th,
+td {
+	border: 1px solid palette(gray, light);
+}
+
+th {
+	background-color: palette(gray, lighter);
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	margin-top: vr(0.5);
+  margin-bottom: vr(0.5);
+	table-layout: fixed;
+	/* Prevents HTML tables from becoming too wide */
+	width: 100%;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+th {
+	border-width: 0 1px 1px 0;
+	font-weight: 700;
+}
+
+td {
+	border-width: 0 1px 1px 0;
+}
+
+th,
+td {
+	padding: 0.4375em;
+}
