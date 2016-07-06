@@ -31,54 +31,54 @@ function nc_template_custom_logo() {
 }
 endif;
 
-if ( ! function_exists( 'getPrevNext' ) ) :
+if ( ! function_exists( 'get_prev_next' ) ) :
 /**
  * Prints HTML with links to previous and next pages for the current page.
  */
-function getPrevNext(){
-	$pagelist = get_pages('sort_column=menu_order&sort_order=asc');
+function get_prev_next() {
+	$pagelist = get_pages( 'sort_column=menu_order&sort_order=asc' );
 	$pages = array();
-	foreach ($pagelist as $page) {
+	foreach ( $pagelist as $page ) {
 	   $pages[] += $page->ID;
 	}
 
-	$current = array_search(get_the_ID(), $pages);
-	$prevID = $pages[$current-1];
-	$nextID = $pages[$current+1];
-	
+	$current = array_search( get_the_ID(), $pages );
+	$prev_ = $pages[$current - 1];
+	$next_id = $pages[$current + 1];
+
 	echo '<nav class="navigation post-navigation">';
 	echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 	echo '<div class="nav-links">';
-	if (!empty($prevID)) {
+	if ( ! empty( $prev_id ) ) {
 		echo '<div class="nav-previous">';
 		echo '<a href="';
-		echo get_permalink($prevID);
+		echo get_permalink( $prev_id );
 		echo '"';
 		echo 'title="';
-		echo get_the_title($prevID); 
-		echo'">← Previous page</a>';
-		echo "</div>";
+		echo get_the_title( $prev_id ); 
+		echo '">← Previous page</a>';
+		echo '</div>';
 	}
-	if (!empty($nextID)) {
+	if ( ! empty( $next_id ) ) {
 		echo '<div class="nav-next">';
 		echo '<a href="';
-		echo get_permalink($nextID);
+		echo get_permalink( $next_id );
 		echo '"';
 		echo 'title="';
-		echo get_the_title($nextID); 
-		echo'">Next page →</a>';
-		echo "</div>";		
+		echo get_the_title( $next_id );
+		echo '">Next page →</a>';
+		echo '</div>';
 	}
 	echo '</div>';
 	echo '</nav>';
-}	
+}
 endif;
 
 if ( ! function_exists( 'nc_template_content_navigation' ) ) :
 /**
  * Adds anchor tag button to TinyMCE editor on the WordPress backend.
  *
- * @param array $buttons Buttons to add to the editor.
+ * @param string $text The page content
  */
 function nc_template_content_navigation( $text ) {
 
@@ -91,7 +91,7 @@ function nc_template_content_navigation( $text ) {
 	    	$items[] = $node -> getAttribute( 'id' );
 	    }
 	}
-	if ( sizeof( $items ) != 0 ) {
+	if ( count( $items ) != 0 ) {
 		echo '<nav class="navigation content-navigation">';
 		echo '<h6 class="nav-header">Inhalt</h6>';
 		echo '<div class="nav-links">';

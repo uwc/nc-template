@@ -63,6 +63,6 @@ add_filter( 'excerpt_length', 'nc_template_excerpt_length', 999 );
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function nc_template_excerpt_more( $more ) {
-    return '...';
+	return '...';
 }
 add_filter( 'excerpt_more', 'nc_template_excerpt_more' );

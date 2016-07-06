@@ -34,9 +34,9 @@
 
 	<div class="entry-content">
 		<?php
-			$text =  get_the_content();
+			$text = get_the_content();
 
-			nc_template_content_navigation($text);
+			nc_template_content_navigation( $text );
 
 			the_content();
 
