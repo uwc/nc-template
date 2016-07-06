@@ -16,8 +16,12 @@
 
 
 #menu-header a {
-	@include font(navigation);
-	@include gradient-underline(90deg, palette(purple), palette(pink));
+	@include font(small);
+	@include gradient-underline(90deg, gray, palette(purple), palette(pink));
+	&:hover,
+	&:focus {
+		color: palette(purple);
+	}
 }
 
 #menu-item-search a:before {

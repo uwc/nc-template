@@ -9,36 +9,39 @@
   }
 }
 
-/**
- * Content can take on two different widths on mobile:
- * full and wide (golden = wide).
- */
-@mixin ctnr-full {
-  width: 100vw;
-  max-width: 100%;
-}
-
-@mixin ctnr-wide {
-  width: auto;
-  margin-right: vr(0.75);
-  margin-left: vr(0.75);
-  @include mappy-query(desktop) {
-    max-width: 56rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: vr(0.75);
-    padding-left: vr(0.75);
+/* Content can take on three different widths: full, wide and golden. */
+@mixin ctnr($width: null) {
+  @if $width == null {
+    @warn "Mixin ctnr() received no input! Please provide a width.";
   }
-}
-
-@mixin ctnr-golden {
-  width: auto;
-  margin-right: vr(0.75);
-  margin-left: vr(0.75);
-  @include mappy-query(desktop) {
-    max-width: 35rem;
-    margin-right: auto;
-    margin-left: auto;
+  @else if $width == 'golden' {
+    width: auto;
+    margin-right: vr(0.75);
+    margin-left: vr(0.75);
+    @include mappy-query(desktop) {
+      max-width: 35rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  @else if $width == 'wide' {
+    width: auto;
+    margin-right: vr(0.75);
+    margin-left: vr(0.75);
+    @include mappy-query(desktop) {
+      max-width: 56rem;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: vr(0.75);
+      padding-left: vr(0.75);
+    }
+  }
+  @else if $width == 'full' {
+    width: 100vw;
+    max-width: 100%;
+  }
+  @else {
+    @warn "Mixin ctnr() received invalid input! This width does not exist.";
   }
 }
 
@@ -51,11 +54,11 @@
 
 /* Content can take on three different widths: full, wide and golden. */
 .ctnr-full {
-  @include ctnr-full;
+  @include ctnr(full);
 }
 .ctnr-wide {
-  @include ctnr-wide;
+  @include ctnr(wide);
 }
 .ctnr-golden {
-  @include ctnr-golden;
+  @include ctnr(golden);
 }

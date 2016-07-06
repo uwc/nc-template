@@ -8,5 +8,9 @@
 	.widget-title {
 		@include font(header4);
 		color: palette(gray);
+		margin-bottom: vr(0.25);
+	}
+	a {
+		@include gradient-underline(90deg, purple, palette(purple, light));
 	}
 }

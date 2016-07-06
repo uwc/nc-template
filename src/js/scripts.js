@@ -7,4 +7,5 @@ window.addEventListener( 'DOMContentLoaded', function() {
 		closeOnNavClick: true, /* Boolean: Close the navigation when one of the links are clicked. */
 		openPos: 'relative' /* String: Position of the opened nav, relative or static. */
 	});
+	smoothScroll.init( { offset: 24 } );
 }, false );

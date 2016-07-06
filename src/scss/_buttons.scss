@@ -2,39 +2,48 @@
 
 /* Style the various button types here. */
 
-input[type="submit"].button, 
-button.button {
-	display: block;
-	outline: none;
-	font-size: .825rem;
-	font-family: $sans;
-	font-weight: $sans-bold;
-	text-transform: uppercase;
-	text-decoration: none;
-	letter-spacing: 0.12rem;
-	padding: .4rem .9rem;
-	margin-top: 1rem;
-	border: 2px solid blue;
-	color: blue;
-	background-color: #fff;
-	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
-	&:hover,
-	&:focus,
-	&:active {
-		color: #fff;
-		background-color: blue;
+@mixin btn($type: none) {
+	@if $type == null {
+	    @warn "Mixin btn() received no input! Please provide a type.";
+	    font-size: ms(10);
+	    color: blue;
+	}
+	@else if $type == 'normal' {
+		@include font(button);
+		display: block;
+		outline: none;
+		text-transform: uppercase;
+		text-decoration: none;
+		letter-spacing: 0.12rem;
+		padding: .4rem .9rem;
+		margin-top: 1rem;
+		border: 2px solid blue;
+		color: blue;
+		background-color: #fff;
+		transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+		&:hover,
+		&:focus,
+		&:active {
+			color: #fff;
+			background-color: blue;
+			cursor: pointer;
+		}
+	}
+	@else if $type == 'ghost' {
+		@include font(button);
+	}
+	@else if $type == 'text' {
+		@include font(button);
+	}
+	@else if $type == 'navigation' {
+		@include font(button);
+		@include gradient-underline(0deg, purple, palette(purple, light))
+		letter-spacing: 0.02rem;
 		cursor: pointer;
 	}
-}
-
-@include mappy-query(phone) {
-	input, textarea {
-	  	font-size: 1.375rem;
-	}
-
-	input[type="submit"].button, 
-	button.button {
-		font-size: 1.125rem;
-		border: 3px solid blue;
+	@else {
+		@warn "Mixin btn() received invalid input! This type does not exist.";
+		font-size: ms(10);
+		color: blue;
 	}
 }

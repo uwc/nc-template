@@ -8,7 +8,7 @@
 }
 
 .footer-widgets {
-	@include ctnr-golden;
+	@include ctnr(golden);
 	@include clearfix;
 	padding-top: vr(1);
 	padding-bottom: vr(1);
@@ -22,9 +22,6 @@
 	.footer-right {
 		width: 26%;
 		padding-left: vr(1);
-	}
-	.widget-title {
-		color: palette(blue);
 	}
 	@include mappy-query(phone) {
 		.footer-left {
@@ -47,7 +44,7 @@
 }
 
 .footer-info {
-	@include ctnr-golden;
+	@include ctnr(golden);
 	font-size: ms(-2);
 	color: palette(gray);
 	text-align: center;

@@ -17,7 +17,11 @@ get_header(); ?>
 
 			get_template_part( 'components/content', get_post_format() );
 
-			the_post_navigation();
+			the_post_navigation( array(
+				'in_same_term' => true,
+				'prev_text' => '← %title',
+				'next_text' => '%title →',
+				));
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

@@ -51,9 +51,16 @@ $border-grey: $border-gray;
   }
 }
 
-@mixin gradient-underline($direction, $color-stops...) {
+@mixin gradient-underline($direction, $color, $color-stops...) {
   position: relative;
   z-index: 1;
+  color: palette($color);
+  display: inline-block;
+  transition: color 0.15s ease-in-out;
+  &:hover,
+  &:focus {
+    color: palette($color, light);
+  }
   &:after {
     content: "";
     position: absolute;
@@ -65,7 +72,7 @@ $border-grey: $border-gray;
     background-color: nth($color-stops, 1);
     background-image: gradient($direction, $color-stops);
     visibility: hidden;
-    transform: translate(0px,3px);
+    transform: translate(0px,2px);
     opacity: 0;
     backface-visibility: hidden;
     transition: visibility .15s ease-in-out, opacity .15s ease-in-out, transform .15s ease-in-out;
@@ -74,7 +81,7 @@ $border-grey: $border-gray;
   &:focus:after {
     visibility: visible;
     opacity: 1;
-    transform: translate(0px,1px);
+    transform: translate(0px,-2px);
   }
 }
 

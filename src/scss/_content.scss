@@ -15,27 +15,35 @@ address,
 pre,
 code,
 hr {
-	@include ctnr-golden;
+	@include ctnr(golden);
 }
 
 h1 {
 	@include font(header1);
 	color: palette(blue);
+	margin-top: vr(1);
+	margin-bottom: vr(0.5);
 }
 
 h2 {
 	@include font(header2);
 	color: palette(blue);
+	margin-top: vr(1);
+	margin-bottom: vr(0.5);
 }
 
 h3 {
 	@include font(header3);
 	color: palette(gray);
+	margin-top: vr(1);
+	margin-bottom: vr(0.5);
 }
 
 h4, h5, h6 {
 	@include font(header4);
 	color: palette(gray);
+	margin-top: vr(0.5);
+	margin-bottom: vr(0.5);
 }
 
 p {
@@ -44,15 +52,14 @@ p {
 }
 
 a {
-	@include gradient-underline(90deg, palette(orange, light));
-	color: palette(orange);
+	@include gradient-underline(90deg, pink, palette(pink, light));
 }
 
 blockquote {
 	@include font(large);
-	color: palette(purple);
-	padding-top: vr(1);
-	padding-bottom: vr(1);
+	color: palette(orange);
+	margin-top: vr(1.5);
+	margin-bottom: vr(1.5);
 	&:before,
 	&:after {
 		content: "";
@@ -88,7 +95,8 @@ blockquote {
 
 ul,
 ol {
-	padding: 0 0 1.75em 1.25em;
+	padding-left: 1.25em;
+	margin-bottom: vr(0.5);
 }
 
 ul {
@@ -102,10 +110,6 @@ ol {
 li > ul,
 li > ol {
 	padding-bottom: 0;
-}
-
-.gallery {
-  @include ctnr-wide;
 }
 
 dl {
@@ -128,6 +132,10 @@ img {
 	max-width: 100%;
 	/* Adhere to container width. */
 	vertical-align: middle;
+}
+
+.gallery {
+  @include ctnr(wide);
 }
 
 del {

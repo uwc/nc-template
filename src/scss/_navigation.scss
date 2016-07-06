@@ -15,7 +15,7 @@
 }
 
 .navigation-ctnr {
-  @include ctnr-wide;
+  @include ctnr(wide);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;

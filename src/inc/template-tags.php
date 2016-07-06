@@ -31,6 +31,78 @@ function nc_template_custom_logo() {
 }
 endif;
 
+if ( ! function_exists( 'getPrevNext' ) ) :
+/**
+ * Prints HTML with links to previous and next pages for the current page.
+ */
+function getPrevNext(){
+	$pagelist = get_pages('sort_column=menu_order&sort_order=asc');
+	$pages = array();
+	foreach ($pagelist as $page) {
+	   $pages[] += $page->ID;
+	}
+
+	$current = array_search(get_the_ID(), $pages);
+	$prevID = $pages[$current-1];
+	$nextID = $pages[$current+1];
+	
+	echo '<nav class="navigation post-navigation">';
+	echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
+	echo '<div class="nav-links">';
+	if (!empty($prevID)) {
+		echo '<div class="nav-previous">';
+		echo '<a href="';
+		echo get_permalink($prevID);
+		echo '"';
+		echo 'title="';
+		echo get_the_title($prevID); 
+		echo'">← Previous page</a>';
+		echo "</div>";
+	}
+	if (!empty($nextID)) {
+		echo '<div class="nav-next">';
+		echo '<a href="';
+		echo get_permalink($nextID);
+		echo '"';
+		echo 'title="';
+		echo get_the_title($nextID); 
+		echo'">Next page →</a>';
+		echo "</div>";		
+	}
+	echo '</div>';
+	echo '</nav>';
+}	
+endif;
+
+if ( ! function_exists( 'nc_template_content_navigation' ) ) :
+/**
+ * Adds anchor tag button to TinyMCE editor on the WordPress backend.
+ *
+ * @param array $buttons Buttons to add to the editor.
+ */
+function nc_template_content_navigation( $text ) {
+
+	$dom = new DOMDocument();
+	$dom -> loadHTML( $text );
+	$nodes = $dom->getElementsByTagName( 'a' );
+	$items = array();
+	foreach ( $nodes as $node ) {
+		if ( $node -> hasAttribute( 'id' ) == true ) {
+	    	$items[] = $node -> getAttribute( 'id' );
+	    }
+	}
+	if ( sizeof( $items ) != 0 ) {
+		echo '<nav class="navigation content-navigation">';
+		echo '<h6 class="nav-header">Inhalt</h6>';
+		echo '<div class="nav-links">';
+		foreach ( $items as $item ) {
+			echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, ' ↓</a>';
+		}
+		echo '</nav>';
+	}
+}
+endif;
+
 if ( ! function_exists( 'nc_template_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.

@@ -12,7 +12,7 @@
 
 .entry-header {
   .header-outer {
-    @include ctnr-golden;
+    @include ctnr(golden);
     margin-top: vr(3);
     margin-bottom: vr(2);
   }
@@ -31,7 +31,7 @@
   margin-bottom: vr(1);
   @include gradient-overlay;
   .entry-photo {
-    @include ctnr-full;
+    @include ctnr(full);
     height: vr(20);
     overflow: hidden;
     img {
@@ -66,10 +66,31 @@
 /* See '_content.scss' for the content styling. */
 
 .entry-content {
+  .content-navigation {
+    margin-bottom: vr(1.5);
+    h6 {
+      @include font(small);
+      margin-bottom: vr(0.25);
+    }
+    .nav-links {
+      @include ctnr(golden);
+      border-top: $border-gray;
+      border-bottom: $border-gray;
+      padding-top: vr(0.25);
+      padding-bottom: vr(0.25);
+      a {
+        @include btn(navigation);
+        margin-right: vr(1.5);
+      }
+    }
+  }
   .shariff {
-    @include ctnr-golden;
+    @include ctnr(golden);
     margin-top: vr(1.5);
     margin-bottom: vr(1.5);
+    a:after {
+      display: none;
+    }
   }
 }
 
@@ -77,10 +98,33 @@
 
 // 3. Footer //
 
+.post-navigation {
+  @include ctnr(golden);
+  @include clearfix;
+  margin-bottom: vr(1.5);
+  .nav-previous {
+    float: left;
+    a {
+      @include btn(navigation);
+    }
+  }
+  .nav-next {
+    float: right;
+    a {
+      @include btn(navigation);
+      text-align: right;
+    }
+  }
+}
+
 .entry-footer {
-  @include ctnr-golden;
+  @include ctnr(golden);
 }
 
 .widget-area {
-  @include ctnr-golden;
+  @include ctnr(golden);
+}
+
+#comments {
+  @include ctnr(golden);
 }
