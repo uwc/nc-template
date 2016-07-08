@@ -56,11 +56,10 @@ function nc_template_setup() {
 		'header-text' => array( 'site-title' ),
 	) );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'header' => esc_html__( 'Header', 'nc-template' ),
 		'social' => __( 'Social', 'nc-template' ),
-		'footer' => __( 'Footer', 'nc-template' ),
 		) );
 
 	/*

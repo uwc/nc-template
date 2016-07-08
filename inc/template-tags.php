@@ -31,6 +31,72 @@ function nc_template_custom_logo() {
 }
 endif;
 
+if ( ! function_exists( 'get_prev_next' ) ) :
+/**
+ * Prints HTML with links to previous and next pages for the current page.
+ */
+function get_prev_next() {
+	$test = wp_get_nav_menu_items( 'header' );
+
+	$pagelist = get_pages( array( 
+		'sort_column' => 'menu_order',
+		'sort_order' => 'asc' ) );
+	$pages = array();
+	foreach ( $pagelist as $page ) {
+	   $pages[] += $page->ID;
+	}
+
+	$current = array_search( get_the_ID(), $pages );
+	$prev_id = $pages[ $current - 1 ];
+	$next_id = $pages[ $current + 1 ];
+
+	echo '<nav class="navigation post-navigation">';
+	echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
+	echo '<div class="nav-links">';
+	if ( ! empty( $prev_id ) ) {
+		echo '<div class="nav-previous">';
+		echo '<a href="', get_permalink( $prev_id ), '" title="', get_the_title( $prev_id ), '">← ', get_the_title( $prev_id ), '</a>';
+		echo '</div>';
+	}
+	if ( ! empty( $next_id ) ) {
+		echo '<div class="nav-next">';
+		echo '<a href="', get_permalink( $next_id ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), ' →</a>';
+		echo '</div>';
+	}
+	echo '</div>';
+	echo '</nav>';
+}
+endif;
+
+if ( ! function_exists( 'nc_template_content_navigation' ) ) :
+/**
+ * Adds anchor tag button to TinyMCE editor on the WordPress backend.
+ *
+ * @param string $text The page content to be parsed.
+ */
+function nc_template_content_navigation( $text ) {
+
+	$dom = new DOMDocument();
+	$dom -> loadHTML( $text );
+	$nodes = $dom->getElementsByTagName( 'a' );
+	$items = array();
+	foreach ( $nodes as $node ) {
+		if ( $node -> hasAttribute( 'id' ) == true ) {
+	    	$items[] = $node -> getAttribute( 'id' );
+	    }
+	}
+	if ( count( $items ) != 0 ) {
+		echo '<nav class="navigation content-navigation">';
+		echo '<h6 class="nav-header">Inhalt</h6>';
+		echo '<div class="nav-links">';
+		foreach ( $items as $item ) {
+			echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, ' ↓</a>';
+		}
+		echo '</nav>';
+	}
+}
+endif;
+
 if ( ! function_exists( 'nc_template_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
