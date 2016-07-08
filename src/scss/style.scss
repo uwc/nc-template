@@ -54,9 +54,6 @@ GitHub Branch: #{metadata(github-branch)}
 /* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
 @import "reset";
 
-/* Styles required by WordPress core */
-@import "wordpress";
-
 
 // 2. Authored dependencies //
 
@@ -64,6 +61,8 @@ GitHub Branch: #{metadata(github-branch)}
 @import "base";
 @import "layout";
 @import "typography";
+/* Styles required by WordPress core */
+@import "wordpress";
 
 
 // 3. Patters //

@@ -17,84 +17,72 @@
 
  // 1. Alignment //
 
-.alignnone {
-		margin-bottom: vr(1);
+.alignnone,
+a img.alignnone {
+	@include ctnr(hybrid);
+	margin-top: vr(1);
+	margin-bottom: vr(1);
 }
 
 .aligncenter,
+a img.aligncenter,
 div.aligncenter {
-		display: block;
-		margin: 0 auto vr(1) auto;
+	@include ctnr(golden);
+	margin: vr(1) auto vr(1);
 }
 
-.alignright {
-		float: right;
-		margin-bottom: vr(1);
-}
-
-.alignleft {
-		float: left;
-		margin-bottom: vr(1);
-}
-
+.alignright,
 a img.alignright {
-		float: right;
-		margin-bottom: vr(1);
+	float: right;
+	max-width: 50%;
+	margin: vr(0.25) 0 vr(0.25) vr(1);
 }
 
-a img.alignnone {
-		margin-bottom: vr(1);
-}
-
+.alignleft,
 a img.alignleft {
-		float: left;
-		margin-bottom: vr(1);
-}
-
-a img.aligncenter {
-		display: block;
-		margin-left: auto;
-		margin-right: auto
+	float: left;
+	max-width: 50%;
+	margin: vr(0.25) vr(1) vr(0.25) 0;
 }
 
 
 // 2. Captions //
 
-.wp-caption {
-		background: #fff;
-		border: 1px solid #f0f0f0;
-		max-width: 96%; /* Image does not overflow the content area */
-		padding: vr(0.5) vr(0.5) vr(1);
-		text-align: center;
+/*.wp-caption {
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	max-width: 96%;
+	padding: vr(0.5) vr(0.5) vr(1);
+	text-align: center;
 }
 
 .wp-caption.alignnone {
-		margin: vr(0.5) vr(2.5) vr(2.5) 0;
+	margin: vr(0.5) vr(2.5) vr(2.5) 0;
 }
 
 .wp-caption.alignleft {
-		margin: vr(0.5) vr(2.5) vr(2.5) 0;
+	margin: vr(0.5) vr(2.5) vr(2.5) 0;
 }
 
 .wp-caption.alignright {
-		margin: vr(0.5) 0 vr(2.5) vr(2.5);
+	margin: vr(0.5) 0 vr(2.5) vr(2.5);
 }
 
 .wp-caption img {
-		border: 0 none;
-		height: auto;
-		margin: 0;
-		max-width: 98.5%;
-		padding: 0;
-		width: auto;
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	max-width: 98.5%;
+	padding: 0;
+	width: auto;
 }
 
 .wp-caption p.wp-caption-text {
-		font-size: 11px;
-		line-height: 17px;
-		margin: 0;
-		padding: 0 vr(0.5) vr(0.5);
-}
+	font-size: 11px;
+	line-height: 17px;
+	margin: 0;
+	padding: 0 vr(0.5) vr(0.5);
+}*/
 
 
 // 3. Media //

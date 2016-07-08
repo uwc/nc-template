@@ -18,8 +18,10 @@
     width: auto;
     margin-right: vr(0.75);
     margin-left: vr(0.75);
+    display: block;
     @include mappy-query(desktop) {
-      max-width: 35rem;
+      width: 35rem;
+      max-width: 100%;
       margin-right: auto;
       margin-left: auto;
     }
@@ -28,8 +30,22 @@
     width: auto;
     margin-right: vr(0.75);
     margin-left: vr(0.75);
+    display: block;
     @include mappy-query(desktop) {
-      max-width: 56rem;
+      width: 56rem;
+      max-width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: vr(0.75);
+      padding-left: vr(0.75);
+    }
+  }
+  @else if $width == 'hybrid' {
+    max-width: 100%;
+    display: block;
+    @include mappy-query(desktop) {
+      width: 56rem;
+      max-width: 100%;
       margin-right: auto;
       margin-left: auto;
       padding-right: vr(0.75);
@@ -37,6 +53,7 @@
     }
   }
   @else if $width == 'full' {
+    display: block;
     width: 100vw;
     max-width: 100%;
   }

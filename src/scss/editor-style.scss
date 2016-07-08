@@ -49,14 +49,13 @@ body#tinymce.wp-editor {
 	/* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
 	@import "reset";
 
-	/* Styles required by WordPress core */
-	@import "wordpress";
-
 
 	// 2. Authored dependencies //
 
 	@import "layout";
 	@import "typography";
+	/* Styles required by WordPress core */
+	@import "wordpress";
 
 	// 3. Editor styles //
 
