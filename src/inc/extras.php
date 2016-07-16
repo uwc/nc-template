@@ -68,75 +68,18 @@ function nc_template_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'nc_template_excerpt_more' );
 
 /**
- * Filter the content to remove p tags around images.
- *
- * @param html $content The post/page content as html.
- * @return html Post/page content modified to remove p tags around images.
- */
-// function nc_template_content_images( $content ){
-//    return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
-// }
-
-
-/**
  * Wrap the inserted image html with <figure> 
  * if the theme supports html5 and the current image has no caption:
  *
  * @param html $content The post/page content as html.
  * @return html Post/page content modified to wrap images in figure tags.
  */     
-/* function nc_template_content_images ( $content )
-{ 
-    $content = preg_replace( 
-        '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', 
-        '<figure>$1</figure>', 
+function nc_template_content_images ( $content ) { 
+    $content = preg_replace(
+        '/<p>\\s*?(<a rel=\"attachment.*?><img\\s*?class=\"(.*?)\".*?><\\/a>|<img\\s*?class=\"(.*?)\".*?>)?\\s*<\\/p>/s',
+        '<figure class="$2$3">$1</figure>',
         $content 
-    ); 
-    return $content; 
-} */
-
-
-function nc_template_content_images ( $content ) {
-	$dom = new DOMDocument();
-	$dom -> loadHTML( $content );
-	$nodes = $dom->getElementsByTagName( 'img' );
-
-	$items = array();
-	foreach ( $nodes as $node ) {
-		$parent = $node->parentNode;
-		if ( $parent -> tagName == 'p' ) {
-	    	$class = $node -> getAttribute( 'class' );
-	    }
-	}
+    );
+    return $content;
 }
-// add_filter( 'the_content', 'nc_template_content_images', 99 );
-
-
-// $dom = new DOMDocument();
-// $dom -> loadHTML( $content );
-// $nodes = $dom->getElementsByTagName( 'img' );
-// $items = array();
-// foreach ( $nodes as $node ) {
-// 	if ( $node -> hasAttribute( 'id' ) == true ) {
-//     	$items[] = $node -> getAttribute( 'id' );
-//     }
-// }
-// if ( count( $items ) != 0 ) {
-// 	echo '<nav class="navigation content-navigation">';
-// 	echo '<h6 class="nav-header">Inhalt</h6>';
-// 	echo '<div class="nav-links">';
-// 	foreach ( $items as $item ) {
-// 		echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, ' ↓</a>';
-// 	}
-// 	echo '</nav>';
-// }
-
-
-// x. DOMDocument with $content
-// x. get all img nodes
-// x. Get all parent node tag names
-// x. for all elements where the parent node is a p element: 
-// 	x. get the img class attribute 
-// 	b. remove parent node 
-// 	c. output new node with figure (including class) and img tag
-// 5. return $content
+add_filter( 'the_content', 'nc_template_content_images', 99 );
