@@ -38,9 +38,10 @@ if ( ! function_exists( 'get_prev_next' ) ) :
 function get_prev_next() {
 	$test = wp_get_nav_menu_items( 'header' );
 
-	$pagelist = get_pages( array( 
+	$pagelist = get_pages( array(
 		'sort_column' => 'menu_order',
-		'sort_order' => 'asc' ) );
+		'sort_order' => 'asc', 
+		) );
 	$pages = array();
 	foreach ( $pagelist as $page ) {
 	   $pages[] += $page->ID;

@@ -41,9 +41,10 @@
     }
   }
   @else if $width == 'hybrid' {
-    max-width: 100%;
     display: block;
-    @include mappy-query(desktop) {
+    width: 100vw;
+    max-width: 100%;
+    @include mappy-query(desktop-large) {
       width: 56rem;
       max-width: 100%;
       margin-right: auto;

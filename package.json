@@ -30,6 +30,7 @@
     "gulp-jshint": "^2.0.1",
     "gulp-livereload": "^3.8.1",
     "gulp-load-plugins": "^1.2.4",
+    "gulp-phpcbf": "^0.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.0.6",
     "gulp-sass": "^2.3.1",

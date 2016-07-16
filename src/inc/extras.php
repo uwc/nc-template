@@ -68,18 +68,56 @@ function nc_template_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'nc_template_excerpt_more' );
 
 /**
- * Wrap the inserted image html with <figure> 
+ * Wrap the inserted image html with <figure>
  * if the theme supports html5 and the current image has no caption:
  *
  * @param html $content The post/page content as html.
  * @return html Post/page content modified to wrap images in figure tags.
- */     
-function nc_template_content_images ( $content ) { 
-    $content = preg_replace(
-        '/<p>\\s*?(<a rel=\"attachment.*?><img\\s*?class=\"(.*?)\".*?><\\/a>|<img\\s*?class=\"(.*?)\".*?>)?\\s*<\\/p>/s',
-        '<figure class="$2$3">$1</figure>',
-        $content 
-    );
-    return $content;
+ */
+/*function nc_template_content_images ( $content ) {
+	$content = preg_replace(
+		'/<p>\\s*?(<img\\s*?class=\"(.*?)\".*?>)?\\s*<\\/p>/s',
+		'<figure class="$2$3">$1</figure>',
+		$content
+	);
+	return $content;
+}*/
+
+// composer autoload
+require 'vendor/autoload.php';
+
+use Masterminds\HTML5;
+
+function nc_template_content_images ( $content ) {
+	$html5 = new HTML5();
+	$dom = $html5->loadHTML( $content );
+	$nodes = $dom->getElementsByTagName( 'img' );
+
+	foreach ( $nodes as $node ) {
+		$parent = $node->parentNode;
+		if ( $parent->tagName == 'p' ) {
+			// Get image class attribute.
+			$class = $node->getAttribute( 'class' );
+
+			$figure = $dom->createElement( 'figure' );
+			$figure->setAttribute( 'class', $class );
+			$figure->appendChild( $node );
+
+			$node->parentNode->replaceChild( $figure, $node );
+		}
+
+	}
+	// Render it as HTML5:
+	return $html5->saveHTML( $dom );
 }
 add_filter( 'the_content', 'nc_template_content_images', 99 );
+
+// x. DOMDocument with $content
+// x. get all img nodes
+// x. Get all parent node tag names
+// x. for all elements where the parent node is a p element: 
+// 	x. get the img class attribute 
+// 	b. remove parent node 
+// 	c. output new node with figure (including class) and img tag
+// 5. return $content
+

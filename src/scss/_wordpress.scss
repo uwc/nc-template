@@ -17,32 +17,33 @@
 
  // 1. Alignment //
 
-.alignnone,
-a img.alignnone {
+figure.alignnone {
 	@include ctnr(hybrid);
 	margin-top: vr(1);
 	margin-bottom: vr(1);
 }
 
-.aligncenter,
-a img.aligncenter,
-div.aligncenter {
+figure.aligncenter {
 	@include ctnr(golden);
 	margin: vr(1) auto vr(1);
 }
 
-.alignright,
-a img.alignright {
-	float: right;
-	max-width: 50%;
-	margin: vr(0.25) 0 vr(0.25) vr(1);
+figure.alignright {
+	@include ctnr(golden);
+	img {
+		float: right;
+		max-width: 50%;
+		margin: vr(0.25) 0 vr(0.25) vr(1);
+	}
 }
 
-.alignleft,
-a img.alignleft {
-	float: left;
-	max-width: 50%;
-	margin: vr(0.25) vr(1) vr(0.25) 0;
+figure.alignleft {
+	@include ctnr(golden);
+	img {
+		float: left;
+		max-width: 50%;
+		margin: vr(0.25) vr(1) vr(0.25) 0;
+	}
 }
 
 
