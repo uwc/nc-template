@@ -1,6 +1,8 @@
 // ==== THEME ==== //
 
 var gulp        = require('gulp')
+  , gutil       = require('gulp-util')
+  , phpcbf      = require('gulp-phpcbf')
   , plugins     = require('gulp-load-plugins')({ camelize: true })
   , config      = require('../../gulpconfig').theme
 ;
@@ -19,11 +21,22 @@ gulp.task('theme-fonts', function() {
   .pipe(gulp.dest(config.fonts.dest));
 });
 
-// Copy PHP source files to the `build` folder
-gulp.task('theme-php', function() {
+gulp.task('theme-php', function () {
   return gulp.src(config.php.src)
-  .pipe(plugins.changed(config.php.dest))
+  .pipe(phpcbf({
+    bin: config.php.bin
+  , standard: config.php.standard
+  , warningSeverity: config.php.warning
+  }))
+  .on('error', gutil.log)
   .pipe(gulp.dest(config.php.dest));
+});
+
+// Copy composer dependency files to the `build` folder
+gulp.task('theme-composer', function() {
+  return gulp.src(config.composer.src)
+  .pipe(plugins.changed(config.composer.dest))
+  .pipe(gulp.dest(config.composer.dest));
 });
 
 // Copy everything under `src/languages` indiscriminately
@@ -34,4 +47,4 @@ gulp.task('theme-lang', function() {
 });
 
 // All the theme tasks in one
-gulp.task('theme', ['theme-lang', 'theme-php', 'theme-fonts', 'theme-readme']);
+gulp.task('theme', ['theme-lang', 'theme-composer', 'theme-php', 'theme-fonts', 'theme-readme']);
