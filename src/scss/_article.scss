@@ -66,6 +66,7 @@
 /* See '_content.scss' for the content styling. */
 
 .entry-content {
+  @include ctnr(golden);
   .content-navigation {
     margin-bottom: vr(1.5);
     h6 {
@@ -73,7 +74,6 @@
       margin-bottom: vr(0.25);
     }
     .nav-links {
-      @include ctnr(golden);
       border-top: $border-gray;
       border-bottom: $border-gray;
       padding-top: vr(0.25);
@@ -85,7 +85,6 @@
     }
   }
   .shariff {
-    @include ctnr(golden);
     margin-top: vr(1.5);
     margin-bottom: vr(1.5);
     a:after {

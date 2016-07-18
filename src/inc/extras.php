@@ -66,20 +66,3 @@ function nc_template_excerpt_more( $more ) {
 	return '...';
 }
 add_filter( 'excerpt_more', 'nc_template_excerpt_more' );
-
-/**
- * Wrap the inserted image html with <figure>
- * if the theme supports html5 and the current image has no caption:
- *
- * @param html $content The post/page content as html.
- * @return html Post/page content modified to wrap images in figure tags.
- */
-function nc_template_content_images( $content ) {
-	$content = preg_replace(
-		'/<p>\\s*?(<img\\s*?class=\"(.*?)\".*?>)?\\s*<\\/p>/s',
-		'<figure class="$2$3">$1</figure>',
-		$content
-	);
-	return $content;
-}
-add_filter( 'the_content', 'nc_template_content_images', 99 );

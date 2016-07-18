@@ -1,23 +1,3 @@
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote,
-ul,
-ol,
-table,
-dt,
-dd,
-address,
-pre,
-code,
-hr {
-	@include ctnr(golden);
-}
-
 h1 {
 	@include font(header1);
 	color: palette(blue);
@@ -129,13 +109,11 @@ dd {
 img {
 	height: auto;
 	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
 	vertical-align: middle;
 }
 
 .gallery {
-  @include ctnr(wide);
+  clear: both;
 }
 
 del {
@@ -157,7 +135,7 @@ table {
 	border-spacing: 0;
 	border-width: 1px 0 0 1px;
 	margin-top: vr(0.5);
-  margin-bottom: vr(0.5);
+	margin-bottom: vr(0.5);
 	table-layout: fixed;
 	/* Prevents HTML tables from becoming too wide */
 	width: 100%;

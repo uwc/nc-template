@@ -29,10 +29,6 @@
 /* Wrap the entire post style inside the TinyMCE selector, as suggested
 here http://codex.wordpress.org/Function_Reference/add_editor_style */
 body#tinymce.wp-editor {
-	font-family: $sans;
-	font-weight: $sans-normal;
-	color: palette(gray, dark);
-
 	// ==== IMPORTS ==== //
 
 	/**
@@ -60,4 +56,9 @@ body#tinymce.wp-editor {
 	// 3. Editor styles //
 
 	@import "content";
+
+	@include ctnr(golden);
+	font-family: $sans;
+	font-weight: $sans-normal;
+	color: palette(gray, dark);
 }

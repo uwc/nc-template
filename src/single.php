@@ -21,11 +21,14 @@ get_header(); ?>
 				'in_same_term' => true,
 				'prev_text' => '← %title',
 				'next_text' => '%title →',
-				));
+			));
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
+			// Check if comments are disabled in customizer.
+			if ( ! get_theme_mod( 'comments' ) ) :
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
 			endif;
 
 		endwhile; // End of the loop.
