@@ -8,125 +8,126 @@
  */
 
 if ( ! function_exists( 'nc_template_custom_logo' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function nc_template_custom_logo() {
-	/* Try to retrieve the Custom Logo. */
-	$output = '';
-	if ( function_exists( 'get_custom_logo' ) ) {
-		$output = get_custom_logo();
-	}
-
 	/**
-	 * Nothing in the output:
-	 * Custom Logo is not supported, or there is no selected logo.
-	 * In both cases we display the site's name.
+	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	if ( empty( $output ) ) {
-		$output = '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>';
-	}
+	function nc_template_custom_logo() {
+		/* Try to retrieve the Custom Logo. */
+		$output = '';
+		if ( function_exists( 'get_custom_logo' ) ) {
+			$output = get_custom_logo();
+		}
 
-	echo $output; // WPCS: XSS ok.
-}
+		/**
+		 * Nothing in the output:
+		 * Custom Logo is not supported, or there is no selected logo.
+		 * In both cases we display the site's name.
+		 */
+		if ( empty( $output ) ) {
+			$output = '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>';
+		}
+
+		echo $output; // WPCS: XSS ok.
+	}
 endif;
 
 if ( ! function_exists( 'get_prev_next' ) ) :
-/**
- * Prints HTML with links to previous and next pages for the current page.
- */
-function get_prev_next() {
-	$test = wp_get_nav_menu_items( 'header' );
+	/**
+	 * Prints HTML with links to previous and next pages for the current page.
+	 */
+	function get_prev_next() {
+		$test = wp_get_nav_menu_items( 'header' );
 
-	$pagelist = get_pages( array( 
-		'sort_column' => 'menu_order',
-		'sort_order' => 'asc' ) );
-	$pages = array();
-	foreach ( $pagelist as $page ) {
-	   $pages[] += $page->ID;
-	}
+		$pagelist = get_pages( array(
+			'sort_column' => 'menu_order',
+			'sort_order' => 'asc',
+		) );
+		$pages = array();
+		foreach ( $pagelist as $page ) {
+			$pages[] += $page->ID;
+		}
 
-	$current = array_search( get_the_ID(), $pages );
-	$prev_id = $pages[ $current - 1 ];
-	$next_id = $pages[ $current + 1 ];
+		$current = array_search( get_the_ID(), $pages );
+		$prev_id = $pages[ $current - 1 ];
+		$next_id = $pages[ $current + 1 ];
 
-	echo '<nav class="navigation post-navigation">';
-	echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
-	echo '<div class="nav-links">';
-	if ( ! empty( $prev_id ) ) {
-		echo '<div class="nav-previous">';
-		echo '<a href="', get_permalink( $prev_id ), '" title="', get_the_title( $prev_id ), '">← ', get_the_title( $prev_id ), '</a>';
+		echo '<nav class="navigation post-navigation">';
+		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
+		echo '<div class="nav-links">';
+		if ( ! empty( $prev_id ) ) {
+			echo '<div class="nav-previous">';
+			echo '<a href="', get_permalink( $prev_id ), '" title="', get_the_title( $prev_id ), '">← ', get_the_title( $prev_id ), '</a>';
+			echo '</div>';
+		}
+		if ( ! empty( $next_id ) ) {
+			echo '<div class="nav-next">';
+			echo '<a href="', get_permalink( $next_id ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), ' →</a>';
+			echo '</div>';
+		}
 		echo '</div>';
+		echo '</nav>';
 	}
-	if ( ! empty( $next_id ) ) {
-		echo '<div class="nav-next">';
-		echo '<a href="', get_permalink( $next_id ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), ' →</a>';
-		echo '</div>';
-	}
-	echo '</div>';
-	echo '</nav>';
-}
 endif;
 
 if ( ! function_exists( 'nc_template_content_navigation' ) ) :
-/**
- * Adds anchor tag button to TinyMCE editor on the WordPress backend.
- *
- * @param string $text The page content to be parsed.
- */
-function nc_template_content_navigation( $text ) {
+	/**
+	 * Adds anchor tag button to TinyMCE editor on the WordPress backend.
+	 *
+	 * @param string $text The page content to be parsed.
+	 */
+	function nc_template_content_navigation( $text ) {
 
-	$dom = new DOMDocument();
-	$dom -> loadHTML( $text );
-	$nodes = $dom->getElementsByTagName( 'a' );
-	$items = array();
-	foreach ( $nodes as $node ) {
-		if ( $node -> hasAttribute( 'id' ) == true ) {
-	    	$items[] = $node -> getAttribute( 'id' );
-	    }
-	}
-	if ( count( $items ) != 0 ) {
-		echo '<nav class="navigation content-navigation">';
-		echo '<h6 class="nav-header">Inhalt</h6>';
-		echo '<div class="nav-links">';
-		foreach ( $items as $item ) {
-			echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, ' ↓</a>';
+		$dom = new DOMDocument();
+		$dom -> loadHTML( $text );
+		$nodes = $dom->getElementsByTagName( 'a' );
+		$items = array();
+		foreach ( $nodes as $node ) {
+			if ( $node -> hasAttribute( 'id' ) == true ) {
+				$items[] = $node -> getAttribute( 'id' );
+			}
 		}
-		echo '</nav>';
+		if ( count( $items ) != 0 ) {
+			echo '<nav class="navigation content-navigation">';
+			echo '<h6 class="nav-header">Inhalt</h6>';
+			echo '<div class="nav-links">';
+			foreach ( $items as $item ) {
+				echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, ' ↓</a>';
+			}
+			echo '</nav>';
+		}
 	}
-}
 endif;
 
 if ( ! function_exists( 'nc_template_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function nc_template_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	/**
+	 * Prints HTML with meta information for the current post-date/time and author.
+	 */
+	function nc_template_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+			$posted_on = sprintf(
+				esc_html_x( 'Posted on %s', 'post date', 'nc-template' ),
+				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			);
+
+			$byline = sprintf(
+				esc_html_x( 'by %s', 'post author', 'nc-template' ),
+				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			);
+
+			echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
 	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'nc-template' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'nc-template' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-}
 endif;
 
 /**

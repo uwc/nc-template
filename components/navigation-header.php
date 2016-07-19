@@ -11,12 +11,12 @@
 <div id="navigation-main" class="navigation-main" role="navigation">
 	<?php if ( has_nav_menu( 'header' ) ) {
 		wp_nav_menu( array(
-		'theme_location' => 'header',
-		'depth' => '2',
-		'container' => 'nav',
-		'container_class' => 'nav-collapse closed',
-		'fallback_cb' => 'false',
+			'theme_location' => 'header',
+			'depth' => '2',
+			'container' => 'nav',
+			'container_class' => 'nav-collapse closed',
+			'fallback_cb' => 'false',
 		) );
-	} ?>
+} ?>
 
 </div><!-- #site-navigation -->

@@ -16,5 +16,5 @@ if ( has_nav_menu( 'social' ) ) {wp_nav_menu( array(
 	'link_before'     => '<span class="screen-reader-text">',
 	'link_after'      => '</span>',
 	'fallback_cb'     => 'false',
-	) );
+) );
 } ?>
