@@ -20,11 +20,21 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'components/content', 'page' );
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				if ( is_page() && $post->post_parent > 0 ) {
+					get_template_part( 'components/content', 'section' );
+				} else {
+					$format = get_post_format() ? : 'standard';
+					get_template_part( 'components/content', $format );
+				}
 
 				get_prev_next();
 
-				// Check if comments are disabled in customizer.
+				// Only show comments if they are not disabled in customizer.
 				if ( ! get_theme_mod( 'comments' ) ) :
 
 					// If comments are open or we have at least one comment, load up the comment template.

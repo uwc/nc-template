@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php.
+ * Template part for displaying posts and pages.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -18,7 +18,12 @@
 			</div>
 			<div class="header-outer">
 				<div class="header-inner">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<?php
+					if ( is_page() || is_single() ) {
+						the_title( '<h1 class="entry-title">', '</h1>' );
+					} else {
+						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					} ?>
 					<h2 class="entry-summary"><?php the_excerpt(); ?></h2>
 				</div>
 			</div>
@@ -26,7 +31,12 @@
 	<?php else : ?>
 		<header class="entry-header">
 			<div class="header-outer">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<?php
+				if ( is_page() || is_single() ) {
+					the_title( '<h1 class="entry-title">', '</h1>' );
+				} else {
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				} ?>
 				<h2 class="entry-summary"><?php the_excerpt(); ?></h2>
 			</div>
 		</header>
@@ -34,11 +44,11 @@
 
 	<div class="entry-content">
 		<?php
-			$text = get_the_content();
-
-			nc_template_content_navigation( $text );
-
-			the_content();
+			the_content( sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'nc-template' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nc-template' ),
@@ -46,7 +56,4 @@
 			) );
 		?>
 	</div>
-	<footer class="entry-footer">
-		<!-- Prev and next links -->
-	</footer>
 </article><!-- #post-## -->

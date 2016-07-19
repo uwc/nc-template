@@ -81,14 +81,12 @@ if ( ! function_exists( 'nc_template_setup' ) ) :
 		 */
 		add_theme_support( 'post-formats', array(
 			'video',
-			'quote',
 			'link',
 			'gallery',
-			'aside',
 		) );
 
 		/*
-		 * Add support for Post Formats to pages.
+		 * Add support for Post Formats and Excerpts to pages.
 		 *
 		 * See: https://codex.wordpress.org/Function_Reference/add_post_type_support
 		 */
