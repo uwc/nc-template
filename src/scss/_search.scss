@@ -14,7 +14,7 @@
 	label {
 		position: relative;
 		&:before {
-			content: '\6a';
+			content: '\73';
 			display: inline-block;
 			position: absolute;
 			padding: vr(0.5) vr(0.75);
@@ -38,4 +38,29 @@
 
 // 2. Search Results //
 
+.search-header {
+	margin-top: vr(2);
+	@include ctnr(golden);
+	.search-wrapper {
+		margin-bottom: vr(1.5);		
+	}
+	.search-title {
+		@include font(small);
+	}
+}
 
+.search-result {
+	@include border();
+	@include ctnr(golden);
+	margin-top: vr(0.5);
+	margin-bottom: vr(0.75);
+	.result-header {
+		@include font(header3);
+		@include gradient-underline(90deg, blue, palette(blue));
+		color: palette(blue);
+	}
+	.result-link {
+		@include font(small);
+		color: palette(turquoise);
+	}
+}

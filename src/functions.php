@@ -169,13 +169,13 @@ if ( ! function_exists( 'nc_template_fonts_url' ) ) :
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
 		/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Cabin font: on or off', 'nc-template' ) ) {
-			$fonts[] = 'Cabin:400,500,700';
+		if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'nc-template' ) ) {
+			$fonts[] = 'Source+Sans+Pro:300,400,600';
 		}
 		if ( $fonts ) {
 			$fonts_url = add_query_arg( array(
-				'family' => urlencode( implode( '|', $fonts ) ),
-				'subset' => urlencode( $subsets ),
+				'family' => implode( '|', $fonts ),
+				'subset' => $subsets,
 			), 'https://fonts.googleapis.com/css' );
 		}
 		return $fonts_url;

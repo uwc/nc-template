@@ -39,6 +39,13 @@
 $border-gray: 1px solid palette(gray, light);
 $border-grey: $border-gray;
 
+@mixin border() {
+  @include mappy-bp(small) {
+    border: 1px solid palette(gray, light);
+    padding: vr(0.75) vr(1);
+  }
+}
+
 @mixin gradient-border($direction, $color-stops...) {
   position: relative;
   &:before {
@@ -57,10 +64,6 @@ $border-grey: $border-gray;
   color: palette($color);
   display: inline-block;
   transition: color 0.15s ease-in-out;
-  &:hover,
-  &:focus {
-    color: palette($color, light);
-  }
   &:after {
     content: "";
     position: absolute;
@@ -77,8 +80,7 @@ $border-grey: $border-gray;
     backface-visibility: hidden;
     transition: visibility .15s ease-in-out, opacity .15s ease-in-out, transform .15s ease-in-out;
   }
-  &:hover:after,
-  &:focus:after {
+  &:hover:after {
     visibility: visible;
     opacity: 1;
     transform: translate(0px,-2px);

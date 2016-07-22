@@ -32,10 +32,10 @@ $mappy-queries: (
 
 // 2. Typography //
 
-$sans: 'Bliss', 'Cabin', 'Freight Sans Pro', Helvetica, sans-serif;
+$sans: 'Bliss', 'Source Sans Pro', 'Freight Sans Pro', Helvetica, sans-serif;
 $sans-normal: 300;
 $sans-medium: 400;
-$sans-bold:   700;
+$sans-bold:   600;
 
 $ms-base: 1rem;
 $ms-ratio: 1.2;
@@ -111,7 +111,7 @@ $_metadata: (
   theme-author:             "Connor Bär",
   theme-author-uri:         "http://connorbaer.io",
   theme-description:        "A template for UWC national committee websites. Please request permission before use.",
-  theme-version:            "v.0.8.0-alpha",
+  theme-version:            "v.0.8.1-alpha",
   theme-license:            "MIT",
   theme-license-uri:        "https://opensource.org/licenses/MIT",
   theme-tags:               (custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready),

@@ -47,4 +47,4 @@ gulp.task('theme-lang', function() {
 });
 
 // All the theme tasks in one
-gulp.task('theme', ['theme-lang', 'theme-composer', 'theme-php', 'theme-fonts', 'theme-readme']);
+gulp.task('theme', ['theme-lang', 'theme-php', 'theme-fonts', 'theme-readme']);

@@ -115,10 +115,6 @@ module.exports = {
       src: src+'languages/**/*' // Glob pattern matching any language files you'd like to copy over; we've broken this out in case you want to automate language-related functions
     , dest: build+'languages/'
     }
-  , composer: {
-      src: composer+'**/*' // This simply copies the composer dependencies over.
-    , dest: build+'inc/vendor/'
-    }
   , php: {
       src: [src+'/**/*.php', !src+'/vendor/**/*.*']
     , dest: build
