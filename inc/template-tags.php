@@ -31,11 +31,11 @@ if ( ! function_exists( 'nc_template_custom_logo' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'get_prev_next' ) ) :
+if ( ! function_exists( 'nc_template_page_navigation' ) ) :
 	/**
 	 * Prints HTML with links to previous and next pages for the current page.
 	 */
-	function get_prev_next() {
+	function nc_template_page_navigation() {
 		$test = wp_get_nav_menu_items( 'header' );
 
 		$pagelist = get_pages( array(
@@ -69,11 +69,31 @@ if ( ! function_exists( 'get_prev_next' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'nc_template_paginated' ) ) :
+	/**
+	 * Prints HTML with links to previous and next pages for the current page.
+	 */
+	function nc_template_paginated() {
+		global $wp_query;
+		$big = 99999;
+
+		echo '<nav class="navigation post-navigation">';
+		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var( 'paged' ) ),
+			'total' => $wp_query -> max_num_pages,
+		) );
+		echo '</nav>';
+	}
+endif;
+
 if ( ! function_exists( 'nc_template_content_navigation' ) ) :
 	/**
-	 * Adds anchor tag button to TinyMCE editor on the WordPress backend.
+	 * Adds content navigation to pages and posts that have anchor tags.
 	 *
-	 * @param string $text The page content to be parsed.
+	 * @param string $text The page/post content to be parsed.
 	 */
 	function nc_template_content_navigation( $text ) {
 

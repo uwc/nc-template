@@ -34,7 +34,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			nc_template_paginated();
 
 		else :
 
