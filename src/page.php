@@ -28,7 +28,7 @@ get_header(); ?>
 				if ( is_page() && $post->post_parent < 0 ) {
 					get_template_part( 'components/content', 'section' );
 				} else {
-					$format = get_post_format() ? : 'standard';
+					$format = get_post_format() ?: 'standard';
 					get_template_part( 'components/content', $format );
 				}
 
