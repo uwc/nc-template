@@ -6,6 +6,7 @@
  *
  * @package NC_Template
  */
+
 ?>
 
 <div class="embed-container">

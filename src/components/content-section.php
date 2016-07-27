@@ -61,10 +61,10 @@
 	<div class="section-content">
 
 		<?php
-			// check if the flexible content field has rows of data
+			// Check if the flexible content field has rows of data.
 		if ( have_rows( 'modules' ) ) :
 
-			// loop through the rows of data
+			// Loop through the rows of data.
 			while ( have_rows( 'modules' ) ) : the_row();
 
 				if ( get_row_layout() == 'text_image' ) :
