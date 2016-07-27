@@ -63,6 +63,7 @@ $border-grey: $border-gray;
   z-index: 1;
   color: palette($color);
   display: inline-block;
+  cursor: pointer;
   transition: color 0.15s ease-in-out;
   &:after {
     content: "";

@@ -1,9 +1,17 @@
-// ==== STYLES ==== //
+// Designed, built, and released under MIT license by @connor_baer.
+
+
+// ==== IMPORTS ==== //
 
 /**
  * Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions.
+ * The order of the imports is crucial since they build on top of each other. 
+ * For example, a form contains buttons, a menu can contain a form, etc.
  * Note: `bower_components` and `npm_modules` are already in Sass's path.
  */
+
+
+// 1. Helpers //
 
 /* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
 @import "modular-scale/stylesheets/modular-scale";
@@ -38,15 +46,7 @@ GitHub Branch: #{metadata(github-branch)}
 */
 
 
-// ==== IMPORTS ==== //
-
-/**
- * Note: `bower_components` and `npm_modules` are already in Sass's path.
- * The order of the imports is crucial since they build on top of each other. 
- * For example, a form contains buttons, a menu can contain a form, etc.
- */
-
-// 1. Dependencies //
+// 2. Dependencies //
 
 /* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
 @import "normalize";
@@ -55,17 +55,17 @@ GitHub Branch: #{metadata(github-branch)}
 @import "reset";
 
 
-// 2. Authored dependencies //
+// 3. Authored dependencies //
 
 @import "fonts";
 @import "base";
 @import "layout";
-@import "typography";
+@import "type";
 /* Styles required by WordPress core */
 @import "wordpress";
 
 
-// 3. Patters //
+// 4. Patters //
 
 @import "buttons";
 @import "forms";
@@ -73,7 +73,7 @@ GitHub Branch: #{metadata(github-branch)}
 @import "menus";
 
 
-// 4. Sections //
+// 5. Sections //
 
 @import "search";
 @import "widgets";

@@ -16,12 +16,22 @@ module.exports = {
 
   browsersync: {
     files: [build+'/**', '!'+build+'/**.map'] // Exclude map files
-  , notify: false // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not)
-  , open: true // Set to false if you don't like the browser window opening automatically
-  , port: 3000 // Port number for the live version of the site; default: 3000
+  , port: 5000 // Port number for the live version of the site; default: 3000
   , proxy: 'nc-website:80' // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work
+  , notify: false // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not)
+  , ui: false // Set to false if you don't need the browsersync UI
+  , open: false // Set to false if you don't like the browser window opening automatically
   , watchOptions: {
       debounceDelay: 2000 // This introduces a small delay when watching for file change events to avoid triggering too many reloads
+    }
+  },
+
+  watch: { // What to watch before triggering each specified task; if files matching the patterns below change it will trigger BrowserSync or Livereload
+    src: {
+      styles:       src+'scss/**/*.scss'
+    , scripts:      src+'js/**/*.js' // You might also want to watch certain dependency trees but that's up to you
+    , images:       src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
+    , theme:        src+'**/*.php'
     }
   },
 
@@ -39,10 +49,6 @@ module.exports = {
       }
     , dest: dist
     }
-  },
-
-  livereload: {
-    port: 35729 // This is a standard port number that should be recognized by your LiveReload helper; there's probably no need to change it
   },
 
   scripts: {
@@ -96,11 +102,6 @@ module.exports = {
       , browsers: ['> 3%', 'last 2 versions', 'ie 9', 'ios 6', 'android 4'] // This tool is magic and you should use it in all your projects :)
       }
     }
-  , rubySass: { // Requires the Ruby implementation of Sass; run `gem install sass` if you use this; Compass is *not* included by default
-      loadPath: ['./src/scss', bower, modules] // Adds Bower and npm directories to the load path so you can @import directly
-    , precision: 6
-    , sourcemap: true
-  }
   , libsass: { // Requires the libsass implementation of Sass (included in this package)
       includePaths: ['./src/scss', bower, modules] // Adds Bower and npm directories to the load path so you can @import directly
     , precision: 6
@@ -144,16 +145,5 @@ module.exports = {
     , dest: src+'scss'
     , rename: '_normalize.scss'
     }
-  },
-
-  watch: { // What to watch before triggering each specified task; if files matching the patterns below change it will trigger BrowserSync or Livereload
-    src: {
-      styles:       src+'scss/**/*.scss'
-    , scripts:      src+'js/**/*.js' // You might also want to watch certain dependency trees but that's up to you
-    , images:       src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
-    , theme:        src+'**/*.php'
-    , livereload:   build+'**/*'
-    }
-  , watcher: 'browsersync' // Modify this value to easily switch between BrowserSync ('browsersync') and Livereload ('livereload')
   }
 }

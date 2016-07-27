@@ -1,4 +1,4 @@
-// ==== MAIN ==== //
+// ==== DEFAULT ==== //
 
 var gulp = require('gulp');
 

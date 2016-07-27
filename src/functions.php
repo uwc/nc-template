@@ -209,6 +209,14 @@ function nc_template_scripts() {
 add_action( 'wp_enqueue_scripts', 'nc_template_scripts' );
 
 /**
+ * Register Google Maps API key to enable Google Maps embeds with Advanced Custom Fields.
+ */
+function nc_template_acf_init() {
+	acf_update_setting( 'google_api_key', 'AIzaSyBV8fzdHyCXxCzT7kCqc1UCRKx4mROcm64' );
+}
+add_action( 'acf/init', 'nc_template_acf_init' );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -224,15 +232,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Prevents jQuery from being included in the frontend.
- * It is not needed and would only increase the time to load the page.
- */
-function change_default_jquery() {
-	if ( ! is_admin() && ! is_customize_preview() ) {
-		wp_dequeue_script( 'jquery' );
-		wp_deregister_script( 'jquery' );
-	}
-}
-add_filter( 'wp_enqueue_scripts', 'change_default_jquery', PHP_INT_MAX );
