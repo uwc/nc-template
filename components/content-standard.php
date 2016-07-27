@@ -60,3 +60,8 @@
 		?>
 	</div>
 </article><!-- #post-## -->
+
+<?php
+	nc_template_page_navigation();
+	get_sidebar();
+?>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: NC Template\n"
-"POT-Creation-Date: 2016-07-22 12:53+0200\n"
-"PO-Revision-Date: 2016-07-22 12:54+0200\n"
+"POT-Creation-Date: 2016-07-19 08:47+0200\n"
+"PO-Revision-Date: 2016-07-19 08:53+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Connor Bär <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:18
+#: 404.php:17
 msgid "404 Oh crumbs."
 msgstr "404 Oh Krümel."
 
-#: 404.php:26
+#: 404.php:22
 #, php-format
 msgid ""
 "Looks like something has gone terribly wrong somewhere in the Internet. As a "
@@ -93,12 +93,12 @@ msgid ""
 "searching can help."
 msgstr "Wir konnten keine Ergebnisse finden. Vielleicht hilft das Suchfeld."
 
-#: components/content-section.php:39 components/content-standard.php:52
+#: components/content-section.php:39 components/content-standard.php:49
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "„%s“ weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
-#: components/content-standard.php:57 image.php:52
+#: components/content-standard.php:54 image.php:52
 msgid "Pages:"
 msgstr "Seiten: "
 
@@ -135,7 +135,7 @@ msgid "Footer right"
 msgstr "Fußzeile rechts"
 
 #: functions.php:172
-msgctxt "Source Sans Pro font: on or off"
+msgctxt "Cabin font: on or off"
 msgid "on"
 msgstr "on"
 
@@ -199,22 +199,22 @@ msgstr ""
 msgid "Search"
 msgstr "Suche"
 
-#: inc/template-tags.php:139
+#: inc/template-tags.php:119
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Gepostet am %s"
 
-#: inc/template-tags.php:144
+#: inc/template-tags.php:124
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr "von %s."
 
-#: search.php:22
+#: search.php:20
 #, php-format
-msgid "Search results for &#x201c;%s&#x201d;:"
-msgstr "Suchergebnisse für &#x201c;%s&#x201d;:"
+msgid "Search results for &#x201c;%s&#x201d;"
+msgstr "Suchergebnisse für %s"
 
 #: searchform.php:10
 msgctxt "label"

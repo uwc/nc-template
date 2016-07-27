@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: NC Template\n"
-"POT-Creation-Date: 2016-07-22 12:53+0200\n"
+"POT-Creation-Date: 2016-07-04 09:04+0200\n"
 "PO-Revision-Date: 2016-07-04 09:02+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:18
+#: 404.php:17
 msgid "404 Oh crumbs."
 msgstr ""
 
-#: 404.php:26
+#: 404.php:22
 #, php-format
 msgid ""
 "Looks like something has gone terribly wrong somewhere in the Internet. As a "
@@ -82,13 +82,13 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: components/content-section.php:39 components/content-standard.php:52
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#: components/content-page.php:40 components/content.php:54 image.php:52
+msgid "Pages:"
 msgstr ""
 
-#: components/content-standard.php:57 image.php:52
-msgid "Pages:"
+#: components/content.php:49
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: components/navigation-header.php:10
@@ -99,6 +99,11 @@ msgstr ""
 msgid "All rights reserved."
 msgstr ""
 
+#: footer.php:35
+#, php-format
+msgid "Website by %s."
+msgstr ""
+
 #: functions.php:61
 msgid "Header"
 msgstr ""
@@ -107,28 +112,32 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:63
+msgid "Footer"
+msgstr ""
+
+#: functions.php:125
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:134
 msgid "Footer left"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:143
 msgid "Footer center"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:152
 msgid "Footer right"
 msgstr ""
 
-#: functions.php:172
-msgctxt "Source Sans Pro font: on or off"
+#: functions.php:174
+msgctxt "Cabin font: on or off"
 msgid "on"
 msgstr ""
 
-#: header.php:39
+#: header.php:34
 msgid "Skip to content"
 msgstr ""
 
@@ -149,7 +158,12 @@ msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr ""
 
-#: image.php:82
+#: image.php:80
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: image.php:98
 msgctxt "Parent post link"
 msgid ""
 "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">"
@@ -163,39 +177,25 @@ msgid ""
 "%s. Please upgrade and try again."
 msgstr ""
 
-#: inc/customizer.php:23
-msgid "Theme Options"
-msgstr ""
-
-#: inc/customizer.php:29
-msgid "Disable comments"
-msgstr ""
-
-#: inc/customizer.php:33
-msgid ""
-"Check the above box to hide comments on the frontend. No comments will be "
-"deleted and can thus be unhidden at any time."
-msgstr ""
-
 #: inc/extras.php:40
 msgid "Search"
 msgstr ""
 
-#: inc/template-tags.php:139
+#: inc/template-tags.php:52
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:144
+#: inc/template-tags.php:57
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: search.php:22
+#: search.php:20
 #, php-format
-msgid "Search results for &#x201c;%s&#x201d;:"
+msgid "Search results for &#x201c;%s&#x201d;"
 msgstr ""
 
 #: searchform.php:10
