@@ -39,13 +39,6 @@
 $border-gray: 1px solid palette(gray, light);
 $border-grey: $border-gray;
 
-@mixin border() {
-  @include mappy-bp(small) {
-    border: 1px solid palette(gray, light);
-    padding: vr(0.75) vr(1);
-  }
-}
-
 @mixin gradient-border($direction, $color-stops...) {
   position: relative;
   &:before {
@@ -64,7 +57,7 @@ $border-grey: $border-gray;
   color: palette($color);
   display: inline-block;
   cursor: pointer;
-  transition: color 0.15s ease-in-out;
+  transition: color $anim-s;
   &:after {
     content: "";
     position: absolute;
@@ -79,7 +72,7 @@ $border-grey: $border-gray;
     transform: translate(0px,2px);
     opacity: 0;
     backface-visibility: hidden;
-    transition: visibility .15s ease-in-out, opacity .15s ease-in-out, transform .15s ease-in-out;
+    transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
   }
   &:hover:after {
     visibility: visible;
@@ -89,7 +82,7 @@ $border-grey: $border-gray;
 }
 
 @mixin text-overlay {
-  color: #fff;
+  color: palette(white);
   text-shadow: 0px 0px 4px palette(gray);
 }
 
@@ -107,5 +100,19 @@ $border-grey: $border-gray;
       background: rgba(0,0,0,0.33);
       height: 100%;
     }
+  }
+}
+
+@mixin overlay {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0,0,0,0.33);
   }
 }

@@ -1,6 +1,5 @@
 // ==== NAVIGATION ==== //
 
-
 /**
  * 1. Main navigation
  */
@@ -12,39 +11,39 @@
 #navigation {
   @include gradient-border(90deg, palette(blue, light), palette(turquoise, light));
   border-bottom: $border-grey;
-}
 
-.navigation-ctnr {
-  @include ctnr(wide);
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-content: space-around;
-  padding-top: vr(0.125);
-  padding-bottom: vr(0.125);
-  height: 100px;
-}
-
-.navigation-logo {
-  flex: 1 0 auto;
-  .custom-logo {
-    max-width: 85vw;
-    height: auto;
-    object-fit: contain;
-    vertical-align: middle;
+  .navigation-ctnr {
+    @include ctnr(wide);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    padding-top: vr(0.125);
+    padding-bottom: vr(0.125);
+    height: 100px;
   }
-}
 
-.navigation-social {
-  flex: 1 0 auto;
-}
+  .navigation-logo {
+    flex: 1 0 auto;
+    .custom-logo {
+      max-width: 85vw;
+      height: auto;
+      object-fit: contain;
+      vertical-align: middle;
+    }
+  }
 
-.navigation-search {
-  display: none;
-}
+  .navigation-social {
+    flex: 1 0 auto;
+  }
 
-.navigation-main {
-  flex: 1 1 100%;
+  .navigation-search {
+    display: none;
+  }
+
+  .navigation-main {
+    flex: 1 1 100%;
+  }
 }
 
 /* ----- */

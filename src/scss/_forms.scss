@@ -13,7 +13,7 @@
 	width: 100%;
 	text-align: left;
 	resize: none;
-	transition: border 0.15s ease-in-out, box-shadow 0.1s ease-out;
+	transition: border $anim-s, box-shadow $anim-s;
 	&:focus,
 	&:active {
 		box-shadow: 0px 0px 5px 1px palette(orange, light);

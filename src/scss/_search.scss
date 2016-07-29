@@ -50,7 +50,7 @@
 }
 
 .search-result {
-	@include border();
+	@include card();
 	@include ctnr(golden);
 	margin-top: vr(0.5);
 	margin-bottom: vr(0.75);

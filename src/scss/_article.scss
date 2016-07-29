@@ -3,65 +3,13 @@
 /* Style post and page content here, including the header and footer. */
 
 /**
- * 1. Header
- * 2. Content
- * 3. Footer
+ * 1. Content
+ * 2. Footer
  */
 
-// 1. Header //
-
-.entry-header {
-  .header-outer {
-    @include ctnr(golden);
-    margin-top: vr(3);
-    margin-bottom: vr(2);
-  }
-  .entry-title {
-    @include font(title);
-    color: palette(blue);
-    margin-bottom: vr(0.25);
-  }
-  .entry-summary p {
-    @include font(large);
-    color: palette(turquoise);
-  }
-}
-
-.entry-header.featured-image {
-  margin-bottom: vr(1);
-  @include gradient-overlay;
-  .entry-photo {
-    @include ctnr(full);
-    height: vr(20);
-    overflow: hidden;
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .header-outer {
-    margin-top: 0;
-    margin-bottom: 0;
-    position: relative;
-    z-index: 15;
-  }
-  .header-inner {
-    position: absolute;
-    bottom: vr(1);
-  }
-  .entry-title {
-    @include text-overlay;
-    margin-bottom: vr(0.25);
-  }
-  .entry-summary p {
-    @include text-overlay;
-  }
-}
 
 
-
-// 2. Content //
+// 1. Content //
 
 /* See '_content.scss' for the content styling. */
 
@@ -72,16 +20,6 @@
     h6 {
       @include font(small);
       margin-bottom: vr(0.25);
-    }
-    .nav-links {
-      border-top: $border-gray;
-      border-bottom: $border-gray;
-      padding-top: vr(0.25);
-      padding-bottom: vr(0.25);
-      a {
-        @include btn(navigation);
-        margin-right: vr(1.5);
-      }
     }
   }
   .shariff {
@@ -95,7 +33,7 @@
 
 
 
-// 3. Footer //
+// 2. Footer //
 
 .post-navigation {
   @include ctnr(golden);
@@ -104,13 +42,13 @@
   .nav-previous {
     float: left;
     a {
-      @include btn(navigation);
+      @include btn(text, purple);
     }
   }
   .nav-next {
     float: right;
     a {
-      @include btn(navigation);
+      @include btn(text, purple);
       text-align: right;
     }
   }

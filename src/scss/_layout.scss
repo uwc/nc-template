@@ -2,81 +2,81 @@
 
 /* Simple mixin to clear floats. */
 @mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 /* Content can take on three different widths: full, wide and golden. */
 @mixin ctnr($width: null) {
-  @if $width == null {
-    @warn "Mixin ctnr() received no input! Please provide a width.";
-  }
-  @else if $width == 'golden' {
-    width: auto;
-    margin-right: vr(0.75);
-    margin-left: vr(0.75);
-    display: block;
-    @include mappy-query(desktop) {
-      width: 35rem;
-      max-width: 100%;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  }
-  @else if $width == 'wide' {
-    width: auto;
-    margin-right: vr(0.75);
-    margin-left: vr(0.75);
-    display: block;
-    @include mappy-query(desktop) {
-      width: 56rem;
-      max-width: 100%;
-      margin-right: auto;
-      margin-left: auto;
-      padding-right: vr(0.75);
-      padding-left: vr(0.75);
-    }
-  }
-  @else if $width == 'hybrid' {
-    display: block;
-    width: 100vw;
-    max-width: 100%;
-    @include mappy-query(desktop-large) {
-      width: 56rem;
-      max-width: 100%;
-      margin-right: auto;
-      margin-left: auto;
-      padding-right: vr(0.75);
-      padding-left: vr(0.75);
-    }
-  }
-  @else if $width == 'full' {
-    display: block;
-    width: 100vw;
-    max-width: 100%;
-  }
-  @else {
-    @warn "Mixin ctnr() received invalid input! This width does not exist.";
-  }
+	@if $width == null {
+		@warn "Mixin ctnr() received no input! Please provide a width.";
+	}
+	@else if $width == 'golden' {
+		width: auto;
+		margin-right: vr(1);
+		margin-left: vr(1);
+		display: block;
+		@include mappy-query(desktop) {
+			width: 35rem;
+			max-width: 100%;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+	@else if $width == 'wide' {
+		width: auto;
+		margin-right: vr(1);
+		margin-left: vr(1);
+		display: block;
+		@include mappy-query(desktop) {
+			width: 56rem;
+			max-width: 100%;
+			margin-right: auto;
+			margin-left: auto;
+			padding-right: vr(2);
+			padding-left: vr(2);
+		}
+	}
+	@else if $width == 'hybrid' {
+		display: block;
+		width: 100vw;
+		max-width: 100%;
+		@include mappy-query(desktop-large) {
+			width: 56rem;
+			max-width: 100%;
+			margin-right: auto;
+			margin-left: auto;
+			padding-right: vr(1);
+			padding-left: vr(1);
+		}
+	}
+	@else if $width == 'full' {
+		display: block;
+		width: 100vw;
+		max-width: 100%;
+	}
+	@else {
+		@warn "Mixin ctnr() received invalid input! This width does not exist.";
+	}
 }
 
 
 /* Limits width on large screens and centers content. */
 .site {
-  max-width: 72rem;
-  margin: 0 auto;
+	max-width: 72rem;
+	margin: 0 auto;
 }
 
 /* Content can take on three different widths: full, wide and golden. */
 .ctnr-full {
-  @include ctnr(full);
+	@include ctnr(full);
 }
 .ctnr-wide {
-  @include ctnr(wide);
+	@include ctnr(wide);
 }
 .ctnr-golden {
-  @include ctnr(golden);
+	@include ctnr(golden);
 }

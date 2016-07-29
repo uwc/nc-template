@@ -36,6 +36,7 @@
 
 	</footer>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV8fzdHyCXxCzT7kCqc1UCRKx4mROcm64"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

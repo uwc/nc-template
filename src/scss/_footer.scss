@@ -4,7 +4,7 @@
 
 .site-footer {
 	@include gradient-border(90deg, palette(blue, light), palette(turquoise, light));
-	margin-top: vr(2);
+	margin-top: vr(1.5);
 }
 
 .footer-widgets {

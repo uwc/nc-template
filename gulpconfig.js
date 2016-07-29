@@ -53,7 +53,7 @@ module.exports = {
 
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks (below) to concatenate; warning: this method offers no dependency management!
-      scripts: ['accessibility', 'smoothScroll', 'navigation', 'core']
+      scripts: ['accessibility', 'smoothScroll', 'navigation', 'core', 'google_maps']
     , html5: ['ie']
     , customizer: ['customizer']
     }
@@ -77,6 +77,9 @@ module.exports = {
       ]
     , customizer: [
         src+'js/customizer.js',
+      ]
+    , google_maps: [
+        src+'js/google-maps.js',
       ]
     }
   , dest: build+'js/' // Where the scripts end up in your theme

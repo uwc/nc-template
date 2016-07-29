@@ -6,7 +6,8 @@
  * 1. Breakpoints
  * 2. Typography
  * 3. Colors
- * 4. Metadata
+ * 4. Animations
+ * 5. Metadata
  */
 
 
@@ -14,18 +15,20 @@
  // 1. Breakpoints //
 
 $breakpoints: (
-  small: 576px,
-  medium: 769px,
-  large: 1025px,
-  x-large: 1441px,
+	small: 576px,
+	medium: 769px,
+	large: 1025px,
+	x-large: 1441px,
 );
 
 /* You can use any valid arguments inserted into mappy-bp as the map values. Any of the following would do. */
 $mappy-queries: (
-  phone: mappy-bp(max-width small),
-  tablet: mappy-bp(small medium),
-  desktop: mappy-bp(medium),
-  desktop-large: mappy-bp(large),
+	phone: mappy-bp(max-width small),
+	phone-tablet: mappy-bp(max-width medium),
+	tablet: mappy-bp(small medium),
+	tablet-desktop: mappy-bp(small),
+	desktop: mappy-bp(medium),
+	desktop-large: mappy-bp(large),
 );
 
 
@@ -41,9 +44,9 @@ $ms-base: 1rem;
 $ms-ratio: 1.2;
 
 $typi: (
-  null: (16px, 1.4),
-  medium: (21px, 1.5),
-  x-large: (26px),
+	null: (16px, 1.4),
+	medium: (21px, 1.5),
+	x-large: (28px),
 );
 
 
@@ -63,60 +66,73 @@ $factor-darken: 8%;
  * Sass map for the color palette; see `_library.scss` for the palette() function. 
  */
 $_palettes: (
-    blue: (
-        base:  $base-blue,
-        light: lighten($base-blue, $factor-lighten),
-        dark:  darken($base-blue, $factor-darken)
-    ),
-    turquoise: (
-        base:  $base-turquoise,
-        light: lighten($base-turquoise, $factor-lighten),
-        dark:  darken($base-turquoise, $factor-darken)
-    ),
-    purple: (
-        base:  $base-purple,
-        light: lighten($base-purple, $factor-lighten),
-        dark:  darken($base-purple, $factor-darken)
-    ),
-    pink: (
-        base:  $base-pink,
-        light: lighten($base-pink, $factor-lighten),
-        dark:  darken($base-pink, $factor-darken)
-    ),
-    orange: (
-        base:  $base-orange,
-        light: lighten($base-orange, $factor-lighten),
-        dark:  darken($base-orange, $factor-darken)
-    ),
-    gray: (
-        base:    #717073,
-        lighter: #F5F5F5,
-        light:   #D6D6D7,
-        dark:    #515152,
-        darker:  #333234
-    )
+		blue: (
+				base:  $base-blue,
+				light: lighten($base-blue, $factor-lighten),
+				dark:  darken($base-blue, $factor-darken)
+		),
+		turquoise: (
+				base:  $base-turquoise,
+				light: lighten($base-turquoise, $factor-lighten),
+				dark:  darken($base-turquoise, $factor-darken)
+		),
+		purple: (
+				base:  $base-purple,
+				light: lighten($base-purple, $factor-lighten),
+				dark:  darken($base-purple, $factor-darken)
+		),
+		pink: (
+				base:  $base-pink,
+				light: lighten($base-pink, $factor-lighten),
+				dark:  darken($base-pink, $factor-darken)
+		),
+		orange: (
+				base:  $base-orange,
+				light: lighten($base-orange, $factor-lighten),
+				dark:  darken($base-orange, $factor-darken)
+		),
+		gray: (
+				base:    #717073,
+				lighter: #F5F5F5,
+				light:   #D6D6D7,
+				dark:    #515152,
+				darker:  #333234
+		),
+		white: (
+				base:    #fff,
+				light:   #fff,
+				dark:    #fff,
+		)
 );
 
 
 
-// 4. Metadata //
+// 4. Animations //
+
+$anim-s: .12s cubic-bezier(0,0,.2,1);
+$anim-m: .24s cubic-bezier(0,0,.2,1);
+$anim-l: .36s cubic-bezier(0,0,.2,1);
+
+
+
+// 5. Metadata //
 
 /* 
  * Sass map for the metadata.
  * See `_library.scss` for the metadata() function. 
  */
 $_metadata: (
-  theme-name:               "NC Template",
-  theme-uri:                "https://github.com/uwc/nc-template",
-  theme-author:             "Connor Bär",
-  theme-author-uri:         "http://connorbaer.io",
-  theme-description:        "A template for UWC national committee websites. Please request permission before use.",
-  theme-version:            "v.0.8.4-alpha",
-  theme-license:            "MIT",
-  theme-license-uri:        "https://opensource.org/licenses/MIT",
-  theme-tags:               (custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready),
-  theme-text-domain:        "nc-template",
-  theme-text-domain-path:   "/languages/",
-  github-theme-uri:         "https://github.com/uwc/nc-template",
-  github-branch:            "master"
+	theme-name:               "NC Template",
+	theme-uri:                "https://github.com/uwc/nc-template",
+	theme-author:             "Connor Bär",
+	theme-author-uri:         "http://connorbaer.io",
+	theme-description:        "A template for UWC national committee websites. Please request permission before use.",
+	theme-version:            "v.0.8.4-alpha",
+	theme-license:            "MIT",
+	theme-license-uri:        "https://opensource.org/licenses/MIT",
+	theme-tags:               (custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready),
+	theme-text-domain:        "nc-template",
+	theme-text-domain-path:   "/languages/",
+	github-theme-uri:         "https://github.com/uwc/nc-template",
+	github-branch:            "master"
 );
