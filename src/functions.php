@@ -197,7 +197,10 @@ add_action( 'wp_head', 'nc_template_javascript_detection', 0 );
  */
 function nc_template_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'nc-template-fonts', nc_template_fonts_url(), array(), null );
+	wp_enqueue_style( 'nc-template-fonts', nc_template_fonts_url(), array( 'jQuery' ) );
+	// Add Google Maps scripts, used in the main stylesheet.
+	wp_enqueue_script( 'nc-template-googlefonts', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBV8fzdHyCXxCzT7kCqc1UCRKx4mROcm64', array(), null );
+	// Theme stylesheet.
 	// Theme stylesheet.
 	wp_enqueue_style( 'nc-template-style', get_stylesheet_uri() );
 	// Load the html5 shiv.

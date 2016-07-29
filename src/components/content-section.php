@@ -23,7 +23,7 @@
 					<h2 class="header-summary">
 						<?php the_excerpt(); ?>
 					</h2>
-					<a href="<?php the_field( 'cta_url' ) ?>" class="header-button"><?php the_field( 'cta_text' ) ?> →</a>
+					<a href="<?php the_field( 'cta_url' ) ?>" class="header-button"><?php the_field( 'cta_text' ) ?></a>
 				<?php else : ?>
 					<nav class="header-navigation">
 						<ul class="header-links">
@@ -31,7 +31,6 @@
 								'child_of'    => $post->ID,
 								'depth'       => 1,
 								'title_li'    => '',
-								'link_after'  => ' →',
 								'sort_column' => 'menu_order',
 							) ); ?>
 						</ul>

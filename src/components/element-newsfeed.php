@@ -24,7 +24,7 @@ if ( $taxonomies && $count >= 4 ) {
 	echo '<section class="section-newsfeed">';
 	$index = 1;
 	foreach ( $posts as $post ) {
-		$categories = [];
+		$categories = array();
 
 		foreach ( $taxonomies as $taxonomy ) {
 			if ( in_category( $taxonomy, $post->ID ) ) {
@@ -37,13 +37,13 @@ if ( $taxonomies && $count >= 4 ) {
 			echo the_post_thumbnail_url( $post->ID );
 			echo ')"></div></a>';
 		} else {
-			echo '<article class="section-post post-' . $index . ' -no-thumbnail">';
+			echo '<article class="section-post post-' . $index . ' -no-thumbnail"><a href="' . get_permalink( $post->ID ) . '" class="section-link"></a>';
 		}
 		echo '<div class="section-wrapper">';
 		foreach ( $categories as $category ) {
 			echo '<a href="' . get_category_link( $category ) . '" class="section-category">' . get_cat_name( $category ) . '</a> ';
 		}
-		echo '<a href="' . get_permalink( $post->ID ) . '"><h2 class="section-headline">' . get_the_title( $post->ID ) . '</h2>' . '<h4 class="section-date">' . get_the_date( '', $post->ID ) . '</h4>' . '</a></div></article>';
+		echo '<a href="' . get_permalink( $post->ID ) . '"><h2 class="section-headline">' . get_the_title( $post->ID ) . '</h2><h4 class="section-date">' . get_the_date( '', $post->ID ) . '</h4></a></div></article>';
 		$index++;
 	}
 	echo '</section>';

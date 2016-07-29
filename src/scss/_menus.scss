@@ -17,7 +17,6 @@
 
 #menu-header a {
 	@include font(small);
-	@include gradient-underline(90deg, gray, palette(purple), palette(pink));
 	&:hover,
 	&:focus {
 		color: palette(purple);

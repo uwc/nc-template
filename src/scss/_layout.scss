@@ -69,14 +69,3 @@
 	max-width: 72rem;
 	margin: 0 auto;
 }
-
-/* Content can take on three different widths: full, wide and golden. */
-.ctnr-full {
-	@include ctnr(full);
-}
-.ctnr-wide {
-	@include ctnr(wide);
-}
-.ctnr-golden {
-	@include ctnr(golden);
-}

@@ -3,25 +3,46 @@
 /* Style post and page content here, including the header and footer. */
 
 /**
- * 1. Content
- * 2. Footer
+ * 1. Navigation
+ * 2. Content
+ * 3. Footer
  */
 
 
+// 1. Navigation //
 
-// 1. Content //
+.entry-navigation {
+  @include ctnr(golden);
+  margin-bottom: vr(1.5);
+  width: inherit;
+  h6 {
+    @include font(small);
+    margin-bottom: vr(0.25);
+  }
+  .entry-links {
+    width: inherit;
+    padding-top: vr(0.25);
+    padding-bottom: vr(0.25);
+    border-top: $border-gray;
+    border-bottom: $border-gray;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    @include font(button);
+    @include link-arrow(down, purple);
+    margin-right: vr(1.5);
+  }
+}
+
+
+// 2. Content //
 
 /* See '_content.scss' for the content styling. */
 
 .entry-content {
   @include ctnr(golden);
-  .content-navigation {
-    margin-bottom: vr(1.5);
-    h6 {
-      @include font(small);
-      margin-bottom: vr(0.25);
-    }
-  }
   .shariff {
     margin-top: vr(1.5);
     margin-bottom: vr(1.5);
@@ -33,29 +54,27 @@
 
 
 
-// 2. Footer //
-
-.post-navigation {
-  @include ctnr(golden);
-  @include clearfix;
-  margin-bottom: vr(1.5);
-  .nav-previous {
-    float: left;
-    a {
-      @include btn(text, purple);
-    }
-  }
-  .nav-next {
-    float: right;
-    a {
-      @include btn(text, purple);
-      text-align: right;
-    }
-  }
-}
+// 3. Footer //
 
 .entry-footer {
   @include ctnr(golden);
+  @include clearfix;
+  margin-bottom: vr(1.5);
+  .entry-previous {
+    float: left;
+    a {
+      @include font(button);
+      @include link-arrow(left, purple);
+    }
+  }
+  .entry-next {
+    float: right;
+    a {
+      @include font(button);
+      @include link-arrow(right, purple);
+      text-align: right;
+    }
+  }
 }
 
 .widget-area {

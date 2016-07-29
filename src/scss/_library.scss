@@ -5,7 +5,9 @@
 /*
  * 1. Settings
  * 2. Gradients
- * 3. Borders, Underlines & Overlays
+ * 3. Overlays
+ * 4. Borders
+ * 5. Link Styles
  */
 
 
@@ -34,7 +36,47 @@
 
 
 
-// 3. Borders, Underlines & Overlays //
+// 3. Overlays //
+
+@mixin overlay {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0,0,0,0.33);
+  }
+}
+
+@mixin overlay-gradient {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    z-index: 10;
+    background: gradient(0deg, rgba(0,0,0,0.66), transparent);
+    @include mappy-query(phone) {
+      background: rgba(0,0,0,0.33);
+      height: 100%;
+    }
+  }
+}
+
+@mixin overlay-text {
+  color: palette(white);
+  text-shadow: 0px 0px 4px palette(gray);
+}
+
+
+
+// 4. Borders //
 
 $border-gray: 1px solid palette(gray, light);
 $border-grey: $border-gray;
@@ -51,7 +93,68 @@ $border-grey: $border-gray;
   }
 }
 
-@mixin gradient-underline($direction, $color, $color-stops...) {
+
+// 5. Link Styles //
+
+@mixin link-arrow($direction: none, $color: none) {
+  transform: translate(0px, 0px) translateZ(0px);
+  transition: color $anim-s;
+  color: palette($color);
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: palette($color, light);
+  }
+  @if $direction == right {
+    &:after {
+      content: '→';
+      color: inherit;
+      padding-left: vr(0.2);
+      display: inline-block;
+      transform: translate(0, 0);
+      transition: transform $anim-s;
+    }
+    &:hover:after,
+    &:focus:after {
+      transform: translate(0.35rem, 0);
+    }
+  }
+  @else if $direction == left {
+    &:before {
+      content: '←';
+      color: inherit;
+      padding-right: vr(0.2);
+      display: inline-block;
+      transform: translate(0, 0);
+      transition: transform $anim-s;
+    }
+    &:hover:before,
+    &:focus:before {
+      transform: translate(-0.35rem, 0);
+    }
+  }
+  @else if $direction == down {
+    &:after {
+      content: '↓';
+      color: inherit;
+      padding-left: vr(0.2);
+      display: inline-block;
+      transform: translate(0, 0);
+      transition: transform $anim-s;
+    }
+    &:hover:after,
+    &:focus:after {
+      transform: translate(0, 0.35rem);
+    }
+  }
+  @else {
+    @warn "Mixin link-arrow() received invalid input! This direction does not exist.";
+    font-size: ms(10);
+    color: purple;
+  }
+}
+
+@mixin link-underline($direction, $color, $color-stops...) {
   position: relative;
   z-index: 1;
   color: palette($color);
@@ -74,45 +177,10 @@ $border-grey: $border-gray;
     backface-visibility: hidden;
     transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
   }
-  &:hover:after {
+  &:hover:after,
+  &:focus:after {
     visibility: visible;
     opacity: 1;
     transform: translate(0px,-2px);
-  }
-}
-
-@mixin text-overlay {
-  color: palette(white);
-  text-shadow: 0px 0px 4px palette(gray);
-}
-
-@mixin gradient-overlay {
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 50%;
-    width: 100%;
-    z-index: 10;
-    background: gradient(0deg, rgba(0,0,0,0.66), transparent);
-    @include mappy-query(phone) {
-      background: rgba(0,0,0,0.33);
-      height: 100%;
-    }
-  }
-}
-
-@mixin overlay {
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    background: rgba(0,0,0,0.33);
   }
 }

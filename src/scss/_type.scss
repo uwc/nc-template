@@ -52,6 +52,8 @@
   @else if $style == 'button' {
     font-weight: $sans-bold;
     font-size: ms(-1);
+    letter-spacing: 0.02rem;
+    cursor: pointer;
   }
   @else {
     @warn "Mixin font() received invalid input! This style does not exist.";
@@ -133,4 +135,31 @@ hr {
   border: 0;
   height: 1px;
   margin: 0 0 vr(1);
+}
+
+cite,
+small {
+  display: block;
+}
+em,
+i,
+cite {
+  font-style: normal;
+}
+
+cite {
+  font-size: ms(0);
+  color: palette(gray);
+  &:before {
+    content: "\2014\00a0";
+  }
+}
+
+strong,
+b {
+  font-weight: $sans-normal;
+}
+
+del {
+  opacity: 0.8;
 }

@@ -11,6 +11,6 @@
 		margin-bottom: vr(0.25);
 	}
 	a {
-		@include gradient-underline(90deg, purple, palette(purple, light));
+		@include link-arrow(right, purple);
 	}
 }

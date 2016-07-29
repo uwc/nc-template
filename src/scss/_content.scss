@@ -32,7 +32,7 @@ p {
 }
 
 a {
-	@include gradient-underline(90deg, pink, palette(pink, light));
+	@include link-underline(90deg, pink, palette(pink, light));
 }
 
 blockquote {
@@ -45,31 +45,13 @@ blockquote {
 		content: "";
 		background-color: palette(gray, light);
 		width: vr(6);
-		height: 2px;
+		height: 1px;
 		display: block;
 		z-index: 10;
 	}
 	p {
 		margin-right: 0;
 		margin-left: 0;
-	}
-	cite,
-	small {
-		font-size: ms(0);
-		color: palette(gray);
-		display: block;
-		&:before {
-			content: "\2014\00a0";
-		}
-	}
-	em,
-	i,
-	cite {
-		font-style: normal;
-	}
-	strong,
-	b {
-		font-weight: $sans-normal;
 	}
 }
 
@@ -103,7 +85,7 @@ dt {
 
 dd {
 	margin-top: vr(0.5);
-  margin-bottom: vr(0.5);
+	margin-bottom: vr(0.5);
 }
 
 img {
@@ -113,11 +95,7 @@ img {
 }
 
 .gallery {
-  clear: both;
-}
-
-del {
-	opacity: 0.8;
+	clear: both;
 }
 
 table,

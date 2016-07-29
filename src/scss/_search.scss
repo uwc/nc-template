@@ -56,7 +56,7 @@
 	margin-bottom: vr(0.75);
 	.result-header {
 		@include font(header3);
-		@include gradient-underline(90deg, blue, palette(blue));
+		@include link-underline(90deg, blue, palette(blue));
 		color: palette(blue);
 	}
 	.result-link {

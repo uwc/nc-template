@@ -2,61 +2,33 @@
 
 /* Style the various button types here. */
 
-@mixin btn($type: none, $color: none) {
-	@if $type == null {
-	    @warn "Mixin btn() received no input! Please provide a type.";
-	    font-size: ms(10);
-	    color: blue;
+@mixin button() {
+	@include font(button);
+	@include link-arrow(right, white);
+	display: inline-block;
+	position: relative;
+  	z-index: 10;
+	outline: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.12rem;
+	padding: .3rem .9rem;
+	border: 2px solid palette(white);
+	background-size: 100%;
+	background-image: gradient(left, palette(purple), palette(pink));
+	&:before {
+	    background-image: gradient(left, palette(purple,light), palette(pink,light));
+	    content: '';    
+	    display: block;
+	    height: 100%;
+	    position: absolute;
+	    top: 0; left: 0;
+	    opacity: 0;
+	    width: 100%;
+	    z-index: -10;
+	    transition: opacity $anim-s;
 	}
-	@else if $type == 'block' and $color == 'image' {
-		@include font(button);
-		display: inline-block;
-		outline: none;
-		text-transform: uppercase;
-		text-decoration: none;
-		letter-spacing: 0.12rem;
-		padding: .3rem .9rem;
-		color: palette(white);
-		border: 2px solid palette(white);
-		background-color: palette(pink);
-		transition: color $anim-s, background-color $anim-s;
-		&:hover,
-		&:focus,
-		&:active {
-			color: palette(pink);
-			background-color: palette(white);
-			cursor: pointer;
-		}
-	}
-	@else if $type == 'block' {
-		@include font(button);
-		display: inline-block;
-		outline: none;
-		text-transform: uppercase;
-		text-decoration: none;
-		letter-spacing: 0.12rem;
-		padding: .3rem .9rem;
-		color: palette(white);
-		border: 2px solid palette(pink);
-		background-color: palette(pink);
-		transition: color $anim-s, background-color $anim-s;
-		&:hover,
-		&:focus,
-		&:active {
-			color: palette(pink);
-			background-color: palette(white);
-			cursor: pointer;
-		}
-	}
-	@else if $type == 'text' {
-		@include font(button);
-		@include gradient-underline(0deg, $color, palette($color, light));
-		letter-spacing: 0.02rem;
-		cursor: pointer;
-	}
-	@else {
-		@warn "Mixin btn() received invalid input!" $type, $color;
-		font-size: ms(10);
-		color: blue;
-	}
+	&:hover:before {
+      	opacity: 1;
+  	}
 }

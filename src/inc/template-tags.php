@@ -51,20 +51,18 @@ if ( ! function_exists( 'nc_template_page_navigation' ) ) :
 		$prev_id = $pages[ $current - 1 ];
 		$next_id = $pages[ $current + 1 ];
 
-		echo '<nav class="navigation post-navigation">';
+		echo '<nav class="entry-footer">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
-		echo '<div class="nav-links">';
 		if ( ! empty( $prev_id ) ) {
-			echo '<div class="nav-previous">';
-			echo '<a href="', get_permalink( $prev_id ), '" title="', get_the_title( $prev_id ), '">← ', get_the_title( $prev_id ), '</a>';
+			echo '<div class="entry-previous">';
+			echo '<a href="', get_permalink( $prev_id ), '" title="', get_the_title( $prev_id ), '">', get_the_title( $prev_id ), '</a>';
 			echo '</div>';
 		}
 		if ( ! empty( $next_id ) ) {
-			echo '<div class="nav-next">';
-			echo '<a href="', get_permalink( $next_id ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), ' →</a>';
+			echo '<div class="entry-next">';
+			echo '<a href="', get_permalink( $next_id ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), '</a>';
 			echo '</div>';
 		}
-		echo '</div>';
 		echo '</nav>';
 	}
 endif;
@@ -77,7 +75,7 @@ if ( ! function_exists( 'nc_template_paginated' ) ) :
 		global $wp_query;
 		$big = 99999;
 
-		echo '<nav class="navigation post-navigation">';
+		echo '<nav class="entry-footer">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 		echo paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -107,11 +105,11 @@ if ( ! function_exists( 'nc_template_content_navigation' ) ) :
 			}
 		}
 		if ( count( $items ) != 0 ) {
-			echo '<nav class="navigation content-navigation">';
-			echo '<h6 class="nav-header">Inhalt</h6>';
-			echo '<div class="nav-links">';
+			echo '<nav class="entry-navigation">';
+			echo '<h6>Inhalt</h6>';
+			echo '<div class="entry-links">';
 			foreach ( $items as $item ) {
-				echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, ' ↓</a>';
+				echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, '</a>';
 			}
 			echo '</nav>';
 		}

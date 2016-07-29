@@ -27,12 +27,15 @@
 				<h2 class="header-summary"><?php the_excerpt(); ?></h2>
 			</div>
 		</div>
-	</header>	
+	</header>
+
+	<?php
+		$text = get_the_content();
+		nc_template_content_navigation( $text );
+	?>
 
 	<div class="entry-content">
 		<?php
-			$text = get_the_content();
-			nc_template_content_navigation( $text );
 
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
