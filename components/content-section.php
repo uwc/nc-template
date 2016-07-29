@@ -11,52 +11,34 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( is_front_page() && has_post_thumbnail() ) : ?>
-		<header class="entry-header featured-image">
-			<div class="entry-photo">
-				<?php the_post_thumbnail(); ?>
-			</div>
-			<div class="header-outer">
-				<div class="header-inner">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-					<h2>
+<?php if ( has_post_thumbnail() ) : ?>
+	<header class="header -section -featured" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+<?php else : ?>
+	<header class="header -section -no-featured">
+<?php endif; ?>
+		<div class="header-outer">
+			<div class="header-inner">
+				<?php the_title( '<h1 class="header-title">', '</h1>' ); ?>
+				<?php if ( is_front_page() ) : ?>
+					<h2 class="header-summary">
 						<?php the_excerpt(); ?>
 					</h2>
-					<a href="<?php the_field( 'cta_url' ) ?>" class="button"><?php the_field( 'cta_text' ) ?></a>
-
-				</div>
+					<a href="<?php the_field( 'cta_url' ) ?>" class="header-button"><?php the_field( 'cta_text' ) ?></a>
+				<?php else : ?>
+					<nav class="header-navigation">
+						<ul class="header-links">
+							<?php wp_list_pages( array(
+								'child_of'    => $post->ID,
+								'depth'       => 1,
+								'title_li'    => '',
+								'sort_column' => 'menu_order',
+							) ); ?>
+						</ul>
+					</nav>
+				<?php endif; ?>
 			</div>
-		</header>
-	<?php elseif ( ! is_front_page() && has_post_thumbnail() ) : ?>
-		<header class="entry-header featured-image">
-			<div class="entry-photo">
-				<?php the_post_thumbnail(); ?>
-			</div>
-			<div class="header-outer">
-				<div class="header-inner">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-					<?php wp_list_pages( array(
-						'child_of'    => $post->ID,
-						'depth'       => 1,
-						'title_li'    => '',
-						'link_after'  => ' →',
-					) ); ?>
-				</div>
-			</div>
-		</header>
-	<?php else : ?>
-		<header class="entry-header">
-			<div class="header-outer">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				<?php wp_list_pages( array(
-					'child_of'    => $post->ID,
-					'depth'       => 1,
-					'title_li'    => '',
-					'link_after'  => ' →',
-				) ); ?>
-			</div>
-		</header>
-	<?php endif; ?>
+		</div>
+	</header>
 
 	<div class="section-content">
 

@@ -8,8 +8,11 @@
  */
 ?>
 
-<blockquote><?php the_sub_field( 'quote' ); ?></blockquote>
-<?php if ( get_sub_field( 'citation' ) ) {
-	echo '<cite>' . the_sub_field( 'citation' ) . '</cite>';
-}
-?>
+<section class="section-quote">
+	<blockquote><p><?php the_sub_field( 'quote' ); ?></p></blockquote>
+	<?php
+	if ( get_sub_field( 'citation' ) ) {
+		echo '<cite>' . get_sub_field( 'citation' ) . '</cite>';
+	}
+	?>
+</section>

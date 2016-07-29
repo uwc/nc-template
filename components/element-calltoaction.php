@@ -9,4 +9,6 @@
 
 ?>
 
-<a href="<?php the_sub_field( 'cta_url' ) ?>" class="button"><?php the_sub_field( 'cta_text' ) ?></a>
+<section class="section-cta">
+	<a href="<?php the_sub_field( 'cta_url' ) ?>"><?php the_sub_field( 'cta_text' ) ?></a>
+</section>
