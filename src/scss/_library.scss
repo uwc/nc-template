@@ -81,17 +81,6 @@
 $border-gray: 1px solid palette(gray, light);
 $border-grey: $border-gray;
 
-@mixin gradient-border($direction, $color-stops...) {
-  position: relative;
-  &:before {
-    content: "";
-    display: block;
-    background-color: nth($color-stops, 1);
-    background-image: gradient($direction, $color-stops);
-    width: 100%;
-    height: 3px;
-  }
-}
 
 
 // 5. Link Styles //
@@ -154,7 +143,7 @@ $border-grey: $border-gray;
   }
 }
 
-@mixin link-underline($direction, $color, $color-stops...) {
+@mixin link-underline($color: none) {
   position: relative;
   z-index: 1;
   color: palette($color);
@@ -169,13 +158,16 @@ $border-grey: $border-gray;
     bottom: 0;
     left: 0;
     z-index: -1;
-    background-color: nth($color-stops, 1);
-    background-image: gradient($direction, $color-stops);
+    background-color: palette($color, light);
     visibility: hidden;
     transform: translate(0px,2px);
     opacity: 0;
     backface-visibility: hidden;
     transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
+  }
+  &:hover,
+  &:focus {
+    color: palette($color, light);
   }
   &:hover:after,
   &:focus:after {

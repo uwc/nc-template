@@ -21,8 +21,8 @@
   }
   .entry-links {
     width: inherit;
-    padding-top: vr(0.25);
-    padding-bottom: vr(0.25);
+    padding-top: vr(0.5);
+    padding-bottom: vr(0.5);
     border-top: $border-gray;
     border-bottom: $border-gray;
   }
@@ -50,24 +50,31 @@
       display: none;
     }
   }
+  .page-links {
+    @include font(button);
+    text-align: center;
+    a {
+      color: palette(purple);
+    }
+  }
 }
 
 
 
 // 3. Footer //
 
-.entry-footer {
+.post-navigation {
   @include ctnr(golden);
   @include clearfix;
   margin-bottom: vr(1.5);
-  .entry-previous {
+  .nav-previous {
     float: left;
     a {
       @include font(button);
       @include link-arrow(left, purple);
     }
   }
-  .entry-next {
+  .nav-next {
     float: right;
     a {
       @include font(button);

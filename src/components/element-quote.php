@@ -6,6 +6,7 @@
  *
  * @package NC_Template
  */
+
 ?>
 
 <section class="section-quote">

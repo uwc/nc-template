@@ -16,23 +16,24 @@
  */
 
 
- // 1. Alignment //
+// 1. Alignment //
 
-.alignnone {
+.alignnone,
+.aligncenter {
 	max-width: 100%;
-	margin: vr(0.5) auto vr(0.5);
-	img {
-		max-width: 100%;
-	}
+	text-align: center;
 }
 
-.aligncenter {
+.alignnone img {
+	width: calc(100% + #{vr(12)})!important;
+	max-width: 100vw;
+	margin: vr(0.5) -#{vr(6)};
+}
+
+.aligncenter img {
 	margin: vr(0.5) auto vr(0.5);
 	width: 100%;
 	max-width: 100%;
-	img {
-		width: 100%;
-	}
 }
 
 .alignright {
@@ -48,13 +49,18 @@
 }
 
 
+
 // 2. Captions //
+
+.wp-caption img {
+	margin-bottom: vr(0.5);
+}
 
 .wp-caption.alignnone,
 .wp-caption.aligncenter {
 	min-width: 100%;
 	text-align: center;
-	margin-top: vr(1);
+	margin-top: vr(0.5);
 	margin-bottom: vr(1);
 }
 
@@ -71,8 +77,8 @@
 .wp-caption-dd {
 	@include font(small);
 	color: palette(grey);
-	margin-top: vr(0.5);
 }
+
 
 
 // 3. Media //

@@ -27,7 +27,6 @@
 .section-textimage {
 	@include ctnr(wide);
 	display: flex;
-	height: vr(12);
 	.section-image {
 		background-repeat: no-repeat;
 		background-position: center;
@@ -48,26 +47,21 @@
 	.section-link {
 		@include font(button);
 		@include link-arrow(right, pink);
+		font-size: ms(0);
 	}
 
 	@include mappy-query(phone) {
 		flex-wrap: wrap;
 		.section-image {
 			width: 100%;
-			height: vr(6);
+			height: vr(8);
+		}
+		.section-headline {
+			margin-top: vr(1);
 		}
 	}
 	@include mappy-query(tablet-desktop) {
-		.section-image {
-			flex: 1 1 22rem;
-		}
-		.section-card {
-			flex: 1 1 34rem;
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center; /* align vertical */
-			align-content: center;
-		}
+		height: vr(12);
 		&:nth-child(odd) {
 			flex-direction: row-reverse;
 			.section-image {
@@ -84,6 +78,16 @@
 			.section-card {
 				margin-left: vr(0.25);
 			}
+		}
+		.section-image {
+			flex: 1 1 22rem;
+		}
+		.section-card {
+			flex: 1 1 34rem;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center; /* align vertical */
+			align-content: center;
 		}
 	}
 }

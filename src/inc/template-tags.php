@@ -51,15 +51,15 @@ if ( ! function_exists( 'nc_template_page_navigation' ) ) :
 		$prev_id = $pages[ $current - 1 ];
 		$next_id = $pages[ $current + 1 ];
 
-		echo '<nav class="entry-footer">';
+		echo '<nav class="post-navigation">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 		if ( ! empty( $prev_id ) ) {
-			echo '<div class="entry-previous">';
+			echo '<div class="nav-previous">';
 			echo '<a href="', get_permalink( $prev_id ), '" title="', get_the_title( $prev_id ), '">', get_the_title( $prev_id ), '</a>';
 			echo '</div>';
 		}
 		if ( ! empty( $next_id ) ) {
-			echo '<div class="entry-next">';
+			echo '<div class="nav-next">';
 			echo '<a href="', get_permalink( $next_id ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), '</a>';
 			echo '</div>';
 		}
@@ -75,7 +75,7 @@ if ( ! function_exists( 'nc_template_paginated' ) ) :
 		global $wp_query;
 		$big = 99999;
 
-		echo '<nav class="entry-footer">';
+		echo '<nav class="post-navigation">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 		echo paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),

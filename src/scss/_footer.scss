@@ -3,7 +3,15 @@
 /* Mixins, functions, and other non-declarative things */
 
 .site-footer {
-	@include gradient-border(90deg, palette(blue, light), palette(turquoise, light));
+	position: relative;
+	&:before {
+		content: "";
+		display: block;
+		background-color: palette(blue);
+		background-image: gradient(left, palette(blue), palette(turquoise));
+		width: 100%;
+		height: 2px;
+	}
 	margin-top: vr(1.5);
 }
 
@@ -15,13 +23,22 @@
 	.footer-widget {
 		float: left;
 	}
-	.footer-left {
-		width: 48%;
-	}
-	.footer-center,
-	.footer-right {
-		width: 26%;
-		padding-left: vr(1);
+	@include mappy-query(tablet-desktop) {
+		.footer-left,
+		.footer-right {
+			width: calc((100% / 3) - #{vr(0.5)});
+		}
+		.footer-left {
+			margin-right: vr(0.5);
+		}
+		.footer-center {
+			width: calc((100% / 3) - #{vr(1)});
+			margin-left: vr(0.5);
+			margin-right: vr(0.5);			
+		}
+		.footer-right {
+			margin-left: vr(0.5);
+		}
 	}
 	@include mappy-query(phone) {
 		.footer-left {
@@ -29,16 +46,14 @@
 		}
 		.footer-center,
 		.footer-right {
-			width: 50%;
-			padding-top: vr(0.75);
+			width: calc(50% - #{vr(0.5)});
+			margin-top: vr(1);
 		}
 		.footer-center {
-			padding-left: 0;
-			padding-right: vr(0.5);
+			margin-right: vr(0.5);
 		}
 		.footer-right {
-			padding-left: vr(0.5);
-			padding-right: 0;
+			margin-left: vr(0.5);
 		}
 	}
 }
@@ -49,9 +64,13 @@
 	color: palette(gray);
 	text-align: center;
 	padding-bottom: vr(0.75);
-	a:hover,
-	a:focus {
-		text-decoration: underline;
+	a {
+		padding: 0.1rem 0.2rem;
+		&:hover,
+		&:focus {
+			background-image: linear-gradient(45deg, #dd2476, #ff512f);
+			color: palette(white);
+		}
 	}
 }
 

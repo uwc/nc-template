@@ -25,7 +25,7 @@
 	}
 	.header-links {
 		width: inherit;
-		padding-top: vr(0.25);
+		padding-top: vr(0.5);
 	}
 	li {
 		display: inline-block;
@@ -36,7 +36,7 @@
 	&.-no-featured .header-links {
 		border-top: $border-gray;
 		border-bottom: $border-gray;
-		padding-bottom: vr(0.25);
+		padding-bottom: vr(0.5);
 		a {
 			@include font(button);
 			@include link-arrow(right, purple);
