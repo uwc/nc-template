@@ -26,7 +26,7 @@ function newMap( $el ) {
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
-	// Create map.        	
+// Create map.        	
 	var map = new google.maps.Map( $el[0], args );
 
 	// Add a markers reference.
@@ -40,7 +40,7 @@ function newMap( $el ) {
 	});
 
 	// Center map.
-	center_map( map );
+	centerMap( map );
 
 	// Return.
 	return map;
@@ -102,7 +102,7 @@ function addMarker( $marker, map ) {
 *  @return	n/a
 */
 
-function center_map( map ) {
+function centerMap( map ) {
 
 	// Vars.
 	var bounds = new google.maps.LatLngBounds();

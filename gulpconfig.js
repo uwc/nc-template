@@ -4,7 +4,7 @@
 var project     = 'nc-template'           // The directory name for the theme.
   , src         = './src/'                // The raw material of the theme: custom scripts, SCSS source files, PHP files, images, etc.; do not delete this folder!
   , build       = './build/'              // A temporary directory containing a development version of your theme; delete it anytime.
-  , dist        = './dist/'+project+'/'   // The distribution package that you'll be uploading to your server; delete it anytime.
+  , dist        = './dist/'               // The distribution package that you'll be uploading to your server; delete it anytime.
   , assets      = './assets/'             // A staging area for assets that require processing before landing in the source folder (example: icons before being added to a sprite sheet)
   , bower       = './bower_components/'   // Bower packages
   , composer    = './vendor/'             // Composer packages
