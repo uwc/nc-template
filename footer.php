@@ -31,12 +31,11 @@
 			<?php endif; ?>
 		</div>
 		<div class="footer-info">
-			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'nc-template' ); ?> Made by <a href="http://connorbaer.io/" rel="designer" target="_blank">Connor B&#228;r</a>.</p>
+			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'nc-template' ); ?> <a href="http://connorbaer.io/" rel="designer" target="_blank">Made by Connor.</a></p>
 		</div>
 
 	</footer>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV8fzdHyCXxCzT7kCqc1UCRKx4mROcm64"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

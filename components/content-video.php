@@ -11,19 +11,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<?php if ( has_post_thumbnail() ) : ?>
-	<header class="header -entry -featured" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
-<?php else : ?>
+<section class="section-video">
+	<?php the_field( 'video_url' ); ?>
+</section>
+
 	<header class="header -entry -no-featured">
-<?php endif; ?>
 		<div class="header-outer">
 			<div class="header-inner">
 				<?php
-				if ( is_page() || is_single() ) {
-					the_title( '<h1 class="header-title">', '</h1>' );
-				} else {
-					the_title( '<h2 class="header-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				} ?>
+					the_title( '<h1 class="header-title">', '</h1>' ); ?>
 				<h2 class="header-summary"><?php the_excerpt(); ?></h2>
 			</div>
 		</div>

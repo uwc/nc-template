@@ -25,8 +25,8 @@ get_header(); ?>
 
 			the_post_navigation( array(
 				'in_same_term' => true,
-				'prev_text' => '← %title',
-				'next_text' => '%title →',
+				'prev_text' => '%title',
+				'next_text' => '%title',
 			));
 
 			// Only show comments if they are not disabled in customizer.

@@ -30,16 +30,18 @@ get_header(); ?>
 				} else {
 					$format = get_post_format() ?: 'standard';
 					get_template_part( 'components/content', $format );
-				}
 
-				// Only show comments if they are not disabled in customizer.
-				if ( ! get_theme_mod( 'comments' ) ) :
+					nc_template_page_navigation();
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
+					// Only show comments if they are not disabled in customizer.
+					if ( ! get_theme_mod( 'comments' ) ) :
+
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
 					endif;
-				endif;
+				}
 
 			endwhile; // End of the loop.
 			?>
@@ -47,4 +49,5 @@ get_header(); ?>
 		</main>
 	</div>
 <?php
+get_sidebar();
 get_footer();
