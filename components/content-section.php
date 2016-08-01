@@ -20,10 +20,12 @@
 			<div class="header-inner">
 				<?php the_title( '<h1 class="header-title">', '</h1>' ); ?>
 				<?php if ( is_front_page() ) : ?>
-					<h2 class="header-summary">
-						<?php the_excerpt(); ?>
-					</h2>
-					<a href="<?php the_field( 'cta_url' ) ?>" class="header-button"><?php the_field( 'cta_text' ) ?></a>
+					<div class="header-front">
+						<h2 class="header-summary">
+							<?php the_excerpt(); ?>
+						</h2>
+						<a href="<?php the_field( 'cta_url' ) ?>" class="header-button"><?php the_field( 'cta_text' ) ?></a>
+					</div>
 				<?php else : ?>
 					<nav class="header-navigation">
 						<ul class="header-links">

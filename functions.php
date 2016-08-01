@@ -50,8 +50,8 @@ if ( ! function_exists( 'nc_template_setup' ) ) :
 
 		// Enable support for custom logo.
 		add_theme_support( 'custom-logo', array(
-			'height'      => 30,
-			'width'       => 240,
+			'height'      => 28,
+			'width'       => 220,
 			'flex-width'  => true,
 			'header-text' => array( 'site-title' ),
 		) );
@@ -207,7 +207,7 @@ function nc_template_scripts() {
 	wp_enqueue_script( 'nc-template-html5', get_template_directory_uri() . '/js/html5.js' );
 	wp_script_add_data( 'nc-template-html5', 'conditional', 'lt IE 9' );
 	// Theme scripts.
-	wp_enqueue_script( 'nc-template-script', get_template_directory_uri() . '/js/scripts.js' );
+	wp_enqueue_script( 'nc-template-script', get_template_directory_uri() . '/js/scripts.js', array( 'jQuery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'nc_template_scripts' );
 
