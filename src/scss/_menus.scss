@@ -9,47 +9,117 @@
 
 // 1. Header //
 
-#menu-header {
-	display: flex;
-	justify-content: space-between;
-}
+.menu-header {
+	position: relative;
+	text-align: justify;
+	line-height: 0;
+	/* Hack to evenly space the menu items. */
+	&:after {
+		content: '';
+		width: 100%;
+		display: inline-block;
+		font-size: 0px;
+		line-height: 0px;
+	}
+	& > li {
+		margin: 0;
+		padding: 0 0 vr(0.3) vr(0.5);
+		list-style-type: none;
+		display: inline-block;
+		height: 100%;
+		position: relative;
+		top: 0;
+		line-height: 1.6;
+		cursor: pointer;
+		&:first-child {
+			padding-left: 0;
+			ul {
+				left: -#{vr(0.5)};
+			}
+		}
+	}
+	& > li > a {
+		@include font(small);
+		@include link-underline(purple);
+		color: palette(gray, dark);
+	}
+	li:hover > a:after,
+	li:focus > a:after,
+	li.current-menu-item > a:after {
+		visibility: visible;
+		opacity: 1;
+		transform: translate(0px,-2px);
+	}
 
+	ul {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 100;
+		min-width: vr(5);
+		padding-top: vr(0.2);
+		background-color: palette(white);
+		width: calc(100% + #{vr(0.5)});
+		li {
+			@include font(small);
+			text-align: left;
+			padding: 0 vr(0.5) vr(0.25);
+			background-color: palette(white);
+			border-right: $border-gray;
+			border-left: $border-gray;
+			width: calc(100% + 0.5rem);
+			transition: color #anim-s;
+			&:last-child {
+				border-bottom: $border-gray;
+			}
+			&:after {
+				content: '→';
+				color: inherit;
+				display: inline-block;
+				opacity: 0;
+				visibility: hidden;
+				transform: translate(0, 0);
+				transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
+			}
+			&:hover,
+			&:focus {
+				color: palette(purple, light);
+			}
+			&:hover:after,
+			&:focus:after {
+				visibility: visible;
+    			opacity: 1;
+				transform: translate(0.35rem, 0);
+			}
+		}
+	}
 
-#menu-header a {
-	@include font(small);
-	&:hover,
-	&:focus {
-		color: palette(purple);
+	& > li:hover > ul {
+		display: block;
 	}
 }
 
-#menu-item-search a:before {
-	content: '\73';
-	display: inline-block;
-	font-family: 'nc-template' !important;
-	font-style: normal !important;
-	font-weight: normal !important;
-	font-variant: normal !important;
-	text-transform: none !important;
-	speak: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-#menu-header .menu-item {
-	position: relative;
-}
-
-#menu-header ul {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-}
-
-#menu-header > li:hover > ul {
-	display: block;
+#menu-item-search {
+	&:before {
+		@include font(small);
+		content: '\73';
+		display: inline-block;
+		font-family: 'nc-template' !important;
+		font-style: normal !important;
+		font-weight: normal !important;
+		font-variant: normal !important;
+		text-transform: none !important;
+		speak: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		transition: color $anim-s;
+	}
+	&:hover:before,
+	&:focus:before {
+		color: palette(purple);
+	}
 }
 
 
@@ -71,78 +141,75 @@
 		display: inline-block;
 		position: relative;
 	}
-}
-
-#menu-social li a {
-	margin-left: vr(0.5);
-}
-
-#menu-social li a:before {
-	content: '\64';
-	display: inline-block;
-	font-family: 'nc-template' !important;
-	vertical-align: top;
-	font-style: normal !important;
-	font-weight: normal !important;
-	font-variant: normal !important;
-	text-transform: none !important;
-	font-size: ms(0);
-	speak: none;
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-#menu-social li a[href*="wordpress"]::before,
-#menu-social li a[href*="wordpress"]::before {
-	content: '\63';
-	color:   #1e8cbe;
-}
-#menu-social li a[href*="facebook"]::before {
-	content: '\68';
-	color:   #3b5998;
-}
-#menu-social li a[href*="twitter"]::before {
-	content: '\69';
-	color:   #55acee;
-}
-#menu-social li a[href*="plus.google"]::before {
-	content: '\61';
-	color:   #dc4e41;
-}
-#menu-social li a[href*="pinterest"]::before {
-	content: '\71';
-	color:   #bd081c;
-}
-#menu-social li a[href*="github"]::before {
-	content: '\70';
-	color:   #333333;
-}
-#menu-social li a[href*="tumblr"]::before {
-	content: '\6d';
-	color:   #35465c;
-}
-#menu-social li a[href*="youtube"]::before {
-	content: '\6a';
-	color:   #cd201f;
-}
-#menu-social li a[href*="flickr"]::before {
-	content: '\72';
-	color:   #ff0084;
-}
-#menu-social li a[href*="vimeo"]::before {
-	content: '\6c';
-	color:   #1ab7ea;
-}
-#menu-social li a[href*="instagram"]::before {
-	content: '\6b';
-	color:   #3f729b;
-}
-#menu-social li a[href*="linkedin"]::before {
-	content: '\67';
-	color:   #0077b5;
-}
-#menu-social li a[href^="mailto:"]::before {
-	content: '\6f';
-	color:   #ffa930;
+	a {
+		margin-left: vr(0.5);
+		&:before {
+			content: '\64';
+			display: inline-block;
+			font-family: 'nc-template' !important;
+			vertical-align: top;
+			font-style: normal !important;
+			font-weight: normal !important;
+			font-variant: normal !important;
+			text-transform: none !important;
+			font-size: ms(0);
+			speak: none;
+			line-height: 1.5;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		&[href*="wordpress"]::before,
+		&[href*="wordpress"]::before {
+			content: '\63';
+			color:   #1e8cbe;
+		}
+		&[href*="facebook"]::before {
+			content: '\68';
+			color:   #3b5998;
+		}
+		&[href*="twitter"]::before {
+			content: '\69';
+			color:   #55acee;
+		}
+		&[href*="plus.google"]::before {
+			content: '\61';
+			color:   #dc4e41;
+		}
+		&[href*="pinterest"]::before {
+			content: '\71';
+			color:   #bd081c;
+		}
+		&[href*="github"]::before {
+			content: '\70';
+			color:   #333333;
+		}
+		&[href*="tumblr"]::before {
+			content: '\6d';
+			color:   #35465c;
+		}
+		&[href*="youtube"]::before {
+			content: '\6a';
+			color:   #cd201f;
+		}
+		&[href*="flickr"]::before {
+			content: '\72';
+			color:   #ff0084;
+		}
+		&[href*="vimeo"]::before {
+			content: '\6c';
+			color:   #1ab7ea;
+		}
+		&[href*="instagram"]::before {
+			content: '\6b';
+			color:   #3f729b;
+		}
+		&[href*="linkedin"]::before {
+			content: '\67';
+			color:   #0077b5;
+		}
+		&[href^="mailto:"]::before {
+			content: '\6f';
+			color:   #ffa930;
+		}
+	}
 }

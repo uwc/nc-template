@@ -4,7 +4,7 @@
 
 @mixin inputs {
 	@include font(body);
-	padding: vr(0.25) vr(0.75);
+	padding: vr(0.125) vr(0.75);
 	border: 1px solid transparent;
 	border-radius: 2px;
 	background-color: palette(gray, lighter);

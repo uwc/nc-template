@@ -222,6 +222,11 @@
 		border: 1px solid palette(gray, light);
 		.section-headline {
 			color: palette(blue);
+			transition: color $anim-s;
+		}
+		&:hover .section-headline,
+		&:focus .section-headline {
+			color: palette(blue, light);
 		}
 		.section-date {
 			color: palette(gray);

@@ -13,7 +13,7 @@
 
 .entry-navigation {
   @include ctnr(golden);
-  margin-bottom: vr(1.5);
+  margin-bottom: vr(1);
   width: inherit;
   h6 {
     @include font(small);
@@ -21,8 +21,8 @@
   }
   .entry-links {
     width: inherit;
-    padding-top: vr(0.5);
-    padding-bottom: vr(0.5);
+    padding-top: vr(0.25);
+    padding-bottom: vr(0.25);
     border-top: $border-gray;
     border-bottom: $border-gray;
   }

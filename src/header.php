@@ -18,7 +18,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php
-if ( is_singular() ) {
+if ( is_singular() && ! get_theme_mod( 'comments' ) ) {
 	wp_enqueue_script( 'comment-reply' );
 }
 wp_head();
@@ -41,13 +41,11 @@ wp_head();
 	<header class="site-navigation" role="banner">
 		<div class="navigation-ctnr">
 			
-			<?php get_template_part( 'components/logo' ); ?>
+			<div class="navigation-logo">
+				<?php nc_template_custom_logo(); ?>
+			</div>
 
 			<?php get_template_part( 'components/navigation', 'social' ); ?>
-
-			<div class="navigation-search">
-				<?php get_search_form(); ?>
-			</div>
 
 			<?php get_template_part( 'components/navigation', 'header' ); ?>
 

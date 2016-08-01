@@ -20,7 +20,7 @@
 		margin-left: vr(1);
 		display: block;
 		@include mappy-query(desktop) {
-			width: 35rem;
+			width: 36rem;
 			max-width: 100%;
 			margin-right: auto;
 			margin-left: auto;
@@ -33,11 +33,9 @@
 		display: block;
 		@include mappy-query(desktop) {
 			width: 56rem;
-			max-width: 100%;
+			max-width: calc(100% - #{vr(4)});
 			margin-right: auto;
 			margin-left: auto;
-			padding-right: vr(2);
-			padding-left: vr(2);
 		}
 	}
 	@else if $width == 'hybrid' {

@@ -44,8 +44,8 @@ $ms-base: 1rem;
 $ms-ratio: 1.2;
 
 $typi: (
-	null: (16px, 1.4),
-	medium: (21px, 1.5),
+	null: (16px, 1.5),
+	medium: (21px, 1.6),
 	x-large: (28px),
 );
 
@@ -94,7 +94,7 @@ $_palettes: (
 		gray: (
 				base:    #717073,
 				lighter: #F5F5F5,
-				light:   #D6D6D7,
+				light:   #DDDCE0,
 				dark:    #515152,
 				darker:  #333234
 		),

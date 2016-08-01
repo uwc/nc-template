@@ -27,8 +27,27 @@
 		width: inherit;
 		padding-top: vr(0.5);
 	}
+	.header-front {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.header-summary {
+			max-width: 34rem;
+		}
+	}
 	.header-button {
-		
+		flex-shrink: 0;
+		margin-left: vr(2);
+		margin-right: 0;
+	}
+	@include mappy-query(phone) {
+		.header-front {
+			flex-wrap: wrap;
+		}
+		.header-button {
+			margin-left: 0;
+			margin-top: vr(0.5);
+		}
 	}
 	li {
 		display: inline-block;
@@ -49,7 +68,8 @@
 		.header-links {
 			border-top: 1px solid palette(white);
 			a {
-				color: palette(white);
+				@include font(button);
+				@include link-arrow(right, white);
 			}
 		}
 		.header-button {
@@ -75,7 +95,7 @@
 .header.-featured {
 	@include ctnr(full);
 	@include overlay-gradient;
-	margin-bottom: vr(1);
+	margin-bottom: vr(1.5);
 	height: vr(20);
 	background-repeat: no-repeat;
 	background-position: center; 
