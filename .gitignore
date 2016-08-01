@@ -9,3 +9,6 @@ vendor/
 
 # Run `gulp` to generate the build directory.
 build/
+
+# Run `gulp dist` to generate the distribution directory.
+dist/
