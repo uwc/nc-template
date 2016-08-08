@@ -10,5 +10,7 @@
 ?>
 
 <section class="section-video">
-	<?php the_sub_field( 'video' ); ?>
+	<div class="section-wrapper">
+		<?php the_sub_field( 'video' ); ?>
+	</div>
 </section>
