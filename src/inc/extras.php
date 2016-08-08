@@ -37,7 +37,7 @@ add_filter( 'body_class', 'nc_template_body_classes' );
  */
 function nc_template_nav_menu_items( $items, $args ) {
 	if ( 'header' == $args -> theme_location ) {
-		$addmenu = '<li id="menu-item-search" class="menu-item"><span class="screen-reader-text">' . __( 'Search', 'nc-template' ) . '</span></li>';
+		$addmenu = '<li id="menu-item-search" class="menu-item"><a id="js-searchOpen" href="#"><span class="screen-reader-text">' . __( 'Search', 'nc-template' ) . '</span></a></li>';
 		return $items.$addmenu;
 	} else {
 		return $items;

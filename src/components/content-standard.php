@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <?php if ( has_post_thumbnail() ) : ?>
-	<header class="header -entry -featured" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+	<header class="header -entry -featured" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
 <?php else : ?>
 	<header class="header -entry -no-featured">
 <?php endif; ?>

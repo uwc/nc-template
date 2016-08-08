@@ -6,8 +6,7 @@
  * 1. Settings
  * 2. Gradients
  * 3. Overlays
- * 4. Borders
- * 5. Link Styles
+ * 4. Link Styles
  */
 
 
@@ -76,14 +75,7 @@
 
 
 
-// 4. Borders //
-
-$border-gray: 1px solid palette(gray, light);
-$border-grey: $border-gray;
-
-
-
-// 5. Link Styles //
+// 4. Link Styles //
 
 @mixin link-arrow($direction: none, $color: none) {
   transform: translate(0px, 0px) translateZ(0px);
@@ -162,7 +154,6 @@ $border-grey: $border-gray;
     visibility: hidden;
     transform: translate(0px,2px);
     opacity: 0;
-    backface-visibility: hidden;
     transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
   }
   &:hover,

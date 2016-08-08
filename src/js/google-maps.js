@@ -23,7 +23,151 @@ function newMap( $el ) {
 	var args = {
 		zoom: 16,
 		center: new google.maps.LatLng( 0, 0 ),
-		mapTypeId: google.maps.MapTypeId.ROADMAP
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		scrollwheel: false,
+        styles: [
+		    {
+		        "featureType": "all",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "all",
+		        "elementType": "labels",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#ffdfc0"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative",
+		        "elementType": "labels.text.fill",
+		        "stylers": [
+		            {
+		                "color": "#000000"
+		            },
+		            {
+		                "visibility": "on"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative",
+		        "elementType": "labels.text.stroke",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            },
+		            {
+		                "visibility": "on"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative.neighborhood",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative.land_parcel",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "landscape",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#333"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#333"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#ddd"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.local",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		        	{
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#333"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "water",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            }
+		        ]
+		    }
+		]
 	};
 
 // Create map.        	
@@ -67,6 +211,11 @@ function addMarker( $marker, map ) {
 	// Create marker.
 	var marker = new google.maps.Marker({
 		position: latlng,
+		icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 4,
+            strokeColor: '#DE6328'
+        },
 		map: map
 	});
 

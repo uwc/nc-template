@@ -11,7 +11,7 @@ Requires at least: WordPress 4.5
 
 Tested up to: WordPress 4.5.3
 
-Version: 0.6.1-alpha
+Version: 0.9.2-alpha
 
 License: [MIT](#copyright)
 
@@ -54,3 +54,5 @@ NC Template theme bundles the following third-party resources:
 HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2
 Source: https://github.com/aFarkas/html5shiv
+
+...and others to be added.

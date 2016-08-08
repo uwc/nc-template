@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <?php if ( has_post_thumbnail() ) : ?>
-	<header class="header -section -featured" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+	<header class="header -section -featured" style="background-image: url(<?php the_post_thumbnail_url( 'large' ); ?>)">
 <?php else : ?>
 	<header class="header -section -no-featured">
 <?php endif; ?>
@@ -52,19 +52,23 @@
 			while ( have_rows( 'modules' ) ) : the_row();
 
 				if ( get_row_layout() == 'text_image' ) :
-					get_template_part( 'components/element', 'textimage' );
+					get_template_part( 'components/module', 'textimage' );
 
 				elseif ( get_row_layout() == 'quote' ) :
 
-					get_template_part( 'components/element', 'quote' );
+					get_template_part( 'components/module', 'quote' );
 
 				elseif ( get_row_layout() == 'call_to_action' ) :
 
-					get_template_part( 'components/element', 'calltoaction' );
+					get_template_part( 'components/module', 'calltoaction' );
 
 				elseif ( get_row_layout() == 'video' ) :
 
-					get_template_part( 'components/element', 'video' );
+					get_template_part( 'components/module', 'video' );
+
+				elseif ( get_row_layout() == 'google_maps' ) :
+
+					get_template_part( 'components/module', 'googlemaps' );
 
 				endif;
 
@@ -77,6 +81,6 @@
 			endif;
 		?>
 
-		<?php get_template_part( 'components/element', 'newsfeed' ); ?>
+		<?php get_template_part( 'components/module', 'newsfeed' ); ?>
 	</div>
 </article><!-- #post-## -->

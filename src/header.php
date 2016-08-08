@@ -38,7 +38,7 @@ wp_head();
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nc-template' ); ?></a>
 
-	<header class="site-navigation" role="banner">
+	<header id="js-navigation" class="site-navigation" role="banner">
 		<div class="navigation-ctnr">
 			
 			<div class="navigation-logo">

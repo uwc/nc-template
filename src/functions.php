@@ -46,8 +46,6 @@ if ( ! function_exists( 'nc_template_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		set_post_thumbnail_size( 1280, 9999, false );
-
 		// Enable support for custom logo.
 		add_theme_support( 'custom-logo', array(
 			'height'      => 28,
@@ -59,7 +57,7 @@ if ( ! function_exists( 'nc_template_setup' ) ) :
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
 			'header' => esc_html__( 'Header', 'nc-template' ),
-			'social' => __( 'Social', 'nc-template' ),
+			'social' => esc_html__( 'Social', 'nc-template' ),
 		) );
 
 		/*
@@ -197,17 +195,16 @@ add_action( 'wp_head', 'nc_template_javascript_detection', 0 );
  */
 function nc_template_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'nc-template-fonts', nc_template_fonts_url(), array( 'jQuery' ) );
+	wp_enqueue_style( 'nc-template-fonts', nc_template_fonts_url(), array( 'jquery' ) );
 	// Add Google Maps scripts, used in the main stylesheet.
-	wp_enqueue_script( 'nc-template-googlefonts', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBV8fzdHyCXxCzT7kCqc1UCRKx4mROcm64', array(), null );
-	// Theme stylesheet.
+	wp_enqueue_script( 'nc-template-googlemaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBV8fzdHyCXxCzT7kCqc1UCRKx4mROcm64', array(), null, true );
 	// Theme stylesheet.
 	wp_enqueue_style( 'nc-template-style', get_stylesheet_uri() );
 	// Load the html5 shiv.
 	wp_enqueue_script( 'nc-template-html5', get_template_directory_uri() . '/js/html5.js' );
 	wp_script_add_data( 'nc-template-html5', 'conditional', 'lt IE 9' );
 	// Theme scripts.
-	wp_enqueue_script( 'nc-template-script', get_template_directory_uri() . '/js/scripts.js', array( 'jQuery' ) );
+	wp_enqueue_script( 'nc-template-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'nc_template_scripts' );
 

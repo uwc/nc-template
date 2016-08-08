@@ -4,13 +4,11 @@
  * 1. Text+Image
  * 2. Quote
  * 3. Call To Action
- * 4. Video
- * 5. Google Maps
- * 6. Newsfeed
+ * 4. Video + Google Maps
+ * 5. Newsfeed
  */
 
 
-.section-textimage,
 .section-quote,
 .section-cta,
 .section-video,
@@ -26,6 +24,8 @@
 
 .section-textimage {
 	@include ctnr(wide);
+	margin-top: vr(.5);
+	margin-bottom: vr(.5);
 	display: flex;
 	.section-image {
 		background-repeat: no-repeat;
@@ -136,34 +136,43 @@
 
 
 
-// 4. Video //
+// 4. Video + Google Maps//
 
-.section-video {
+.section-video,
+.section-googlemaps {
 	@include ctnr(hybrid);
-	position: relative; 
-	padding-bottom: 56.25%;
-	overflow: hidden;
-	max-height: 31.5rem;
-} 
+	.section-wrapper {
+		position: relative; 
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		max-height: 31.5rem;
+	}
+	iframe,
+	object,
+	embed,
+	.acf-map { 
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 
-.section-video iframe,
-.section-video object,
-.section-video embed { 
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	}
+	.section-header {
+		@include font(small);
+		color: palette(blue);
+	}
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
 }
 
 
 
-// 5. Google Maps //
 
-
-
-
-// 6. Newsfeed //
+// 5. Newsfeed //
 
 .section-newsfeed {
 	@include ctnr(full);

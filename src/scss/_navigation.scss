@@ -3,7 +3,7 @@
 /**
  * 1. Main navigation
  */
-
+ 
 
 // 1. Main navigation //
 
@@ -27,15 +27,30 @@
 
 	.navigation-logo {
 		float: left;
+		opacity: 1;
+		transition: opacity $anim-s;
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+		}
 		.custom-logo {
 			max-width: 85vw;
 			height: auto;
 			vertical-align: middle;
 		}
 	}
+	.js-searchOpen {
+		height: 100%;
+		width: 100%;
+	}
 
 	.navigation-social {
 		float: right;
+	}
+
+	.navigation-header {
+		clear: both;
+		padding-top: vr(0.375);
 	}
 
 	.navigation-search {
@@ -46,9 +61,11 @@
 		z-index: 5;
 	}
 
-	.navigation-header {
-		clear: both;
-		padding-top: vr(0.375);
+	/* Search open. */
+	&.js-search {
+		.navigation-search {
+			display: block;
+		}
 	}
 }
 

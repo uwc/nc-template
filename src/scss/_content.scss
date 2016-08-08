@@ -32,6 +32,9 @@ p {
 	a {
 		@include link-underline(pink);
 	}
+	img {
+		max-width: 100%;
+	}
 }
 
 blockquote {
