@@ -54,9 +54,27 @@
 	@include ctnr(golden);
 	margin-top: vr(0.5);
 	margin-bottom: vr(0.75);
-	.result-header {
+	.result-title {
 		@include font(header3);
-		@include link-underline(blue);
+		&:after {
+			content: '→';
+			color: inherit;
+			display: inline-block;
+			opacity: 0;
+			visibility: hidden;
+			transform: translate(0, 0);
+			transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
+		}
+		&:hover,
+		&:focus {
+			color: palette(blue, light);
+		}
+		&:hover:after,
+		&:focus:after {
+			visibility: visible;
+			opacity: 1;
+			transform: translate(0.35rem, 0);
+		}
 	}
 	.result-link {
 		@include font(small);

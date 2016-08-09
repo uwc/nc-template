@@ -44,11 +44,9 @@
 		max-width: 100%;
 		@include mappy-query(desktop-large) {
 			width: 56rem;
-			max-width: 100%;
+			max-width: calc(100% - #{vr(4)});
 			margin-right: auto;
 			margin-left: auto;
-			padding-right: vr(1);
-			padding-left: vr(1);
 		}
 	}
 	@else if $width == 'full' {

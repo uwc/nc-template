@@ -55,6 +55,15 @@ blockquote {
 		margin-right: 0;
 		margin-left: 0;
 	}
+	cite,
+	small {
+		display: block;
+	}
+	em,
+	i,
+	cite {
+		font-style: normal;
+	}
 }
 
 ul,

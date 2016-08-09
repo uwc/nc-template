@@ -117,6 +117,7 @@ module.exports = {
   theme: {
     lang: {
       src: src+'languages/**/*' // Glob pattern matching any language files you'd like to copy over; we've broken this out in case you want to automate language-related functions
+    , languages: src+'languages/'
     , dest: build+'languages/'
     }
   , php: {
@@ -133,6 +134,10 @@ module.exports = {
   , readme: {
       src: src+'readme.*' // This simply copies the readme file over.
     , dest: build
+    }
+  , acf: {
+      src: src+'acf-json/**/*'
+    , dest: build+'acf-json/'
     }
   },
 

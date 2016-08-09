@@ -21,7 +21,7 @@
 		font-size: 0px;
 		line-height: 0px;
 	}
-	& > li {
+	& > .menu-item {
 		margin: 0;
 		padding: 0 0 vr(0.3) vr(0.5);
 		list-style-type: none;
@@ -38,44 +38,42 @@
 			}
 		}
 	}
-	& > li > a {
+	& > .menu-item > a {
 		@include font(small);
 		@include link-underline(purple);
 		color: palette(gray, dark);
 	}
-	li:hover > a:after,
-	li:focus > a:after,
-	li.current-menu-item > a:after {
+	.menu-item:hover > a:after,
+	.menu-item:focus > a:after,
+	.menu-item.current-menu-item > a:after {
 		visibility: visible;
 		opacity: 1;
 		transform: translate(0px,-2px);
 	}
 
-	ul {
+	.sub-menu {
 		position: absolute;
 		top: 100%;
 		left: 0;
 		z-index: 100;
 		min-width: vr(5);
-		padding-top: vr(0.2);
+		padding-top: vr(0.18);
 		background-color: palette(white);
 		visibility: hidden;
 	    transform: translate(0px,4px);
 	    opacity: 0;
 	    transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
 		width: calc(100% + #{vr(0.5)});
-		li {
+		.menu-item {
 			@include font(small);
+			/* Fixes weird change in font-weight on hover in Safari. */
+			-webkit-font-smoothing: antialiased;
 			text-align: left;
 			padding: 0 vr(0.5) vr(0.25);
 			background-color: palette(white);
-			border-right: $border-gray;
-			border-left: $border-gray;
+			box-shadow: 0px 4px 8px -2px palette(gray, light);
 			width: calc(100% + 0.5rem);
 			transition: color #anim-s;
-			&:last-child {
-				border-bottom: $border-gray;
-			}
 			&:after {
 				content: '→';
 				color: inherit;
@@ -98,7 +96,7 @@
 		}
 	}
 
-	& > li:hover > ul {
+	& > .menu-item:hover > .sub-menu {
 		visibility: visible;
 	    opacity: 1;
 	    transform: translate(0px,0px)
@@ -148,6 +146,12 @@
 	}
 	a {
 		margin-left: vr(0.5);
+		opacity: 1;
+		transition: opacity $anim-s;
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+		}
 		&:before {
 			content: '\64';
 			display: inline-block;
