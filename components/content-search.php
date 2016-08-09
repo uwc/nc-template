@@ -12,9 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'search-result' ); ?>>
 	<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-		<header class="result-header">
-			<?php the_title( '<h2 class="result-title">', '</h2>' ); ?>
-		</header>
+		<?php the_title( '<h2 class="result-title">', '</h2>' ); ?>
 		<p class="result-link"><?php the_permalink(); ?></p>
 		<div class="result-summary">
 			<?php the_excerpt(); ?>

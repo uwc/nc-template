@@ -25,6 +25,8 @@ if ( $taxonomies && $count >= 4 ) {
 	$index = 1;
 	foreach ( $posts as $post ) {
 		$categories = array();
+		$featured = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+		$featured_url = $featured[0];
 
 		foreach ( $taxonomies as $taxonomy ) {
 			if ( in_category( $taxonomy, $post->ID ) ) {
@@ -33,11 +35,11 @@ if ( $taxonomies && $count >= 4 ) {
 		}
 
 		if ( has_post_thumbnail( $post->ID ) ) {
-			echo '<article class="section-post post-' . $index . ' -thumbnail"><a href="' . get_permalink( $post->ID ) . '" class="section-link"><div class="section-image" style="background-image: url(';
-			echo the_post_thumbnail_url( $post->ID );
-			echo ')"></div></a>';
+			echo '<article class="section-post post-' . $index . ' -thumbnail"><div class="section-image" style="background-image: url(';
+			echo $featured_url;
+			echo ')"></div>';
 		} else {
-			echo '<article class="section-post post-' . $index . ' -no-thumbnail"><a href="' . get_permalink( $post->ID ) . '" class="section-link"></a>';
+			echo '<article class="section-post post-' . $index . ' -no-thumbnail">';
 		}
 		echo '<div class="section-wrapper">';
 		foreach ( $categories as $category ) {

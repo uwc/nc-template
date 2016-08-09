@@ -1,0 +1,414 @@
+{
+    "key": "group_578b1bf790b4e",
+    "title": "Format: \u00dcbersicht",
+    "fields": [
+        {
+            "key": "field_578b1ca493636",
+            "label": "Bausteine",
+            "name": "modules",
+            "type": "flexible_content",
+            "instructions": "Sortiere, l\u00f6sche oder f\u00fcge Bausteine hinzu. \r\nMindestens 2 und maximal 12 Bausteine erlaubt.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Baustein hinzuf\u00fcgen",
+            "min": 2,
+            "max": 12,
+            "layouts": [
+                {
+                    "key": "578b1cce9dffc",
+                    "name": "text_image",
+                    "label": "Text + Bild",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_578bd72038df2",
+                            "label": "Bild",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "W\u00e4hle ein Bild aus der Mediathek aus oder lade ein neues hoch. Das Bild sollte zum Inhalt des Textes passen. ",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_578bd6d738def",
+                            "label": "\u00dcberschrift",
+                            "name": "headline",
+                            "type": "text",
+                            "instructions": "Gib eine kurze \u00dcberschrift ein. \r\nMaximal 25 Buchstaben. ",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 25,
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_578b1dae93637",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "textarea",
+                            "instructions": "Gib einen kurzen Text ein, der begeistert und neugierig macht. \r\nMaximal 250 Buchstaben. ",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": 250,
+                            "rows": "",
+                            "new_lines": "br",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_578bd6f838df0",
+                            "label": "Link Text",
+                            "name": "link_text",
+                            "type": "text",
+                            "instructions": "Gib 3 bis 5 W\u00f6rter ein, die als Link unterhalb des Textes erscheinen. Es sollte eine Aufforderung sein, zum Beispiel \"Erfahre mehr \u00fcber UWC\" oder \"Lerne die Colleges kennen\".\r\nMaximal 25 Buchstaben. ",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 25,
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_578bd70538df1",
+                            "label": "Link URL",
+                            "name": "link_url",
+                            "type": "url",
+                            "instructions": "Gib einen Link ein, zu dem Besucher geleitet werden, wenn sie den Link unterhalb des Textes anklicken. Sollte nach M\u00f6glichkeit zu einer Seite innerhalb der Webseite f\u00fchren.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "578bd67138dee",
+                    "name": "quote",
+                    "label": "Zitat",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_578b1eb493638",
+                            "label": "Zitat",
+                            "name": "quote",
+                            "type": "textarea",
+                            "instructions": "Gib ein Zitat ein. \r\nMaximal 500 Buchstaben.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_578bddb4aec20",
+                            "label": "Urheber",
+                            "name": "citation",
+                            "type": "text",
+                            "instructions": "Gib den Urheber des Zitats ein (optional).\r\nMaximal 50 Buchstaben.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "578bd74738df3",
+                    "name": "call_to_action",
+                    "label": "Call To Action",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_578bbce4ec2df",
+                            "label": "Call To Action Text",
+                            "name": "cta_text",
+                            "type": "text",
+                            "instructions": "Gib 2 oder 3 W\u00f6rter ein, die in der Taste angezeigt werden. Es sollte eine Aufforderung sein, zum Beispiel \"Bewirb dich\" oder \"Erfahre mehr\".\r\nMaximal 20 Buchstaben.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_578bd78438df4",
+                            "label": "Call To Action URL",
+                            "name": "cta_url",
+                            "type": "url",
+                            "instructions": "Gib einen Link ein, zu dem Besucher geleitet werden, wenn sie die Taste anklicken. Sollte nach M\u00f6glichkeit zu einer Seite innerhalb der Webseite f\u00fchren.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "578bde13aec23",
+                    "name": "video",
+                    "label": "Video",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_578bde1aaec24",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "oembed",
+                            "instructions": "Gib die URL des Videos ein, welches angezeigt werden soll. Es werden Videos von YouTube und Vimeo unterst\u00fctzt.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "578bddecaec21",
+                    "name": "google_maps",
+                    "label": "Google Maps",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_579916c4279e5",
+                            "label": "Standorte",
+                            "name": "locations",
+                            "type": "repeater",
+                            "instructions": "F\u00fcge einen oder mehrere Standorte hinzu, die auf der Karte angezeigt werden sollen.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "field_579916d4279e6",
+                            "min": "",
+                            "max": "",
+                            "layout": "block",
+                            "button_label": "Standort hinzuf\u00fcgen",
+                            "sub_fields": [
+                                {
+                                    "key": "field_57a85af2d1f25",
+                                    "label": "Standort",
+                                    "name": "location",
+                                    "type": "google_map",
+                                    "instructions": "Gib einen Suchbegriff ein und w\u00e4hle die richtige Adresse aus.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "center_lat": "",
+                                    "center_lng": "",
+                                    "zoom": "",
+                                    "height": ""
+                                },
+                                {
+                                    "key": "field_579916d4279e6",
+                                    "label": "Titel",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "Gib einen Titel f\u00fcr den Standort ein. Maximal 30 Buchstaben.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": 30,
+                                    "readonly": 0,
+                                    "disabled": 0
+                                },
+                                {
+                                    "key": "field_57a8a47b3529b",
+                                    "label": "Beschreibung",
+                                    "name": "description",
+                                    "type": "textarea",
+                                    "instructions": "Gib eine kurze Beschreibung f\u00fcr den Standort ein. Maximal 200 Buchstaben.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 4,
+                                    "new_lines": "wpautop",
+                                    "readonly": 0,
+                                    "disabled": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        },
+        {
+            "key": "field_578b208f42bab",
+            "label": "Newsfeed",
+            "name": "newsfeed",
+            "type": "taxonomy",
+            "instructions": "W\u00e4hle eine oder mehrere Kategorien aus. Die 4 neuesten Posts aus diesen Kategorien werden automatisch unterhalb der Bausteine angezeigt. ",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "top_level"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "posts_page"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "author",
+        "format",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1470753557
+}
