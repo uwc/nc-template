@@ -72,6 +72,14 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+#: src/components/element-standard.php:19
+msgid "Featured"
+msgstr ""
+
+#: src/components/element-standard.php:27, src/components/element-video.php:26
+msgid "Weiter lesen"
+msgstr ""
+
 #: src/components/navigation-header.php:12
 msgid "Top Menu"
 msgstr ""
