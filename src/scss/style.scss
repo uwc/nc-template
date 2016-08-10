@@ -69,7 +69,6 @@ GitHub Branch: #{metadata(github-branch)}
 
 @import "buttons";
 @import "forms";
-@import "cards";
 @import "menus";
 
 
@@ -81,6 +80,7 @@ GitHub Branch: #{metadata(github-branch)}
 @import "header";
 @import "section";
 @import "article";
+@import "category";
 .entry-content {
 	@import "content";
 }

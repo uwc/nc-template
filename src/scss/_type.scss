@@ -16,44 +16,53 @@
     font-weight: $sans-bold;
     font-size: ms(6);
     line-height: 1;
+    word-wrap: break-word;
   }
   @else if $style == 'header1' {
     font-weight: $sans-bold;
     font-size: ms(4);
     line-height: 1.2;
+    word-wrap: break-word;
   }
   @else if $style == 'header2' {
     font-weight: $sans-bold;
     font-size: ms(3);
     line-height: 1.2;
+    word-wrap: break-word;
   }
   @else if $style == 'header3' {
     font-weight: $sans-bold;
     font-size: ms(2);
     line-height: 1.2;
+    word-wrap: break-word;
   }
   @else if $style == 'header4' {
     font-weight: $sans-bold;
     font-size: ms(1);
     line-height: 1.2;
+    word-wrap: break-word;
   }
   @else if $style == 'large' {
     font-size: ms(1);
     font-weight: $sans-medium;
+    word-wrap: break-word;
   }
   @else if $style == 'body' {
     font-size: ms(0);
+    word-wrap: break-word;
   }
   @else if $style == 'small' {
     font-weight: $sans-medium;
     font-size: ms(-1);
     letter-spacing: 0.01rem;
+    word-wrap: break-word;
   }
   @else if $style == 'button' {
     font-weight: $sans-bold;
     font-size: ms(-1);
     letter-spacing: 0.02rem;
     cursor: pointer;
+    word-wrap: break-word;
   }
   @else {
     @warn "Mixin font() received invalid input! This style does not exist.";

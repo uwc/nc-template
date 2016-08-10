@@ -11,17 +11,16 @@ window.addEventListener( 'DOMContentLoaded', function() {
 	smoothScroll.init( { offset: 36 } );
 }, false );
 
-
-// open and close the search in the navigation bar
-
+// Open and close the search in the navigation bar.
 function search() {
-  $('#js-navigation').toggleClass('js-search');
+  $( '#js-navigation' ).toggleClass( 'js-search' );
   return false;
 }
 
-$('#js-search').on('click', function( e ) {
+$( '#js-search' ).on( 'click', function( e ) {
 	e.preventDefault();
 	search();
+
 	// $('#form1_q').focus();
 });
 
@@ -31,7 +30,5 @@ $('#js-search').on('click', function( e ) {
   // $('#form1_q').focus();
   // return false;
 // }
-
-
 
 })( jQuery );

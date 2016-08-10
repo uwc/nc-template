@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying category pages.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -17,8 +17,8 @@ get_header(); ?>
 
 			<header class="header -entry -no-featured">
 				<div class="header-outer">
-					<h1 class="header-title"><?php the_archive_title(); ?></h1>
-					<h2 class="header-summary"><?php the_archive_description(); ?></h2>
+					<h1 class="header-title"><?php single_cat_title(); ?>
+					<h2 class="header-summary"><?php echo category_description(); ?></h2>
 				</div>
 			</header>
 			<?php

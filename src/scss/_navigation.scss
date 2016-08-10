@@ -10,6 +10,7 @@
 .site-navigation {
 	position: relative;
 	box-shadow: 0px 2px 8px -2px palette(gray, light);
+	background-color: palette(white);
 	&:before {
 		content: "";
 		display: block;

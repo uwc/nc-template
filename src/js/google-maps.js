@@ -131,7 +131,7 @@ function newMap( $el ) {
 		]
 	};
 
-// Create map.        	
+	// Create map.        	
 	var map = new google.maps.Map( $el[0], args );
 
 	// Add a markers reference.
