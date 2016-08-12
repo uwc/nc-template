@@ -29,12 +29,13 @@ h4, h5, h6 {
 p {
 	margin-top: vr(0.5);
 	margin-bottom: vr(0.5);
-	a {
-		@include link-underline(pink);
-	}
 	img {
 		max-width: 100%;
 	}
+}
+
+a {
+	@include link-underline(pink);
 }
 
 blockquote {

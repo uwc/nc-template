@@ -33,6 +33,7 @@
     @include font(button);
     @include link-arrow(down, purple);
     margin-right: vr(1.5);
+    white-space: nowrap;
   }
 }
 
