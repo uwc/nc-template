@@ -48,6 +48,10 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
+#: src/components/content-link.php:33, src/components/element-link.php:27
+msgid "Continue reading"
+msgstr ""
+
 #: src/components/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
@@ -72,7 +76,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: src/components/element-standard.php:19
+#: src/components/element-link.php:19, src/components/element-standard.php:19
 msgid "Featured"
 msgstr ""
 
@@ -163,12 +167,12 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/inc/template-tags.php:137
+#: src/inc/template-tags.php:138
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: src/inc/template-tags.php:142
+#: src/inc/template-tags.php:143
 msgctxt "post author"
 msgid "by %s"
 msgstr ""

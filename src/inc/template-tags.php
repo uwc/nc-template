@@ -96,12 +96,13 @@ if ( ! function_exists( 'nc_template_content_navigation' ) ) :
 	function nc_template_content_navigation( $text ) {
 
 		$dom = new DOMDocument();
-		$dom -> loadHTML( $text );
+		$dom -> loadHTML( '<?xml encoding="utf-8" ?>' . $text );
 		$nodes = $dom->getElementsByTagName( 'a' );
 		$items = array();
 		foreach ( $nodes as $node ) {
 			if ( $node -> hasAttribute( 'id' ) == true ) {
-				$items[] = $node -> getAttribute( 'id' );
+				$id = $node -> getAttribute( 'id' );
+				$items[] = html_entity_decode( $id );
 			}
 		}
 		if ( count( $items ) != 0 ) {

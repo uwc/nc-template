@@ -35,6 +35,7 @@
 	.section-card {
 		border: $border-gray;
 		padding: vr(0.75) vr(1);
+		width: 100%;
 	}
 	.section-headline {
 		@include font(header2);

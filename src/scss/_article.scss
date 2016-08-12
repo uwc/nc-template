@@ -66,7 +66,9 @@
 .post-navigation {
   @include ctnr(golden);
   @include clearfix;
-  margin-bottom: vr(1.5);
+  clear: both;
+  padding-top: vr(0.75);
+  padding-bottom: vr(1.5);
   .nav-previous {
     float: left;
     a {
