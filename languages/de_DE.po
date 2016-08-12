@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: NC Template\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/nc-template/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-08-08 23:05+0200\n"
+"PO-Revision-Date: 2016-08-12 05:54+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -66,6 +66,10 @@ msgstr "Neuere Einträge"
 msgid "Comments are closed."
 msgstr "Es können keine Kommentare abgegeben werden."
 
+#: src/components/content-link.php:33, src/components/element-link.php:27
+msgid "Continue reading"
+msgstr "Weiter lesen"
+
 #: src/components/content-none.php:14
 msgid "Nothing Found"
 msgstr "Es wurde nichts gefunden."
@@ -99,6 +103,14 @@ msgstr "„%s“ weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 #: src/image.php:52
 msgid "Pages:"
 msgstr "Seiten: "
+
+#: src/components/element-link.php:19, src/components/element-standard.php:19
+msgid "Featured"
+msgstr "Featured"
+
+#: src/components/element-standard.php:27, src/components/element-video.php:26
+msgid "Weiter lesen"
+msgstr "Weiter lesen"
 
 #: src/components/navigation-header.php:12
 msgid "Top Menu"
@@ -197,12 +209,12 @@ msgstr ""
 msgid "Search"
 msgstr "Suche"
 
-#: src/inc/template-tags.php:137
+#: src/inc/template-tags.php:138
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Gepostet am %s"
 
-#: src/inc/template-tags.php:142
+#: src/inc/template-tags.php:143
 msgctxt "post author"
 msgid "by %s"
 msgstr "von %s."

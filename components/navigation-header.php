@@ -13,8 +13,7 @@
 <div class="navigation-header" role="navigation">
 	<div class="navigation-search">
 		<?php get_search_form(); ?>
-	</div>
-	<?php if ( has_nav_menu( 'header' ) ) {
+	</div><?php if ( has_nav_menu( 'header' ) ) {
 		wp_nav_menu( array(
 			'theme_location'  => 'header',
 			'depth'           => '2',
@@ -23,5 +22,4 @@
 			'menu_class'      => 'menu-header',
 			'fallback_cb'     => 'false',
 		) );
-} ?>
-</div>
+} ?></div>
