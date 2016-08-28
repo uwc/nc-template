@@ -1,11 +1,11 @@
 {
-  "name": "nc-template",
+  "name": "uwc-website",
   "version": "v.1.0.0",
   "description": "An open-source website template for UWC national committees. Please request permission before use.",
-  "homepage": "https://github.com/uwc/nc-template",
+  "homepage": "https://github.com/uwc/uwc-website",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uwc/nc-template.git"
+    "url": "https://github.com/uwc/uwc-website.git"
   },
   "keywords": [
     "wordpress",

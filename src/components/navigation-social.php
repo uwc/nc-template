@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 if ( has_nav_menu( 'social' ) ) {

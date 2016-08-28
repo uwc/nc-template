@@ -32,6 +32,7 @@
   a {
     @include font(button);
     @include link-arrow(down, purple);
+    display: inline-block;
     margin-right: vr(1.5);
     white-space: nowrap;
   }

@@ -130,17 +130,17 @@ $anim-l: .45s cubic-bezier(0,0,.2,1);
  * See `_library.scss` for the metadata() function. 
  */
 $_metadata: (
-	theme-name:               "NC Template",
-	theme-uri:                "https://github.com/uwc/nc-template",
+	theme-name:               "UWC Website",
+	theme-uri:                "https://github.com/uwc/uwc-website",
 	theme-author:             "Connor Bär",
 	theme-author-uri:         "http://connorbaer.io",
-	theme-description:        "An open-source website template for UWC national committees. Please request permission before use.",
-	theme-version:            "v.1.0.0",
+	theme-description:        "An open-source website template for UWC. Please request permission before use.",
+	theme-version:            "v.1.0.1",
 	theme-license:            "MIT",
 	theme-license-uri:        "https://opensource.org/licenses/MIT",
 	theme-tags:               (custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready),
-	theme-text-domain:        "nc-template",
+	theme-text-domain:        "uwc-website",
 	theme-text-domain-path:   "/languages/",
-	github-theme-uri:         "https://github.com/uwc/nc-template",
+	github-theme-uri:         "https://github.com/uwc/uwc-website",
 	github-branch:            "master"
 );

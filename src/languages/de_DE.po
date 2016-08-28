@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: NC Template\n"
-"Report-Msgid-Bugs-To: https://github.com/uwc/nc-template/issues\n"
+"Project-Id-Version: UWC Website\n"
+"Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-08-12 05:54+0200\n"
+"PO-Revision-Date: 2016-08-28 15:50+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -120,14 +120,6 @@ msgstr "Hauptnavigation"
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
 
-#: src/functions.php:59
-msgid "Header"
-msgstr "Kopfzeile"
-
-#: src/functions.php:60
-msgid "Social"
-msgstr "Soziale Netzwerke"
-
 #: src/functions.php:121
 msgid "Sidebar"
 msgstr "Seitenleiste"
@@ -182,10 +174,10 @@ msgstr ""
 #: src/inc/back-compat.php:35, src/inc/back-compat.php:45,
 #: src/inc/back-compat.php:58
 msgid ""
-"NC Template requires at least WordPress version 4.4. You are running version "
+"UWC Website requires at least WordPress version 4.4. You are running version "
 "%s. Please upgrade and try again."
 msgstr ""
-"NC Template setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
+"UWC Website setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
 "%s. Bitte aktualisiere und probiere es dann noch einmal."
 
 #: src/inc/customizer.php:23
@@ -205,7 +197,7 @@ msgstr ""
 "verbergen. Keine Kommentare werden gelöscht und können somit jederzeit "
 "eingeblendet werden."
 
-#: src/inc/extras.php:40
+#: src/inc/extras.php:19
 msgid "Search"
 msgstr "Suche"
 
@@ -232,3 +224,9 @@ msgstr "Suche nach:"
 msgctxt "placeholder"
 msgid "Search..."
 msgstr "Suche..."
+
+#~ msgid "Header"
+#~ msgstr "Kopfzeile"
+
+#~ msgid "Social"
+#~ msgstr "Soziale Netzwerke"

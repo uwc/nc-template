@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 get_header(); ?>

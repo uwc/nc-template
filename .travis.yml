@@ -1,8 +1,8 @@
-# Travis CI (MIT License) configuration file for the NC Template WordPress theme.
+# Travis CI (MIT License) configuration file for the UWC Website WordPress theme.
 # @link https://travis-ci.org/
 
-# For use with the NC Template WordPress theme.
-# @link https://github.com/uwc/nc-template
+# For use with the UWC Website WordPress theme.
+# @link https://github.com/uwc/uwc-website
 
 # Ditch sudo and use containers.
 # @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F

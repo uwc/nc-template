@@ -17,8 +17,8 @@ function search() {
   return false;
 }
 
-$( '#js-search' ).on( 'click', function( e ) {
-	e.preventDefault();
+$( '#js-search' ).on( 'click', function( element ) {
+	element.preventDefault();
 	search();
 
 	// $('#form1_q').focus();

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 ?>
@@ -16,7 +16,7 @@
 	<div class="category-text">
 
 	<?php if ( is_sticky() ) : ?>
-		<span class="sticky"><?php echo esc_html__( 'Featured', 'nc-template' ); ?></span>
+		<span class="sticky"><?php echo esc_html__( 'Featured', 'uwc-website' ); ?></span>
 	<?php endif; ?>
 
 		<header class="header -category">
@@ -24,6 +24,6 @@
 		</header>
 		<p class="category-body"><?php the_excerpt(); ?></p>
 
-		<?php echo '<a class="category-link" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Weiter lesen', 'nc-template' ) . '</a>'; ?>
+		<?php echo '<a class="category-link" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Weiter lesen', 'uwc-website' ) . '</a>'; ?>
 	</div>
 </article> <!-- // post-## -->

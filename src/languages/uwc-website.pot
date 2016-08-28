@@ -1,9 +1,9 @@
-# Copyright (C) 2016 nc-template
-# This file is distributed under the same license as the nc-template package.
+# Copyright (C) 2016 uwc-website
+# This file is distributed under the same license as the uwc-website package.
 msgid ""
 msgstr ""
-"Project-Id-Version: nc-template\n"
-"Report-Msgid-Bugs-To: https://github.com/uwc/nc-template/issues\n"
+"Project-Id-Version: uwc-website\n"
+"Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,14 +92,6 @@ msgstr ""
 msgid "All rights reserved."
 msgstr ""
 
-#: src/functions.php:59
-msgid "Header"
-msgstr ""
-
-#: src/functions.php:60
-msgid "Social"
-msgstr ""
-
 #: src/functions.php:121
 msgid "Sidebar"
 msgstr ""
@@ -148,7 +140,7 @@ msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%t
 msgstr ""
 
 #: src/inc/back-compat.php:35, src/inc/back-compat.php:45, src/inc/back-compat.php:58
-msgid "NC Template requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again."
+msgid "UWC Website requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again."
 msgstr ""
 
 #: src/inc/customizer.php:23
@@ -163,7 +155,7 @@ msgstr ""
 msgid "Check the above box to hide comments on the frontend. No comments will be deleted and can thus be unhidden at any time."
 msgstr ""
 
-#: src/inc/extras.php:40
+#: src/inc/extras.php:19
 msgid "Search"
 msgstr ""
 

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 ?><!DOCTYPE html>
@@ -36,13 +36,13 @@ wp_head();
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nc-template' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uwc-website' ); ?></a>
 
 	<header id="js-navigation" class="site-navigation" role="banner">
 		<div class="navigation-ctnr">
 			
 			<div class="navigation-logo">
-				<?php nc_template_custom_logo(); ?>
+				<?php uwc_website_custom_logo(); ?>
 			</div>
 
 			<?php get_template_part( 'components/navigation', 'social' ); ?>

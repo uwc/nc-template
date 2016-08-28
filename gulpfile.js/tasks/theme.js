@@ -30,6 +30,7 @@ gulp.task('theme-fonts', function() {
   .pipe(gulp.dest(config.fonts.dest));
 });
 
+// Lint theme php files with phpcbf, then copy to the `build` folder
 gulp.task('theme-php', function () {
   return gulp.src(config.php.src)
   .pipe(phpcbf({
@@ -53,10 +54,10 @@ gulp.task('languages', function () {
   return gulp.src(config.php.src)
     .pipe(sort())
     .pipe(wppot( {
-      domain: 'nc-template',
-      destFile:'nc-template.pot',
-      package: 'nc-template',
-      bugReport: 'https://github.com/uwc/nc-template/issues',
+      domain: config.lang.domain,
+      destFile: config.lang.domain+'.pot',
+      package: config.lang.domain,
+      bugReport: 'https://github.com/uwc/'+config.lang.domain+'/issues',
       lastTranslator: 'Connor Bär <hello@connorbaer.io>',
       team: 'Made by Connor. <hello@connorbaer.io>'
     } ))

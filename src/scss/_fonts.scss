@@ -1,19 +1,19 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "nc-template";
-  src:url("fonts/nc-template.eot");
-  src:url("fonts/nc-template.eot?#iefix") format("embedded-opentype"),
-    url("fonts/nc-template.woff") format("woff"),
-    url("fonts/nc-template.ttf") format("truetype"),
-    url("fonts/nc-template.svg#nc-template") format("svg");
+  font-family: "uwc-website";
+  src:url("fonts/uwc-website.eot");
+  src:url("fonts/uwc-website.eot?#iefix") format("embedded-opentype"),
+    url("fonts/uwc-website.woff") format("woff"),
+    url("fonts/uwc-website.ttf") format("truetype"),
+    url("fonts/uwc-website.svg#uwc-website") format("svg");
   font-weight: normal;
   font-style: normal;
 
 }
 
 [data-icon]:before {
-  font-family: "nc-template" !important;
+  font-family: "uwc-website" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -27,7 +27,7 @@
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "nc-template" !important;
+  font-family: "uwc-website" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;

@@ -56,19 +56,20 @@
 		top: 100%;
 		left: 0;
 		z-index: 100;
-		min-width: vr(5);
+		min-width: 100%;
 		padding-top: vr(0.18);
 		background-color: palette(white);
 		visibility: hidden;
 	    transform: translate(0px,4px);
 	    opacity: 0;
 	    transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
-		width: calc(100% + #{vr(0.5)});
+		/*max-width: vr(8);*/
 		.menu-item {
 			@include font(small);
 			/* Fixes weird change in font-weight on hover in Safari. */
 			-webkit-font-smoothing: antialiased;
 			text-align: left;
+			white-space: nowrap;
 			padding: 0 vr(0.5) vr(0.25);
 			background-color: palette(white);
 			box-shadow: 0px 4px 8px -2px palette(gray, light);
@@ -108,7 +109,7 @@
 		@include font(small);
 		content: '\73';
 		display: inline-block;
-		font-family: 'nc-template' !important;
+		font-family: 'uwc-website' !important;
 		font-style: normal !important;
 		font-weight: normal !important;
 		font-variant: normal !important;
@@ -155,7 +156,7 @@
 		&:before {
 			content: '\64';
 			display: inline-block;
-			font-family: 'nc-template' !important;
+			font-family: 'uwc-website' !important;
 			vertical-align: top;
 			font-style: normal !important;
 			font-weight: normal !important;

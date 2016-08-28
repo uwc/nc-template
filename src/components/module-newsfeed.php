@@ -6,7 +6,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 $taxonomies = get_field( 'newsfeed' );

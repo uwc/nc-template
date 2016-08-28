@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/uwc/nc-template.svg?branch=development)](https://travis-ci.org/uwc/nc-template)
+[![Build Status](https://travis-ci.org/uwc/uwc-website.svg?branch=development)](https://travis-ci.org/uwc/uwc-website)
 
 
-# A template for UWC national committee websites. 
+# A WordPress template for UWC websites. 
 
 > Please [request permission](mailto:uwc@connorbaer.io) before use.
 
@@ -11,7 +11,7 @@ Requires at least: WordPress 4.5
 
 Tested up to: WordPress 4.5.3
 
-Version: 0.9.3-alpha
+Version: 1.0.1
 
 License: [MIT](#copyright)
 
@@ -28,9 +28,9 @@ If you are interested in contributing to the development, [drop me a line](mailt
 
 > This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.
 
-1. NC Template is not listed publicly on Wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
+1. UWC Website is not listed publicly on Wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
 2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top. 
-3. Paste the url `https://github.com/uwc/nc-template` into the field 'Theme URI'. You can leave the other fields as they are and click on the 'Install Theme' button.
+3. Paste the url `https://github.com/uwc/uwc-website` into the field 'Theme URI'. You can leave the other fields as they are and click on the 'Install Theme' button.
 4. Click on the 'Activate' button to use your new theme right away.
 5. Go to https:// for a guide on how to customize this theme.
 6. Navigate to Appearance > Customize in your admin panel and customize to taste.
@@ -49,7 +49,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---
 
-NC Template theme bundles the following third-party resources:
+UWC Website theme bundles the following third-party resources:
 
 HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2

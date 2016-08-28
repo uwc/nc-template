@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/uwc/nc-template.svg?branch=development)](https://travis-ci.org/uwc/nc-template)
+[![Build Status](https://travis-ci.org/uwc/uwc-website.svg?branch=development)](https://travis-ci.org/uwc/uwc-website)
 
 
 # UWC Website Template

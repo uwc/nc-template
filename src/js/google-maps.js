@@ -27,104 +27,89 @@ function newMap( $el ) {
 		scrollwheel: false,
         styles: [
 		    {
-		        'featureType': 'landscape',
+		        'featureType': 'landscape.man_made',
+		        'elementType': 'all',
 		        'stylers': [
 		            {
-		                'hue': '#FFBB00'
+		                'color': '#faf5ed'
 		            },
 		            {
-		                'saturation': 43.400000000000006
+		                'lightness': '0'
 		            },
 		            {
-		                'lightness': 37.599999999999994
-		            },
-		            {
-		                'gamma': 1
+		                'gamma': '1'
 		            }
 		        ]
 		    },
 		    {
-		        'featureType': 'road.highway',
+		        'featureType': 'poi.park',
+		        'elementType': 'geometry.fill',
 		        'stylers': [
 		            {
-		                'hue': '#FFC200'
+		                'color': '#bae5a6'
+		            }
+		        ]
+		    },
+		    {
+		        'featureType': 'road',
+		        'elementType': 'all',
+		        'stylers': [
+		            {
+		                'weight': '1.00'
 		            },
 		            {
-		                'saturation': -61.8
+		                'gamma': '1.8'
 		            },
 		            {
-		                'lightness': 45.599999999999994
-		            },
+		                'saturation': '0'
+		            }
+		        ]
+		    },
+		    {
+		        'featureType': 'road',
+		        'elementType': 'geometry.fill',
+		        'stylers': [
 		            {
-		                'gamma': 1
+		                'hue': '#ffb200'
 		            }
 		        ]
 		    },
 		    {
 		        'featureType': 'road.arterial',
+		        'elementType': 'geometry.fill',
 		        'stylers': [
 		            {
-		                'hue': '#FF0300'
+		                'lightness': '0'
 		            },
 		            {
-		                'saturation': -100
-		            },
-		            {
-		                'lightness': 51.19999999999999
-		            },
-		            {
-		                'gamma': 1
+		                'gamma': '1'
 		            }
 		        ]
 		    },
 		    {
-		        'featureType': 'road.local',
+		        'featureType': 'transit.station.airport',
+		        'elementType': 'all',
 		        'stylers': [
 		            {
-		                'hue': '#FF0300'
+		                'hue': '#b000ff'
 		            },
 		            {
-		                'saturation': -100
+		                'saturation': '23'
 		            },
 		            {
-		                'lightness': 52
+		                'lightness': '-4'
 		            },
 		            {
-		                'gamma': 1
+		                'gamma': '0.80'
 		            }
 		        ]
 		    },
 		    {
 		        'featureType': 'water',
+		        'elementType': 'all',
 		        'stylers': [
 		            {
-		                'hue': '#0078FF'
-		            },
-		            {
-		                'saturation': -13.200000000000003
-		            },
-		            {
-		                'lightness': 2.4000000000000057
-		            },
-		            {
-		                'gamma': 1
-		            }
-		        ]
-		    },
-		    {
-		        'featureType': 'poi',
-		        'stylers': [
-		            {
-		                'hue': '#00FF6A'
-		            },
-		            {
-		                'saturation': -1.0989010989011234
-		            },
-		            {
-		                'lightness': 11.200000000000017
-		            },
-		            {
-		                'gamma': 1
+		                'color': '#a0daf2'
 		            }
 		        ]
 		    }

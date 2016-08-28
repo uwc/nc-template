@@ -1,7 +1,7 @@
 // ==== CONFIGURATION ==== //
 
 // Project paths
-var project     = 'nc-template'           // The directory name for the theme.
+var project     = 'uwc-website'           // The directory name for the theme.
   , src         = './src/'                // The raw material of the theme: custom scripts, SCSS source files, PHP files, images, etc.; do not delete this folder!
   , build       = './build/'              // A temporary directory containing a development version of your theme; delete it anytime.
   , dist        = './dist/'               // The distribution package that you'll be uploading to your server; delete it anytime.
@@ -118,6 +118,7 @@ module.exports = {
     lang: {
       src: src+'languages/**/*' // Glob pattern matching any language files you'd like to copy over; we've broken this out in case you want to automate language-related functions
     , languages: src+'languages/'
+    , domain: project
     , dest: build+'languages/'
     }
   , php: {

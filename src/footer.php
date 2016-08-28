@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 ?>
@@ -31,7 +31,7 @@
 			<?php endif; ?>
 		</div>
 		<div class="footer-info">
-			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'nc-template' ); ?> <a href="http://connorbaer.io/" rel="designer" target="_blank">Made by Connor.</a></p>
+			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'uwc-website' ); ?> <a href="http://connorbaer.io/" rel="designer" target="_blank">Made by Connor.</a></p>
 		</div>
 
 	</footer>
