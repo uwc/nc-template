@@ -95,7 +95,7 @@ function uwc_website_hierarchy_from_menu( $menu_id, $menu_data = null ) {
 					if ( 'page' != $items[ $item_index[ $item->menu_item_parent ] ]->object ) {
 						// The parent isn't a page. Queue an error message.
 						global $messages;
-						$messages[] = '<div id="message" class="error"><p>' . sprintf( __( 'The parent of <strong>%1$1s</strong> is <strong>%2$2s</strong>, which is not a page, which means that this part of the menu cannot sync with your page hierarchy.', ETTD ), $item->title, $items[ $item_index[ $item->menu_item_parent ] ]->title ) . '</p></div>';
+						$messages[] = '<div id="message" class="error"><p>' . sprintf( __( 'The parent of <strong>%1$1s</strong> is <strong>%2$2s</strong>, which is not a page, which means that this part of the menu cannot sync with your page hierarchy.', 'uwc-website' ), $item->title, $items[ $item_index[ $item->menu_item_parent ] ]->title ) . '</p></div>';
 						$new_post['post_parent'] = new WP_Error;
 					} else { 					// Get the new parent page from the index.
 						$new_post['post_parent'] = $items[ $item_index[ $item->menu_item_parent ] ]->object_id;

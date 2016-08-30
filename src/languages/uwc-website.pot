@@ -25,26 +25,19 @@ msgstr ""
 msgid "Looks like something has gone terribly wrong somewhere in the Internet. As a result, the page you requested isn&rsquo;t available. Or maybe it doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of your imagination. Maybe you are a figment of your own imagination. Did we just blow your mind? Find out more about the <a href=\"%s\">theory of knowledge course</a> at UWC or simply use the search bar below to find what you are looking for."
 msgstr ""
 
-#: src/comments.php:30
+#: src/comments.php:29
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: src/comments.php:33
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/comments.php:39, src/comments.php:59
-msgid "Comment navigation"
-msgstr ""
-
-#: src/comments.php:42, src/comments.php:62
-msgid "Older Comments"
-msgstr ""
-
-#: src/comments.php:43, src/comments.php:63
-msgid "Newer Comments"
-msgstr ""
-
-#: src/comments.php:76
+#: src/comments.php:67
 msgid "Comments are closed."
 msgstr ""
 
@@ -157,6 +150,10 @@ msgstr ""
 
 #: src/inc/extras.php:19
 msgid "Search"
+msgstr ""
+
+#: src/inc/extras.php:98
+msgid "The parent of <strong>%1$1s</strong> is <strong>%2$2s</strong>, which is not a page, which means that this part of the menu cannot sync with your page hierarchy."
 msgstr ""
 
 #: src/inc/template-tags.php:138
