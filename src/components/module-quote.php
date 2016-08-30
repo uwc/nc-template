@@ -13,7 +13,7 @@
 	<blockquote><p><?php the_sub_field( 'quote' ); ?></p>
 		<?php
 		if ( get_sub_field( 'citation' ) ) {
-			echo '<cite>' . sanitize_text_field( get_sub_field( 'citation' ) ) . '</cite>';
+			echo '<cite>' . esc_html( get_sub_field( 'citation' ) ) . '</cite>';
 		}
 		?>
 	</blockquote>

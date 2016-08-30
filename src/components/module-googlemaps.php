@@ -18,12 +18,12 @@
 			$location = get_sub_field( 'location' );
 
 			?>
-			<div class="marker" data-lat="<?php echo sanitize_text_field( $location['lat'] ); ?>" data-lng="<?php echo sanitize_text_field( $location['lng'] ); ?>">
+			<div class="marker" data-lat="<?php echo esc_html( $location['lat'] ); ?>" data-lng="<?php echo esc_html( $location['lng'] ); ?>">
 				<?php
 				if ( get_sub_field( 'link_url' ) ) {
-					echo '<a href="' . get_sub_field( 'link_url' ) . '"><h4 class="section-header">' . get_sub_field( 'title' ) . '</h4></a>';
+					echo '<a href="' . esc_url( get_sub_field( 'link_url' ) ) . '"><h4 class="section-header">' . esc_url( get_sub_field( 'title' ) ) . '</h4></a>';
 				} else {
-					echo '<h4 class="section-header">' . get_sub_field( 'title' ) . '</h4>';
+					echo '<h4 class="section-header">' . esc_html( get_sub_field( 'title' ) ) . '</h4>';
 				}
 				?>
 				<p class="address"><?php the_sub_field( 'description' ); ?></p>

@@ -19,4 +19,4 @@ if ( has_nav_menu( 'social' ) ) {
 		'link_after'      => '</span>',
 		'fallback_cb'     => 'false',
 	) );
-} ?>
+}

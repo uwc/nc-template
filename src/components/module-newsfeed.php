@@ -43,10 +43,10 @@ if ( $taxonomies && $count >= 4 ) {
 		}
 		echo '<div class="section-wrapper">';
 		foreach ( $categories as $category ) {
-			echo '<a href="' . esc_url( get_category_link( $category ) ) . '" class="section-category">' . sanitize_text_field( get_cat_name( $category ) ) . '</a> ';
+			echo '<a href="' . esc_url( get_category_link( $category ) ) . '" class="section-category">' . esc_url( get_cat_name( $category ) ) . '</a> ';
 		}
 		echo '<a href="' . esc_url( get_permalink( $post->ID ) ) . '"><h2 class="section-headline">' . get_the_title( $post->ID ) . '</h2><h4 class="section-date">' . get_the_date( '', $post->ID ) . '</h4></a></div></article>';
 		$index++;
 	}
 	echo '</section>';
-} ?>
+}
