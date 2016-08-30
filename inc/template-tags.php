@@ -106,11 +106,9 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 			}
 		}
 		if ( count( $items ) != 0 ) {
-			echo '<nav class="entry-navigation">';
-			echo '<h6>Inhalt</h6>';
-			echo '<div class="entry-links">';
+			echo '<nav class="entry-navigation"><h6>Inhalt</h6><div class="entry-links">';
 			foreach ( $items as $item ) {
-				echo '<a href="#', intval( $item ), '" title="', intval( $item ), '" data-scroll>', intval( $item ), '</a>';
+				echo '<a href="#', esc_html( $item ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a>';
 			}
 			echo '</nav>';
 		}

@@ -135,16 +135,16 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/inc/extras.php:98
+#: src/inc/extras.php:113
 msgid "The parent of <strong>%1$1s</strong> is <strong>%2$2s</strong>, which is not a page, which means that this part of the menu cannot sync with your page hierarchy."
 msgstr ""
 
-#: src/inc/template-tags.php:138
+#: src/inc/template-tags.php:136
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: src/inc/template-tags.php:143
+#: src/inc/template-tags.php:141
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
