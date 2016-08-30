@@ -11,7 +11,7 @@ Requires at least: WordPress 4.5
 
 Tested up to: WordPress 4.5.3
 
-Version: 1.1.0
+Version: 1.1.1
 
 License: [MIT](#copyright)
 

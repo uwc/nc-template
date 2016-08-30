@@ -166,6 +166,9 @@
 		@include font(small);
 		color: palette(blue);
 	}
+	a .section-header {
+		@include link-underline(blue);
+	}
 }
 
 /* fixes potential theme css conflict */

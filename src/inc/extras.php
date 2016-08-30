@@ -47,8 +47,7 @@ function uwc_website_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'uwc_website_excerpt_more' );
 
 /**
- * Wrap the inserted image html with <figure>
- * if the theme supports html5 and the current image has no caption:
+ * Wrap the inserted image html with <figure> if the current image has no caption.
  *
  * @param html $content The post/page content as html.
  * @return html Post/page content modified to wrap images in figure tags.
@@ -62,6 +61,22 @@ function uwc_website_content_images( $content ) {
 	return $content;
 }
 add_filter( 'the_content', 'uwc_website_content_images' );
+
+/**
+ * Replace spaces with dashes in anchor tags.
+ *
+ * @param html $content The post/page content as html.
+ * @return html Post/page content modified to replace .
+ */
+function uwc_website_content_anchors( $content ) {
+	$content = preg_replace(
+		'/<p>\\s*?<a\\s*?id=\"(.*?)\">?\\s*<\\/p>/s',
+		'Forth-tag',
+		$content
+	);
+	return $content;
+}
+add_filter( 'the_content', 'uwc_website_content_anchors' );
 
 /**
  * Synchronize the page hierarchy when the menu structure is changed.
