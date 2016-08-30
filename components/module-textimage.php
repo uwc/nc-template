@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 ?>
@@ -18,7 +18,7 @@
 
 	if ( $image ) {
 
-		echo $url[0];
+		echo esc_url( $url[0] );
 
 	}
 

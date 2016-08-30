@@ -4,16 +4,17 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 ?>
 
 <section class="section-quote">
-	<blockquote><p><?php the_sub_field( 'quote' ); ?></p></blockquote>
-	<?php
-	if ( get_sub_field( 'citation' ) ) {
-		echo '<cite>' . get_sub_field( 'citation' ) . '</cite>';
-	}
-	?>
+	<blockquote><p><?php the_sub_field( 'quote' ); ?></p>
+		<?php
+		if ( get_sub_field( 'citation' ) ) {
+			echo '<cite>' . esc_html( get_sub_field( 'citation' ) ) . '</cite>';
+		}
+		?>
+	</blockquote>
 </section>

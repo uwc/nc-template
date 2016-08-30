@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 ?>
 
-<a id="menu-toggle" href="#" aria-controls="top-menu" aria-expanded="false"><?php esc_html_e( 'Top Menu', 'nc-template' ); ?></a>
+<a id="menu-toggle" href="#" aria-controls="top-menu" aria-expanded="false"><?php esc_html_e( 'Top Menu', 'uwc-website' ); ?></a>
 <div class="navigation-header" role="navigation">
 	<div class="navigation-search">
 		<?php get_search_form(); ?>

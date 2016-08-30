@@ -1,10 +1,10 @@
 <?php
 /**
- * Element to output the Quote module on section pages.
+ * Element to output the Google Maps module on section pages.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 ?>
@@ -18,8 +18,14 @@
 			$location = get_sub_field( 'location' );
 
 			?>
-			<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
-				<h4 class="section-header"><?php the_sub_field( 'title' ); ?></h4>
+			<div class="marker" data-lat="<?php echo esc_html( $location['lat'] ); ?>" data-lng="<?php echo esc_html( $location['lng'] ); ?>">
+				<?php
+				if ( get_sub_field( 'link_url' ) ) {
+					echo '<a href="' . esc_url( get_sub_field( 'link_url' ) ) . '"><h4 class="section-header">' . esc_url( get_sub_field( 'title' ) ) . '</h4></a>';
+				} else {
+					echo '<h4 class="section-header">' . esc_html( get_sub_field( 'title' ) ) . '</h4>';
+				}
+				?>
 				<p class="address"><?php the_sub_field( 'description' ); ?></p>
 			</div>
 		<?php endwhile; ?>

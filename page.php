@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 get_header(); ?>
@@ -31,7 +31,7 @@ get_header(); ?>
 					$format = get_post_format() ?: 'standard';
 					get_template_part( 'components/content', $format );
 
-					nc_template_page_navigation();
+					uwc_website_page_navigation();
 
 					// Only show comments if they are not disabled in customizer.
 					if ( ! get_theme_mod( 'comments' ) ) :

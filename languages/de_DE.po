@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: NC Template\n"
-"Report-Msgid-Bugs-To: https://github.com/uwc/nc-template/issues\n"
+"Project-Id-Version: UWC Website\n"
+"Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-08-12 05:54+0200\n"
+"PO-Revision-Date: 2016-08-30 12:03+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -42,29 +42,6 @@ msgstr ""
 "eigenen Phantasie. Haben wir blasen einfach nur die Seele? Erfahren Sie mehr "
 "über die <a href=\"%s\">Theorie des Wissens natürlich</a> bei UWC oder "
 "verwenden Sie einfach die Suchleiste unten zu finden , was Sie suchen."
-
-#: src/comments.php:31
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "1 Kommentar zu &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
-
-#: src/comments.php:40, src/comments.php:60
-msgid "Comment navigation"
-msgstr "Navigation der Kommentare"
-
-#: src/comments.php:43, src/comments.php:63
-msgid "Older Comments"
-msgstr "Ältere Kommentare"
-
-#: src/comments.php:44, src/comments.php:64
-msgid "Newer Comments"
-msgstr "Neuere Einträge"
-
-#: src/comments.php:77
-msgid "Comments are closed."
-msgstr "Es können keine Kommentare abgegeben werden."
 
 #: src/components/content-link.php:33, src/components/element-link.php:27
 msgid "Continue reading"
@@ -120,14 +97,6 @@ msgstr "Hauptnavigation"
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
 
-#: src/functions.php:59
-msgid "Header"
-msgstr "Kopfzeile"
-
-#: src/functions.php:60
-msgid "Social"
-msgstr "Soziale Netzwerke"
-
 #: src/functions.php:121
 msgid "Sidebar"
 msgstr "Seitenleiste"
@@ -182,32 +151,42 @@ msgstr ""
 #: src/inc/back-compat.php:35, src/inc/back-compat.php:45,
 #: src/inc/back-compat.php:58
 msgid ""
-"NC Template requires at least WordPress version 4.4. You are running version "
+"UWC Website requires at least WordPress version 4.4. You are running version "
 "%s. Please upgrade and try again."
 msgstr ""
-"NC Template setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
+"UWC Website setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
 "%s. Bitte aktualisiere und probiere es dann noch einmal."
 
-#: src/inc/customizer.php:23
+#: src/inc/customizer.php:22
 msgid "Theme Options"
 msgstr "Allgemeine Optionen"
 
-#: src/inc/customizer.php:29
+#: src/inc/customizer.php:28
 msgid "Disable comments"
 msgstr "Kommentare deaktivieren"
 
-#: src/inc/customizer.php:33
+#: src/inc/customizer.php:32
 msgid ""
-"Check the above box to hide comments on the frontend. No comments will be "
-"deleted and can thus be unhidden at any time."
+"Check the box to hide comments on the frontend. Comments are NOT deleted and "
+"can thus be unhidden at any time."
 msgstr ""
-"Aktivieren Sie das obige Kästchen um Kommentare auf der Webseite zu "
-"verbergen. Keine Kommentare werden gelöscht und können somit jederzeit "
+"Aktivieren Sie das Kästchen um Kommentare auf der Webseite zu verbergen. Die "
+"Kommentare werden NICHT gelöscht und können somit jederzeit wieder "
 "eingeblendet werden."
 
-#: src/inc/extras.php:40
+#: src/inc/extras.php:19
 msgid "Search"
 msgstr "Suche"
+
+#: src/inc/extras.php:98
+msgid ""
+"The parent of <strong>%1$1s</strong> is <strong>%2$2s</strong>, which is not "
+"a page, which means that this part of the menu cannot sync with your page "
+"hierarchy."
+msgstr ""
+"The parent of <strong>%1$1s</strong> is <strong>%2$2s</strong>, which is not "
+"a page, which means that this part of the menu cannot sync with your page "
+"hierarchy."
 
 #: src/inc/template-tags.php:138
 msgctxt "post date"
@@ -232,3 +211,31 @@ msgstr "Suche nach:"
 msgctxt "placeholder"
 msgid "Search..."
 msgstr "Suche..."
+
+#~ msgctxt "comments title"
+#~ msgid "One thought on &ldquo;%s&rdquo;"
+#~ msgstr "1 Kommentar zu &ldquo;%2$s&rdquo;"
+
+#~ msgctxt "comments title"
+#~ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "1 Kommentar zu &ldquo;%2$s&rdquo;"
+#~ msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#~ msgid "Comments are closed."
+#~ msgstr "Es können keine Kommentare abgegeben werden."
+
+#~ msgid "Comment navigation"
+#~ msgstr "Navigation der Kommentare"
+
+#~ msgid "Older Comments"
+#~ msgstr "Ältere Kommentare"
+
+#~ msgid "Newer Comments"
+#~ msgstr "Neuere Einträge"
+
+#~ msgid "Header"
+#~ msgstr "Kopfzeile"
+
+#~ msgid "Social"
+#~ msgstr "Soziale Netzwerke"

@@ -4,14 +4,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
-if ( ! function_exists( 'nc_template_custom_logo' ) ) :
+if ( ! function_exists( 'uwc_website_custom_logo' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function nc_template_custom_logo() {
+	function uwc_website_custom_logo() {
 		/* Try to retrieve the Custom Logo. */
 		$output = '';
 		if ( function_exists( 'get_custom_logo' ) ) {
@@ -31,11 +31,11 @@ if ( ! function_exists( 'nc_template_custom_logo' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'nc_template_page_navigation' ) ) :
+if ( ! function_exists( 'uwc_website_page_navigation' ) ) :
 	/**
 	 * Prints HTML with links to previous and next pages for the current page.
 	 */
-	function nc_template_page_navigation() {
+	function uwc_website_page_navigation() {
 		$test = wp_get_nav_menu_items( 'header' );
 
 		$pagelist = get_pages( array(
@@ -55,45 +55,45 @@ if ( ! function_exists( 'nc_template_page_navigation' ) ) :
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 		if ( ! empty( $prev_id ) ) {
 			echo '<div class="nav-previous">';
-			echo '<a href="', get_permalink( $prev_id ), '" title="', get_the_title( $prev_id ), '">', get_the_title( $prev_id ), '</a>';
+			echo '<a href="', esc_url( get_permalink( $prev_id ) ), '" title="', get_the_title( $prev_id ), '">', get_the_title( $prev_id ), '</a>';
 			echo '</div>';
 		}
 		if ( ! empty( $next_id ) ) {
 			echo '<div class="nav-next">';
-			echo '<a href="', get_permalink( $next_id ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), '</a>';
+			echo '<a href="', esc_url( get_permalink( $next_id ) ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), '</a>';
 			echo '</div>';
 		}
 		echo '</nav>';
 	}
 endif;
 
-if ( ! function_exists( 'nc_template_paginated' ) ) :
+if ( ! function_exists( 'uwc_website_paginated' ) ) :
 	/**
 	 * Prints HTML with links to previous and next pages for the current page.
 	 */
-	function nc_template_paginated() {
+	function uwc_website_paginated() {
 		global $wp_query;
 		$big = 99999;
 
 		echo '<nav class="post-navigation">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
-		echo paginate_links( array(
+		echo wp_kses( paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var( 'paged' ) ),
 			'total' => $wp_query -> max_num_pages,
-		) );
+		) ) );
 		echo '</nav>';
 	}
 endif;
 
-if ( ! function_exists( 'nc_template_content_navigation' ) ) :
+if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 	/**
 	 * Adds content navigation to pages and posts that have anchor tags.
 	 *
 	 * @param string $text The page/post content to be parsed.
 	 */
-	function nc_template_content_navigation( $text ) {
+	function uwc_website_content_navigation( $text ) {
 
 		$dom = new DOMDocument();
 		$dom -> loadHTML( '<?xml encoding="utf-8" ?>' . $text );
@@ -110,18 +110,18 @@ if ( ! function_exists( 'nc_template_content_navigation' ) ) :
 			echo '<h6>Inhalt</h6>';
 			echo '<div class="entry-links">';
 			foreach ( $items as $item ) {
-				echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, '</a>';
+				echo '<a href="#', intval( $item ), '" title="', intval( $item ), '" data-scroll>', intval( $item ), '</a>';
 			}
 			echo '</nav>';
 		}
 	}
 endif;
 
-if ( ! function_exists( 'nc_template_posted_on' ) ) :
+if ( ! function_exists( 'uwc_website_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function nc_template_posted_on() {
+	function uwc_website_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -135,12 +135,12 @@ if ( ! function_exists( 'nc_template_posted_on' ) ) :
 		);
 
 			$posted_on = sprintf(
-				esc_html_x( 'Posted on %s', 'post date', 'nc-template' ),
+				esc_html_x( 'Posted on %s', 'post date', 'uwc-website' ),
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 			);
 
 			$byline = sprintf(
-				esc_html_x( 'by %s', 'post author', 'nc-template' ),
+				esc_html_x( 'by %s', 'post author', 'uwc-website' ),
 				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 			);
 
@@ -154,8 +154,8 @@ endif;
  *
  * @return bool
  */
-function nc_template_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'nc_template_categories' ) ) ) {
+function uwc_website_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'uwc_website_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -167,27 +167,27 @@ function nc_template_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'nc_template_categories', $all_the_cool_cats );
+		set_transient( 'uwc_website_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so nc_template_categorized_blog should return true.
+		// This blog has more than 1 category so uwc_website_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so nc_template_categorized_blog should return false.
+		// This blog has only 1 category so uwc_website_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in nc_template_categorized_blog.
+ * Flush out the transients used in uwc_website_categorized_blog.
  */
-function nc_template_category_transient_flusher() {
+function uwc_website_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'nc_template_categories' );
+	delete_transient( 'uwc_website_categories' );
 }
-add_action( 'edit_category', 'nc_template_category_transient_flusher' );
-add_action( 'save_post',     'nc_template_category_transient_flusher' );
+add_action( 'edit_category', 'uwc_website_category_transient_flusher' );
+add_action( 'save_post',     'uwc_website_category_transient_flusher' );

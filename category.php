@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package NC_Template
+ * @package UWC_Website
  */
 
 get_header(); ?>
@@ -35,7 +35,7 @@ get_header(); ?>
 
 			endwhile;
 
-			nc_template_paginated();
+			uwc_website_paginated();
 
 		else :
 
