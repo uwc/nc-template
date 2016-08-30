@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-08-30 11:29+0200\n"
+"PO-Revision-Date: 2016-08-30 12:03+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -42,22 +42,6 @@ msgstr ""
 "eigenen Phantasie. Haben wir blasen einfach nur die Seele? Erfahren Sie mehr "
 "über die <a href=\"%s\">Theorie des Wissens natürlich</a> bei UWC oder "
 "verwenden Sie einfach die Suchleiste unten zu finden , was Sie suchen."
-
-#: src/comments.php:29
-msgctxt "comments title"
-msgid "One thought on &ldquo;%s&rdquo;"
-msgstr "1 Kommentar zu &ldquo;%2$s&rdquo;"
-
-#: src/comments.php:33
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "1 Kommentar zu &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
-
-#: src/comments.php:67
-msgid "Comments are closed."
-msgstr "Es können keine Kommentare abgegeben werden."
 
 #: src/components/content-link.php:33, src/components/element-link.php:27
 msgid "Continue reading"
@@ -173,15 +157,15 @@ msgstr ""
 "UWC Website setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
 "%s. Bitte aktualisiere und probiere es dann noch einmal."
 
-#: src/inc/customizer.php:21
+#: src/inc/customizer.php:22
 msgid "Theme Options"
 msgstr "Allgemeine Optionen"
 
-#: src/inc/customizer.php:27
+#: src/inc/customizer.php:28
 msgid "Disable comments"
 msgstr "Kommentare deaktivieren"
 
-#: src/inc/customizer.php:31
+#: src/inc/customizer.php:32
 msgid ""
 "Check the box to hide comments on the frontend. Comments are NOT deleted and "
 "can thus be unhidden at any time."
@@ -227,6 +211,19 @@ msgstr "Suche nach:"
 msgctxt "placeholder"
 msgid "Search..."
 msgstr "Suche..."
+
+#~ msgctxt "comments title"
+#~ msgid "One thought on &ldquo;%s&rdquo;"
+#~ msgstr "1 Kommentar zu &ldquo;%2$s&rdquo;"
+
+#~ msgctxt "comments title"
+#~ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "1 Kommentar zu &ldquo;%2$s&rdquo;"
+#~ msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#~ msgid "Comments are closed."
+#~ msgstr "Es können keine Kommentare abgegeben werden."
 
 #~ msgid "Comment navigation"
 #~ msgstr "Navigation der Kommentare"

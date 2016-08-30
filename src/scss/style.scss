@@ -23,10 +23,10 @@
 @import "mappy-breakpoints/mappy-breakpoints";
 
 /* Configuration variables and settings. */
-@import "config";
+@import "helpers/config";
 
 /* Library: basic mixins, functions, etc. specific to this theme. */
-@import "library";
+@import "helpers/library";
 
 
 /*!
@@ -49,40 +49,40 @@ GitHub Branch: #{metadata(github-branch)}
 // 2. Dependencies //
 
 /* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
-@import "normalize";
+@import "dependencies/normalize";
 
 /* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
-@import "reset";
+@import "dependencies/reset";
 
 
 // 3. Authored dependencies //
 
-@import "fonts";
-@import "base";
-@import "layout";
-@import "type";
+@import "dependencies/fonts";
+@import "dependencies/base";
+@import "dependencies/layout";
+@import "dependencies/type";
 /* Styles required by WordPress core */
-@import "wordpress";
+@import "dependencies/wordpress";
 
 
 // 4. Patters //
 
-@import "buttons";
-@import "forms";
-@import "menus";
+@import "patterns/buttons";
+@import "patterns/forms";
+@import "patterns/menus";
 
 
 // 5. Sections //
 
-@import "search";
-@import "widgets";
-@import "navigation";
-@import "header";
-@import "section";
-@import "article";
-@import "category";
+@import "sections/search";
+@import "sections/widgets";
+@import "sections/navigation";
+@import "sections/header";
+@import "sections/section";
+@import "sections/article";
+@import "sections/category";
 .entry-content {
-	@import "content";
+	@import "sections/content";
 }
 /*@import "contact";*/
-@import "footer";
+@import "sections/footer";

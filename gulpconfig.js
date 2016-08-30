@@ -151,7 +151,7 @@ module.exports = {
     }
   , normalize: { // Copies `normalize.css` from `node_modules` to `src/scss` and renames it to allow for it to imported as a Sass file
       src: bower+'normalize-css/normalize.css'
-    , dest: src+'scss'
+    , dest: src+'scss/dependencies'
     , rename: '_normalize.scss'
     }
   }

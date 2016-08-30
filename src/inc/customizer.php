@@ -16,6 +16,7 @@ function uwc_website_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->add_setting( 'comments', array(
 		'default' => false,
+		'sanitize_callback' => 'esc_html',
 	) );
 	$wp_customize->add_section( 'uwc_website_theme_options' , array(
 		'title'      => __( 'Theme Options', 'uwc-website' ),

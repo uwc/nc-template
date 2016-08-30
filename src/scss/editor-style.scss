@@ -24,10 +24,10 @@
 @import "mappy-breakpoints/mappy-breakpoints";
 
 /* Configuration variables and settings. */
-@import "config";
+@import "helpers/config";
 
 /* Library: basic mixins, functions, etc. specific to this theme. */
-@import "library";
+@import "helpers/library";
 
 
 /* Wrap the entire post style inside the TinyMCE selector, as suggested
@@ -38,22 +38,22 @@ body#tinymce.wp-editor {
 	// 2. Dependencies //
 
 	/* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
-	@import "normalize";
+	@import "dependencies/normalize";
 
 	/* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
-	@import "reset";
+	@import "dependencies/reset";
 
 
 	// 3. Authored dependencies //
 
-	@import "layout";
-	@import "type";
+	@import "dependencies/layout";
+	@import "dependencies/type";
 	/* Styles required by WordPress core */
-	@import "wordpress";
+	@import "dependencies/wordpress";
 
-	// 4. Editor styles //
+	// 4. Sections //
 
-	@import "content";
+	@import "sections/content";
 
 	/* Apply fundamental styles to editor */
 	@include ctnr(golden);
