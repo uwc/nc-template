@@ -55,12 +55,12 @@ if ( ! function_exists( 'uwc_website_page_navigation' ) ) :
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 		if ( ! empty( $prev_id ) ) {
 			echo '<div class="nav-previous">';
-			echo '<a href="', get_permalink( $prev_id ), '" title="', get_the_title( $prev_id ), '">', get_the_title( $prev_id ), '</a>';
+			echo '<a href="', esc_url( get_permalink( $prev_id ) ), '" title="', get_the_title( $prev_id ), '">', get_the_title( $prev_id ), '</a>';
 			echo '</div>';
 		}
 		if ( ! empty( $next_id ) ) {
 			echo '<div class="nav-next">';
-			echo '<a href="', get_permalink( $next_id ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), '</a>';
+			echo '<a href="', esc_url( get_permalink( $next_id ) ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), '</a>';
 			echo '</div>';
 		}
 		echo '</nav>';
@@ -77,12 +77,12 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 
 		echo '<nav class="post-navigation">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
-		echo paginate_links( array(
+		echo wp_kses( paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var( 'paged' ) ),
 			'total' => $wp_query -> max_num_pages,
-		) );
+		) ) );
 		echo '</nav>';
 	}
 endif;
@@ -110,7 +110,7 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 			echo '<h6>Inhalt</h6>';
 			echo '<div class="entry-links">';
 			foreach ( $items as $item ) {
-				echo '<a href="#', $item, '" title="', $item, '" data-scroll>', $item, '</a>';
+				echo '<a href="#', intval( $item ), '" title="', intval( $item ), '" data-scroll>', intval( $item ), '</a>';
 			}
 			echo '</nav>';
 		}

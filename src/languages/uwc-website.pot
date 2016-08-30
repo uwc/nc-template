@@ -143,16 +143,16 @@ msgstr ""
 msgid "UWC Website requires at least WordPress version 4.4. You are running version %s. Please upgrade and try again."
 msgstr ""
 
-#: src/inc/customizer.php:23
+#: src/inc/customizer.php:21
 msgid "Theme Options"
 msgstr ""
 
-#: src/inc/customizer.php:29
+#: src/inc/customizer.php:27
 msgid "Disable comments"
 msgstr ""
 
-#: src/inc/customizer.php:33
-msgid "Check the above box to hide comments on the frontend. No comments will be deleted and can thus be unhidden at any time."
+#: src/inc/customizer.php:31
+msgid "Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time."
 msgstr ""
 
 #: src/inc/extras.php:19

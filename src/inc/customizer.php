@@ -16,8 +16,6 @@ function uwc_website_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->add_setting( 'comments', array(
 		'default' => false,
-		'type' => 'theme_mod',
-		'sanitize_callback' => 'intval',
 	) );
 	$wp_customize->add_section( 'uwc_website_theme_options' , array(
 		'title'      => __( 'Theme Options', 'uwc-website' ),
@@ -30,7 +28,7 @@ function uwc_website_customize_register( $wp_customize ) {
 		'section'     => 'uwc_website_theme_options',
 		'settings'    => 'comments',
 		'type'        => 'checkbox',
-		'description' => __( 'Check the above box to hide comments on the frontend. No comments will be deleted and can thus be unhidden at any time.', 'uwc-website' ),
+		'description' => __( 'Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time.', 'uwc-website' ),
 		)
 	);
 }

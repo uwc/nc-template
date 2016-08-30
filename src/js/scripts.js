@@ -24,11 +24,11 @@ $( '#js-search' ).on( 'click', function( element ) {
 	// $('#form1_q').focus();
 });
 
-// function searchOpen() {
-  // $('#js-overlay-search').fadeToggle(300);
-  // $('body').toggleClass('no-scroll');
-  // $('#form1_q').focus();
-  // return false;
-// }
+function searchOpen() {
+  $('#js-overlay-search').fadeToggle(300);
+  $('body').toggleClass('no-scroll');
+  $('#form1_q').focus();
+  return false;
+}
 
 })( jQuery );

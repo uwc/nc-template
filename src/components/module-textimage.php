@@ -18,7 +18,7 @@
 
 	if ( $image ) {
 
-		echo $url[0];
+		echo esc_url( $url[0] );
 
 	}
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Element to output the newsfeed preview on section pages.
+ * Element to output the Newsfeed preview on section pages.
  * Gets the 4 most recent posts belonging to the selected categories.
  * Outputs them with markup if at least one category is set and a minimum of 4 posts exist.
  *
@@ -35,17 +35,17 @@ if ( $taxonomies && $count >= 4 ) {
 		}
 
 		if ( has_post_thumbnail( $post->ID ) ) {
-			echo '<article class="section-post post-' . $index . ' -thumbnail"><div class="section-image" style="background-image: url(';
-			echo $featured_url;
+			echo '<article class="section-post post-' . intval( $index ) . ' -thumbnail"><div class="section-image" style="background-image: url(';
+			echo esc_url( $featured_url );
 			echo ')"></div>';
 		} else {
-			echo '<article class="section-post post-' . $index . ' -no-thumbnail">';
+			echo '<article class="section-post post-' . intval( $index ) . ' -no-thumbnail">';
 		}
 		echo '<div class="section-wrapper">';
 		foreach ( $categories as $category ) {
-			echo '<a href="' . get_category_link( $category ) . '" class="section-category">' . get_cat_name( $category ) . '</a> ';
+			echo '<a href="' . esc_url( get_category_link( $category ) ) . '" class="section-category">' . sanitize_text_field( get_cat_name( $category ) ) . '</a> ';
 		}
-		echo '<a href="' . get_permalink( $post->ID ) . '"><h2 class="section-headline">' . get_the_title( $post->ID ) . '</h2><h4 class="section-date">' . get_the_date( '', $post->ID ) . '</h4></a></div></article>';
+		echo '<a href="' . esc_url( get_permalink( $post->ID ) ) . '"><h2 class="section-headline">' . get_the_title( $post->ID ) . '</h2><h4 class="section-date">' . get_the_date( '', $post->ID ) . '</h4></a></div></article>';
 		$index++;
 	}
 	echo '</section>';

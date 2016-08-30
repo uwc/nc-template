@@ -116,7 +116,7 @@ function newMap( $el ) {
 		]
 	};
 
-	// Create map.        	
+	// Create map.
 	var map = new google.maps.Map( $el[0], args );
 
 	// Add a markers reference.
@@ -206,7 +206,7 @@ function centerMap( map ) {
 	});
 
 	// Only 1 marker?
-	if ( 1 == map.markers.length ) {
+	if ( 1 === map.markers.length ) {
 
 		// Set center of map.
 		map.setCenter( bounds.getCenter() );

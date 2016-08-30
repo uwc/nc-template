@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-08-28 15:50+0200\n"
+"PO-Revision-Date: 2016-08-29 19:46+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -180,21 +180,21 @@ msgstr ""
 "UWC Website setzt mindestens WordPress Version 4.4 voraus. Du nutzt Version "
 "%s. Bitte aktualisiere und probiere es dann noch einmal."
 
-#: src/inc/customizer.php:23
+#: src/inc/customizer.php:21
 msgid "Theme Options"
 msgstr "Allgemeine Optionen"
 
-#: src/inc/customizer.php:29
+#: src/inc/customizer.php:27
 msgid "Disable comments"
 msgstr "Kommentare deaktivieren"
 
-#: src/inc/customizer.php:33
+#: src/inc/customizer.php:31
 msgid ""
-"Check the above box to hide comments on the frontend. No comments will be "
-"deleted and can thus be unhidden at any time."
+"Check the box to hide comments on the frontend. Comments are NOT deleted and "
+"can thus be unhidden at any time."
 msgstr ""
-"Aktivieren Sie das obige Kästchen um Kommentare auf der Webseite zu "
-"verbergen. Keine Kommentare werden gelöscht und können somit jederzeit "
+"Aktivieren Sie das Kästchen um Kommentare auf der Webseite zu verbergen. Die "
+"Kommentare werden NICHT gelöscht und können somit jederzeit wieder "
 "eingeblendet werden."
 
 #: src/inc/extras.php:19

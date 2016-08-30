@@ -1,5 +1,8 @@
 <?php
-	/**
-	 * Silence is golden.
-	 */
+/**
+ * Silence is golden.
+ *
+ * @package UWC_Website
+ */
+
 ?>

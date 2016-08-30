@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package UWC_Website
+ * @package UWC)_Website
  */
 
 get_header(); ?>

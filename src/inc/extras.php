@@ -68,6 +68,7 @@ add_filter( 'the_content', 'uwc_website_content_images' );
  * From https://www.wp-code.com/wordpress-snippets/synchronize-a-menu-with-your-page-hierarchy/
  *
  * @param integer $menu_id The id of the menu to be kept in sync.
+ * @param array   $menu_data Array with data of the menu to be kept in sync.
  */
 function uwc_website_hierarchy_from_menu( $menu_id, $menu_data = null ) {
 

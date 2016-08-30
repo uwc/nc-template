@@ -118,9 +118,12 @@
 			margin-top: vr(0.5);
 			margin-bottom: vr(0.5);
 		}
-	}
-	cite {
-		text-align: right;
+		cite {
+			text-align: right;
+			width: 100%;
+			display: inline-block;
+			margin-bottom: vr(0.5);
+		}
 	}
 }
 
