@@ -2,7 +2,7 @@
 /* jshint -W098 */
 (function( $ ) {
 
-window.addEventListener( 'DOMContentLoaded', function() {
+window.addEventListener( 'turbolinks:load', function() {
 	var nav = responsiveNav( '.nav-collapse', {
 		customToggle: 'menu-toggle', /* Selector: Specify the ID of a custom toggle. */
 		closeOnNavClick: true, /* Boolean: Close the navigation when one of the links are clicked. */

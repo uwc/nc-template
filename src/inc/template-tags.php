@@ -77,15 +77,16 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 
 		echo '<nav class="post-navigation">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
-		echo wp_kses( paginate_links( array(
+		echo paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var( 'paged' ) ),
 			'total' => $wp_query -> max_num_pages,
-		) ) );
+		) );
 		echo '</nav>';
 	}
 endif;
+
 
 if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 	/**
@@ -108,7 +109,7 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 		if ( count( $items ) != 0 ) {
 			echo '<nav class="entry-navigation"><h6>Inhalt</h6><div class="entry-links">';
 			foreach ( $items as $item ) {
-				echo '<a href="#', esc_html( $item ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a>';
+				echo '<a href="#', esc_html( urlencode( $item ) ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a>';
 			}
 			echo '</nav>';
 		}

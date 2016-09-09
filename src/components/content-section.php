@@ -28,14 +28,15 @@
 					</div>
 				<?php else : ?>
 					<nav class="header-navigation">
-						<ul class="header-links">
-							<?php wp_list_pages( array(
-								'child_of'    => $post->ID,
-								'depth'       => 1,
-								'title_li'    => '',
-								'sort_column' => 'menu_order',
-							) ); ?>
-						</ul>
+						<?php if ( has_nav_menu( 'primary' ) ) {
+							wp_nav_menu( array(
+								'theme_location'  => 'primary',
+								'sub_menu'		  => true,
+								'depth'           => '2',
+								'container'       => 'nav',
+								'fallback_cb'     => 'false',
+							) );
+					} ?>
 					</nav>
 				<?php endif; ?>
 			</div>

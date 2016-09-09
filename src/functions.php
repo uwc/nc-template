@@ -56,8 +56,8 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'header' => esc_html( 'Header' ),
-			'social' => esc_html( 'Social' ),
+			'primary' => __( 'Primary Menu', 'uwc-website' ),
+			'social' => __( 'Social Links Menu', 'uwc-website' ),
 		) );
 
 		/*

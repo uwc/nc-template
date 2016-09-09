@@ -53,7 +53,7 @@ module.exports = {
 
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks (below) to concatenate; warning: this method offers no dependency management!
-      scripts: ['accessibility', 'smoothScroll', 'navigation', 'core', 'google_maps']
+      scripts: ['accessibility', 'navigation', 'core', 'google_maps']
     , html5: ['ie']
     , customizer: ['customizer']
     }
@@ -66,11 +66,10 @@ module.exports = {
         src+'js/skip-link-focus-fix.js'
       ]
     , navigation: [
-        bower+'responsive-nav/responsive-nav.js', 
-        bower+'headroom.js/dist/headroom.js'
-      ]
-    , smoothScroll: [
-        bower+'smooth-scroll/dist/js/smooth-scroll.js'
+        bower+'responsive-nav/responsive-nav.js'
+      , bower+'headroom.js/dist/headroom.js'
+      , bower+'smooth-scroll/dist/js/smooth-scroll.js'
+      , modules+'turbolinks/dist/turbolinks.js'
       ]
     , ie: [
         bower+'html5shiv/dist/html5shiv.js',
