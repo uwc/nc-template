@@ -5,6 +5,7 @@
 @mixin button() {
 	@include font(button);
 	@include link-arrow(right, white);
+
 	display: inline-block;
 	position: relative;
   	z-index: 10;
@@ -17,6 +18,7 @@
 	background-size: 100%;
 	background-color: palette(pink);
 	background-image: gradient(left, palette(purple), palette(pink));
+
 	&:before {
 		background-color: palette(pink,light);
 	    background-image: gradient(left, palette(purple,light), palette(pink,light));
@@ -30,6 +32,7 @@
 	    z-index: -10;
 	    transition: opacity $anim-s;
 	}
+	
 	&:hover:before {
       	opacity: 1;
   	}

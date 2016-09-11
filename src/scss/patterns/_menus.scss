@@ -13,6 +13,7 @@
 	position: relative;
 	text-align: justify;
 	line-height: 0;
+
 	/* Hack to evenly space the menu items. */
 	&:after {
 		content: '';
@@ -21,6 +22,7 @@
 		font-size: 0px;
 		line-height: 0px;
 	}
+
 	& > .menu-item {
 		margin: 0;
 		padding: 0 0 vr(0.3) vr(0.5);
@@ -31,6 +33,7 @@
 		top: 0;
 		line-height: 1.6;
 		cursor: pointer;
+
 		&:first-child {
 			padding-left: 0;
 			ul {
@@ -38,11 +41,14 @@
 			}
 		}
 	}
+
 	& > .menu-item > a {
 		@include font(small);
 		@include link-underline(purple);
+
 		color: palette(gray, dark);
 	}
+
 	.menu-item:hover > a:after,
 	.menu-item:focus > a:after,
 	.menu-item.current-menu-item > a:after {
@@ -63,9 +69,10 @@
 	    transform: translate(0px,4px);
 	    opacity: 0;
 	    transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
-		/*max-width: vr(8);*/
+
 		.menu-item {
 			@include font(small);
+
 			/* Fixes weird change in font-weight on hover in Safari. */
 			-webkit-font-smoothing: antialiased;
 			text-align: left;
@@ -75,6 +82,7 @@
 			box-shadow: 0px 4px 8px -2px palette(gray, light);
 			width: calc(100% + 0.5rem);
 			transition: color #anim-s;
+
 			&:after {
 				content: '→';
 				color: inherit;
@@ -84,10 +92,12 @@
 				transform: translate(0, 0);
 				transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
 			}
+
 			&:hover,
 			&:focus {
 				color: palette(purple, light);
 			}
+
 			&:hover:after,
 			&:focus:after {
 				visibility: visible;
@@ -107,6 +117,7 @@
 #menu-item-search {
 	a:before {
 		@include font(small);
+
 		content: '\73';
 		display: inline-block;
 		font-family: 'uwc-website' !important;
@@ -120,6 +131,7 @@
 		-moz-osx-font-smoothing: grayscale;
 		transition: color $anim-s;
 	}
+
 	a:hover:before,
 	a:focus:before {
 		color: palette(purple);
@@ -141,18 +153,22 @@
 	text-align: right;
 	padding: 0;
 	margin: 0;
+
 	li {
 		display: inline-block;
 		position: relative;
 	}
+
 	a {
 		margin-left: vr(0.5);
 		opacity: 1;
 		transition: opacity $anim-s;
+
 		&:hover,
 		&:focus {
 			opacity: 0.8;
 		}
+
 		&:before {
 			content: '\64';
 			display: inline-block;

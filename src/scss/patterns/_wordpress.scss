@@ -27,6 +27,7 @@
 	width: 100vw!important;
 	max-width: 100vw;
 	margin: vr(0.5) calc((100vw - 100%) / -2);
+	
 	@include mappy-query(desktop-large) {
 		width: 56rem!important;
 		max-width: calc(100vw - #{vr(4)});
@@ -85,7 +86,8 @@ figure.alignleft {
 /* Apply same style in WordPress editor. */
 .wp-caption-dd {
 	@include font(small);
-	color: palette(grey);
+
+	color: palette(gray);
 }
 
 

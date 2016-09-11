@@ -4,6 +4,7 @@
 
 @mixin inputs {
 	@include font(body);
+
 	padding: vr(0.125) vr(0.75);
 	border: 1px solid transparent;
 	border-radius: 2px;
@@ -14,6 +15,7 @@
 	text-align: left;
 	resize: none;
 	transition: border $anim-s, box-shadow $anim-s;
+	
 	&:focus,
 	&:active {
 		box-shadow: 0px 0px 5px 1px palette(orange, light);

@@ -12,14 +12,17 @@
 
 .category-post {
   @include ctnr(golden);
+
   margin-bottom: vr(1);
   display: flex;
   align-items: stretch;
+
   @include mappy-query(phone) {
     flex-wrap: wrap;
   }
+
   @include mappy-query(tablet-desktop) {
-    border: $border-gray;
+    border: 1px solid palette(gray, light);
     background-color: palette(white);
     flex-direction: row-reverse;
   }
@@ -28,7 +31,7 @@
 
 // 2. Content //
 
-.sticky {
+.sticky .featured {
   font-weight: $sans-medium;
   font-size: ms(-2);
   line-height: 1rem;
@@ -37,28 +40,39 @@
   display: inline-block;
   padding: 0.1rem 0.5rem;
   margin-bottom: vr(0.5);
-  background: gradient(90deg, palette(purple), palette(pink));
+  background: linear-gradient(90deg, palette(purple), palette(pink));
   color: palette(white);
 }
 
 .category-text {
   .category-title {
     @include font(header3);
+
     color: palette(blue);
     margin-bottom: vr(0.5);
+
     @include mappy-query(phone) {
       margin-top: vr(0.75);
     }
   }
+
   .category-link {
     @include font(button);
     @include link-arrow(right, pink);
+
     display: inline-block;
     margin-top: vr(0.5);
   }
   @include mappy-query(tablet-desktop) {
     padding: vr(0.75) vr(1);
   }
+}
+
+.category-tags {
+  @include font(small);
+
+  color: palette(grey);
+  padding-bottom: vr(0.25);
 }
 
 .category-image {
@@ -78,6 +92,7 @@
   .category-image {
     flex: 1 1 14rem;
   }
+
   .category-text {
     flex: 1 1 22rem;
   }

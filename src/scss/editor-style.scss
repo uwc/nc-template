@@ -5,6 +5,13 @@
  * For more info, check out the codex: http://codex.wordpress.org/Editor_Style
  */
 
+/*
+ * 1. Dependencies
+ * 2. Configuration
+ * 3. Patterns
+ * 4. Sections
+ */
+
 /**
  * The order of the imports is crucial since they build on top of each other. 
  * For example, a form contains buttons, a menu can contain a form, etc.
@@ -12,44 +19,42 @@
  */
 
 
-// 1. Helpers //
-
-/* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
-@import "modular-scale/stylesheets/modular-scale";
-
-/* Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi */
-@import "typi/scss/typi";
-
-/* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
-@import "mappy-breakpoints/mappy-breakpoints";
-
-/* Configuration variables and settings. */
-@import "helpers/config";
-
-/* Library: basic mixins, functions, etc. specific to this theme. */
-@import "helpers/library";
-
-
 /* Wrap the entire post style inside the TinyMCE selector, as suggested
 here http://codex.wordpress.org/Function_Reference/add_editor_style */
 body#tinymce.wp-editor {
 
+	// 1. Dependencies //
 
-	// 2. Dependencies //
+	/* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
+	@import "modular-scale/stylesheets/modular-scale";
+
+	/* Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi */
+	@import "typi/scss/typi";
+
+	/* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
+	@import "mappy-breakpoints/mappy-breakpoints";
 
 	/* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
-	@import "dependencies/normalize";
+	@import "deps/normalize";
 
 	/* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
-	@import "dependencies/reset";
+	@import "deps/reset";
 
 
-	// 3. Authored dependencies //
+	// 2. Configuration //
 
-	@import "dependencies/layout";
-	@import "dependencies/type";
+	@import "config/layout";
+	@import "config/color";
+	@import "config/fonts";
+	@import "config/type";
+	@import "config/animation";
+
+
+	// 3. Patterns //
+
 	/* Styles required by WordPress core */
-	@import "dependencies/wordpress";
+	@import "patterns/wordpress";
+
 
 	// 4. Sections //
 

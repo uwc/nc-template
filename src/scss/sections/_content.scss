@@ -1,5 +1,6 @@
 h1 {
 	@include font(header1);
+
 	color: palette(blue);
 	margin-top: vr(1);
 	margin-bottom: vr(0.5);
@@ -7,6 +8,7 @@ h1 {
 
 h2 {
 	@include font(header2);
+
 	color: palette(blue);
 	margin-top: vr(1);
 	margin-bottom: vr(0.5);
@@ -14,6 +16,7 @@ h2 {
 
 h3 {
 	@include font(header3);
+
 	color: palette(gray);
 	margin-top: vr(1);
 	margin-bottom: vr(0.5);
@@ -21,6 +24,7 @@ h3 {
 
 h4, h5, h6 {
 	@include font(header4);
+
 	color: palette(gray);
 	margin-top: vr(0.5);
 	margin-bottom: vr(0.5);
@@ -29,6 +33,7 @@ h4, h5, h6 {
 p {
 	margin-top: vr(0.5);
 	margin-bottom: vr(0.5);
+
 	img {
 		max-width: 100%;
 	}
@@ -40,9 +45,11 @@ a {
 
 blockquote {
 	@include font(large);
+
 	color: palette(orange);
 	margin-top: vr(1.5);
 	margin-bottom: vr(1.5);
+
 	&:before,
 	&:after {
 		content: "";
@@ -52,14 +59,17 @@ blockquote {
 		display: block;
 		z-index: 10;
 	}
+
 	p {
 		margin-right: 0;
 		margin-left: 0;
 	}
+
 	cite,
 	small {
 		display: block;
 	}
+	
 	em,
 	i,
 	cite {

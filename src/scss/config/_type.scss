@@ -1,0 +1,335 @@
+// ==== TYPOGRAPHY ==== //
+
+/* Define all global font styles here. */
+
+/*
+ * 1. Variables
+ * 2. font()
+ * 3. Link styles
+ * 4. Global styles
+ */
+
+
+// 1. Variables //
+
+$sans: 'Bliss', 'Source Sans Pro', 'Freight Sans Pro', Helvetica, sans-serif;
+$sans-normal: 300;
+$sans-medium: 400;
+$sans-bold:   600;
+
+$ms-base: 1rem;
+$ms-ratio: 1.2;
+
+$typi: (
+  null: (16px, 1.5),
+  medium: (21px, 1.6),
+  x-large: (28px),
+);
+
+
+// 2. font() //
+
+/* 
+ * The font() function accepts a style parameter.
+ * It is intended to promote consistency in the typography, 
+ * therefore the number of styles should be kept to a minimum.
+ * Attributes which change between instances should not be defined here (e.g. color). 
+ */
+@mixin font($style: null) {
+  @if $style == null {
+    @warn "Mixin font() received no input! Please provide a style.";
+    font-size: ms(10);
+    color: red;
+  }
+
+  @else if $style == 'title' {
+    font-weight: $sans-bold;
+    font-size: ms(6);
+    line-height: 1;
+    word-wrap: break-word;
+  }
+
+  @else if $style == 'header1' {
+    font-weight: $sans-bold;
+    font-size: ms(4);
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  @else if $style == 'header2' {
+    font-weight: $sans-bold;
+    font-size: ms(3);
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  @else if $style == 'header3' {
+    font-weight: $sans-bold;
+    font-size: ms(2);
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  @else if $style == 'header4' {
+    font-weight: $sans-bold;
+    font-size: ms(1);
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  @else if $style == 'large' {
+    font-size: ms(1);
+    font-weight: $sans-medium;
+    word-wrap: break-word;
+  }
+
+  @else if $style == 'body' {
+    font-size: ms(0);
+    word-wrap: break-word;
+  }
+
+  @else if $style == 'small' {
+    font-weight: $sans-medium;
+    font-size: ms(-1);
+    letter-spacing: 0.01rem;
+    word-wrap: break-word;
+  }
+
+  @else if $style == 'button' {
+    font-weight: $sans-bold;
+    font-size: ms(-1);
+    letter-spacing: 0.02rem;
+    cursor: pointer;
+    word-wrap: break-word;
+  }
+
+  @else {
+    @warn "Mixin font() received invalid input! This style does not exist.";
+    font-size: ms(10);
+    color: red;
+  }
+}
+
+
+// 3. Link Styles //
+
+@mixin link-arrow($direction: none, $color: none) {
+  transform: translate(0px, 0px) translateZ(0px);
+  transition: color $anim-s;
+  color: palette($color);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: palette($color, light);
+  }
+
+  @if $direction == right {
+    &:after {
+      content: '→';
+      color: inherit;
+      padding-left: vr(0.2);
+      display: inline-block;
+      transform: translate(0, 0);
+      transition: transform $anim-s;
+    }
+
+    &:hover:after,
+    &:focus:after {
+      transform: translate(0.35rem, 0);
+    }
+  }
+
+  @else if $direction == left {
+    &:before {
+      content: '←';
+      color: inherit;
+      padding-right: vr(0.2);
+      display: inline-block;
+      transform: translate(0, 0);
+      transition: transform $anim-s;
+    }
+
+    &:hover:before,
+    &:focus:before {
+      transform: translate(-0.35rem, 0);
+    }
+  }
+
+  @else if $direction == down {
+    &:after {
+      content: '↓';
+      color: inherit;
+      padding-left: vr(0.2);
+      display: inline-block;
+      transform: translate(0, 0);
+      transition: transform $anim-s;
+    }
+
+    &:hover:after,
+    &:focus:after {
+      transform: translate(0, 0.35rem);
+    }
+  }
+
+  @else {
+    @warn "Mixin link-arrow() received invalid input! This direction does not exist.";
+    font-size: ms(10);
+    color: purple;
+  }
+}
+
+@mixin link-underline($color: none) {
+  position: relative;
+  z-index: 1;
+  color: palette($color);
+  display: inline-block;
+  cursor: pointer;
+  transition: color $anim-s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: palette($color, light);
+    visibility: hidden;
+    transform: translate(0px,2px);
+    opacity: 0;
+    transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
+  }
+
+  &:hover,
+  &:focus {
+    color: palette($color, light);
+  }
+
+  &:hover:after,
+  &:focus:after {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px,-2px);
+  }
+}
+
+
+// 4. Global styles //
+
+/* Update the foundational and global aspects of the page. */
+
+html {
+  @include typi-base();
+
+  font-family: $sans;
+  font-weight: $sans-normal;
+  word-wrap: break-word;
+  background-color: palette(gray, darker);
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  background-color: palette(white, light);
+  color: palette(gray, dark);
+}
+
+a {
+  border: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+strong,
+.strong {
+  font-weight: $sans-bold;
+}
+
+dfn,
+i,
+em,
+.em {
+  font-style: italic;
+}
+
+code,
+kbd,
+tt,
+var,
+samp,
+pre {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+  border: 1px solid palette(gray, light);
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.3125;
+  margin: 0 0 1.75em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.75em;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  background-color: palette(gray, light);
+  padding: 0.125em 0.25em;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted palette(gray, light);
+  cursor: help;
+}
+
+mark,
+ins {
+  background: palette(blue, light);
+  color: palette(white);
+  padding: 0.125em 0.25em;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+hr {
+  background-color: palette(gray, light);
+  border: 0;
+  height: 1px;
+  margin: 0 0 vr(1);
+}
+
+cite {
+  font-size: ms(0);
+  color: palette(gray);
+  
+  &:before {
+    content: "\2014\00a0";
+  }
+}
+
+strong,
+b {
+  font-weight: $sans-bold;
+}
+
+del {
+  opacity: 0.8;
+}

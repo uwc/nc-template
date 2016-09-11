@@ -11,6 +11,7 @@
 	position: relative;
 	box-shadow: 0px 2px 8px -2px palette(gray, light);
 	background-color: palette(white);
+
 	&:before {
 		content: "";
 		display: block;
@@ -22,6 +23,7 @@
 
 	.navigation-ctnr {
 		@include ctnr(wide);
+
 		padding-top: vr(0.375);
 		position: relative;
 	}
@@ -30,16 +32,19 @@
 		float: left;
 		opacity: 1;
 		transition: opacity $anim-s;
+
 		&:hover,
 		&:focus {
 			opacity: 0.8;
 		}
+
 		.custom-logo {
 			max-width: 85vw;
 			height: auto;
 			vertical-align: middle;
 		}
 	}
+	
 	.js-searchOpen {
 		height: 100%;
 		width: 100%;

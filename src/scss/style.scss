@@ -1,17 +1,39 @@
-// Designed, built, and released under MIT license by @connor_baer.
+// Designed, built, and released under MIT license by Connor Bär (connorbaer.io).
+
+/*!
+Theme Name: UWC Website
+Theme URI: https://github.com/uwc/uwc-website
+Author: Connor Bär
+Author URI: http://connorbaer.io
+Description: An open-source website template for UWC. Please request permission before use.
+Version: 1.1.1
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
+Text Domain: uwc-website
+Domain Path: /languages/
+GitHub Theme URI: https://github.com/uwc/uwc-website
+GitHub Branch: master
+*/
 
 
 // ==== IMPORTS ==== //
 
+/*
+ * 1. Dependencies
+ * 2. Configuration
+ * 3. Patterns
+ * 4. Sections
+ */
+
 /**
- * Do not declare anything before the metadata block; this first section is solely for variable, function, and mixin definitions.
  * The order of the imports is crucial since they build on top of each other. 
  * For example, a form contains buttons, a menu can contain a form, etc.
  * Note: `bower_components` and `npm_modules` are already in Sass's path.
  */
 
 
-// 1. Helpers //
+// 1. Dependencies //
 
 /* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
 @import "modular-scale/stylesheets/modular-scale";
@@ -22,57 +44,33 @@
 /* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
 @import "mappy-breakpoints/mappy-breakpoints";
 
-/* Configuration variables and settings. */
-@import "helpers/config";
-
-/* Library: basic mixins, functions, etc. specific to this theme. */
-@import "helpers/library";
-
-
-/*!
-Theme Name: #{metadata(theme-name)}
-Theme URI: #{metadata(theme-uri)}
-Author: #{metadata(theme-author)}
-Author URI: #{metadata(theme-author-uri)}
-Description: #{metadata(theme-description)}
-Version: #{metadata(theme-version)}
-License: #{metadata(theme-license)}
-License URI: #{metadata(theme-license-uri)}
-Tags: #{metadata(theme-tags)}
-Text Domain: #{metadata(theme-text-domain)}
-Domain Path: #{metadata(theme-text-domain-path)}
-GitHub Theme URI: #{metadata(github-theme-uri)}
-GitHub Branch: #{metadata(github-branch)}
-*/
-
-
-// 2. Dependencies //
-
 /* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
-@import "dependencies/normalize";
+@import "deps/normalize";
 
 /* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
-@import "dependencies/reset";
+@import "deps/reset";
 
 
-// 3. Authored dependencies //
+// 2. Configuration //
 
-@import "dependencies/fonts";
-@import "dependencies/base";
-@import "dependencies/layout";
-@import "dependencies/type";
+@import "config/layout";
+@import "config/color";
+@import "config/fonts";
+@import "config/type";
+@import "config/animation";
+
+
+// 3. Patters //
+
 /* Styles required by WordPress core */
-@import "dependencies/wordpress";
-
-
-// 4. Patters //
-
+@import "patterns/wordpress";
 @import "patterns/buttons";
 @import "patterns/forms";
 @import "patterns/menus";
+@import "patterns/overlays";
 
 
-// 5. Sections //
+// 4. Sections //
 
 @import "sections/search";
 @import "sections/widgets";
@@ -84,5 +82,4 @@ GitHub Branch: #{metadata(github-branch)}
 .entry-content {
 	@import "sections/content";
 }
-/*@import "contact";*/
 @import "sections/footer";
