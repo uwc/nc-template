@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-09-10 01:01+0200\n"
+"PO-Revision-Date: 2016-09-12 11:54+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -43,7 +43,7 @@ msgstr ""
 "über die <a href=\"%s\">Theorie des Wissens natürlich</a> bei UWC oder "
 "verwenden Sie einfach die Suchleiste unten zu finden , was Sie suchen."
 
-#: src/components/content-link.php:33, src/components/element-link.php:27
+#: src/components/content-link.php:33, src/components/element-link.php:37
 msgid "Continue reading"
 msgstr "Weiter lesen"
 
@@ -51,41 +51,38 @@ msgstr "Weiter lesen"
 msgid "Nothing Found"
 msgstr "Es wurde nichts gefunden."
 
-#: src/components/content-none.php:20
+#: src/components/content-none.php:18
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Sind Sie bereit, Ihren ersten Beitrag zu veröffentlichen? <a "
 "href=“%s”>Beginnen Sie hier</a>."
 
-#: src/components/content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+#: src/components/content-none.php:23
+msgid "Sorry, but nothing matched your search terms."
 msgstr ""
 "Es tut uns leid. Ihre Suche ergab keinen Treffer. Bitte versuchen Sie es mit "
 "einem anderen Begriff!"
 
-#: src/components/content-none.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr "Wir konnten keine Ergebnisse finden. Vielleicht hilft das Suchfeld."
+#: src/components/content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr "Es konnte leider nichts gefunden werden."
 
-#: src/components/content-standard.php:42, src/components/content-video.php:38
+#: src/components/content-standard.php:42, src/components/content-video.php:40
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "„%s“ weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
-#: src/components/content-standard.php:47, src/components/content-video.php:43,
+#: src/components/content-standard.php:47, src/components/content-video.php:45,
 #: src/image.php:52
 msgid "Pages:"
 msgstr "Seiten: "
 
-#: src/components/element-link.php:19, src/components/element-standard.php:19
+#: src/components/element-link.php:19, src/components/element-standard.php:19,
+#: src/components/element-video.php:23
 msgid "Featured"
 msgstr "Featured"
 
-#: src/components/element-standard.php:27, src/components/element-video.php:26
+#: src/components/element-standard.php:37, src/components/element-video.php:40
 msgid "Weiter lesen"
 msgstr "Weiter lesen"
 
@@ -186,12 +183,20 @@ msgstr ""
 msgid "Search"
 msgstr "Suche"
 
-#: src/inc/template-tags.php:137
+#: src/inc/template-tags.php:91
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
+#: src/inc/template-tags.php:93
+msgid "Next page"
+msgstr "Nächste Seite"
+
+#: src/inc/template-tags.php:166
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Gepostet am %s"
 
-#: src/inc/template-tags.php:142
+#: src/inc/template-tags.php:171
 msgctxt "post author"
 msgid "by %s"
 msgstr "von %s."
