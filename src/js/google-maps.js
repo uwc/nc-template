@@ -232,7 +232,7 @@ function centerMap( map ) {
 // Global var.
 var map = null;
 
-$( document ).ready(function() {
+window.addEventListener( 'turbolinks:load', function() {
 
 	$( '.acf-map' ).each(function() {
 

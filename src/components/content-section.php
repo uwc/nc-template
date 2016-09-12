@@ -34,6 +34,7 @@
 								'sub_menu'		  => true,
 								'depth'           => '2',
 								'container'       => 'nav',
+								'container_class'       => 'header-links',
 								'fallback_cb'     => 'false',
 							) );
 					} ?>

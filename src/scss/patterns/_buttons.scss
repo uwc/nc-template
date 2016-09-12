@@ -17,11 +17,11 @@
 	border: 2px solid palette(white);
 	background-size: 100%;
 	background-color: palette(pink);
-	background-image: gradient(left, palette(purple), palette(pink));
+	background-image: linear-gradient(left, palette(purple), palette(pink));
 
 	&:before {
 		background-color: palette(pink,light);
-	    background-image: gradient(left, palette(purple,light), palette(pink,light));
+	    background-image: linear-gradient(left, palette(purple,light), palette(pink,light));
 	    content: '';    
 	    display: block;
 	    height: 100%;
