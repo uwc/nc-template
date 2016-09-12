@@ -1,6 +1,6 @@
 {
-  "name": "uwc/nc-template",
-  "description": "A template for UWC (United World College) websites. Request permission before use.",
+  "name": "uwc/uwc-website",
+  "description": "An open-source WordPress theme for UWC websites. Request permission before use.",
   "keywords": [
     "wordpress",
     "wordpress-theme",
@@ -9,7 +9,7 @@
     "nc",
     "national-committee"
   ],
-  "homepage": "https://github.com/uwc/nc-template",
+  "homepage": "https://github.com/uwc/uwc-website",
   "license": "MIT",
   "authors": [
     {

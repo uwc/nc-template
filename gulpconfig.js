@@ -17,7 +17,7 @@ module.exports = {
   browsersync: {
     files: [build+'/**', '!'+build+'/**.map'] // Exclude map files
   , port: 5000 // Port number for the live version of the site; default: 3000
-  , proxy: 'nc-website:80' // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work
+  , proxy: 'http://nc-website/' // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work
   , notify: false // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not)
   , ui: false // Set to false if you don't need the browsersync UI
   , open: false // Set to false if you don't like the browser window opening automatically

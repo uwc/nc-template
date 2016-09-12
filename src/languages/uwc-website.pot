@@ -24,7 +24,7 @@ msgstr ""
 msgid "Looks like something has gone terribly wrong somewhere in the Internet. As a result, the page you requested isn&rsquo;t available. Or maybe it doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of your imagination. Maybe you are a figment of your own imagination. Did we just blow your mind? Find out more about the <a href=\"%s\">theory of knowledge course</a> at UWC or simply use the search bar below to find what you are looking for."
 msgstr ""
 
-#: src/components/content-link.php:33, src/components/element-link.php:27
+#: src/components/content-link.php:33, src/components/element-link.php:37
 msgid "Continue reading"
 msgstr ""
 
@@ -32,31 +32,31 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: src/components/content-none.php:20
+#: src/components/content-none.php:18
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: src/components/content-none.php:25
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+#: src/components/content-none.php:23
+msgid "Sorry, but nothing matched your search terms."
 msgstr ""
 
-#: src/components/content-none.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+#: src/components/content-none.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
 msgstr ""
 
-#: src/components/content-standard.php:42, src/components/content-video.php:38
+#: src/components/content-standard.php:42, src/components/content-video.php:40
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: src/components/content-standard.php:47, src/components/content-video.php:43, src/image.php:52
+#: src/components/content-standard.php:47, src/components/content-video.php:45, src/image.php:52
 msgid "Pages:"
 msgstr ""
 
-#: src/components/element-link.php:19, src/components/element-standard.php:19
+#: src/components/element-link.php:19, src/components/element-standard.php:19, src/components/element-video.php:23
 msgid "Featured"
 msgstr ""
 
-#: src/components/element-standard.php:27, src/components/element-video.php:26
+#: src/components/element-standard.php:37, src/components/element-video.php:40
 msgid "Weiter lesen"
 msgstr ""
 
@@ -143,12 +143,20 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/inc/template-tags.php:137
+#: src/inc/template-tags.php:91
+msgid "Previous page"
+msgstr ""
+
+#: src/inc/template-tags.php:93
+msgid "Next page"
+msgstr ""
+
+#: src/inc/template-tags.php:166
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: src/inc/template-tags.php:142
+#: src/inc/template-tags.php:171
 msgctxt "post author"
 msgid "by %s"
 msgstr ""

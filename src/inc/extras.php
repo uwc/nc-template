@@ -69,12 +69,12 @@ add_filter( 'the_content', 'uwc_website_content_images' );
  * @return html Post/page content modified to urlencode anchor ids.
  */
 function uwc_website_content_anchors( $content ) {
-	$content = preg_replace_callback( 
+	$content = preg_replace_callback(
 		'/<a id=\"([^\"]*)\"><\/a>/iU',
 		function ( $matches ) {
 			return '<a id="' . urlencode( $matches[1] ) . '"></a>';
-		}, 
-		$content 
+		},
+		$content
 	);
 	return $content;
 }
@@ -87,7 +87,6 @@ add_filter( 'the_content', 'uwc_website_content_anchors' );
  * @param array $sorted_menu_items The sorted menu defined in the wp_nav_menu.
  * @param array $args The arguments defined in the wp_nav_menu call.
  */
-
 function uwc_website_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 	if ( isset( $args->sub_menu ) ) {
 		$root_id = 0;
@@ -103,29 +102,29 @@ function uwc_website_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 	// Find the top level parent.
 	if ( ! isset( $args->direct_parent ) ) {
 		$prev_root_id = $root_id;
-		while ( $prev_root_id != 0 ) {
+		while ( 0 != $prev_root_id ) {
 			foreach ( $sorted_menu_items as $menu_item ) {
 				if ( $menu_item->ID == $prev_root_id ) {
 					$prev_root_id = $menu_item->menu_item_parent;
 					// Don't set the root_id to 0 if we've reached the top of the menu.
-					if ( $prev_root_id != 0 ) $root_id = $menu_item->menu_item_parent;
+					if ( 0 != $prev_root_id ) $root_id = $menu_item->menu_item_parent;
 					break;
+					}
 				}
 			}
 		}
-	}
 
-	$menu_item_parents = array();
-	foreach ( $sorted_menu_items as $key => $item ) {
-		// Init menu_item_parents.
-		if ( $item->ID == $root_id ) $menu_item_parents[] = $item->ID;
+		$menu_item_parents = array();
+		foreach ( $sorted_menu_items as $key => $item ) {
+			// Init menu_item_parents.
+			if ( $item->ID == $root_id ) $menu_item_parents[] = $item->ID;
 
-			if ( in_array( $item->menu_item_parent, $menu_item_parents ) ) {
-				// Part of sub-tree: keep!
-				$menu_item_parents[] = $item->ID;
-			} else if ( ! ( isset( $args->show_parent ) && in_array( $item->ID, $menu_item_parents ) ) ) {
-				// Not part of sub-tree: away with it!
-				unset( $sorted_menu_items[$key] );
+				if ( in_array( $item->menu_item_parent, $menu_item_parents ) ) {
+					// Part of sub-tree: keep!
+					$menu_item_parents[] = $item->ID;
+				} else if ( ! ( isset( $args->show_parent ) && in_array( $item->ID, $menu_item_parents ) ) ) {
+					// Not part of sub-tree: away with it!
+					unset( $sorted_menu_items[ $key ] );
 				}
 			}
 			return $sorted_menu_items;

@@ -82,11 +82,14 @@
   @include clearfix;
 
   clear: both;
+  position: relative;
   padding-top: vr(0.75);
   padding-bottom: vr(1.5);
 
   .nav-previous {
     float: left;
+    z-index: 100;
+    position: relative;
 
     a {
       @include font(button);
@@ -94,8 +97,26 @@
     }
   }
 
+  .nav-numbers {
+    @include font(small);
+
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    right: 0;
+
+    a {
+      @include font(button);
+
+      color: palette(purple);
+    }
+  }
+
   .nav-next {
     float: right;
+    z-index: 100;
+    position: relative;
 
     a {
       @include font(button);

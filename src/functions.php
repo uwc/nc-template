@@ -8,7 +8,7 @@
  */
 
 /**
- * UWC Website only works in WordPress 4.4 or later.
+ * UWC Website has only been tested in WordPress 4.4 and later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';

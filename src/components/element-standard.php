@@ -16,12 +16,22 @@
 	<div class="category-text">
 
 	<?php if ( is_sticky() ) : ?>
-		<span class="sticky"><?php echo esc_html__( 'Featured', 'uwc-website' ); ?></span>
+		<span class="featured"><?php echo esc_html__( 'Featured', 'uwc-website' ); ?></span>
 	<?php endif; ?>
 
 		<header class="header -category">
 		<?php the_title( '<h2 class="category-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 		</header>
+
+		<?php if( $tags = get_the_tags() ) {
+			echo '<p class="category-tags">';
+			foreach( $tags as $tag ) {
+				$sep = ( $tag === end( $tags ) ) ? '' : ', ';
+				echo '<a href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
+			}
+			echo '</p>';
+		} ?>
+
 		<p class="category-body"><?php the_excerpt(); ?></p>
 
 		<?php echo '<a class="category-link" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_html__( 'Weiter lesen', 'uwc-website' ) . '</a>'; ?>

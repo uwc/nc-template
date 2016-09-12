@@ -49,4 +49,14 @@
 			) );
 		?>
 	</div>
+
+	<?php if( $tags = get_the_tags() ) {
+		echo '<p class="post-tags">';
+		foreach( $tags as $tag ) {
+			$sep = ( $tag === end( $tags ) ) ? '' : ', ';
+			echo '<a href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
+		}
+		echo '</p>';
+	} ?>
+	
 </article><!-- #post-## -->

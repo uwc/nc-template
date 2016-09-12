@@ -10,10 +10,8 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="header-header">
-		<h1 class="header-title"><?php esc_html_e( 'Nothing Found', 'uwc-website' ); ?></h1>
-	</header>
-	<div class="page-content">
+	<div class="entry-content">
+		<h1><?php esc_html_e( 'Nothing Found', 'uwc-website' ); ?></h1>
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
@@ -22,13 +20,10 @@
 		<?php elseif ( is_search() ) :
 			get_search_form(); ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'uwc-website' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms.', 'uwc-website' ); ?></p>
 		<?php else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'uwc-website' ); ?></p>
-			<?php
-				get_search_form();
-
-		endif; ?>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'uwc-website' ); ?></p>
+		<?php endif; ?>
 	</div>
 </section><!-- .no-results -->

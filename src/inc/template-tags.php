@@ -69,21 +69,50 @@ endif;
 
 if ( ! function_exists( 'uwc_website_paginated' ) ) :
 	/**
-	 * Prints HTML with links to previous and next pages for the current page.
+	 * Pagination for archive, taxonomy, category, tag and search results pages.
+	 *
+	 * @global $wp_query http://codex.wordpress.org/Class_Reference/WP_Query
+	 * @return Prints the HTML for the pagination if a template is $paged
 	 */
 	function uwc_website_paginated() {
 		global $wp_query;
-		$big = 99999;
+		$big = 99999999; // This needs to be an unlikely integer.
 
-		echo '<nav class="post-navigation">';
-		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
-		echo paginate_links( array(
+		// For more options and info view the docs for paginate_links(): http://codex.wordpress.org/Function_Reference/paginate_links.
+		$paginate_numbers = paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var( 'paged' ) ),
 			'total' => $wp_query -> max_num_pages,
+			'prev_next' => false,
+			'mid_size' => 1
 		) );
-		echo '</nav>';
+
+		$paginate_previous = get_previous_posts_link( __( 'Previous page', 'uwc-website') );
+
+		$paginate_next = get_next_posts_link(  __( 'Next page', 'uwc-website') );
+
+		// Display the pagination if more than one page is found
+	    if ( $paginate_numbers ) {
+	        echo '<nav class="post-navigation">';
+			echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
+			if ( ! empty( $paginate_previous ) ) {
+				echo '<div class="nav-previous">' . $paginate_previous . '</div>';
+			}
+	        echo '<div class="nav-numbers">' . wp_kses( $paginate_numbers, array(
+			    'a' => array(
+			        'href' => array(),
+			        'title' => array()
+			    ),
+			    'nav' => array(),
+			    'ul' => array(),
+			    'li' => array(),
+			) ) . '</div>';
+			if ( ! empty( $paginate_next ) ) {
+				echo '<div class="nav-next">' . $paginate_next . '</div>';
+			}
+	        echo '</nav>';
+	    }
 	}
 endif;
 

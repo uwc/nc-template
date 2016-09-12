@@ -32,4 +32,14 @@
 	<div class="entry-content">
 		<?php echo '<p><a href="' . esc_url( get_field( 'link_url' ) ) . '" rel="bookmark" target="_blank">' . esc_html__( 'Continue reading', 'uwc-website' ) . '...</a></p>'; ?>
 	</div>
+
+	<?php if( $tags = get_the_tags() ) {
+		echo '<p class="category-tags">';
+		foreach( $tags as $tag ) {
+			$sep = ( $tag === end( $tags ) ) ? '' : ', ';
+			echo '<a href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
+		}
+		echo '</p>';
+	} ?>
+	
 </article><!-- #post-## -->
