@@ -56,7 +56,7 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: src/components/element-standard.php:37, src/components/element-video.php:40
+#: src/components/element-standard.php:37, src/components/element-video.php:41
 msgid "Weiter lesen"
 msgstr ""
 
@@ -143,20 +143,20 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/inc/template-tags.php:91
+#: src/inc/template-tags.php:90
 msgid "Previous page"
 msgstr ""
 
-#: src/inc/template-tags.php:93
+#: src/inc/template-tags.php:92
 msgid "Next page"
 msgstr ""
 
-#: src/inc/template-tags.php:166
+#: src/inc/template-tags.php:172
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: src/inc/template-tags.php:171
+#: src/inc/template-tags.php:177
 msgctxt "post author"
 msgid "by %s"
 msgstr ""

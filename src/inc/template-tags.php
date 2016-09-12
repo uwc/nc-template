@@ -72,7 +72,6 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 	 * Pagination for archive, taxonomy, category, tag and search results pages.
 	 *
 	 * @global $wp_query http://codex.wordpress.org/Class_Reference/WP_Query
-	 * @return Prints the HTML for the pagination if a template is $paged
 	 */
 	function uwc_website_paginated() {
 		global $wp_query;
@@ -92,24 +91,31 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 
 		$paginate_next = get_next_posts_link( __( 'Next page', 'uwc-website' ) );
 
-		// Display the pagination if more than one page is found
+		// Display the pagination if more than one page is found.
 	    if ( $paginate_numbers ) {
 	        echo '<nav class="post-navigation">';
 			echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 			if ( ! empty( $paginate_previous ) ) {
-				echo '<div class="nav-previous">' . $paginate_previous . '</div>';
+				echo '<div class="nav-previous">' . wp_kses( $paginate_previous, array(
+			    'a' => array(
+			        'href' => array(),
+			        'title' => array(),
+			    )
+			) ) . '</div>';
 			}
 	        echo '<div class="nav-numbers">' . wp_kses( $paginate_numbers, array(
 			    'a' => array(
 			        'href' => array(),
 			        'title' => array(),
-			    ),
-			    'nav' => array(),
-			    'ul' => array(),
-			    'li' => array(),
+			    )
 			) ) . '</div>';
 			if ( ! empty( $paginate_next ) ) {
-				echo '<div class="nav-next">' . $paginate_next . '</div>';
+				echo '<div class="nav-next">' . wp_kses( $paginate_next, array(
+			    'a' => array(
+			        'href' => array(),
+			        'title' => array(),
+			    )
+			) ) . '</div>';
 			}
 	        echo '</nav>';
 	    }

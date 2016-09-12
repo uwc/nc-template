@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-09-12 11:54+0200\n"
+"PO-Revision-Date: 2016-09-12 12:36+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -82,7 +82,7 @@ msgstr "Seiten: "
 msgid "Featured"
 msgstr "Featured"
 
-#: src/components/element-standard.php:37, src/components/element-video.php:40
+#: src/components/element-standard.php:37, src/components/element-video.php:41
 msgid "Weiter lesen"
 msgstr "Weiter lesen"
 
@@ -183,20 +183,20 @@ msgstr ""
 msgid "Search"
 msgstr "Suche"
 
-#: src/inc/template-tags.php:91
+#: src/inc/template-tags.php:90
 msgid "Previous page"
 msgstr "Vorherige Seite"
 
-#: src/inc/template-tags.php:93
+#: src/inc/template-tags.php:92
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: src/inc/template-tags.php:166
+#: src/inc/template-tags.php:172
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Gepostet am %s"
 
-#: src/inc/template-tags.php:171
+#: src/inc/template-tags.php:177
 msgctxt "post author"
 msgid "by %s"
 msgstr "von %s."

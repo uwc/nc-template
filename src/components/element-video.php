@@ -28,12 +28,13 @@
 		</header>
 
 		<?php if ( $tags = get_the_tags() ) {
-			echo '<span class="meta-sep"> | </span>';
+			echo '<p class="category-tags">';
 			foreach ( $tags as $tag ) {
-				$sep = ( $tag === end( $tags ) ) ? '' : ', ';
-				echo '<a href="' . get_term_link( $tag, $tag->taxonomy ) . '">#' . $tag->name . '</a>' . $sep;
+				$sep = ( end( $tags ) === $tag ) ? '' : ', ';
+				echo '<a href="' . esc_url( get_term_link( $tag, $tag->taxonomy ) ) . '">#' . esc_html( $tag->name ) . '</a>' . esc_html( $sep );
 			}
-} ?>
+			echo '</p>';
+	} ?>
 
 		<p class="category-body"><?php the_excerpt(); ?></p>
 
