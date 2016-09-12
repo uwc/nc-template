@@ -85,12 +85,12 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 			'current' => max( 1, get_query_var( 'paged' ) ),
 			'total' => $wp_query -> max_num_pages,
 			'prev_next' => false,
-			'mid_size' => 1
+			'mid_size' => 1,
 		) );
 
-		$paginate_previous = get_previous_posts_link( __( 'Previous page', 'uwc-website') );
+		$paginate_previous = get_previous_posts_link( __( 'Previous page', 'uwc-website' ) );
 
-		$paginate_next = get_next_posts_link(  __( 'Next page', 'uwc-website') );
+		$paginate_next = get_next_posts_link( __( 'Next page', 'uwc-website' ) );
 
 		// Display the pagination if more than one page is found
 	    if ( $paginate_numbers ) {
@@ -102,7 +102,7 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 	        echo '<div class="nav-numbers">' . wp_kses( $paginate_numbers, array(
 			    'a' => array(
 			        'href' => array(),
-			        'title' => array()
+			        'title' => array(),
 			    ),
 			    'nav' => array(),
 			    'ul' => array(),

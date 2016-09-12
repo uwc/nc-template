@@ -125,7 +125,7 @@ module.exports = {
     , dest: build
     , bin: 'phpcbf'
     , standard: 'WordPress-Core'
-    , warning: '0'
+    , warningSeverity: '0'
     }
   , fonts: {
       src: src+'fonts/*' // This simply copies the custom font files over.

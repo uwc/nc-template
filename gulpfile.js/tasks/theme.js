@@ -36,7 +36,7 @@ gulp.task('theme-php', function () {
   .pipe(phpcbf({
     bin: config.php.bin
   , standard: config.php.standard
-  , warningSeverity: config.php.warning
+  , warningSeverity: config.php.warningSeverity
   }))
   .on('error', gutil.log)
   .pipe(gulp.dest(config.php.dest));
