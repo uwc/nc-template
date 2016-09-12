@@ -12,7 +12,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <section class="section-video">
-	<?php the_field( 'video_url' ); ?>
+	<div class="section-wrapper">
+		<?php the_field( 'video_url' ); ?>
+	</div>
 </section>
 
 	<header class="header -entry -no-featured">
@@ -45,4 +47,14 @@
 			) );
 		?>
 	</div>
+
+	<?php if ( $tags = get_the_tags() ) {
+		echo '<p class="category-tags">';
+		foreach ( $tags as $tag ) {
+			$sep = ( end( $tags ) === $tag ) ? '' : ', ';
+			echo '<a href="' . esc_url( get_term_link( $tag, $tag->taxonomy ) ) . '">#' . esc_html( $tag->name ) . '</a>' . esc_html( $sep );
+		}
+		echo '</p>';
+} ?>
+	
 </article><!-- #post-## -->

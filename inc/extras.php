@@ -15,7 +15,7 @@
  * @param array $args Menu arguments for theme location.
  */
 function uwc_website_nav_menu_items( $items, $args ) {
-	if ( 'header' == $args -> theme_location ) {
+	if ( 'menu-header' == $args -> menu_class ) {
 		$addmenu = '<li id="menu-item-search" class="menu-item"><a id="js-searchOpen" href="#"><span class="screen-reader-text">' . __( 'Search', 'uwc-website' ) . '</span></a></li>';
 		return $items . $addmenu;
 	} else {
@@ -66,12 +66,14 @@ add_filter( 'the_content', 'uwc_website_content_images' );
  * Replace spaces with dashes in anchor tags.
  *
  * @param html $content The post/page content as html.
- * @return html Post/page content modified to replace .
+ * @return html Post/page content modified to urlencode anchor ids.
  */
 function uwc_website_content_anchors( $content ) {
-	$content = preg_replace(
-		'/<p>\\s*?<a\\s*?id=\"(.*?)\">?\\s*<\\/p>/s',
-		'Forth-tag',
+	$content = preg_replace_callback(
+		'/<a id=\"([^\"]*)\"><\/a>/iU',
+		function ( $matches ) {
+			return '<a id="' . urlencode( $matches[1] ) . '"></a>';
+		},
 		$content
 	);
 	return $content;
@@ -79,52 +81,57 @@ function uwc_website_content_anchors( $content ) {
 add_filter( 'the_content', 'uwc_website_content_anchors' );
 
 /**
- * Synchronize the page hierarchy when the menu structure is changed.
- * From https://www.wp-code.com/wordpress-snippets/synchronize-a-menu-with-your-page-hierarchy/
+ * Output a submenu with the child pages of the current page.
+ * From https://stackoverflow.com/questions/18875400/display-current-parent-and-its-sub-menu-only-wordpress
  *
- * @param integer $menu_id The id of the menu to be kept in sync.
- * @param array   $menu_data Array with data of the menu to be kept in sync.
+ * @param array $sorted_menu_items The sorted menu defined in the wp_nav_menu.
+ * @param array $args The arguments defined in the wp_nav_menu call.
  */
-function uwc_website_hierarchy_from_menu( $menu_id, $menu_data = null ) {
+function uwc_website_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
+	if ( isset( $args->sub_menu ) ) {
+		$root_id = 0;
+		// Find the current menu item.
+		foreach ( $sorted_menu_items as $menu_item ) {
+			if ( $menu_item->current ) {
+				// Set the root id based on whether the current menu item has a parent or not.
+				$root_id = ( $menu_item->menu_item_parent ) ? $menu_item->menu_item_parent : $menu_item->ID;
+				break;
+			}
+		}
 
-	$term = get_term_by( 'name', 'Header', 'nav_menu' );
-	$sync_menu_id = $term->term_id;
-
-	if ( $sync_menu_id != $menu_id ) {  // You should update this integer to the id of the menu you want to keep in sync.
-		return; }
-	if ( null !== $menu_data ) { // If $menu_data !== null, this means the action was fired in nav-menu.php, BEFORE the menu items have been updated, and we should ignore it.
-		return; }
-	$menu_details = get_term_by( 'id', $menu_id, 'nav_menu' );
-	if ( $items = wp_get_nav_menu_items( $menu_details->term_id ) ) {
-		// Create an index of menu item IDs, so we can find parents easily.
-		foreach ( $items as $key => $item ) {
-			$item_index[ $item->ID ] = $key; }
-		// Loop through each menu item.
-		foreach ( $items as $item ) {
-			// Only proceed if we're dealing with a page.
-			if ( 'page' == $item->object ) {
-				// Get the details of the page.
-				$post = get_post( $item->object_id, ARRAY_A );
-				if ( 0 != $item->menu_item_parent ) {
-					// This is not top-level menu items, so we need to find the parent page.
-					if ( 'page' != $items[ $item_index[ $item->menu_item_parent ] ]->object ) {
-						// The parent isn't a page. Queue an error message.
-						global $messages;
-						$messages[] = '<div id="message" class="error"><p>' . sprintf( __( 'The parent of <strong>%1$1s</strong> is <strong>%2$2s</strong>, which is not a page, which means that this part of the menu cannot sync with your page hierarchy.', 'uwc-website' ), $item->title, $items[ $item_index[ $item->menu_item_parent ] ]->title ) . '</p></div>';
-						$new_post['post_parent'] = new WP_Error;
-					} else { 					// Get the new parent page from the index.
-						$new_post['post_parent'] = $items[ $item_index[ $item->menu_item_parent ] ]->object_id;
+		// Find the top level parent.
+		if ( ! isset( $args->direct_parent ) ) {
+			$prev_root_id = $root_id;
+			while ( 0 != $prev_root_id ) {
+				foreach ( $sorted_menu_items as $menu_item ) {
+					if ( $menu_item->ID == $prev_root_id ) {
+						$prev_root_id = $menu_item->menu_item_parent;
+						// Don't set the root_id to 0 if we've reached the top of the menu.
+						if ( 0 != $prev_root_id ) { $root_id = $menu_item->menu_item_parent;
+						}
+						break;
 					}
-				} else { 				$new_post['post_parent'] = 0; // Top-level menu item, so the new parent page is 0.
-				}			if ( ! is_wp_error( $new_post['post_parent'] ) ) {
-						$new_post['ID'] = $post['ID'];
-						$new_post['menu_order'] = $item->menu_order;
-					if ( $new_post['menu_order'] !== $post['menu_order'] || $new_post['post_parent'] !== $post['post_parent'] ) {
-						// Only update the page if something has changed.
-						wp_update_post( $new_post ); }
 				}
 			}
 		}
+
+		$menu_item_parents = array();
+		foreach ( $sorted_menu_items as $key => $item ) {
+			// Init menu_item_parents.
+			if ( $item->ID == $root_id ) { $menu_item_parents[] = $item->ID;
+			}
+
+			if ( in_array( $item->menu_item_parent, $menu_item_parents ) ) {
+				// Part of sub-tree: keep!
+				$menu_item_parents[] = $item->ID;
+			} else if ( ! ( isset( $args->show_parent ) && in_array( $item->ID, $menu_item_parents ) ) ) {
+				// Not part of sub-tree: away with it!
+				unset( $sorted_menu_items[ $key ] );
+			}
+		}
+			return $sorted_menu_items;
+	} else {
+		return $sorted_menu_items;
 	}
 }
-add_action( 'wp_update_nav_menu', 'uwc_website_hierarchy_from_menu', 10, 2 );
+add_filter( 'wp_nav_menu_objects', 'uwc_website_wp_nav_menu_objects_sub_menu', 10, 2 );

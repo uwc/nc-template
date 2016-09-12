@@ -9,9 +9,9 @@ Contributors: [Connor Bär](http://connorbaer.io)
 
 Requires at least: WordPress 4.5
 
-Tested up to: WordPress 4.5.3
+Tested up to: WordPress 4.6.1
 
-Version: 1.1.1
+Version: 1.2.0
 
 License: [MIT](#copyright)
 

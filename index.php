@@ -35,10 +35,10 @@ get_header(); ?>
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 				if ( is_page() && $post->post_parent > 0 ) {
-					get_template_part( 'components/content', 'section' );
+					get_template_part( 'components/element', 'section' );
 				} else {
 					$format = get_post_format() ? : 'standard';
-					get_template_part( 'components/content', $format );
+					get_template_part( 'components/element', $format );
 				}
 
 			endwhile;

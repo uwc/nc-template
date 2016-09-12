@@ -8,7 +8,7 @@
  */
 
 /**
- * UWC Website only works in WordPress 4.4 or later.
+ * UWC Website has only been tested in WordPress 4.4 and later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -56,8 +56,8 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'header' => esc_html( 'Header' ),
-			'social' => esc_html( 'Social' ),
+			'primary' => __( 'Primary Menu', 'uwc-website' ),
+			'social' => __( 'Social Links Menu', 'uwc-website' ),
 		) );
 
 		/*
