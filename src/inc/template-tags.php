@@ -100,21 +100,21 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 			    'a' => array(
 			        'href' => array(),
 			        'title' => array(),
-			    )
+			    ),
 			) ) . '</div>';
 			}
 	        echo '<div class="nav-numbers">' . wp_kses( $paginate_numbers, array(
 			    'a' => array(
 			        'href' => array(),
 			        'title' => array(),
-			    )
+			    ),
 			) ) . '</div>';
 			if ( ! empty( $paginate_next ) ) {
 				echo '<div class="nav-next">' . wp_kses( $paginate_next, array(
 			    'a' => array(
 			        'href' => array(),
 			        'title' => array(),
-			    )
+			    ),
 			) ) . '</div>';
 			}
 	        echo '</nav>';
