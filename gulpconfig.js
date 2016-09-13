@@ -53,7 +53,7 @@ module.exports = {
 
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks (below) to concatenate; warning: this method offers no dependency management!
-      scripts: ['accessibility', 'navigation', 'core', 'google_maps']
+      scripts: ['accessibility', 'navigation', 'lightbox', 'core', 'google_maps']
     , html5: ['ie']
     , customizer: ['customizer']
     }
@@ -70,6 +70,10 @@ module.exports = {
       , bower+'headroom.js/dist/headroom.js'
       , bower+'smooth-scroll/dist/js/smooth-scroll.js'
       , modules+'turbolinks/dist/turbolinks.js'
+      ]
+    , lightbox: [
+        bower+'slick-carousel/slick/slick.min.js'
+      , bower+'slick-lightbox/dist/slick-lightbox.min.js'
       ]
     , ie: [
         bower+'html5shiv/dist/html5shiv.js',
@@ -148,10 +152,18 @@ module.exports = {
       src: [build+'**/*', '!'+build+'**/*.map']
     , dest: dist
     }
-  , normalize: { // Copies `normalize.css` from `node_modules` to `src/scss` and renames it to allow for it to imported as a Sass file
-      src: bower+'normalize-css/normalize.css'
+  , dependencies: { // Copies dependencies from `bower_components` to `src/scss` and renames them to allow for them to be imported as a Sass file.
+      src: [
+        bower+'normalize-css/normalize.css'
+      , bower+'slick-lightbox/dist/slick-lightbox.css'
+      , bower+'slick-carousel/slick/slick.css'
+      , bower+'slick-carousel/slick/slick-theme.css'
+      ]
     , dest: src+'scss/deps'
-    , rename: '_normalize.scss'
+    , rename: {
+        prefix: "_",
+        extname: ".scss"
+      }
     }
   }
 }

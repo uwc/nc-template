@@ -6,7 +6,7 @@ var gulp = require('gulp');
 gulp.task('default', ['watch']);
 
 // One-off setup tasks
-gulp.task('setup', ['utils-normalize']);
+gulp.task('setup', ['utils-dependencies']);
 
 // Build a working copy of the theme
 gulp.task('build', ['images', 'scripts', 'styles', 'theme']);

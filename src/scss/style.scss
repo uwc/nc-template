@@ -50,6 +50,12 @@ GitHub Branch: master
 /* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
 @import "deps/reset";
 
+/* A lightbox wrapper for Ken's amazing slick carousel, https://mreq.github.io/slick-lightbox/ */
+@import "deps/slick";
+@import "deps/slick-theme";
+@import "deps/slick-lightbox";
+
+
 
 // 2. Configuration //
 
@@ -60,7 +66,7 @@ GitHub Branch: master
 @import "config/animation";
 
 
-// 3. Patters //
+// 3. Patterns //
 
 /* Styles required by WordPress core */
 @import "patterns/wordpress";

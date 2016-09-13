@@ -35,5 +35,8 @@
     "responsive-nav": "viljamis/responsive-nav.js#^1.0.39",
     "headroom.js": "https://npmcdn.com/headroom.js/bower.zip",
     "normalize-css": "^4.1.1"
+  },
+  "dependencies": {
+    "slick-lightbox": "^0.2.1"
   }
 }
