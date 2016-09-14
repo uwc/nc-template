@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-09-12 12:36+0200\n"
+"PO-Revision-Date: 2016-09-14 14:48+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -42,6 +42,14 @@ msgstr ""
 "eigenen Phantasie. Haben wir blasen einfach nur die Seele? Erfahren Sie mehr "
 "über die <a href=\"%s\">Theorie des Wissens natürlich</a> bei UWC oder "
 "verwenden Sie einfach die Suchleiste unten zu finden , was Sie suchen."
+
+#: src/components/contact-button.php:23
+msgid "Contact us"
+msgstr "Kontaktieren Sie uns"
+
+#: src/components/contact-button.php:27
+msgid "Ask a question"
+msgstr "Eine Nachricht senden"
 
 #: src/components/content-link.php:33, src/components/element-link.php:37
 msgid "Continue reading"
