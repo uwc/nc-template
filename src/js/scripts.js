@@ -14,7 +14,7 @@ $( document ).on( 'turbolinks:load', function() {
 	smoothScroll.init( { offset: 36 } );
 
 	$( '.gallery' ).each( function() {
-        $(this).slickLightbox( {
+        $( this ).slickLightbox( {
 			itemSelector: '> figure > div > a',
 			caption: function( element ) {
 				return $( element ).parent().next().text();
