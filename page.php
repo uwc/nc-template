@@ -43,6 +43,8 @@ get_header(); ?>
 					endif;
 				}
 
+				get_template_part( 'components/contact', 'button' );
+
 			endwhile; // End of the loop.
 			?>
 

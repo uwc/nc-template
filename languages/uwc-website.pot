@@ -24,6 +24,14 @@ msgstr ""
 msgid "Looks like something has gone terribly wrong somewhere in the Internet. As a result, the page you requested isn&rsquo;t available. Or maybe it doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of your imagination. Maybe you are a figment of your own imagination. Did we just blow your mind? Find out more about the <a href=\"%s\">theory of knowledge course</a> at UWC or simply use the search bar below to find what you are looking for."
 msgstr ""
 
+#: src/components/contact-button.php:23
+msgid "Contact us"
+msgstr ""
+
+#: src/components/contact-button.php:27
+msgid "Ask a question"
+msgstr ""
+
 #: src/components/content-link.php:33, src/components/element-link.php:37
 msgid "Continue reading"
 msgstr ""
