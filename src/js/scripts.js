@@ -10,8 +10,6 @@ $( document ).on( 'turbolinks:load', function() {
 		openPos: 'relative' /* String: Position of the opened nav, relative or static. */
 	});
 
-
-
 	// Initialize and configure SmoothScroll.
 	smoothScroll.init( { offset: 36 } );
 

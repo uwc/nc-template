@@ -26,7 +26,7 @@ if ( $name && $contact && $email ) :
 				<p class="contact-text"><?php echo wp_kses( $contact, array(
 				    'a' => array(
 				        'href' => array(),
-				        'title' => array()
+				        'title' => array(),
 				    ),
 				    'br' => array(),
 				    'em' => array(),
