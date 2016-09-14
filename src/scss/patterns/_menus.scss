@@ -9,37 +9,18 @@
 
 // 1. Header //
 
-.menu-header {
+#menu-primary-menu {
 	position: relative;
-	text-align: justify;
-	line-height: 0;
-
-	/* Hack to evenly space the menu items. */
-	&:after {
-		content: '';
-		width: 100%;
-		display: inline-block;
-		font-size: 0px;
-		line-height: 0px;
-	}
+	text-align: center;
 
 	& > .menu-item {
 		margin: 0;
-		padding: 0 0 vr(0.3) vr(0.5);
+		padding: 0 vr(0.5);
 		list-style-type: none;
 		display: inline-block;
 		height: 100%;
 		position: relative;
-		top: 0;
-		line-height: 1.6;
 		cursor: pointer;
-
-		&:first-child {
-			padding-left: 0;
-			ul {
-				left: -#{vr(0.5)};
-			}
-		}
 	}
 
 	& > .menu-item > a {
@@ -63,7 +44,7 @@
 		left: 0;
 		z-index: 100;
 		min-width: 100%;
-		padding-top: vr(0.18);
+		padding-top: vr(.25);
 		background-color: palette(white);
 		visibility: hidden;
 	    transform: translate(0px,4px);
@@ -80,7 +61,7 @@
 			padding: 0 vr(0.5) vr(0.25);
 			background-color: palette(white);
 			box-shadow: 0px 4px 8px -2px palette(gray, light);
-			width: calc(100% + 0.5rem);
+			width: 100%;
 			transition: color #anim-s;
 
 			&:after {
@@ -172,6 +153,7 @@
 		&:before {
 			content: '\64';
 			display: inline-block;
+			color: palette(gray);
 			font-family: 'uwc-website' !important;
 			vertical-align: top;
 			font-style: normal !important;
@@ -183,59 +165,138 @@
 			line-height: 1.5;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
+			transition: color $anim-s;
 		}
-		&[href*="wordpress"]::before,
-		&[href*="wordpress"]::before {
-			content: '\63';
-			color:   #1e8cbe;
+		&[href*="wordpress"],
+		&[href*="wordpress"] {
+			&:before {
+				content: '\63';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #1e8cbe;
+			}			
 		}
-		&[href*="facebook"]::before {
-			content: '\68';
-			color:   #3b5998;
+		&[href*="facebook"] {
+			&:before {
+				content: '\68';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #3b5998;
+			}			
 		}
-		&[href*="twitter"]::before {
-			content: '\69';
-			color:   #55acee;
+		&[href*="twitter"] {
+			&:before {
+				content: '\69';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #55acee;
+			}			
 		}
-		&[href*="plus.google"]::before {
-			content: '\61';
-			color:   #dc4e41;
+		&[href*="plus.google"] {
+			&:before {
+				content: '\61';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #dc4e41;
+			}			
 		}
-		&[href*="pinterest"]::before {
-			content: '\71';
-			color:   #bd081c;
+		&[href*="pinterest"] {
+			&:before {
+				content: '\71';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #bd081c;
+			}			
 		}
-		&[href*="github"]::before {
-			content: '\70';
-			color:   #333333;
+		&[href*="github"] {
+			&:before {
+				content: '\70';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #333333;
+			}			
 		}
-		&[href*="tumblr"]::before {
-			content: '\6d';
-			color:   #35465c;
+		&[href*="tumblr"] {
+			&:before {
+				content: '\6d';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #35465c;
+			}			
 		}
-		&[href*="youtube"]::before {
-			content: '\6a';
-			color:   #cd201f;
+		&[href*="youtube"] {
+			&:before {
+				content: '\6a';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #cd201f;
+			}			
 		}
-		&[href*="flickr"]::before {
-			content: '\72';
-			color:   #ff0084;
+		&[href*="flickr"] {
+			&:before {
+				content: '\72';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #ff0084;
+			}			
 		}
-		&[href*="vimeo"]::before {
-			content: '\6c';
-			color:   #1ab7ea;
+		&[href*="vimeo"] {
+			&:before {
+				content: '\6c';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #1ab7ea;
+			}			
 		}
-		&[href*="instagram"]::before {
-			content: '\6b';
-			color:   #3f729b;
+		&[href*="instagram"] {
+			&:before {
+				content: '\6b';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #3f729b;
+			}			
 		}
-		&[href*="linkedin"]::before {
-			content: '\67';
-			color:   #0077b5;
+		&[href*="linkedin"] {
+			&:before {
+				content: '\67';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #0077b5;
+			}			
 		}
-		&[href^="mailto:"]::before {
-			content: '\6f';
-			color:   #ffa930;
+		&[href^="mailto:"] {
+			&:before {
+				content: '\6f';
+			}
+
+			&:focus:before,
+			&:hover:before {
+				color:   #ffa930;
+			}			
 		}
 	}
 }

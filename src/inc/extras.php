@@ -8,23 +8,6 @@
  */
 
 /**
- * Adds the search icon to the navigation menu on desktop.
- * From https://wordpress.stackexchange.com/questions/15455/how-to-hard-code-custom-menu-items
- *
- * @param array $items List elements in the menu.
- * @param array $args Menu arguments for theme location.
- */
-function uwc_website_nav_menu_items( $items, $args ) {
-	if ( 'menu-header' == $args -> menu_class ) {
-		$addmenu = '<li id="menu-item-search" class="menu-item"><a id="js-searchOpen" href="#"><span class="screen-reader-text">' . __( 'Search', 'uwc-website' ) . '</span></a></li>';
-		return $items . $addmenu;
-	} else {
-		return $items;
-	}
-}
-add_filter( 'wp_nav_menu_items','uwc_website_nav_menu_items', 10, 2 );
-
-/**
  * Limits the length of excerpts to 32 words.
  * See https://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length
  *

@@ -1,43 +1,66 @@
 // ==== NAVIGATION ==== //
 
 /**
- * 1. Main navigation
- * 2. Turbolinks
+ * 1. Navigation
+ * 2. Upper navigation
+ * 3. Lower navigation
+ * 4. Turbolinks
  */
- 
 
-// 1. Main navigation //
 
-.site-navigation {
+// 1. Navigation //
+
+.navigation {
 	position: relative;
 	box-shadow: 0px 2px 8px -2px palette(gray, light);
 	background-color: palette(white);
 
 	&:before {
-		content: "";
+		content: '';
 		display: block;
 		width: 100%;
 		height: 4px;
 	}
 
+	/* Display full progress bar to indicate completed page load. */
 	&.-loaded:before {
-		content: "";
-		display: block;
 		background-color: palette(blue);
 		background-image: linear-gradient(left, palette(blue), palette(turquoise));
-		width: 100%;
-		height: 4px;
 	}
+}
+ 
 
-	.navigation-ctnr {
-		@include ctnr(wide);
+// 2. Upper navigation //
 
-		padding-top: vr(0.375);
-		position: relative;
-	}
+.navigation-upper {
+	@include ctnr(wide);
+	@include clearfix();
 
-	.navigation-logo {
-		float: left;
+	padding-top: vr(.4);
+	position: relative;
+}
+
+.navigation-social,
+.navigation-search {
+	/* Lift the left & right elements above the center element. */
+	position: relative;
+	z-index: 10000;
+	vertical-align: middle;
+}
+
+.navigation-social {
+	float: left;
+}
+
+.navigation-logo {
+	display: block;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+
+	svg {
+		height: vr(1);
 		opacity: 1;
 		transition: opacity $anim-s;
 
@@ -45,47 +68,67 @@
 		&:focus {
 			opacity: 0.8;
 		}
-
-		.custom-logo {
-			max-width: 85vw;
-			height: auto;
-			vertical-align: middle;
-		}
-	}
-	
-	.js-searchOpen {
-		height: 100%;
-		width: 100%;
 	}
 
-	.navigation-social {
-		float: right;
-	}
+	.custom-logo {
+		max-width: 85vw;
+		height: auto;
+		vertical-align: middle;
+		opacity: 1;
+		transition: opacity $anim-s;
 
-	.navigation-header {
-		clear: both;
-		padding-top: vr(0.375);
-	}
-
-	.navigation-search {
-		display: none;
-		position: absolute;
-		bottom: vr(0.4);
-		background-color: palette(white);
-		z-index: 5;
-	}
-
-	/* Search open. */
-	&.js-search {
-		.navigation-search {
-			display: block;
+		&:hover,
+		&:focus {
+			opacity: 0.8;
 		}
 	}
 }
 
+.navigation-search {
+	background-color: palette(white);
+}
+
+.navigation-button {
+	float: right;
+	color: palette(gray);
+	background: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	transition: transform $anim-s;
+}
+
+.navigation-searchform {
+	display: none;
+}
+
+/*.js-searchOpen {
+	height: 100%;
+	width: 100%;
+}*/
+
+/* Search open. */
+&.js-search {
+	.navigation-search {
+		display: block;
+	}
+}
+
+
+// 3. Lower navigation //
+
+.navigation-lower {
+	@include ctnr(wide);
+
+	clear: both;
+	padding-top: vr(.4);
+	padding-bottom: vr(.4);
+}
+
 /* ----- */
 
-.js .nav-collapse {
+/*.js .nav-collapse {
 	clip: rect(0 0 0 0);
 	max-height: 0;
 	position: absolute;
@@ -95,7 +138,7 @@
 
 .nav-collapse.opened {
 	max-height: 9999px;
-}
+}*/
 
 #menu-toggle {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -104,7 +147,7 @@
 	display: none;
 }
 
-@media screen and (min-width: 40em) {
+/*@media screen and (min-width: 40em) {
 	.js .nav-collapse {
 		position: relative;
 	}
@@ -114,7 +157,10 @@
 	.nav-toggle {
 		display: none;
 	}
-}
+}*/
+
+
+// 4. Turbolinks //
 
 .turbolinks-progress-bar {
 	height: 4px;

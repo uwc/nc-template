@@ -12,7 +12,7 @@
   position: fixed;
   width: 100%;
   bottom: vr(.75);
-  z-index: 999999;
+  z-index: 999;
   pointer-events: none;
   text-align: right;
 }
@@ -33,7 +33,7 @@
   outline: none;
   width: vr(2);
   height: vr(2);
-  border: 2px solid palette(white);
+  border: 3px solid palette(white);
   border-radius: 50%;
   background-color: palette(pink);
   background-image: linear-gradient(135deg, palette(purple), palette(pink));
@@ -65,6 +65,7 @@
 // 2. Box //
 
 .contact-box {
+  pointer-events: all;
   text-align: left;
   visibility: hidden;
   opacity: 0;
