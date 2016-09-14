@@ -25,7 +25,6 @@ $( document ).on( 'turbolinks:load', function() {
 	});
 
 	$( '#js-contact' ).on( 'click', function() {
-		console.log(this);
 		$( this ).parent().toggleClass( '-open' );
 	});
 });
