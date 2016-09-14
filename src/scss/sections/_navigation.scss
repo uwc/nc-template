@@ -2,6 +2,7 @@
 
 /**
  * 1. Main navigation
+ * 2. Turbolinks
  */
  
 
@@ -15,10 +16,17 @@
 	&:before {
 		content: "";
 		display: block;
+		width: 100%;
+		height: 4px;
+	}
+
+	&.-loaded:before {
+		content: "";
+		display: block;
 		background-color: palette(blue);
 		background-image: linear-gradient(left, palette(blue), palette(turquoise));
 		width: 100%;
-		height: 3px;
+		height: 4px;
 	}
 
 	.navigation-ctnr {
@@ -106,4 +114,10 @@
 	.nav-toggle {
 		display: none;
 	}
+}
+
+.turbolinks-progress-bar {
+	height: 4px;
+	background-color: palette(blue);
+	background-image: linear-gradient(left, palette(blue), palette(turquoise));
 }

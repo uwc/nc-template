@@ -92,33 +92,33 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 		$paginate_next = get_next_posts_link( __( 'Next page', 'uwc-website' ) );
 
 		// Display the pagination if more than one page is found.
-	    if ( $paginate_numbers ) {
-	        echo '<nav class="post-navigation">';
+		if ( $paginate_numbers ) {
+			echo '<nav class="post-navigation">';
 			echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 			if ( ! empty( $paginate_previous ) ) {
 				echo '<div class="nav-previous">' . wp_kses( $paginate_previous, array(
-			    'a' => array(
-			        'href' => array(),
-			        'title' => array(),
-			    ),
+				'a' => array(
+					'href' => array(),
+					'title' => array(),
+				),
 			) ) . '</div>';
 			}
-	        echo '<div class="nav-numbers">' . wp_kses( $paginate_numbers, array(
-			    'a' => array(
-			        'href' => array(),
-			        'title' => array(),
-			    ),
+			echo '<div class="nav-numbers">' . wp_kses( $paginate_numbers, array(
+				'a' => array(
+					'href' => array(),
+					'title' => array(),
+				),
 			) ) . '</div>';
 			if ( ! empty( $paginate_next ) ) {
 				echo '<div class="nav-next">' . wp_kses( $paginate_next, array(
-			    'a' => array(
-			        'href' => array(),
-			        'title' => array(),
-			    ),
+				'a' => array(
+					'href' => array(),
+					'title' => array(),
+				),
 			) ) . '</div>';
 			}
-	        echo '</nav>';
-	    }
+			echo '</nav>';
+		}
 	}
 endif;
 

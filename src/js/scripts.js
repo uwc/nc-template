@@ -3,6 +3,10 @@
 (function( $ ) {
 
 $( document ).on( 'turbolinks:load', function() {
+
+	// Shows the gradient top border of the navigation bar to indicate that the page has loaded.
+	$( '.site-navigation' ).addClass( '-loaded' );
+
 	var nav = responsiveNav( '.nav-collapse', {
 		customToggle: 'menu-toggle', /* Selector: Specify the ID of a custom toggle. */
 		closeOnNavClick: true, /* Boolean: Close the navigation when one of the links are clicked. */
@@ -19,6 +23,18 @@ $( document ).on( 'turbolinks:load', function() {
 		captionPosition: 'bottom',
 		useHistoryApi: true
 	});
+
+	$( '#js-contact' ).on( 'click', function() {
+		console.log(this);
+		$( this ).parent().toggleClass( '-open' );
+	});
+});
+
+// Hides the gradient top border of the navigation bar to allow the progress bar to show.
+$( document ).on( 'turbolinks:click', function() {
+
+	$( '.site-navigation' ).removeClass( '-loaded' );
+
 });
 
 // Open and close the search in the navigation bar.

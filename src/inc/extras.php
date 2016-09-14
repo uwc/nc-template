@@ -82,7 +82,7 @@ add_filter( 'the_content', 'uwc_website_content_anchors' );
 
 /**
  * Output a submenu with the child pages of the current page.
- * From https://stackoverflow.com/questions/18875400/display-current-parent-and-its-sub-menu-only-wordpress
+ * From http://christianvarga.com/how-to-get-submenu-items-from-a-wordpress-menu-based-on-parent-or-sibling/
  *
  * @param array $sorted_menu_items The sorted menu defined in the wp_nav_menu.
  * @param array $args The arguments defined in the wp_nav_menu call.
