@@ -10,7 +10,9 @@
 ?>
 
 <section class="section-video">
-	<?php the_field( 'video_url' ); ?>
+	<div class="section-wrapper">
+		<?php the_field( 'video_url' ); ?>
+	</div>
 </section>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'category-post' ); ?>>

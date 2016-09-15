@@ -28,7 +28,7 @@ msgstr ""
 msgid "Contact us"
 msgstr ""
 
-#: src/components/contact-button.php:27
+#: src/components/contact-button.php:35
 msgid "Ask a question"
 msgstr ""
 
@@ -60,16 +60,12 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: src/components/element-link.php:19, src/components/element-standard.php:19, src/components/element-video.php:23
+#: src/components/element-link.php:19, src/components/element-standard.php:19, src/components/element-video.php:25
 msgid "Featured"
 msgstr ""
 
-#: src/components/element-standard.php:37, src/components/element-video.php:41
+#: src/components/element-standard.php:37, src/components/element-video.php:43
 msgid "Weiter lesen"
-msgstr ""
-
-#: src/components/navigation-header.php:12
-msgid "Top Menu"
 msgstr ""
 
 #: src/footer.php:34
@@ -107,6 +103,14 @@ msgstr ""
 
 #: src/header.php:39
 msgid "Skip to content"
+msgstr ""
+
+#: src/header.php:61
+msgid "Search"
+msgstr ""
+
+#: src/header.php:62
+msgid "Menu"
 msgstr ""
 
 #: src/image.php:22
@@ -147,10 +151,6 @@ msgstr ""
 msgid "Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time."
 msgstr ""
 
-#: src/inc/extras.php:19
-msgid "Search"
-msgstr ""
-
 #: src/inc/template-tags.php:90
 msgid "Previous page"
 msgstr ""
@@ -173,12 +173,12 @@ msgstr ""
 msgid "Search results for &#x201c;%s&#x201d;:"
 msgstr ""
 
-#: src/searchform.php:10
+#: src/searchform.php:9
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: src/searchform.php:11
+#: src/searchform.php:10
 msgctxt "placeholder"
 msgid "Search..."
 msgstr ""
