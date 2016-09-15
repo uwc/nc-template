@@ -9,25 +9,29 @@
 
 // 1. Header //
 
-#menu-primary-menu {
+#menu-primary {
 	position: relative;
 	text-align: center;
 
 	& > .menu-item {
 		margin: 0;
-		padding: 0 vr(0.5);
+		padding: vr(.3) vr(.25) vr(.4);
 		list-style-type: none;
 		display: inline-block;
 		height: 100%;
 		position: relative;
 		cursor: pointer;
+
+		@include mappy-bp(large) {
+			padding: vr(.3) vr(.75) vr(.4);
+		}
 	}
 
 	& > .menu-item > a {
 		@include font(small);
 		@include link-underline(purple);
 
-		color: palette(gray, dark);
+		color: palette(gray, darker);
 	}
 
 	.menu-item:hover > a:after,
@@ -35,7 +39,7 @@
 	.menu-item.current-menu-item > a:after {
 		visibility: visible;
 		opacity: 1;
-		transform: translate(0px,-2px);
+		transform: translate(0px, 0px);
 	}
 
 	.sub-menu {
@@ -44,46 +48,33 @@
 		left: 0;
 		z-index: 100;
 		min-width: 100%;
-		padding-top: vr(.25);
+		padding-bottom: vr(.25);
 		background-color: palette(white);
+		box-shadow: 0px 2px 8px -2px palette(gray, light);
+		border-bottom-right-radius: vr(.125);
+		border-bottom-left-radius: vr(.125);
 		visibility: hidden;
-	    transform: translate(0px,4px);
+	    transform: translate(0px, -4px);
 	    opacity: 0;
 	    transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
 
 		.menu-item {
 			@include font(small);
 
-			/* Fixes weird change in font-weight on hover in Safari. */
-			-webkit-font-smoothing: antialiased;
 			text-align: left;
 			white-space: nowrap;
-			padding: 0 vr(0.5) vr(0.25);
+			padding: vr(.125) vr(.5);
 			background-color: palette(white);
-			box-shadow: 0px 4px 8px -2px palette(gray, light);
 			width: 100%;
 			transition: color #anim-s;
-
-			&:after {
-				content: '→';
-				color: inherit;
-				display: inline-block;
-				opacity: 0;
-				visibility: hidden;
-				transform: translate(0, 0);
-				transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
-			}
 
 			&:hover,
 			&:focus {
 				color: palette(purple, light);
 			}
 
-			&:hover:after,
-			&:focus:after {
-				visibility: visible;
-    			opacity: 1;
-				transform: translate(0.35rem, 0);
+			@include mappy-bp(large) {
+				padding: vr(.125) vr(.75);
 			}
 		}
 	}
@@ -141,7 +132,7 @@
 	}
 
 	a {
-		margin-left: vr(0.5);
+		margin-right: vr(0.5);
 		opacity: 1;
 		transition: opacity $anim-s;
 

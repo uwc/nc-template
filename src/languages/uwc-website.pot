@@ -24,7 +24,7 @@ msgstr ""
 msgid "Looks like something has gone terribly wrong somewhere in the Internet. As a result, the page you requested isn&rsquo;t available. Or maybe it doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of your imagination. Maybe you are a figment of your own imagination. Did we just blow your mind? Find out more about the <a href=\"%s\">theory of knowledge course</a> at UWC or simply use the search bar below to find what you are looking for."
 msgstr ""
 
-#: src/components/contact-button.php:23, src/header.php:62
+#: src/components/contact-button.php:23
 msgid "Contact us"
 msgstr ""
 
@@ -60,11 +60,11 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: src/components/element-link.php:19, src/components/element-standard.php:19, src/components/element-video.php:23
+#: src/components/element-link.php:19, src/components/element-standard.php:19, src/components/element-video.php:25
 msgid "Featured"
 msgstr ""
 
-#: src/components/element-standard.php:37, src/components/element-video.php:41
+#: src/components/element-standard.php:37, src/components/element-video.php:43
 msgid "Weiter lesen"
 msgstr ""
 
@@ -105,7 +105,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: src/header.php:68
+#: src/header.php:61
+msgid "Search"
+msgstr ""
+
+#: src/header.php:62
 msgid "Menu"
 msgstr ""
 
@@ -169,12 +173,12 @@ msgstr ""
 msgid "Search results for &#x201c;%s&#x201d;:"
 msgstr ""
 
-#: src/searchform.php:10
+#: src/searchform.php:9
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: src/searchform.php:11
+#: src/searchform.php:10
 msgctxt "placeholder"
 msgid "Search..."
 msgstr ""

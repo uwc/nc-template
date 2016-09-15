@@ -12,7 +12,7 @@
   position: fixed;
   width: 100%;
   bottom: vr(.75);
-  z-index: 999;
+  z-index: 99;
   pointer-events: none;
   text-align: right;
 }
@@ -46,18 +46,35 @@
     fill: palette(white);
     vertical-align: middle;
   }
+
+  .contact-open {
+    display: inline;
+  }
+
+  .contact-close {
+    display: none;
+  }
 }
 
 /* Open state */
 
-.contact-inner.-open {
+.-contact-open {
   .contact-button {
-    transform: rotate(45deg);
+    transform: rotate(180deg);
   }
+
   .contact-box {
     visibility: visible;
     opacity: 1;
     transform: translate(0, 0);
+  }
+
+  .contact-open {
+    display: none;
+  }
+
+  .contact-close {
+    display: inline;
   }
 }
 
@@ -84,6 +101,12 @@
   @include font(header3);
 
   color: palette(blue);
+}
+
+.contact-text {
+  @include font(small);
+
+  margin: vr(.25) 0;
 }
 
 .contact-link {
