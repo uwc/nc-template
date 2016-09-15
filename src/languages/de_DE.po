@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-09-14 14:48+0200\n"
+"PO-Revision-Date: 2016-09-16 00:28+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "Contact us"
 msgstr "Kontaktieren Sie uns"
 
-#: src/components/contact-button.php:27
+#: src/components/contact-button.php:35
 msgid "Ask a question"
 msgstr "Eine Nachricht senden"
 
@@ -86,17 +86,13 @@ msgid "Pages:"
 msgstr "Seiten: "
 
 #: src/components/element-link.php:19, src/components/element-standard.php:19,
-#: src/components/element-video.php:23
+#: src/components/element-video.php:25
 msgid "Featured"
 msgstr "Featured"
 
-#: src/components/element-standard.php:37, src/components/element-video.php:41
+#: src/components/element-standard.php:37, src/components/element-video.php:43
 msgid "Weiter lesen"
 msgstr "Weiter lesen"
-
-#: src/components/navigation-header.php:12
-msgid "Top Menu"
-msgstr "Hauptnavigation"
 
 #: src/footer.php:34
 msgid "All rights reserved."
@@ -134,6 +130,14 @@ msgstr "on"
 #: src/header.php:39
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
+
+#: src/header.php:61
+msgid "Search"
+msgstr "Suchen"
+
+#: src/header.php:62
+msgid "Menu"
+msgstr "Menü"
 
 #: src/image.php:22
 msgid "Previous Image"
@@ -187,10 +191,6 @@ msgstr ""
 "Kommentare werden NICHT gelöscht und können somit jederzeit wieder "
 "eingeblendet werden."
 
-#: src/inc/extras.php:19
-msgid "Search"
-msgstr "Suche"
-
 #: src/inc/template-tags.php:90
 msgid "Previous page"
 msgstr "Vorherige Seite"
@@ -213,12 +213,12 @@ msgstr "von %s."
 msgid "Search results for &#x201c;%s&#x201d;:"
 msgstr "Suchergebnisse für &#x201c;%s&#x201d;:"
 
-#: src/searchform.php:10
+#: src/searchform.php:9
 msgctxt "label"
 msgid "Search for:"
 msgstr "Suche nach:"
 
-#: src/searchform.php:11
+#: src/searchform.php:10
 msgctxt "placeholder"
 msgid "Search..."
 msgstr "Suche..."
