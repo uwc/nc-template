@@ -38,6 +38,7 @@ wp_head();
 <div id="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uwc-website' ); ?></a>
 
+	<div class="turbolinks-bar"></div>
 	<header id="js-navigation" class="site-navigation -loaded" role="banner">
 		<div class="navigation-upper">
 
