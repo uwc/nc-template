@@ -6,15 +6,16 @@ $( document ).on( 'turbolinks:load', function() {
 
 	// RESPONSIVE NAV //
 
-	var nav = responsiveNav( '.nav-collapse', {
+	var nav = responsiveNav( '.navigation-links', {
 		customToggle: 'js-menu', /* Selector: Specify the ID of a custom toggle. */
-		closeOnNavClick: true, /* Boolean: Close the navigation when one of the links are clicked. */
+		navClass: "navigation-links", // String: Default CSS class. If changed, you need to edit the CSS too!
+		navActiveClass: "-navigation-open", // String: Class that is added to  element when nav is active
 		openPos: 'relative' /* String: Position of the opened nav, relative or static. */
 	});
 
 	// SMOOTHSCROLL //
 
-	smoothScroll.init( { offset: 36 } );
+	smoothScroll.init( { offset: 100 } );
 
 	// HEADROOM //
 
@@ -70,19 +71,6 @@ $( document ).on( 'turbolinks:load', function() {
 // Hides the gradient bar at the top of the navigation to allow the progress bar to show.
 $( document ).on( 'turbolinks:click', function() {
 	$( '#js-body' ).removeClass( '-turbolinks-loaded' );
-});
-
-// Open and close the search in the navigation bar.
-function search() {
-  $( '#js-navigation' ).toggleClass( 'js-search' );
-  return false;
-}
-
-$( '#js-search' ).on( 'click', function( element ) {
-	element.preventDefault();
-	search();
-
-	// $('#form1_q').focus();
 });
 
 })( jQuery );

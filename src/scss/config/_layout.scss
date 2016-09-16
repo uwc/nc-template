@@ -18,7 +18,7 @@ $breakpoints: (
 	x-large: 1441px,
 );
 
-/* You can use any valid arguments inserted into mappy-bp as the map values. Any of the following would do. */
+/* You can use any valid arguments inserted into mappy-bp as the map values. Use with mappy-query(). */
 $mappy-queries: (
 	phone: mappy-bp(max-width small),
 	phone-tablet: mappy-bp(max-width medium),
@@ -45,9 +45,9 @@ $mappy-queries: (
 
 		@include mappy-query(desktop) {
 			width: 36rem;
-			max-width: 100%;
 			margin-right: auto;
 			margin-left: auto;
+			max-width: calc(100% - #{vr(2)});
 		}
 	}
 
@@ -59,9 +59,9 @@ $mappy-queries: (
 
 		@include mappy-query(desktop) {
 			width: 54rem;
-			max-width: calc(100% - #{vr(4)});
 			margin-right: auto;
 			margin-left: auto;
+			max-width: calc(100% - #{vr(2)});
 		}
 	}
 
@@ -72,9 +72,9 @@ $mappy-queries: (
 
 		@include mappy-query(desktop-large) {
 			width: 54rem;
-			max-width: calc(100% - #{vr(4)});
 			margin-right: auto;
 			margin-left: auto;
+			max-width: calc(100% - #{vr(2)});
 		}
 	}
 
@@ -91,6 +91,14 @@ $mappy-queries: (
 
 
 // 3. Helpers //
+
+body {
+	/* Search open */
+	&.-search-open {
+		height: 100%;
+		overflow: hidden;
+	}
+}
 
 /* Limits width on large screens and centers content. */
 #site {

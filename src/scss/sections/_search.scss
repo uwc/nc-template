@@ -3,22 +3,18 @@
 /* Style the search form and search results here. */
 
 /**
- * 1. Search form
- * 2. Search state
- * 3. Search results
+ * 1. Search 
+ * 2. Results
  */
 
 
- // 1. Search rorm //
+ // 1. Search //
 
 .search-form {
 	@include ctnr(golden);
 
 	position: relative;
 }
-
-
-// 2. Search state //
 
 .site-search {
 	visibility: hidden;
@@ -33,6 +29,12 @@
 	height: 100vh;
 	transform: translate(0px, 20px);
 	transition: $anim-m;
+
+	.-search-open & {
+		visibility: visible;
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
 }
 
 .search-field {
@@ -42,32 +44,8 @@
 	transform: translate(0, -50%);
 }
 
-/* Search open */
-.-search-open {
-	height: 100%;
-	overflow: hidden;
 
-	.site-search {
-		visibility: visible;
-		opacity: 1;
-		transform: translate(0px, 0px);
-	}
-
-	.navigation-search {
-		transform: rotate(180deg);
-	}
-
-	.search-open {
-		display: none;
-	}
-
-	.search-close {
-		display: inline;
-	}
-}
-
-
-// 3. Search results //
+// 2. Results //
 
 .search-header {
 	margin-top: vr(2);

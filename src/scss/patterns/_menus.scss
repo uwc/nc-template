@@ -15,7 +15,7 @@
 
 	& > .menu-item {
 		margin: 0 1.5%;
-		padding: vr(.3) 0 vr(.4);
+		padding-bottom: 12px;
 		list-style-type: none;
 		display: inline-block;
 		height: 100%;
@@ -114,7 +114,7 @@
 			font-weight: normal !important;
 			font-variant: normal !important;
 			text-transform: none !important;
-			font-size: ms(0);
+			font-size: 20px;
 			speak: none;
 			line-height: 1.5;
 			-webkit-font-smoothing: antialiased;

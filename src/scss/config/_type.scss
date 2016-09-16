@@ -12,17 +12,17 @@
 
 // 1. Variables //
 
-$sans: 'Bliss', 'Source Sans Pro', 'Freight Sans Pro', Helvetica, sans-serif;
-$sans-normal: 300;
-$sans-medium: 400;
-$sans-bold:   600;
+$sans: 'Bliss', 'Source Sans Pro', Arial, sans-serif;
+$sans-normal: 400;
+$sans-medium: 500;
+$sans-bold:   700;
 
 $ms-base: 1rem;
 $ms-ratio: 1.2;
 
 $typi: (
-  null: (16px, 1.5),
-  medium: (21px, 1.6),
+  null: (16px, 1.6),
+  medium: (21px),
   x-large: (28px),
 );
 

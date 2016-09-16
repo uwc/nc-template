@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-09-16 00:28+0200\n"
+"PO-Revision-Date: 2016-09-16 16:12+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -22,26 +22,16 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: src/404.php:18
-msgid "404 Oh crumbs."
-msgstr "404 Oh Krümel."
+msgid "404: Page not found."
+msgstr "404: Seite nicht gefunden."
 
-#: src/404.php:26
+#: src/404.php:20
 msgid ""
-"Looks like something has gone terribly wrong somewhere in the Internet. As a "
-"result, the page you requested isn&rsquo;t available. Or maybe it "
-"doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of "
-"your imagination. Maybe you are a figment of your own imagination. Did we "
-"just blow your mind? Find out more about the <a href=\"%s\">theory of "
-"knowledge course</a> at UWC or simply use the search bar below to find what "
-"you are looking for."
+"Sorry, the page you’re looking for doesn’t exist. Check the URL for errors "
+"or try searching for it below."
 msgstr ""
-"Sieht aus wie etwas schrecklich falsch irgendwo im Internet gegangen ist. "
-"Als Ergebnis ist die von Ihnen angeforderte Seite nicht zur Verfügung. Oder "
-"vielleicht existiert es nicht. Vielleicht gab es nie. Vielleicht ist diese "
-"Seite eine Ausgeburt der Phantasie. Vielleicht sind Sie eine Ausgeburt der "
-"eigenen Phantasie. Haben wir blasen einfach nur die Seele? Erfahren Sie mehr "
-"über die <a href=\"%s\">Theorie des Wissens natürlich</a> bei UWC oder "
-"verwenden Sie einfach die Suchleiste unten zu finden , was Sie suchen."
+"Es tut uns leid, die von Ihnen gesuchte Seite scheint nicht zu existieren. "
+"Überprüfen Sie die URL auf Fehler oder benutzen Sie das Suchfeld unten."
 
 #: src/components/contact-button.php:23
 msgid "Contact us"
@@ -131,11 +121,11 @@ msgstr "on"
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: src/header.php:61
-msgid "Search"
-msgstr "Suchen"
-
 #: src/header.php:62
+msgid "Search"
+msgstr "Suche"
+
+#: src/header.php:63
 msgid "Menu"
 msgstr "Menü"
 
@@ -221,7 +211,28 @@ msgstr "Suche nach:"
 #: src/searchform.php:10
 msgctxt "placeholder"
 msgid "Search..."
-msgstr "Suche..."
+msgstr "Suchen…"
+
+#~ msgid "404 Oh crumbs."
+#~ msgstr "404 Oh Krümel."
+
+#~ msgid ""
+#~ "Looks like something has gone terribly wrong somewhere in the Internet. "
+#~ "As a result, the page you requested isn&rsquo;t available. Or maybe it "
+#~ "doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment "
+#~ "of your imagination. Maybe you are a figment of your own imagination. Did "
+#~ "we just blow your mind? Find out more about the <a href=\"%s\">theory of "
+#~ "knowledge course</a> at UWC or simply use the search bar below to find "
+#~ "what you are looking for."
+#~ msgstr ""
+#~ "Sieht aus wie etwas schrecklich falsch irgendwo im Internet gegangen ist. "
+#~ "Als Ergebnis ist die von Ihnen angeforderte Seite nicht zur Verfügung. "
+#~ "Oder vielleicht existiert es nicht. Vielleicht gab es nie. Vielleicht ist "
+#~ "diese Seite eine Ausgeburt der Phantasie. Vielleicht sind Sie eine "
+#~ "Ausgeburt der eigenen Phantasie. Haben wir blasen einfach nur die Seele? "
+#~ "Erfahren Sie mehr über die <a href=\"%s\">Theorie des Wissens natürlich</"
+#~ "a> bei UWC oder verwenden Sie einfach die Suchleiste unten zu finden , "
+#~ "was Sie suchen."
 
 #~ msgid ""
 #~ "The parent of <strong>%1$1s</strong> is <strong>%2$2s</strong>, which is "
