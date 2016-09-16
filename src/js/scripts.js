@@ -60,7 +60,7 @@ $( document ).on( 'turbolinks:load', function() {
 
 	$( '#js-search' ).on( 'click', function() {
 		$( '#js-body' ).toggleClass( '-search-open' );
-		// $( '.site-search' ).find( 'input' ).focus();
+		$( '.site-search' ).find( 'input' ).focus();
 	});
 
 	// Shows a gradient bar at the top of the navigation to indicate that the page has loaded.
