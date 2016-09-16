@@ -1,35 +1,39 @@
 // ==== NAVIGATION ==== //
 
 /**
- * 1. Navigation
+ * 1. Headroom
  * 2. Upper navigation
  * 3. Lower navigation
  * 4. Turbolinks
  */
 
 
-// 1. Navigation //
+// 1. Headroom //
 
 .site-navigation {
-	position: relative;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
 	z-index: 9999;
 	box-shadow: 0px 2px 8px -2px palette(gray, light);
 	background-color: palette(white);
 
-	&:before {
-		content: '';
-		display: block;
-		width: 100%;
-		height: 4px;
+	.headroom & {
+	  	position: fixed;
+	  	transition: transform $anim-m;
 	}
 
-	/* Display full progress bar to indicate completed page load. */
-	&.-loaded:before {
-		background-color: palette(blue);
-		background-image: linear-gradient(left, palette(blue), palette(turquoise));
+	.headroom--pinned &,
+	.headroom--unpinned.headroom--bottom & {
+	  	transform: translateY(0%);
+	}
+
+	.headroom--unpinned & {
+	  	transform: translateY(-46%);
 	}
 }
- 
+
 
 // 2. Upper navigation //
 
@@ -37,8 +41,18 @@
 	@include ctnr(wide);
 	@include clearfix();
 
-	padding-top: vr(.6);
+	padding-top: vr(.7);
 	position: relative;
+	visibility: visible;
+	transition: visibility $anim-m;
+
+	.headroom--unpinned & {
+	  	visibility: hidden;
+	}
+
+	.headroom--unpinned.headroom--bottom & {
+		visibility: visible;
+	}
 }
 
 .navigation-left,
@@ -162,6 +176,24 @@
 
 .turbolinks-progress-bar {
 	height: 4px;
+	z-index: 999999;
 	background-color: palette(blue);
 	background-image: linear-gradient(left, palette(blue), palette(turquoise));
+}
+
+.turbolinks-bar {
+	display: block;
+	width: 100%;
+	height: 4px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999999;
+
+	/* Display full progress bar to indicate completed page load. */
+	.-turbolinks-loaded & {
+		background-color: palette(blue);
+		background-image: linear-gradient(left, palette(blue), palette(turquoise));
+	}
 }

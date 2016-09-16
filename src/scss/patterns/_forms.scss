@@ -12,7 +12,7 @@ textarea {
 
 	padding: 0;
 	border: none;
-	border-bottom: 2px solid palette(gray);
+	border-bottom: 1px solid palette(gray);
 	background: none;
 	color: palette(gray, darker);
 	outline: none;
@@ -20,12 +20,6 @@ textarea {
 	line-height: 1.75;
 	text-align: left;
 	resize: none;
-	transition: border $anim-s, box-shadow $anim-s;
-	
-	&:focus,
-	&:active {
-		/*box-shadow: 0px 0px 5px 1px palette(orange, light);*/
-	}
 }
 
 .form-underline {
@@ -35,8 +29,8 @@ textarea {
 	background-color: palette(orange);
 	width: 0;
 	margin: 0 auto;
-	transition: $anim-s;
 	bottom: 2px;
+	transition: $anim-s;
 }
 
 .form-input:focus ~ .form-underline {

@@ -14,8 +14,8 @@
 	text-align: center;
 
 	& > .menu-item {
-		margin: 0;
-		padding: vr(.3) vr(.25) vr(.4);
+		margin: 0 1.5%;
+		padding: vr(.3) 0 vr(.4);
 		list-style-type: none;
 		display: inline-block;
 		height: 100%;
@@ -23,7 +23,7 @@
 		cursor: pointer;
 
 		@include mappy-bp(large) {
-			padding: vr(.3) vr(.75) vr(.4);
+			margin: 0 2.5%;
 		}
 	}
 
@@ -45,7 +45,7 @@
 	.sub-menu {
 		position: absolute;
 		top: 100%;
-		left: 0;
+		left: -#{vr(.5)};
 		z-index: 100;
 		min-width: 100%;
 		padding-bottom: vr(.25);
@@ -56,7 +56,7 @@
 		visibility: hidden;
 	    transform: translate(0px, -4px);
 	    opacity: 0;
-	    transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
+	    transition: visibility $anim-m, opacity $anim-m, transform $anim-m;
 
 		.menu-item {
 			@include font(small);
@@ -72,44 +72,15 @@
 			&:focus {
 				color: palette(purple, light);
 			}
-
-			@include mappy-bp(large) {
-				padding: vr(.125) vr(.75);
-			}
 		}
 	}
 
 	& > .menu-item:hover > .sub-menu {
 		visibility: visible;
 	    opacity: 1;
-	    transform: translate(0px,0px)
+	    transform: translate(0px, 0px)
 	}
 }
-
-#menu-item-search {
-	a:before {
-		@include font(small);
-
-		content: '\73';
-		display: inline-block;
-		font-family: 'uwc-website' !important;
-		font-style: normal !important;
-		font-weight: normal !important;
-		font-variant: normal !important;
-		text-transform: none !important;
-		speak: none;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		transition: color $anim-s;
-	}
-
-	a:hover:before,
-	a:focus:before {
-		color: palette(purple);
-	}
-}
-
 
 
 // 2. Social //
@@ -128,18 +99,10 @@
 
 	li {
 		display: inline-block;
-		position: relative;
 	}
 
 	a {
-		margin-right: vr(0.5);
-		opacity: 1;
-		transition: opacity $anim-s;
-
-		&:hover,
-		&:focus {
-			opacity: 0.8;
-		}
+		margin-right: vr(.5);
 
 		&:before {
 			content: '\64';

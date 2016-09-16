@@ -105,11 +105,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: src/header.php:61
+#: src/header.php:62
 msgid "Search"
 msgstr ""
 
-#: src/header.php:62
+#: src/header.php:63
 msgid "Menu"
 msgstr ""
 
