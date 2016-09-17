@@ -43,7 +43,7 @@ get_header(); ?>
 					endif;
 				}
 
-				get_template_part( 'components/contact', 'button' );
+				get_template_part( 'components/site', 'contact' );
 
 			endwhile; // End of the loop.
 			?>

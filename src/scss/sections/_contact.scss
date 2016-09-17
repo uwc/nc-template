@@ -9,107 +9,166 @@
 
 
 .contact-outer {
-  position: fixed;
-  width: 100%;
-  bottom: vr(.75);
-  z-index: 99;
-  pointer-events: none;
-  text-align: right;
+	position: fixed;
+	width: 100%;
+	bottom: vr(1);
+	z-index: 99;
+	pointer-events: none;
+	text-align: right;
 }
 
 .contact-inner {
-  @include ctnr(wide);
+	@include ctnr(wide);
 
-  position: relative;
+	position: relative;
 }
 
 
 // 1. Button //
 
 .contact-button {
-  pointer-events: all;
-  box-shadow: 0px 2px 12px -2px palette(gray, light);
-  color: palette(gray);
-  outline: none;
-  width: vr(2);
-  height: vr(2);
-  border: 3px solid palette(white);
-  border-radius: 50%;
-  background-color: palette(pink);
-  background-image: linear-gradient(135deg, palette(purple), palette(pink));
-  cursor: pointer;
-  transition: transform $anim-s;
+	pointer-events: all;
+	box-shadow: 0px 2px 12px -2px palette(gray);
+	color: palette(gray);
+	position: relative;
+	overflow: hidden;
+  	z-index: 10;
+	outline: none;
+	padding: 0;
+	width: 60px;
+	height: 60px;
+	border: none;
+	border-radius: 50%;
+	background-color: palette(pink);
+	background-image: linear-gradient(135deg, palette(purple), palette(pink));
+	cursor: pointer;
+	transition: transform $anim-s, box-shadow $anim-s;
 
-  svg {
-    width: 24px;
-    height: 24px;
-    fill: palette(white);
-    vertical-align: middle;
-  }
+	&:hover {
+		box-shadow: 0px 2px 12px 0px palette(gray);
+	}
 
-  .contact-open {
-    display: inline;
-  }
+	&:before {
+		background-color: palette(pink,light);
+		background-image: linear-gradient(135deg, palette(purple,light), palette(pink,light));
+		content: '';    
+		display: block;
+		height: 100%;
+		position: absolute;
+		top: 0; 
+		left: 0;
+		opacity: 0;
+		width: 100%;
+		z-index: -10;
+		transition: opacity $anim-s;
+	}
+	
+	&:hover:before {
+		opacity: 1;
+	}
 
-  .contact-close {
-    display: none;
-  }
+	svg {
+		width: 24px;
+		height: 24px;
+		fill: palette(white);
+		vertical-align: middle;
+		transition: transform $anim-s;
+	}
+
+	.-contact-open & svg {
+		transform: rotate(180deg);
+	}
 }
 
-/* Open state */
 
-.-contact-open {
-  .contact-button {
-    transform: rotate(180deg);
-  }
+.contact-open {
+	display: inline;
 
-  .contact-box {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+	.-contact-open & {
+		display: none;
+	}
+}
 
-  .contact-open {
-    display: none;
-  }
+.contact-close {
+	display: none;
 
-  .contact-close {
-    display: inline;
-  }
+	.-contact-open & {
+		display: inline;
+	}
 }
 
 
 // 2. Box //
 
 .contact-box {
-  pointer-events: all;
-  text-align: left;
-  visibility: hidden;
-  opacity: 0;
-  transform: translate(0, 5px);
-  padding: vr(.5) vr(.75);
-  position: absolute;
-  background-color: palette(white);
-  box-shadow: 0px 2px 12px -2px palette(gray, light);
-  border-radius: vr(.25);
-  right: 0;
-  bottom: calc( 100% + #{vr(.5)} );
-  transition: $anim-s;
+	max-width: 90vw;
+	pointer-events: all;
+	text-align: left;
+	visibility: hidden;
+	opacity: 0;
+	transform: translate(0, 5px);
+	position: absolute;
+	overflow: hidden;
+	background-color: palette(white);
+	box-shadow: 0px 2px 12px -2px palette(gray, light);
+	border-radius: 8px;
+	right: 0;
+	bottom: calc( 100% + #{vr(.5)} );
+	transition: $anim-s;
+
+	.-contact-open & {
+		visibility: visible;
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+.contact-header {
+	@include clearfix;
+
+	background-color: palette(pink);
+	background-image: linear-gradient(135deg, palette(purple), palette(pink));
+	padding: vr(.5) vr(.75);
+}
+
+.contact-image {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+	height: vr(1.75);
+	width: vr(1.75);
+	margin-right: vr(.5);
+	float: left;
 }
 
 .contact-headline {
-  @include font(header3);
-
-  color: palette(blue);
+	float: left;
 }
 
-.contact-text {
-  @include font(small);
+.contact-name {
+	@include font(header4);
 
-  margin: vr(.25) 0;
+	color: palette(white);
+}
+
+.contact-role {
+	@include font(small);
+
+	color: palette(white);
+}
+
+.contact-body {
+	padding: vr(.5) vr(.75);
+}
+
+.contact-info {
+	@include font(body);
+
+	margin-bottom: vr(.125);
 }
 
 .contact-link {
-  @include font(button);
-  @include link-arrow(right, purple);
+	@include font(button);
+	@include link-arrow(right, pink);
 }

@@ -24,14 +24,6 @@ msgstr ""
 msgid "Sorry, the page you’re looking for doesn’t exist. Check the URL for errors or try searching for it below."
 msgstr ""
 
-#: src/components/contact-button.php:23
-msgid "Contact us"
-msgstr ""
-
-#: src/components/contact-button.php:35
-msgid "Ask a question"
-msgstr ""
-
 #: src/components/content-link.php:33, src/components/element-link.php:37
 msgid "Continue reading"
 msgstr ""
@@ -66,6 +58,14 @@ msgstr ""
 
 #: src/components/element-standard.php:37, src/components/element-video.php:43
 msgid "Weiter lesen"
+msgstr ""
+
+#: src/components/site-contact.php:25
+msgid "Contact us"
+msgstr ""
+
+#: src/components/site-contact.php:50
+msgid "Ask a question"
 msgstr ""
 
 #: src/footer.php:34

@@ -72,10 +72,10 @@ $( document ).on( 'turbolinks:load', function() {
 
 	// Close everything on escape.
 	$( document ).on( 'keyup', function( e ) {
-		if ( e.keyCode === 27 ) { 
+		if ( 27 === e.keyCode ) {
 			$( '#js-body' ).removeClass( '-search-open' );
 			$( '#js-body' ).removeClass( '-contact-open' );
-		} 
+		}
 	});
 
 	// Shows a gradient bar at the top of the navigation to indicate that the page has loaded.
