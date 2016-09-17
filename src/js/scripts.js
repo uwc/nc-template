@@ -8,8 +8,8 @@ $( document ).on( 'turbolinks:load', function() {
 
 	var nav = responsiveNav( '.navigation-links', {
 		customToggle: 'js-menu', /* Selector: Specify the ID of a custom toggle. */
-		navClass: "navigation-links", // String: Default CSS class. If changed, you need to edit the CSS too!
-		navActiveClass: "-navigation-open", // String: Class that is added to  element when nav is active
+		navClass: 'navigation-links', // String: Default CSS class. If changed, you need to edit the CSS too!
+		navActiveClass: '-navigation-open', // String: Class that is added to  element when nav is active
 		openPos: 'relative' /* String: Position of the opened nav, relative or static. */
 	});
 
