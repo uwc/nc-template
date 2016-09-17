@@ -2,6 +2,10 @@
 
 /* Mixins, functions, and other non-declarative things */
 
+.widget-area {
+  @include ctnr(golden);
+}
+
 .widget {
 	@include font(small);
 

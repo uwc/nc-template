@@ -24,10 +24,6 @@
 	  	transition: transform $anim-m;
 	}
 
-	.admin-bar & {
-		top: 32px;
-	}
-
 	.headroom--pinned &,
 	.headroom--unpinned.headroom--bottom & {
 	  	transform: translateY(0%);
@@ -35,6 +31,12 @@
 
 	.headroom--unpinned & {
 	  	transform: translateY(-48%);
+	}
+
+	@include mappy-query(tablet-desktop) {
+		.admin-bar & {
+			top: 32px;
+		}
 	}
 }
 
@@ -194,19 +196,22 @@
 	}
 
 	.navigation-button {
-		-webkit-tap-highlight-color: rgba(0,0,0,0);
-		-webkit-touch-callout: none;
-		user-select: none;
+		@include font(small);
+
+		font-size: ms(1);
+		color: palette(gray, darker);
 		background: none;
 		outline: none;
 		border: none;
-		cursor: pointer;
 		padding: 0;
-		font-size: ms(1);
 		vertical-align: middle;
 		padding-left: 16px;
 		margin-left: 8px;
 		border-left: 1px solid gray;
+		cursor: pointer;
+		user-select: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		-webkit-touch-callout: none;
 	}
 }
 
@@ -244,13 +249,15 @@
 	right: 0;
 	z-index: 99998;
 
-	.admin-bar & {
-		top: 32px;
-	}
-
 	/* Display full progress bar to indicate completed page load. */
 	.-turbolinks-loaded & {
 		background-color: palette(blue);
 		background-image: linear-gradient(left, palette(blue), palette(turquoise));
+	}
+
+	@include mappy-query(tablet-desktop) {
+		.admin-bar & {
+			top: 32px;
+		}
 	}
 }

@@ -25,14 +25,14 @@ $( document ).on( 'turbolinks:load', function() {
 	// Construct an instance of Headroom, passing the element.
 	var headroom  = new Headroom( hrBody, {
 
-	    // Vertical offset in px before element is first unpinned.
-	    offset: 64,
+		// Vertical offset in px before element is first unpinned.
+		offset: 64,
 
-	    // Scroll tolerance in px before state changes for up/down scroll.
-	    tolerance: {
-	        up: 10,
-	        down: 5
-	    }
+		// Scroll tolerance in px before state changes for up/down scroll.
+		tolerance: {
+			up: 10,
+			down: 5
+		}
 	});
 
 	// Initialise.
@@ -41,7 +41,7 @@ $( document ).on( 'turbolinks:load', function() {
 	// SLICK LIGHTBOX //
 
 	$( '.gallery' ).each( function() {
-        $( this ).slickLightbox( {
+		$( this ).slickLightbox( {
 			itemSelector: '> figure > div > a',
 			caption: function( element ) {
 				return $( element ).parent().next().text();
@@ -61,7 +61,21 @@ $( document ).on( 'turbolinks:load', function() {
 
 	$( '#js-search' ).on( 'click', function() {
 		$( '#js-body' ).toggleClass( '-search-open' );
-		$( '.site-search' ).find( 'input' ).focus();
+
+		function focusInput() {
+			$( '.site-search' ).find( 'input' ).focus();
+		}
+
+		// Set timeout to accommodate for the fade in animation.
+		setTimeout( focusInput, 300 );
+	});
+
+	// Close everything on escape.
+	$( document ).on( 'keyup', function( e ) {
+		if ( e.keyCode === 27 ) { 
+			$( '#js-body' ).removeClass( '-search-open' );
+			$( '#js-body' ).removeClass( '-contact-open' );
+		} 
 	});
 
 	// Shows a gradient bar at the top of the navigation to indicate that the page has loaded.
