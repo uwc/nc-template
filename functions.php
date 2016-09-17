@@ -168,7 +168,7 @@ if ( ! function_exists( 'uwc_website_fonts_url' ) ) :
 		$subsets   = 'latin,latin-ext';
 		/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
 		if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'uwc-website' ) ) {
-			$fonts[] = 'Source+Sans+Pro:300,400,600';
+			$fonts[] = 'Source+Sans+Pro:400,500,700';
 		}
 		if ( $fonts ) {
 			$fonts_url = add_query_arg( array(

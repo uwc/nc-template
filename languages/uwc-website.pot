@@ -17,11 +17,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: src/404.php:18
-msgid "404 Oh crumbs."
+msgid "404: Page not found."
 msgstr ""
 
-#: src/404.php:26
-msgid "Looks like something has gone terribly wrong somewhere in the Internet. As a result, the page you requested isn&rsquo;t available. Or maybe it doesn&rsquo;t exist. Maybe it never existed. Maybe this page is a figment of your imagination. Maybe you are a figment of your own imagination. Did we just blow your mind? Find out more about the <a href=\"%s\">theory of knowledge course</a> at UWC or simply use the search bar below to find what you are looking for."
+#: src/404.php:20
+msgid "Sorry, the page you’re looking for doesn’t exist. Check the URL for errors or try searching for it below."
 msgstr ""
 
 #: src/components/contact-button.php:23
@@ -101,15 +101,15 @@ msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr ""
 
-#: src/header.php:39
+#: src/header.php:41
 msgid "Skip to content"
 msgstr ""
 
-#: src/header.php:62
+#: src/header.php:67
 msgid "Search"
 msgstr ""
 
-#: src/header.php:63
+#: src/header.php:68
 msgid "Menu"
 msgstr ""
 
