@@ -1,263 +1,258 @@
 // ==== NAVIGATION ==== //
 
-/**
- * 1. Headroom
- * 2. Upper navigation
- * 3. Lower navigation
- * 4. Turbolinks
- */
+// 1. Headroom
+// 2. Upper navigation
+// 3. Lower navigation
+// 4. Turbolinks
 
-
-// 1. Headroom //
+// 1. Headroom
 
 .site-navigation {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	z-index: 9999;
-	box-shadow: 0px 2px 8px -2px palette(gray, light);
-	background-color: palette(white);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: palette(white);
+  box-shadow: 0 2px 8px -2px palette(gray, light);
+  z-index: 9999;
 
-	.headroom & {
-	  	position: fixed;
-	  	transition: transform $anim-m;
-	}
+  .headroom & {
+    position: fixed;
+    transition: transform $anim-m;
+  }
 
-	.headroom--pinned &,
-	.headroom--unpinned.headroom--bottom & {
-	  	transform: translateY(0%);
-	}
+  .headroom--pinned &,
+  .headroom--unpinned.headroom--bottom & {
+    transform: translateY(0%);
+  }
 
-	.headroom--unpinned & {
-	  	transform: translateY(-48%);
-	}
+  .headroom--unpinned & {
+    transform: translateY(-48%);
+  }
 
-	@include mappy-query(tablet-desktop) {
-		.admin-bar & {
-			top: 32px;
-		}
-	}
+  @include mappy-query(tablet-desktop) {
+    .admin-bar & {
+      top: 32px;
+    }
+  }
 }
-
 
 // 2. Upper navigation //
 
 .navigation-upper {
-	@include ctnr(wide);
-	@include clearfix();
+  @include ctnr(wide);
 
-	padding-top: 24px;
-	position: relative;
-	visibility: visible;
-	transition: visibility $anim-m;
+  @include clearfix;
 
-	@include mappy-query(tablet-desktop) {
+  position: relative;
+  padding-top: 24px;
+  transition: visibility $anim-m;
+  visibility: visible;
 
-		.headroom--unpinned & {
-		  	visibility: hidden;
-		}
+  @include mappy-query(tablet-desktop) {
+    .headroom--unpinned & {
+      visibility: hidden;
+    }
 
-		.headroom--unpinned.headroom--bottom & {
-			visibility: visible;
-		}
-	}
+    .headroom--unpinned.headroom--bottom & {
+      visibility: visible;
+    }
+  }
 }
 
 .navigation-left,
 .navigation-right {
-	/* Lift the left & right elements above the center element. */
-	position: relative;
-	z-index: 10000;
-	padding-bottom: 12px;
+  // Lift the left & right elements above the center element.
+  position: relative;
+  padding-bottom: 12px;
+  z-index: 10000;
 }
 
 .navigation-left {
-	float: left;
+  float: left;
 }
 
 .navigation-center {
-	display: block;
-	text-align: center;
-	line-height: 0;
-	padding-bottom: 12px;
+  display: block;
+  padding-bottom: 12px;
+  line-height: 0;
+  text-align: center;
 
-	@include mappy-query(tablet-desktop) {
-		position: absolute;
-		left: 0;
-		right: 0;
-		line-height: 0;
-	}
+  @include mappy-query(tablet-desktop) {
+    position: absolute;
+    right: 0;
+    left: 0;
+    line-height: 0;
+  }
 
-	svg,
-	.custom-logo {
-		max-width: 100%;
-		opacity: 1;
-		transition: opacity $anim-s;
 
-		&:hover,
-		&:focus {
-			opacity: 0.75;
-		}
-	}
+  svg,
+  .custom-logo {
+    max-width: 100%;
+    transition: opacity $anim-s;
+    opacity: 1;
 
-	svg {
-		height: vr(1);
-	}
+    &:hover,
+    &:focus {
+      opacity: 0.75;
+    }
+  }
 
-	.custom-logo {
-		height: auto;
-		vertical-align: middle;
-	}
+  svg {
+    height: vr(1);
+  }
+
+  .custom-logo {
+    height: auto;
+    vertical-align: middle;
+  }
 }
 
 .navigation-right {
-	float: right;
+  float: right;
 }
 
 .navigation-search {
-	color: palette(gray);
-	background: none;
-	outline: none;
-	border: none;
-	cursor: pointer;
-	padding: 0;
-	transition: transform $anim-s;
+  padding: 0;
+  transition: transform $anim-s;
+  border: 0;
+  outline: none;
+  background: none;
+  color: palette(gray);
+  cursor: pointer;
 
-	svg {
-		vertical-align: middle;
-		fill: palette(gray);
-		transition: fill $anim-s;
+  svg {
+    transition: fill $anim-s;
+    vertical-align: middle;
+    fill: palette(gray);
 
-		&:hover,
-		&:focus {
-			fill: palette(orange);
-		}
-	}
+    &:hover,
+    &:focus {
+      fill: palette(orange);
+    }
+  }
 
-	.-search-open & {
-		transform: rotate(180deg);
-	}
+  .-search-open & {
+    transform: rotate(180deg);
+  }
 }
 
 .search-open {
-	display: inline;
+  display: inline;
 
-	.-search-open & {
-		display: none;
-	}
+  .-search-open & {
+    display: none;
+  }
 }
 
 .search-close {
-	display: none;
+  display: none;
 
-	.-search-open & {
-		display: inline;
-	}
+  .-search-open & {
+    display: inline;
+  }
 }
 
-
-// 3. Lower navigation //
+// 3. Lower navigation
 
 .navigation-lower {
-	@include ctnr(wide);
+  @include ctnr(wide);
 
-	clear: both;
+  clear: both;
 }
 
-/*! responsive-nav.js 1.0.39 by @viljamis */
+// responsive-nav.js 1.0.39 by @viljamis
 
 @include mappy-query(phone) {
+  .navigation-links ul {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-	.navigation-links ul {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		display: block;
-		list-style: none;
-	}
+  .navigation-links li {
+    display: block;
+    width: 100%;
+  }
 
-	.navigation-links li {
-		width: 100%;
-		display: block;
-	}
+  .js .navigation-links {
+    display: block;
+    position: absolute;
+    max-height: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    zoom: 1;
+  }
 
-	.js .navigation-links {
-		clip: rect(0 0 0 0);
-		max-height: 0;
-		position: absolute;
-		display: block;
-		overflow: hidden;
-		zoom: 1;
-	}
+  .navigation-links.opened {
+    max-height: 9999px;
+  }
 
-	.navigation-links.opened {
-		max-height: 9999px;
-	}
+  .navigation-button {
+    @include font(small);
 
-	.navigation-button {
-		@include font(small);
-
-		font-size: ms(1);
-		color: palette(gray, darker);
-		background: none;
-		outline: none;
-		border: none;
-		padding: 0;
-		vertical-align: middle;
-		padding-left: 16px;
-		margin-left: 8px;
-		border-left: 1px solid gray;
-		cursor: pointer;
-		user-select: none;
-		-webkit-tap-highlight-color: rgba(0,0,0,0);
-		-webkit-touch-callout: none;
-	}
+    margin-left: 8px;
+    padding: 0;
+    padding-left: 16px;
+    border: 0;
+    border-left: 1px solid gray;
+    outline: none;
+    background: none;
+    color: palette(gray, darker);
+    font-size: ms(1);
+    cursor: pointer;
+    vertical-align: middle;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+  }
 }
+
 
 @include mappy-query(tablet-desktop) {
+  .js .navigation-links {
+    position: relative;
+  }
 
-	.js .navigation-links {
-		position: relative;
-	}
-	.js .navigation-links.closed {
-		max-height: none;
-	}
-	.navigation-button {
-		display: none;
-	}
+  .js .navigation-links.closed {
+    max-height: none;
+  }
+
+  .navigation-button {
+    display: none;
+  }
 }
-
 
 
 // 4. Turbolinks //
 
 .turbolinks-progress-bar {
-	height: 4px;
-	z-index: 99998;
-	background-color: palette(blue);
-	background-image: linear-gradient(left, palette(blue), palette(turquoise));
+  background-color: palette(blue);
+  background-image: linear-gradient(left, palette(blue), palette(turquoise));
+  z-index: 99998;
 }
 
 .turbolinks-bar {
-	display: block;
-	width: 100%;
-	height: 4px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 99998;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 99998;
 
-	/* Display full progress bar to indicate completed page load. */
-	.-turbolinks-loaded & {
-		background-color: palette(blue);
-		background-image: linear-gradient(left, palette(blue), palette(turquoise));
-	}
+  // Display full progress bar to indicate completed page load.
+  .-turbolinks-loaded & {
+    background-color: palette(blue);
+    background-image: linear-gradient(left, palette(blue), palette(turquoise));
+  }
 
-	@include mappy-query(tablet-desktop) {
-		.admin-bar & {
-			top: 32px;
-		}
-	}
+  @include mappy-query(tablet-desktop) {
+    .admin-bar & {
+      top: 32px;
+    }
+  }
 }

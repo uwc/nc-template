@@ -60,7 +60,7 @@ wp_head();
 						'link_after'      => '</span>',
 						'fallback_cb'     => 'false',
 					) );
-				} ?>
+} ?>
 
 				<div class="navigation-right">
 
@@ -82,7 +82,7 @@ wp_head();
 						'menu_id'         => 'menu-primary',
 						'fallback_cb'     => 'false',
 					) );
-			} ?>
+} ?>
 
 			</div>
 

@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/uwc/uwc-website.svg?branch=development)](https://travis-ci.org/uwc/uwc-website)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8129049d7374429b9fa6c88fff60376)](https://www.codacy.com/app/connor_baer/uwc-website)
 
-
-# A WordPress template for UWC websites. 
+# A WordPress template for UWC websites.
 
 > Please [request permission](mailto:uwc@connorbaer.io) before use.
 
@@ -29,7 +29,7 @@ If you are interested in contributing to the development, [drop me a line](mailt
 > This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.
 
 1. UWC Website is not listed publicly on Wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
-2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top. 
+2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top.
 3. Paste the url `https://github.com/uwc/uwc-website` into the field 'Theme URI'. You can leave the other fields as they are and click on the 'Install Theme' button.
 4. Click on the 'Activate' button to use your new theme right away.
 5. Go to https:// for a guide on how to customize this theme.

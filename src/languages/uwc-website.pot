@@ -68,7 +68,7 @@ msgstr ""
 msgid "Ask a question"
 msgstr ""
 
-#: src/footer.php:34
+#: src/footer.php:32
 msgid "All rights reserved."
 msgstr ""
 

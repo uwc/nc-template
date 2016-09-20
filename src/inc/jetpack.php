@@ -39,11 +39,11 @@ add_action( 'after_setup_theme', 'uwc_website_jetpack_setup' );
 function uwc_website_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		if ( is_search() ) :
+		if ( is_search() ) {
 			get_template_part( 'components/post/content', 'search' );
-		else :
-			get_template_part( 'components/post/content', get_post_format() );
-		endif;
+			return;
+		}
+		get_template_part( 'components/post/content', get_post_format() );
 	}
 }
 
@@ -53,9 +53,8 @@ function uwc_website_infinite_scroll_render() {
 function uwc_website_the_site_logo() {
 	if ( ! function_exists( 'jetpack_the_site_logo' ) ) {
 		return;
-	} else {
-		jetpack_the_site_logo();
 	}
+	jetpack_the_site_logo();
 }
 
 /**

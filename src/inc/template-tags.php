@@ -97,11 +97,11 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 			echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 			if ( ! empty( $paginate_previous ) ) {
 				echo '<div class="nav-previous">' . wp_kses( $paginate_previous, array(
-				'a' => array(
+					'a' => array(
 					'href' => array(),
 					'title' => array(),
-				),
-			) ) . '</div>';
+					),
+				) ) . '</div>';
 			}
 			echo '<div class="nav-numbers">' . wp_kses( $paginate_numbers, array(
 				'a' => array(
@@ -111,11 +111,11 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 			) ) . '</div>';
 			if ( ! empty( $paginate_next ) ) {
 				echo '<div class="nav-next">' . wp_kses( $paginate_next, array(
-				'a' => array(
+					'a' => array(
 					'href' => array(),
 					'title' => array(),
-				),
-			) ) . '</div>';
+					),
+				) ) . '</div>';
 			}
 			echo '</nav>';
 		}
@@ -207,10 +207,9 @@ function uwc_website_categorized_blog() {
 	if ( $all_the_cool_cats > 1 ) {
 		// This blog has more than 1 category so uwc_website_categorized_blog should return true.
 		return true;
-	} else {
-		// This blog has only 1 category so uwc_website_categorized_blog should return false.
-		return false;
 	}
+	// This blog has only 1 category so uwc_website_categorized_blog should return false.
+	return false;
 }
 
 /**
