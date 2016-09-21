@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/uwc/uwc-website.svg?branch=development)](https://travis-ci.org/uwc/uwc-website)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8129049d7374429b9fa6c88fff60376)](https://www.codacy.com/app/connor_baer/uwc-website)
+[![Build Status](https://travis-ci.org/uwc/uwc-website.svg?branch=development)](https://travis-ci.org/uwc/uwc-website) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8129049d7374429b9fa6c88fff60376)](https://www.codacy.com/app/connor_baer/uwc-website)
 
 # A WordPress template for UWC websites.
 
@@ -11,7 +10,7 @@ Requires at least: WordPress 4.5
 
 Tested up to: WordPress 4.6.1
 
-Version: 1.4.1
+Version: 1.4.2
 
 License: [MIT](#copyright)
 
@@ -22,7 +21,6 @@ Tags: custom-menu, editor-style, featured-image-header, featured-images, post-fo
 ### This theme is still under development and NOT intended for use yet.
 
 If you are interested in contributing to the development, [drop me a line](mailto:uwc@connorbaer.io).
-
 
 ## Installation
 
@@ -35,11 +33,9 @@ If you are interested in contributing to the development, [drop me a line](mailt
 5. Go to https:// for a guide on how to customize this theme.
 6. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-
 ## Copyright
 
-The MIT License (MIT)
-Copyright (c) 2016 Connor Bär
+The MIT License (MIT) Copyright (c) 2016 Connor Bär
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -47,12 +43,10 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
----
+--------------------------------------------------------------------------------
 
 UWC Website theme bundles the following third-party resources:
 
-HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
-Licenses: MIT/GPL2
-Source: https://github.com/aFarkas/html5shiv
+HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas Licenses: MIT/GPL2 Source: <https://github.com/aFarkas/html5shiv>
 
 ...and others to be added.

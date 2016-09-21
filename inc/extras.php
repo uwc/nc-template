@@ -72,7 +72,7 @@ add_filter( 'the_content', 'uwc_website_content_anchors' );
  */
 function uwc_website_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 	if ( ! isset( $args->sub_menu ) ) {
-		return;
+		return $sorted_menu_items;
 	}
 	$root_id = 0;
 	// Find the current menu item.
@@ -87,12 +87,12 @@ function uwc_website_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 	// Find the top level parent.
 	if ( ! isset( $args->direct_parent ) ) {
 		$prev_root_id = $root_id;
-		while ( 0 != $prev_root_id ) {
+		while ( 0 !== $prev_root_id ) {
 			foreach ( $sorted_menu_items as $menu_item ) {
-				if ( $menu_item->ID == $prev_root_id ) {
+				if ( $menu_item->ID === $prev_root_id ) {
 					$prev_root_id = $menu_item->menu_item_parent;
 					// Don't set the root_id to 0 if we've reached the top of the menu.
-					if ( 0 != $prev_root_id ) { $root_id = $menu_item->menu_item_parent;
+					if ( 0 !== $prev_root_id ) { $root_id = $menu_item->menu_item_parent;
 					}
 					break;
 				}
@@ -103,17 +103,17 @@ function uwc_website_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 	$menu_item_parents = array();
 	foreach ( $sorted_menu_items as $key => $item ) {
 		// Init menu_item_parents.
-		if ( $item->ID == $root_id ) { $menu_item_parents[] = $item->ID;
+		if ( $item->ID === $root_id ) { $menu_item_parents[] = $item->ID;
 		}
 
-		if ( in_array( $item->menu_item_parent, $menu_item_parents ) ) {
+		if ( in_array( $item->menu_item_parent, $menu_item_parents, true ) ) {
 			// Part of sub-tree: keep!
 			$menu_item_parents[] = $item->ID;
-		} elseif ( ! ( isset( $args->show_parent ) && in_array( $item->ID, $menu_item_parents ) ) ) {
+		} elseif ( ! ( isset( $args->show_parent ) && in_array( $item->ID, $menu_item_parents, true ) ) ) {
 			// Not part of sub-tree: away with it!
 			unset( $sorted_menu_items[ $key ] );
 		}
+		return $sorted_menu_items;
 	}
-	return $sorted_menu_items;
 }
 add_filter( 'wp_nav_menu_objects', 'uwc_website_wp_nav_menu_objects_sub_menu', 10, 2 );
