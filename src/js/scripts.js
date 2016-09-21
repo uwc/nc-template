@@ -1,11 +1,10 @@
 /* jshint -W117 */
 /* jshint -W098 */
-( function ( $ ) {
+( function( $ ) {
 
-  $( document ).on( 'turbolinks:load', function () {
+  // RESPONSIVE NAV //
 
-    // RESPONSIVE NAV //
-
+  function _responsiveNav() {
     var nav = responsiveNav( '.navigation-links', {
       customToggle: 'js-menu',
       /* Selector: Specify the ID of a custom toggle. */
@@ -13,14 +12,19 @@
       navActiveClass: '-navigation-open', // String: Class that is added to  element when nav is active
       openPos: 'relative' /* String: Position of the opened nav, relative or static. */
     } );
+  }
 
-    // SMOOTHSCROLL //
+  // SMOOTHSCROLL //
 
+  function _smoothScroll() {
     smoothScroll.init( {
       offset: 100
     } );
+  }
 
-    // HEADROOM //
+  // HEADROOM //
+
+  function _headroom() {
 
     // Grab an element.
     var hrBody = document.body;
@@ -40,29 +44,35 @@
 
     // Initialise.
     headroom.init();
+  }
 
-    // SLICK LIGHTBOX //
+  // SLICK LIGHTBOX //
 
-    $( '.gallery' ).each( function () {
+  function _slickLightbox() {
+    $( '.gallery' ).each( function() {
       $( this ).slickLightbox( {
         itemSelector: '> figure > div > a',
-        caption: function ( element ) {
+        caption: function( element ) {
           return $( element ).parent().next().text();
         },
         captionPosition: 'bottom',
         useHistoryApi: true
       } );
     } );
+  }
 
-    // CONTACT BUTTON //
+  // CONTACT BUTTON //
 
-    $( '#js-contact' ).on( 'click', function () {
+  function _contactButton() {
+    $( '#js-contact' ).on( 'click', function() {
       $( '#js-body' ).toggleClass( '-contact-open' );
     } );
+  }
 
-    // SEARCH //
+  // SEARCH //
 
-    $( '#js-search' ).on( 'click', function () {
+  function _search() {
+    $( '#js-search' ).on( 'click', function() {
       $( '#js-body' ).toggleClass( '-search-open' );
 
       function focusInput() {
@@ -72,22 +82,23 @@
       // Set timeout to accommodate for the fade in animation.
       setTimeout( focusInput, 300 );
     } );
+  }
 
-    // Close everything on escape.
-    $( document ).on( 'keyup', function ( e ) {
-      if ( 27 === e.keyCode ) {
-        $( '#js-body' ).removeClass( '-search-open' );
-        $( '#js-body' ).removeClass( '-contact-open' );
-      }
-    } );
-
-    // Shows a gradient bar at the top of the navigation to indicate that the page has loaded.
-    $( '#js-body' ).addClass( '-turbolinks-loaded' );
+  $( document ).ready( function() {
+    _smoothScroll();
+    _headroom();
+    _contactButton();
+    _search();
+    _slickLightbox();
+    _responsiveNav();
   } );
 
-  // Hides the gradient bar at the top of the navigation to allow the progress bar to show.
-  $( document ).on( 'turbolinks:click', function () {
-    $( '#js-body' ).removeClass( '-turbolinks-loaded' );
+  // Close everything on escape.
+  $( document ).on( 'keyup', function( e ) {
+    if ( 27 === e.keyCode ) {
+      $( '#js-body' ).removeClass( '-search-open' );
+      $( '#js-body' ).removeClass( '-contact-open' );
+    }
   } );
 
 }( jQuery ) );

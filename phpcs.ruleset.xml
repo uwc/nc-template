@@ -8,15 +8,12 @@
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
-		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+		<exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
 	</rule>
 
 	<rule ref="WordPress-VIP">
-        <exclude name="WordPress.VIP.RestrictedFunctions" />
-	</rule> 
-
-	<!-- Include sniffs for PHP cross-version compatibility. -->
-	<rule ref="PHPCompatibility"/>
+		<exclude name="WordPress.VIP.RestrictedFunctions"/>
+	</rule>
 </ruleset>

@@ -1,68 +1,57 @@
 // ==== EDITOR STYLES ==== //
 
-/**
- * This stylesheet is loaded automatically by Wordpress when compiled and placed in the root theme directory folder as editor-style.css.
- * For more info, check out the codex: http://codex.wordpress.org/Editor_Style
- */
+// This stylesheet is loaded automatically by Wordpress when compiled and placed in the root theme directory folder as editor-style.css.
+// For more info, check out the codex: http://codex.wordpress.org/Editor_Style
 
-/*
- * 1. Dependencies
- * 2. Configuration
- * 3. Patterns
- * 4. Sections
- */
+// 1. Dependencies
+// 2. Configuration
+// 3. Patterns
+// 4. Sections
 
-/**
- * The order of the imports is crucial since they build on top of each other. 
- * For example, a form contains buttons, a menu can contain a form, etc.
- * Note: `bower_components` and `npm_modules` are already in Sass's path.
- */
+// The order of the imports is crucial since they build on top of each other.
+// For example, a form contains buttons, a menu can contain a form, etc.
+// Note: `bower_components` and `npm_modules` are already in Sass's path.
 
-
-/* Wrap the entire post style inside the TinyMCE selector, as suggested
-here http://codex.wordpress.org/Function_Reference/add_editor_style */
+// Wrap the entire post style inside the TinyMCE selector, as suggested here http://codex.wordpress.org/Function_Reference/add_editor_style.
 body#tinymce.wp-editor {
+  // 1. Dependencies //
 
-	// 1. Dependencies //
+  // Modular scale calculator built into your Sass, from http://www.modularscale.com/.
+  @import "modular-scale/stylesheets/modular-scale";
 
-	/* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
-	@import "modular-scale/stylesheets/modular-scale";
+  // Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi.
+  @import "typi/scss/typi";
 
-	/* Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi */
-	@import "typi/scss/typi";
+  // Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints.
+  @import "mappy-breakpoints/mappy-breakpoints";
 
-	/* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
-	@import "mappy-breakpoints/mappy-breakpoints";
+  // Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/.
+  @import "deps/normalize";
 
-	/* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
-	@import "deps/normalize";
+  // Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/.
+  @import "deps/reset";
 
-	/* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
-	@import "deps/reset";
+  // 2. Configuration //
 
+  @import "config/layout";
+  @import "config/color";
+  @import "config/fonts";
+  @import "config/type";
+  @import "config/animation";
 
-	// 2. Configuration //
+  // 3. Patterns //
 
-	@import "config/layout";
-	@import "config/color";
-	@import "config/fonts";
-	@import "config/type";
-	@import "config/animation";
+  // Styles required by WordPress core.
+  @import "patterns/wordpress";
 
+  // 4. Sections //
 
-	// 3. Patterns //
+  @import "sections/content";
 
-	/* Styles required by WordPress core */
-	@import "patterns/wordpress";
+  // Apply fundamental styles to editor.
+  @include ctnr(golden);
 
-
-	// 4. Sections //
-
-	@import "sections/content";
-
-	/* Apply fundamental styles to editor */
-	@include ctnr(golden);
-	font-family: $sans;
-	font-weight: $sans-normal;
-	color: palette(gray, dark);
+  color: palette(gray, dark);
+  font-family: $sans;
+  font-weight: $sans-normal;
 }

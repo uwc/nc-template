@@ -2,109 +2,89 @@
 
 /* Define all global layouts and layout styles here. */
 
-/* 
+/*
  * 1. Breakpoints
  * 2. ctnr()
  * 3. Helpers
  */
 
-
 // 1. Breakpoints //
 
-$breakpoints: (
-	small: 576px,
-	medium: 769px,
-	large: 1025px,
-	x-large: 1441px,
-);
+$breakpoints: (small: 576px, medium: 769px, large: 1025px, x-large: 1441px);
 
 /* You can use any valid arguments inserted into mappy-bp as the map values. Use with mappy-query(). */
-$mappy-queries: (
-	phone: mappy-bp(max-width small),
-	phone-tablet: mappy-bp(max-width medium),
-	tablet: mappy-bp(small medium),
-	tablet-desktop: mappy-bp(small),
-	desktop: mappy-bp(medium),
-	desktop-large: mappy-bp(large),
-);
-
+$mappy-queries: (phone: mappy-bp(max-width small), phone-tablet: mappy-bp(max-width medium), tablet: mappy-bp(small medium), tablet-desktop: mappy-bp(small), desktop: mappy-bp(medium), desktop-large: mappy-bp(large));
 
 // 2. ctnr() //
 
 /* Content can take on three different widths: full, wide and golden. */
 @mixin ctnr($width: null) {
-	@if $width == null {
-		@warn "Mixin ctnr() received no input! Please provide a width.";
-	}
+  @if $width == null {
+    @warn "Mixin ctnr() received no input! Please provide a width.";
+  }
+  @else if $width == "golden" {
+    width: auto;
+    margin-right: vr(1);
+    margin-left: vr(1);
+    display: block;
 
-	@else if $width == 'golden' {
-		width: auto;
-		margin-right: vr(1);
-		margin-left: vr(1);
-		display: block;
+    @include mappy-query(desktop) {
+      width: 36rem;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: calc(100% - #{vr(2)});
+    }
+  }
+  @else if $width == "wide" {
+    width: auto;
+    margin-right: vr(1);
+    margin-left: vr(1);
+    display: block;
 
-		@include mappy-query(desktop) {
-			width: 36rem;
-			margin-right: auto;
-			margin-left: auto;
-			max-width: calc(100% - #{vr(2)});
-		}
-	}
+    @include mappy-query(desktop) {
+      width: 54rem;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: calc(100% - #{vr(2)});
+    }
+  }
+  @else if $width == "hybrid" {
+    display: block;
+    width: 100vw;
+    max-width: 100%;
 
-	@else if $width == 'wide' {
-		width: auto;
-		margin-right: vr(1);
-		margin-left: vr(1);
-		display: block;
-
-		@include mappy-query(desktop) {
-			width: 54rem;
-			margin-right: auto;
-			margin-left: auto;
-			max-width: calc(100% - #{vr(2)});
-		}
-	}
-
-	@else if $width == 'hybrid' {
-		display: block;
-		width: 100vw;
-		max-width: 100%;
-
-		@include mappy-query(desktop-large) {
-			width: 54rem;
-			margin-right: auto;
-			margin-left: auto;
-			max-width: calc(100% - #{vr(2)});
-		}
-	}
-
-	@else if $width == 'full' {
-		display: block;
-		width: 100vw;
-		max-width: 100%;
-	}
-	
-	@else {
-		@warn "Mixin ctnr() received invalid input! This width does not exist.";
-	}
+    @include mappy-query(desktop-large) {
+      width: 54rem;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: calc(100% - #{vr(2)});
+    }
+  }
+  @else if $width == "full" {
+    display: block;
+    width: 100vw;
+    max-width: 100%;
+  }
+  @else {
+    @warn "Mixin ctnr() received invalid input! This width does not exist.";
+  }
 }
-
 
 // 3. Helpers //
 
 body {
-	/* Search open */
-	&.-search-open {
-		height: 100%;
-		overflow: hidden;
-	}
+  /* Search open */
+  &.-search-open {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 /* Limits width on large screens and centers content. */
 #site {
-	max-width: 72rem;
-	margin: 0 auto;
-	padding-top: vr(3.5);
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-top: vr(3.5);
 }
 
 @mixin clearfix {

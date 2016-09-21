@@ -8,7 +8,6 @@
  * 3. Footer
  */
 
-
 // 1. Navigation //
 
 .entry-navigation {
@@ -37,6 +36,7 @@
 
   a {
     @include font(button);
+
     @include link-arrow(down, purple);
 
     display: inline-block;
@@ -44,7 +44,6 @@
     white-space: nowrap;
   }
 }
-
 
 // 2. Content //
 
@@ -73,12 +72,11 @@
   }
 }
 
-
-
 // 3. Footer //
 
 .post-navigation {
   @include ctnr(golden);
+
   @include clearfix;
 
   clear: both;
@@ -93,6 +91,7 @@
 
     a {
       @include font(button);
+
       @include link-arrow(left, purple);
     }
   }
@@ -120,6 +119,7 @@
 
     a {
       @include font(button);
+
       @include link-arrow(right, purple);
 
       text-align: right;
@@ -129,6 +129,7 @@
 
 .post-tags {
   @include ctnr(golden);
+
   @include font(small);
 
   color: palette(gray);

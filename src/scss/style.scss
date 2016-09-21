@@ -1,12 +1,12 @@
-// Designed, built, and released under MIT license by Connor Bär (connorbaer.io).
+// Designed, built, and released under MIT license by Connor Baer (connorbaer.io).
 
 /*!
 Theme Name: UWC Website
 Theme URI: https://github.com/uwc/uwc-website
-Author: Connor Bär
+Author: Connor Baer
 Author URI: http://connorbaer.io
 Description: An open-source website template for UWC. Please request permission before use.
-Version: 1.4.0
+Version: 1.4.1
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
@@ -16,46 +16,38 @@ GitHub Theme URI: https://github.com/uwc/uwc-website
 GitHub Branch: master
 */
 
-
 // ==== IMPORTS ==== //
 
-/*
- * 1. Dependencies
- * 2. Configuration
- * 3. Patterns
- * 4. Sections
- */
+// 1. Dependencies
+// 2. Configuration
+// 3. Patterns
+// 4. Sections
 
-/**
- * The order of the imports is crucial since they build on top of each other. 
- * For example, a form contains buttons, a menu can contain a form, etc.
- * Note: `bower_components` and `npm_modules` are already in Sass's path.
- */
-
+// The order of the imports is crucial since they build on top of each other.
+// For example, a form contains buttons, a menu can contain a form, etc.
+// Note: `bower_components` and `npm_modules` are already in Sass's path.
 
 // 1. Dependencies //
 
-/* Modular scale calculator built into your Sass, from http://www.modularscale.com/ */
+// Modular scale calculator built into your Sass, from http://www.modularscale.com/.
 @import "modular-scale/stylesheets/modular-scale";
 
-/* Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi */
+// Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi.
 @import "typi/scss/typi";
 
-/* Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints */
+// Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints.
 @import "mappy-breakpoints/mappy-breakpoints";
 
-/* Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/ */
+// Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/.
 @import "deps/normalize";
 
-/* Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/ */
+// Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/.
 @import "deps/reset";
 
-/* A lightbox wrapper for Ken's amazing slick carousel, https://mreq.github.io/slick-lightbox/ */
+// A lightbox wrapper for Ken's amazing slick carousel, https://mreq.github.io/slick-lightbox/.
 @import "deps/slick";
 @import "deps/slick-theme";
 @import "deps/slick-lightbox";
-
-
 
 // 2. Configuration //
 
@@ -65,16 +57,14 @@ GitHub Branch: master
 @import "config/type";
 @import "config/animation";
 
-
 // 3. Patterns //
 
-/* Styles required by WordPress core */
+//  Styles required by WordPress core.
 @import "patterns/wordpress";
 @import "patterns/buttons";
 @import "patterns/forms";
 @import "patterns/menus";
 @import "patterns/overlays";
-
 
 // 4. Sections //
 
@@ -85,8 +75,10 @@ GitHub Branch: master
 @import "sections/section";
 @import "sections/article";
 @import "sections/category";
+
 .entry-content {
-	@import "sections/content";
+  @import "sections/content";
 }
+
 @import "sections/contact";
 @import "sections/footer";

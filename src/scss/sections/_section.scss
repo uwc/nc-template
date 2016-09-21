@@ -8,360 +8,363 @@
  * 5. Newsfeed
  */
 
-
 .section-quote,
 .section-cta,
 .section-video,
 .section-googlemaps,
 .section-newsfeed {
-	margin-top: vr(1.5);
-	margin-bottom: vr(1.5);
+  margin-top: vr(1.5);
+  margin-bottom: vr(1.5);
 }
-
 
 // 1. Text+Image //
 
 .section-textimage {
-	@include ctnr(wide);
+  @include ctnr(wide);
 
-	margin-top: vr(.5);
-	margin-bottom: vr(.5);
-	display: flex;
+  margin-top: vr(0.5);
+  margin-bottom: vr(0.5);
+  display: flex;
 
-	.section-image {
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-	}
+  .section-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
-	.section-card {
-		border: 1px solid palette(gray, light);
-		padding: vr(0.75) vr(1);
-		width: 100%;
-	}
+  .section-card {
+    border: 1px solid palette(gray, light);
+    padding: vr(0.75) vr(1);
+    width: 100%;
+  }
 
-	.section-headline {
-		@include font(header2);
+  .section-headline {
+    @include font(header2);
 
-		color: palette(blue);
-	}
+    color: palette(blue);
+  }
 
-	.section-text {
-		margin-top: vr(0.5);
-		margin-bottom: vr(0.5);
-		width: 100%;
-	}
+  .section-text {
+    margin-top: vr(0.5);
+    margin-bottom: vr(0.5);
+    width: 100%;
+  }
 
-	.section-link {
-		@include font(button);
-		@include link-arrow(right, pink);
+  .section-link {
+    @include font(button);
 
-		font-size: ms(0);
-	}
+    @include link-arrow(right, pink);
 
-	@include mappy-query(phone) {
-		flex-wrap: wrap;
+    font-size: ms(0);
+  }
 
-		.section-image {
-			width: 100%;
-			height: vr(8);
-		}
+  @include mappy-query(phone) {
+    flex-wrap: wrap;
 
-		.section-headline {
-			margin-top: vr(1);
-		}
-	}
-	@include mappy-query(tablet-desktop) {
-		height: vr(12);
+    .section-image {
+      width: 100%;
+      height: vr(8);
+    }
 
-		&:nth-child(odd) {
-			flex-direction: row-reverse;
+    .section-headline {
+      margin-top: vr(1);
+    }
+  }
 
-			.section-image {
-				margin-left: vr(0.25);
-			}
 
-			.section-card {
-				margin-right: vr(0.25);
-			}
-		}
+  @include mappy-query(tablet-desktop) {
+    height: vr(12);
 
-		&:nth-child(even) {
-			.section-image {
-				margin-right: vr(0.25);
-			}
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
 
-			.section-card {
-				margin-left: vr(0.25);
-			}
-		}
+      .section-image {
+        margin-left: vr(0.25);
+      }
 
-		.section-image {
-			flex: 1 1 22rem;
-		}
+      .section-card {
+        margin-right: vr(0.25);
+      }
+    }
 
-		.section-card {
-			flex: 1 1 34rem;
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center; /* align vertical */
-			align-content: center;
-		}
-	}
+    &:nth-child(even) {
+      .section-image {
+        margin-right: vr(0.25);
+      }
+
+      .section-card {
+        margin-left: vr(0.25);
+      }
+    }
+
+    .section-image {
+      flex: 1 1 22rem;
+    }
+
+    .section-card {
+      flex: 1 1 34rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      /* align vertical */
+      align-content: center;
+    }
+  }
 }
-
 
 // 2. Quote //
 
 .section-quote {
-	@include ctnr(golden);
+  @include ctnr(golden);
 
-	blockquote {
-		@include font(large);
+  blockquote {
+    @include font(large);
 
-		text-align: center;
-		color: palette(orange);
+    text-align: center;
+    color: palette(orange);
 
-		&:before,
-		&:after {
-			content: "";
-			background-color: palette(gray, light);
-			width: vr(6);
-			height: 1px;
-			display: block;
-			z-index: 10;
-			margin: 0 auto;
-		}
+    &:before,
+    &:after {
+      content: "";
+      background-color: palette(gray, light);
+      width: vr(6);
+      height: 1px;
+      display: block;
+      z-index: 10;
+      margin: 0 auto;
+    }
 
-		p {
-			margin-top: vr(0.5);
-			margin-bottom: vr(0.5);
-		}
+    p {
+      margin-top: vr(0.5);
+      margin-bottom: vr(0.5);
+    }
 
-		cite {
-			text-align: right;
-			width: 100%;
-			display: inline-block;
-			margin-bottom: vr(0.5);
-		}
-	}
+    cite {
+      text-align: right;
+      width: 100%;
+      display: inline-block;
+      margin-bottom: vr(0.5);
+    }
+  }
 }
-
 
 // 3. Call To Action //
 
 .section-cta {
-	@include ctnr(golden);
+  @include ctnr(golden);
 
-	text-align: center;
+  text-align: center;
 
-	a {
-		@include button;
-	}
+  a {
+    @include button;
+  }
 }
-
 
 // 4. Video + Google Maps//
 
 .section-video,
 .section-googlemaps {
-	@include ctnr(hybrid);
+  @include ctnr(hybrid);
 
-	.section-wrapper {
-		position: relative; 
-		padding-bottom: 56.25%;
-		overflow: hidden;
-	}
+  .section-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+  }
 
-	iframe,
-	object,
-	embed,
-	.acf-map { 
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+  iframe,
+  object,
+  embed,
+  .acf-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-	.section-header {
-		@include font(small);
+  .section-header {
+    @include font(small);
 
-		color: palette(blue);
-	}
+    color: palette(blue);
+  }
 
-	a .section-header {
-		@include link-underline(blue);
-	}
+  a .section-header {
+    @include link-underline(blue);
+  }
 }
 
 /* fixes potential theme css conflict */
 .acf-map img {
-   max-width: inherit !important;
+  max-width: inherit !important;
 }
-
 
 // 5. Newsfeed //
 
 .section-newsfeed {
-	@include ctnr(full);
-	@include clearfix;
-	
-	overflow: hidden;
+  @include ctnr(full);
 
-	.section-image {
-		width: 100%;
-		height: 100%;
-		background-repeat: no-repeat;
-		background-position: center; 
-		background-size: cover;
-		transition: transform $anim-m;
-	}
+  @include clearfix;
 
-	.section-wrapper {
-		padding: vr(0.75) vr(1);
-		width: 100%;
-		position: absolute;
-		z-index: 15;
-	    bottom: 0;
-	}
+  overflow: hidden;
 
-	.section-category {
-		font-weight: $sans-medium;
-	    font-size: ms(-2);
-	    line-height: 1rem;
-		text-transform: uppercase;
-		letter-spacing: 0.06rem;
-		display: inline-block;
-		padding: 0.1rem 0.5rem;
-		background: linear-gradient(90deg, palette(purple), palette(pink));
-		color: palette(white);
-	}
+  .section-image {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform $anim-m;
+  }
 
-	.section-headline {
-		margin-top: vr(.5);
-		margin-bottom: vr(.25);
-	}
+  .section-wrapper {
+    padding: vr(0.75) vr(1);
+    width: 100%;
+    position: absolute;
+    z-index: 15;
+    bottom: 0;
+  }
 
-	.section-date {
-		@include font(small);
-	}
+  .section-category {
+    font-weight: $sans-medium;
+    font-size: ms(-2);
+    line-height: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: linear-gradient(90deg, palette(purple), palette(pink));
+    color: palette(white);
+  }
 
-	.section-post {
-		float: left;
-		position: relative;
-		overflow: hidden;
+  .section-headline {
+    margin-top: vr(0.5);
+    margin-bottom: vr(0.25);
+  }
 
-		&:hover .section-image,
-		&:focus .section-image {
-			transform: scale(1.075);
-		}
-	}
-	.section-post.-no-thumbnail {
-		border: 1px solid palette(gray, light);
+  .section-date {
+    @include font(small);
+  }
 
-		.section-headline {
-			color: palette(blue);
-			transition: color $anim-s;
-		}
+  .section-post {
+    float: left;
+    position: relative;
+    overflow: hidden;
 
-		&:hover .section-headline,
-		&:focus .section-headline {
-			color: palette(blue, light);
-		}
+    &:hover .section-image,
+    &:focus .section-image {
+      transform: scale(1.075);
+    }
+  }
 
-		.section-date {
-			color: palette(gray);
-		}
-	}
-	.section-post.-thumbnail {
-		@include overlay;
+  .section-post.-no-thumbnail {
+    border: 1px solid palette(gray, light);
 
-		.section-headline,
-		.section-date {
-			color: palette(white);
-		}
-	}
+    .section-headline {
+      color: palette(blue);
+      transition: color $anim-s;
+    }
 
-	@include mappy-query(phone-tablet) {
-		.post-1 {
-			width: 100%;
-			height: vr(14);
-			margin-bottom: vr(0.125);
-		}
+    &:hover .section-headline,
+    &:focus .section-headline {
+      color: palette(blue, light);
+    }
 
-		.post-2 {
-			width: 100%;
-			height: vr(7);
-			margin-top: vr(0.125);
-			margin-bottom: vr(0.125);
-		}
+    .section-date {
+      color: palette(gray);
+    }
+  }
 
-		.post-1,
-		.post-2 {
-			.section-headline {
-				@include font(header2);
-			}
-		}
+  .section-post.-thumbnail {
+    @include overlay;
 
-		.post-3 {
-			margin-right: vr(0.125);
-		}
+    .section-headline,
+    .section-date {
+      color: palette(white);
+    }
+  }
 
-		.post-4 {
-			margin-left: vr(0.125);
-		}
+  @include mappy-query(phone-tablet) {
+    .post-1 {
+      width: 100%;
+      height: vr(14);
+      margin-bottom: vr(0.125);
+    }
 
-		.post-3,
-		.post-4 {
-			width: calc(50% - #{vr(0.125)});
-			margin-top: vr(0.125);
-			height: vr(7);
+    .post-2 {
+      width: 100%;
+      height: vr(7);
+      margin-top: vr(0.125);
+      margin-bottom: vr(0.125);
+    }
 
-			.section-headline {
-				@include font(header4);
-			}
-		}
-	}
+    .post-1,
+    .post-2 {
+      .section-headline {
+        @include font(header2);
+      }
+    }
 
-	@include mappy-query(desktop) {
-		.post-1 {
-			width: calc(50% - #{vr(0.125)});
-			margin-right: vr(0.125);
-		}
+    .post-3 {
+      margin-right: vr(0.125);
+    }
 
-		.post-2 {
-			width: calc(25% - #{vr(0.25)});
-			margin-left: vr(0.125);
-			margin-right: vr(0.125);
-		}
+    .post-4 {
+      margin-left: vr(0.125);
+    }
 
-		.post-1,
-		.post-2 {
-			height: vr(16);
+    .post-3,
+    .post-4 {
+      width: calc(50% - #{vr(0.125)});
+      margin-top: vr(0.125);
+      height: vr(7);
 
-			.section-headline {
-				@include font(header2);
-			}
-		}
+      .section-headline {
+        @include font(header4);
+      }
+    }
+  }
 
-		.post-3 {
-			margin-bottom: vr(0.125);
-		}
 
-		.post-4 {
-			margin-top: vr(0.125);
-		}
+  @include mappy-query(desktop) {
+    .post-1 {
+      width: calc(50% - #{vr(0.125)});
+      margin-right: vr(0.125);
+    }
 
-		.post-3,
-		.post-4 {
-			width: calc(25% - #{vr(0.125)});
-			margin-left: vr(0.125);
-			height: calc(#{vr(8)} - #{vr(0.125)});
+    .post-2 {
+      width: calc(25% - #{vr(0.25)});
+      margin-left: vr(0.125);
+      margin-right: vr(0.125);
+    }
 
-			.section-headline {
-				@include font(header4);
-			}
-		}
-	}
+    .post-1,
+    .post-2 {
+      height: vr(16);
+
+      .section-headline {
+        @include font(header2);
+      }
+    }
+
+    .post-3 {
+      margin-bottom: vr(0.125);
+    }
+
+    .post-4 {
+      margin-top: vr(0.125);
+    }
+
+    .post-3,
+    .post-4 {
+      width: calc(25% - #{vr(0.125)});
+      margin-left: vr(0.125);
+      height: calc(#{vr(8)} - #{vr(0.125)});
+
+      .section-headline {
+        @include font(header4);
+      }
+    }
+  }
 }

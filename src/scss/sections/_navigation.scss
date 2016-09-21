@@ -228,12 +228,6 @@
 
 // 4. Turbolinks //
 
-.turbolinks-progress-bar {
-  background-color: palette(blue);
-  background-image: linear-gradient(left, palette(blue), palette(turquoise));
-  z-index: 99998;
-}
-
 .turbolinks-bar {
   display: block;
   position: fixed;
@@ -242,13 +236,11 @@
   left: 0;
   width: 100%;
   height: 3px;
-  z-index: 99998;
 
   // Display full progress bar to indicate completed page load.
-  .-turbolinks-loaded & {
-    background-color: palette(blue);
-    background-image: linear-gradient(left, palette(blue), palette(turquoise));
-  }
+  background-color: palette(blue);
+  background-image: linear-gradient(left, palette(blue), palette(turquoise));
+  z-index: 99998;
 
   @include mappy-query(tablet-desktop) {
     .admin-bar & {

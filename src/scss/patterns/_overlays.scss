@@ -15,7 +15,7 @@
     height: 100%;
     width: 100%;
     z-index: 10;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -29,10 +29,10 @@
     height: 66%;
     width: 100%;
     z-index: 10;
-    background: linear-gradient(0deg, rgba(0,0,0,0.5), transparent);
-    
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+
     @include mappy-query(phone) {
-      background: rgba(0,0,0,0.25);
+      background: rgba(0, 0, 0, 0.25);
       height: 100%;
     }
   }

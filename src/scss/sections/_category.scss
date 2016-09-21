@@ -7,7 +7,6 @@
  * 2. Content
  */
 
-
 // 1. Box //
 
 .category-post {
@@ -21,13 +20,13 @@
     flex-wrap: wrap;
   }
 
+
   @include mappy-query(tablet-desktop) {
     border: 1px solid palette(gray, light);
     background-color: palette(white);
     flex-direction: row-reverse;
   }
 }
-
 
 // 2. Content //
 
@@ -58,11 +57,13 @@
 
   .category-link {
     @include font(button);
+
     @include link-arrow(right, pink);
 
     display: inline-block;
     margin-top: vr(0.5);
   }
+
   @include mappy-query(tablet-desktop) {
     padding: vr(0.75) vr(1);
   }
@@ -87,6 +88,7 @@
     height: vr(8);
   }
 }
+
 
 @include mappy-query(tablet-desktop) {
   .category-image {

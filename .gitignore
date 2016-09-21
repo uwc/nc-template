@@ -7,8 +7,8 @@ node_modules/
 # Install by running `./composer.phar update`
 vendor/
 
-# Run `gulp` to generate the build directory.
-build/
+# Run `gulp` to generate the theme directory.
+uwc-website/
 
 # Run `gulp dist` to generate the distribution directory.
 dist/

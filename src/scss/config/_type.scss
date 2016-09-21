@@ -29,11 +29,11 @@ $typi: (
 
 // 2. font() //
 
-/* 
+/*
  * The font() function accepts a style parameter.
- * It is intended to promote consistency in the typography, 
+ * It is intended to promote consistency in the typography,
  * therefore the number of styles should be kept to a minimum.
- * Attributes which change between instances should not be defined here (e.g. color). 
+ * Attributes which change between instances should not be defined here (e.g. color).
  */
 @mixin font($style: null) {
   @if $style == null {
@@ -319,7 +319,7 @@ hr {
 cite {
   font-size: ms(0);
   color: palette(gray);
-  
+
   &:before {
     content: "\2014\00a0";
   }

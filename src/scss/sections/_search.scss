@@ -3,102 +3,101 @@
 /* Style the search form and search results here. */
 
 /**
- * 1. Search 
+ * 1. Search
  * 2. Results
  */
 
-
- // 1. Search //
+// 1. Search //
 
 .search-form {
-	@include ctnr(golden);
+  @include ctnr(golden);
 
-	position: relative;
+  position: relative;
 }
 
 .site-search {
-	visibility: hidden;
-	opacity: 0;
-	text-align: center;
-	position: fixed;
-	background-color: palette(white);
-	left: 0;
-	right: 0;
-	top: 0;
-	z-index: 999;
-	height: 100vh;
-	transform: translate(0px, 20px);
-	transition: $anim-m;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+  position: fixed;
+  background-color: palette(white);
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  height: 100vh;
+  transform: translate(0px, 20px);
+  transition: $anim-m;
 
-	.-search-open & {
-		visibility: visible;
-		opacity: 1;
-		transform: translate(0px, 0px);
-	}
+  .-search-open & {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 }
 
 .search-field {
-	position: relative;
-	top: 50%;
-	width: 100%;
-	transform: translate(0, -50%);
+  position: relative;
+  top: 50%;
+  width: 100%;
+  transform: translate(0, -50%);
 }
-
 
 // 2. Results //
 
 .search-header {
-	margin-top: vr(2);
+  margin-top: vr(2);
 
-	.search-wrapper {
-		margin-bottom: vr(1.5);		
-	}
+  .search-wrapper {
+    margin-bottom: vr(1.5);
+  }
 
-	.search-title {
-		@include ctnr(golden);
-		@include font(small);
-	}
+  .search-title {
+    @include ctnr(golden);
+
+    @include font(small);
+  }
 }
 
 .search-result {
-	@include ctnr(golden);
+  @include ctnr(golden);
 
-	border: 1px solid palette(gray, light);
-	padding: vr(0.75) vr(1);
-	margin-top: vr(0.5);
-	margin-bottom: vr(0.75);
+  border: 1px solid palette(gray, light);
+  padding: vr(0.75) vr(1);
+  margin-top: vr(0.5);
+  margin-bottom: vr(0.75);
 
-	.result-title {
-		@include font(header3);
+  .result-title {
+    @include font(header3);
 
-		color: palette(blue);
+    color: palette(blue);
 
-		&:after {
-			content: '→';
-			color: inherit;
-			display: inline-block;
-			opacity: 0;
-			visibility: hidden;
-			transform: translate(0, 0);
-			transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
-		}
+    &:after {
+      content: '→';
+      color: inherit;
+      display: inline-block;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(0, 0);
+      transition: visibility $anim-s, opacity $anim-s, transform $anim-s;
+    }
 
-		&:hover,
-		&:focus {
-			color: palette(blue, light);
-		}
+    &:hover,
+    &:focus {
+      color: palette(blue, light);
+    }
 
-		&:hover:after,
-		&:focus:after {
-			visibility: visible;
-			opacity: 1;
-			transform: translate(0.35rem, 0);
-		}
-	}
+    &:hover:after,
+    &:focus:after {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0.35rem, 0);
+    }
+  }
 
-	.result-link {
-		@include font(small);
+  .result-link {
+    @include font(small);
 
-		color: palette(turquoise);
-	}
+    color: palette(turquoise);
+  }
 }

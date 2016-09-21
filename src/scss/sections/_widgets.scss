@@ -1,24 +1,24 @@
 // ==== WIDGETS ==== //
 
-/* Mixins, functions, and other non-declarative things */
+// Mixins, functions, and other non-declarative things.
 
 .widget-area {
   @include ctnr(golden);
 }
 
 .widget {
-	@include font(small);
+  @include font(small);
 
-	color: palette(gray, dark);
+  color: palette(gray, dark);
 
-	.widget-title {
-		@include font(header4);
+  .widget-title {
+    @include font(header4);
 
-		color: palette(gray);
-		margin-bottom: vr(0.25);
-	}
-	
-	a {
-		@include link-arrow(right, purple);
-	}
+    margin-bottom: vr(0.25);
+    color: palette(gray);
+  }
+
+  a {
+    @include link-arrow(right, purple);
+  }
 }

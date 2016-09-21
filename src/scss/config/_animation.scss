@@ -1,10 +1,7 @@
 // ==== ANIMATION ==== //
 
-/*
- * Define transitions here.
- */
+// Define transitions here.
 
-
-$anim-s: .15s cubic-bezier(0,0,.2,1);
-$anim-m: .3s cubic-bezier(0,0,.2,1);
-$anim-l: .45s cubic-bezier(0,0,.2,1);
+$anim-s: 0.15s cubic-bezier(0, 0, 0.2, 1);
+$anim-m: 0.3s cubic-bezier(0, 0, 0.2, 1);
+$anim-l: 0.45s cubic-bezier(0, 0, 0.2, 1);

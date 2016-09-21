@@ -3,36 +3,36 @@
 /* Style form inputs and labels here. Depends on the 'buttons' stylesheet. */
 
 textarea {
-	resize: vertical;
-	max-width: 100%;
+  resize: vertical;
+  max-width: 100%;
 }
 
 .form-input {
-	@include font(header1);
+  @include font(header1);
 
-	padding: 0;
-	border: none;
-	border-bottom: 2px solid palette(gray);
-	background: none;
-	color: palette(gray, darker);
-	outline: none;
-	width: 100%;
-	line-height: 1.75;
-	text-align: left;
-	resize: none;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid palette(gray);
+  background: none;
+  color: palette(gray, darker);
+  outline: none;
+  width: 100%;
+  line-height: 1.75;
+  text-align: left;
+  resize: none;
 }
 
 .form-underline {
-	display: block;
-	position: relative;
-	height: 2px;
-	background-color: palette(orange);
-	width: 0;
-	margin: 0 auto;
-	bottom: 2px;
-	transition: $anim-s;
+  display: block;
+  position: relative;
+  height: 2px;
+  background-color: palette(orange);
+  width: 0;
+  margin: 0 auto;
+  bottom: 2px;
+  transition: $anim-s;
 }
 
 .form-input:focus ~ .form-underline {
-	width: 100%;
+  width: 100%;
 }

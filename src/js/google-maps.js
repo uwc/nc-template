@@ -1,7 +1,7 @@
 /* jshint -W117 */
 /* jshint -W098 */
 
-( function ( $ ) {
+( function( $ ) {
 
   /*
    *  This function will render a Google Map onto the selected jQuery element
@@ -123,7 +123,7 @@
     map.markers = [];
 
     // Add markers.
-    $markers.each( function () {
+    $markers.each( function() {
 
       addMarker( $( this ), map );
 
@@ -172,7 +172,7 @@
       } );
 
       // Show info window when marker is clicked.
-      google.maps.event.addListener( marker, 'click', function () {
+      google.maps.event.addListener( marker, 'click', function() {
 
         infowindow.open( map, marker );
 
@@ -198,7 +198,7 @@
     var bounds = new google.maps.LatLngBounds();
 
     // Loop through all markers and create bounds.
-    $.each( map.markers, function ( i, marker ) {
+    $.each( map.markers, function( i, marker ) {
 
       var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
 
@@ -232,9 +232,9 @@
   // Global var.
   var map = null;
 
-  $( document ).on( 'turbolinks:load', function () {
+  $( document ).ready( function() {
 
-    $( '.acf-map' ).each( function () {
+    $( '.acf-map' ).each( function() {
 
       // Create map.
       map = newMap( $( this ) );

@@ -2,94 +2,94 @@
 
 /* Mixins, functions, and other non-declarative things */
 
-
 /* Rewrite layout with a 2-1-1 approach. */
 
-
 .site-footer {
-	position: relative;
-	margin-top: vr(1.5);
-	box-shadow: 0 -2px 8px -2px palette(gray, light);
-	background-color: palette(white);
+  position: relative;
+  margin-top: vr(1.5);
+  box-shadow: 0 -2px 8px -2px palette(gray, light);
+  background-color: palette(white);
 
-	&:before {
-		content: "";
-		display: block;
-		background-color: palette(blue);
-		background-image: linear-gradient(left, palette(blue), palette(turquoise));
-		width: 100%;
-		height: 3px;
-	}
+  &:before {
+    content: "";
+    display: block;
+    background-color: palette(blue);
+    background-image: linear-gradient(left, palette(blue), palette(turquoise));
+    width: 100%;
+    height: 3px;
+  }
 }
 
 .footer-widgets {
-	@include ctnr(golden);
-	@include clearfix;
+  @include ctnr(golden);
 
-	padding-top: vr(1);
-	padding-bottom: vr(1);
+  @include clearfix;
 
-	.footer-widget {
-		float: left;
-	}
+  padding-top: vr(1);
+  padding-bottom: vr(1);
 
-	@include mappy-query(tablet-desktop) {
-		.footer-left,
-		.footer-right {
-			width: calc((100% / 3) - #{vr(0.5)});
-		}
+  .footer-widget {
+    float: left;
+  }
 
-		.footer-left {
-			margin-right: vr(0.5);
-		}
+  @include mappy-query(tablet-desktop) {
+    .footer-left,
+    .footer-right {
+      width: calc((100% / 3) - #{vr(0.5)});
+    }
 
-		.footer-center {
-			width: calc((100% / 3) - #{vr(1)});
-			margin-left: vr(0.5);
-			margin-right: vr(0.5);			
-		}
+    .footer-left {
+      margin-right: vr(0.5);
+    }
 
-		.footer-right {
-			margin-left: vr(0.5);
-		}
-	}
+    .footer-center {
+      width: calc((100% / 3) - #{vr(1)});
+      margin-left: vr(0.5);
+      margin-right: vr(0.5);
+    }
 
-	@include mappy-query(phone) {
-		.footer-left {
-			width: 100%;
-		}
+    .footer-right {
+      margin-left: vr(0.5);
+    }
+  }
 
-		.footer-center,
-		.footer-right {
-			width: calc(50% - #{vr(0.5)});
-			margin-top: vr(1);
-		}
 
-		.footer-center {
-			margin-right: vr(0.5);
-		}
+  @include mappy-query(phone) {
+    .footer-left {
+      width: 100%;
+    }
 
-		.footer-right {
-			margin-left: vr(0.5);
-		}
-	}
+    .footer-center,
+    .footer-right {
+      width: calc(50% - #{vr(0.5)});
+      margin-top: vr(1);
+    }
+
+    .footer-center {
+      margin-right: vr(0.5);
+    }
+
+    .footer-right {
+      margin-left: vr(0.5);
+    }
+  }
 }
 
 .footer-info {
-	@include ctnr(golden);
+  @include ctnr(golden);
 
-	font-size: ms(-2);
-	color: palette(gray);
-	text-align: center;
-	padding-bottom: vr(0.75);
+  font-size: ms(-2);
+  color: palette(gray);
+  text-align: center;
+  padding-bottom: vr(0.75);
 
-	a {
-		padding: 0.1rem 0.2rem;
+  a {
+    padding: 0.1rem 0.2rem;
 
-		&:hover,
-		&:focus {
-			background-image: linear-gradient(45deg, #dd2476, #ff512f);
-			color: palette(white);
-		}
-	}
+    &:hover,
+    &:focus {
+      background-image: linear-gradient(45deg, #dd2476, #ff512f);
+      color: palette(white);
+    }
+  }
 }

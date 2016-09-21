@@ -6,89 +6,87 @@
  * 3. Footer
  */
 
-
 // 1. Header //
 
 #menu-primary {
-	position: relative;
-	text-align: center;
+  position: relative;
+  text-align: center;
 
-	& > .menu-item {
-		margin: 0 1.5%;
-		padding-bottom: 12px;
-		list-style-type: none;
-		display: inline-block;
-		height: 100%;
-		position: relative;
-		cursor: pointer;
+  & > .menu-item {
+    margin: 0 1.5%;
+    padding-bottom: 12px;
+    list-style-type: none;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
 
-		@include mappy-bp(large) {
-			margin: 0 2.5%;
-		}
-	}
+    @include mappy-bp(large) {
+      margin: 0 2.5%;
+    }
+  }
 
-	& > .menu-item > a {
-		@include font(small);
-		@include link-underline(purple);
+  & > .menu-item > a {
+    @include font(small);
 
-		color: palette(gray, darker);
+    @include link-underline(purple);
 
-		@include mappy-query(phone) {
-			font-size: ms(1);
-		}
-	}
+    color: palette(gray, darker);
 
-	.menu-item:hover > a:after,
-	.menu-item:focus > a:after,
-	.menu-item.current-menu-item > a:after {
-		visibility: visible;
-		opacity: 1;
-		transform: translate(0px, 0px);
-	}
+    @include mappy-query(phone) {
+      font-size: ms(1);
+    }
+  }
 
-	.sub-menu {
-		position: absolute;
-		top: 100%;
-		left: -#{vr(.5)};
-		z-index: 100;
-		min-width: 100%;
-		padding-bottom: vr(.25);
-		background-color: palette(white);
-		box-shadow: 0px 2px 8px -2px palette(gray, light);
-		border-bottom-right-radius: vr(.125);
-		border-bottom-left-radius: vr(.125);
-		visibility: hidden;
-	    transform: translate(0px, -4px);
-	    opacity: 0;
-	    transition: visibility $anim-m, opacity $anim-m, transform $anim-m;
+  .menu-item:hover > a:after,
+  .menu-item:focus > a:after,
+  .menu-item.current-menu-item > a:after {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 
-		.menu-item {
-			@include font(small);
+  .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: -#{vr(0.5)};
+    z-index: 100;
+    min-width: 100%;
+    padding-bottom: vr(0.25);
+    background-color: palette(white);
+    box-shadow: 0px 2px 8px -2px palette(gray, light);
+    border-bottom-right-radius: vr(0.125);
+    border-bottom-left-radius: vr(0.125);
+    visibility: hidden;
+    transform: translate(0px, -4px);
+    opacity: 0;
+    transition: visibility $anim-m, opacity $anim-m, transform $anim-m;
 
-			text-align: left;
-			white-space: nowrap;
-			padding: vr(.125) vr(.5);
-			background-color: palette(white);
-			width: 100%;
-			transition: color #anim-s;
+    .menu-item {
+      @include font(small);
 
-			&:hover,
-			&:focus {
-				color: palette(purple, light);
-			}
-		}
-	}
+      text-align: left;
+      white-space: nowrap;
+      padding: vr(0.125) vr(0.5);
+      background-color: palette(white);
+      width: 100%;
+      transition: color #anim-s;
 
-	@include mappy-query(tablet-desktop) {
+      &:hover,
+      &:focus {
+        color: palette(purple, light);
+      }
+    }
+  }
 
-		& > .menu-item:hover > .sub-menu {
-			visibility: visible;
-		    opacity: 1;
-		    transform: translate(0px, 0px)
-		}
-	}
+  @include mappy-query(tablet-desktop) {
+    & > .menu-item:hover > .sub-menu {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }
 }
-
 
 // 2. Social //
 
@@ -99,165 +97,178 @@
  * Inspired by http://justintadlock.com/archives/2013/08/14/social-nav-menus-part-2
  */
 #menu-social {
-	list-style: none;
-	text-align: right;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  text-align: right;
+  padding: 0;
+  margin: 0;
 
-	li {
-		display: inline-block;
-	}
+  li {
+    display: inline-block;
+  }
 
-	a {
-		margin-right: vr(.5);
+  a {
+    margin-right: vr(0.5);
 
-		&:before {
-			content: '\64';
-			display: inline-block;
-			color: palette(gray);
-			font-family: 'uwc-website' !important;
-			vertical-align: top;
-			font-style: normal !important;
-			font-weight: normal !important;
-			font-variant: normal !important;
-			text-transform: none !important;
-			font-size: 20px;
-			speak: none;
-			line-height: 1.5;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			transition: color $anim-s;
-		}
-		&[href*="wordpress"],
-		&[href*="wordpress"] {
-			&:before {
-				content: '\63';
-			}
+    &:before {
+      content: '\64';
+      display: inline-block;
+      color: palette(gray);
+      font-family: 'uwc-website' !important;
+      vertical-align: top;
+      font-style: normal !important;
+      font-weight: normal !important;
+      font-variant: normal !important;
+      text-transform: none !important;
+      font-size: 20px;
+      speak: none;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: color $anim-s;
+    }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #1e8cbe;
-			}			
-		}
-		&[href*="facebook"] {
-			&:before {
-				content: '\68';
-			}
+    &[href*="wordpress"],
+    &[href*="wordpress"] {
+      &:before {
+        content: '\63';
+      }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #3b5998;
-			}			
-		}
-		&[href*="twitter"] {
-			&:before {
-				content: '\69';
-			}
+      &:focus:before,
+      &:hover:before {
+        color: #1e8cbe;
+      }
+    }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #55acee;
-			}			
-		}
-		&[href*="plus.google"] {
-			&:before {
-				content: '\61';
-			}
+    &[href*="facebook"] {
+      &:before {
+        content: '\68';
+      }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #dc4e41;
-			}			
-		}
-		&[href*="pinterest"] {
-			&:before {
-				content: '\71';
-			}
+      &:focus:before,
+      &:hover:before {
+        color: #3b5998;
+      }
+    }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #bd081c;
-			}			
-		}
-		&[href*="github"] {
-			&:before {
-				content: '\70';
-			}
+    &[href*="twitter"] {
+      &:before {
+        content: '\69';
+      }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #333333;
-			}			
-		}
-		&[href*="tumblr"] {
-			&:before {
-				content: '\6d';
-			}
+      &:focus:before,
+      &:hover:before {
+        color: #55acee;
+      }
+    }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #35465c;
-			}			
-		}
-		&[href*="youtube"] {
-			&:before {
-				content: '\6a';
-			}
+    &[href*="plus.google"] {
+      &:before {
+        content: '\61';
+      }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #cd201f;
-			}			
-		}
-		&[href*="flickr"] {
-			&:before {
-				content: '\72';
-			}
+      &:focus:before,
+      &:hover:before {
+        color: #dc4e41;
+      }
+    }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #ff0084;
-			}			
-		}
-		&[href*="vimeo"] {
-			&:before {
-				content: '\6c';
-			}
+    &[href*="pinterest"] {
+      &:before {
+        content: '\71';
+      }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #1ab7ea;
-			}			
-		}
-		&[href*="instagram"] {
-			&:before {
-				content: '\6b';
-			}
+      &:focus:before,
+      &:hover:before {
+        color: #bd081c;
+      }
+    }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #3f729b;
-			}			
-		}
-		&[href*="linkedin"] {
-			&:before {
-				content: '\67';
-			}
+    &[href*="github"] {
+      &:before {
+        content: '\70';
+      }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #0077b5;
-			}			
-		}
-		&[href^="mailto:"] {
-			&:before {
-				content: '\6f';
-			}
+      &:focus:before,
+      &:hover:before {
+        color: #333333;
+      }
+    }
 
-			&:focus:before,
-			&:hover:before {
-				color:   #ffa930;
-			}			
-		}
-	}
+    &[href*="tumblr"] {
+      &:before {
+        content: '\6d';
+      }
+
+      &:focus:before,
+      &:hover:before {
+        color: #35465c;
+      }
+    }
+
+    &[href*="youtube"] {
+      &:before {
+        content: '\6a';
+      }
+
+      &:focus:before,
+      &:hover:before {
+        color: #cd201f;
+      }
+    }
+
+    &[href*="flickr"] {
+      &:before {
+        content: '\72';
+      }
+
+      &:focus:before,
+      &:hover:before {
+        color: #ff0084;
+      }
+    }
+
+    &[href*="vimeo"] {
+      &:before {
+        content: '\6c';
+      }
+
+      &:focus:before,
+      &:hover:before {
+        color: #1ab7ea;
+      }
+    }
+
+    &[href*="instagram"] {
+      &:before {
+        content: '\6b';
+      }
+
+      &:focus:before,
+      &:hover:before {
+        color: #3f729b;
+      }
+    }
+
+    &[href*="linkedin"] {
+      &:before {
+        content: '\67';
+      }
+
+      &:focus:before,
+      &:hover:before {
+        color: #0077b5;
+      }
+    }
+
+    &[href^="mailto:"] {
+      &:before {
+        content: '\6f';
+      }
+
+      &:focus:before,
+      &:hover:before {
+        color: #ffa930;
+      }
+    }
+  }
 }
