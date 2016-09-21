@@ -10,7 +10,7 @@ Requires at least: WordPress 4.5
 
 Tested up to: WordPress 4.6.1
 
-Version: 1.4.2
+Version: 1.4.3
 
 License: [MIT](#copyright)
 

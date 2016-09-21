@@ -70,7 +70,7 @@
       padding: vr(0.125) vr(0.5);
       background-color: palette(white);
       width: 100%;
-      transition: color #anim-s;
+      transition: color $anim-s;
 
       &:hover,
       &:focus {
