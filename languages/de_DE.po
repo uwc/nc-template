@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-09-17 16:46+0200\n"
+"PO-Revision-Date: 2016-09-20 08:38+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -32,14 +32,6 @@ msgid ""
 msgstr ""
 "Es tut uns leid, die von Ihnen gesuchte Seite scheint nicht zu existieren. "
 "Überprüfen Sie die URL auf Fehler oder benutzen Sie das Suchfeld unten."
-
-#: src/components/contact-button.php:23
-msgid "Contact us"
-msgstr "Kontaktieren Sie uns"
-
-#: src/components/contact-button.php:35
-msgid "Ask a question"
-msgstr "Nachricht senden"
 
 #: src/components/content-link.php:33, src/components/element-link.php:37
 msgid "Continue reading"
@@ -84,7 +76,15 @@ msgstr "Featured"
 msgid "Weiter lesen"
 msgstr "Weiter lesen"
 
-#: src/footer.php:34
+#: src/components/site-contact.php:25
+msgid "Contact us"
+msgstr "Kontaktieren Sie uns"
+
+#: src/components/site-contact.php:50
+msgid "Ask a question"
+msgstr "Nachricht senden"
+
+#: src/footer.php:32
 msgid "All rights reserved."
 msgstr "Alle Rechte vorbehalten."
 
@@ -117,15 +117,15 @@ msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr "on"
 
-#: src/header.php:39
+#: src/header.php:41
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: src/header.php:62
+#: src/header.php:67
 msgid "Search"
 msgstr "Suche"
 
-#: src/header.php:63
+#: src/header.php:68
 msgid "Menu"
 msgstr "Menü"
 

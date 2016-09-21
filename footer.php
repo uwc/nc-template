@@ -9,9 +9,7 @@
  * @package UWC_Website
  */
 
-?>
-
-	</div>
+?></div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="footer-widgets">
 			<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
