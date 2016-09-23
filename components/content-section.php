@@ -28,14 +28,16 @@
 					</div>
 				<?php else : ?>
 					<nav class="header-navigation">
-						<ul class="header-links">
-							<?php wp_list_pages( array(
-								'child_of'    => $post->ID,
-								'depth'       => 1,
-								'title_li'    => '',
-								'sort_column' => 'menu_order',
-							) ); ?>
-						</ul>
+						<?php if ( has_nav_menu( 'primary' ) ) {
+							wp_nav_menu( array(
+								'theme_location'  => 'primary',
+								'sub_menu'		    => true,
+								'depth'           => '2',
+								'container'       => 'nav',
+								'container_class' => 'header-links',
+								'fallback_cb'     => 'false',
+							) );
+} ?>
 					</nav>
 				<?php endif; ?>
 			</div>
@@ -51,22 +53,22 @@
 			// Loop through the rows of data.
 			while ( have_rows( 'modules' ) ) : the_row();
 
-				if ( get_row_layout() == 'text_image' ) :
+				if ( get_row_layout() === 'text_image' ) :
 					get_template_part( 'components/module', 'textimage' );
 
-				elseif ( get_row_layout() == 'quote' ) :
+				elseif ( get_row_layout() === 'quote' ) :
 
 					get_template_part( 'components/module', 'quote' );
 
-				elseif ( get_row_layout() == 'call_to_action' ) :
+				elseif ( get_row_layout() === 'call_to_action' ) :
 
 					get_template_part( 'components/module', 'calltoaction' );
 
-				elseif ( get_row_layout() == 'video' ) :
+				elseif ( get_row_layout() === 'video' ) :
 
 					get_template_part( 'components/module', 'video' );
 
-				elseif ( get_row_layout() == 'google_maps' ) :
+				elseif ( get_row_layout() === 'google_maps' ) :
 
 					get_template_part( 'components/module', 'googlemaps' );
 

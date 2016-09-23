@@ -36,31 +36,26 @@ if ( ! function_exists( 'uwc_website_page_navigation' ) ) :
 	 * Prints HTML with links to previous and next pages for the current page.
 	 */
 	function uwc_website_page_navigation() {
-		$test = wp_get_nav_menu_items( 'header' );
+		$menu_location = 'primary';
+		$locations = get_nav_menu_locations();
+		$menu = wp_get_nav_menu_object( $locations[ $menu_location ] );
+		$pagelist = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
 
-		$pagelist = get_pages( array(
-			'sort_column' => 'menu_order',
-			'sort_order' => 'asc',
-		) );
-		$pages = array();
-		foreach ( $pagelist as $page ) {
-			$pages[] += $page->ID;
-		}
+		$current = array_search( get_the_ID(), array_column( $pagelist, 'object_id' ) );
 
-		$current = array_search( get_the_ID(), $pages );
-		$prev_id = $pages[ $current - 1 ];
-		$next_id = $pages[ $current + 1 ];
+		$previous = $current - 1;
+		$next = $current + 1;
 
 		echo '<nav class="post-navigation">';
 		echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
-		if ( ! empty( $prev_id ) ) {
+		if ( ! empty( $previous ) ) {
 			echo '<div class="nav-previous">';
-			echo '<a href="', esc_url( get_permalink( $prev_id ) ), '" title="', get_the_title( $prev_id ), '">', get_the_title( $prev_id ), '</a>';
+			echo '<a href="' . esc_url( $pagelist[ $previous ]->url ) . '" title="' . esc_html( $pagelist[ $previous ]->title ) . '">' . esc_html( $pagelist[ $previous ]->title ) . '</a>';
 			echo '</div>';
 		}
-		if ( ! empty( $next_id ) ) {
+		if ( ! empty( $next ) ) {
 			echo '<div class="nav-next">';
-			echo '<a href="', esc_url( get_permalink( $next_id ) ), '" title="', get_the_title( $next_id ), '">', get_the_title( $next_id ), '</a>';
+			echo '<a href="' . esc_url( $pagelist[ $next ]->url ) . '" title="' . esc_html( $pagelist[ $next ]->title ) . '">' . esc_html( $pagelist[ $next ]->title ) . '</a>';
 			echo '</div>';
 		}
 		echo '</nav>';
@@ -136,12 +131,12 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 		$nodes = $dom->getElementsByTagName( 'a' );
 		$items = array();
 		foreach ( $nodes as $node ) {
-			if ( $node -> hasAttribute( 'id' ) == true ) {
+			if ( $node -> hasAttribute( 'id' ) === true ) {
 				$id = $node -> getAttribute( 'id' );
 				$items[] = html_entity_decode( $id );
 			}
 		}
-		if ( count( $items ) != 0 ) {
+		if ( count( $items ) !== 0 ) {
 			echo '<nav class="entry-navigation"><h6>Inhalt</h6><div class="entry-links">';
 			foreach ( $items as $item ) {
 				echo '<a href="#', esc_html( urlencode( $item ) ), '" title="', esc_html( $item ), '" data-scroll>', esc_html( $item ), '</a>';
