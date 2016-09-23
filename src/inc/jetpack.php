@@ -63,7 +63,6 @@ function uwc_website_the_site_logo() {
 function uwc_website_social_menu() {
 	if ( ! function_exists( 'jetpack_social_menu' ) ) {
 		return;
-	} else {
-		jetpack_social_menu();
 	}
+	jetpack_social_menu();
 }

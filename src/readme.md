@@ -6,11 +6,11 @@
 
 Contributors: [Connor Bär](http://connorbaer.io)
 
-Requires at least: WordPress 4.5
+Requires at least: WordPress 4.5, PHP 5.5
 
-Tested up to: WordPress 4.6.1
+Tested up to: WordPress 4.6.1, PHP 7.0
 
-Version: 1.4.3
+Version: 1.4.4
 
 License: [MIT](#copyright)
 
@@ -18,7 +18,7 @@ Tags: custom-menu, editor-style, featured-image-header, featured-images, post-fo
 
 ## Description
 
-### This theme is still under development and NOT intended for use yet.
+_To be updated._
 
 If you are interested in contributing to the development, [drop me a line](mailto:uwc@connorbaer.io).
 

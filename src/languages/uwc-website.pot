@@ -151,20 +151,20 @@ msgstr ""
 msgid "Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time."
 msgstr ""
 
-#: src/inc/template-tags.php:90
+#: src/inc/template-tags.php:85
 msgid "Previous page"
 msgstr ""
 
-#: src/inc/template-tags.php:92
+#: src/inc/template-tags.php:87
 msgid "Next page"
 msgstr ""
 
-#: src/inc/template-tags.php:172
+#: src/inc/template-tags.php:167
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: src/inc/template-tags.php:177
+#: src/inc/template-tags.php:172
 msgctxt "post author"
 msgid "by %s"
 msgstr ""

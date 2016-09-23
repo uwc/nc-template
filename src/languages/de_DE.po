@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: UWC Website\n"
 "Report-Msgid-Bugs-To: https://github.com/uwc/uwc-website/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-09-21 10:08+0200\n"
+"PO-Revision-Date: 2016-09-23 14:18+0200\n"
 "Last-Translator: Connor Bär <hello@connorbaer.io>\n"
 "Language-Team: Made by Connor. <hello@connorbaer.io>\n"
 "Language: de_DE\n"
@@ -181,20 +181,20 @@ msgstr ""
 "Kommentare werden NICHT gelöscht und können somit jederzeit wieder "
 "eingeblendet werden."
 
-#: src/inc/template-tags.php:90
+#: src/inc/template-tags.php:85
 msgid "Previous page"
 msgstr "Vorherige Seite"
 
-#: src/inc/template-tags.php:92
+#: src/inc/template-tags.php:87
 msgid "Next page"
 msgstr "Nächste Seite"
 
-#: src/inc/template-tags.php:172
+#: src/inc/template-tags.php:167
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Gepostet am %s"
 
-#: src/inc/template-tags.php:177
+#: src/inc/template-tags.php:172
 msgctxt "post author"
 msgid "by %s"
 msgstr "von %s."
