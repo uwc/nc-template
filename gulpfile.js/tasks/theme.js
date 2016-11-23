@@ -16,11 +16,11 @@ gulp.task('theme-acf', function() {
   .pipe(gulp.dest(config.acf.dest));
 });
 
-// Copy readme file to the `build` folder
-gulp.task('theme-readme', function() {
-  return gulp.src(config.readme.src)
-  .pipe(plugins.changed(config.readme.dest))
-  .pipe(gulp.dest(config.readme.dest));
+// Copy documents to the `build` folder
+gulp.task('theme-documents', function() {
+  return gulp.src(config.documents.src)
+  .pipe(plugins.changed(config.documents.dest))
+  .pipe(gulp.dest(config.documents.dest));
 });
 
 // Copy custom font files to the `build` folder
@@ -73,4 +73,4 @@ gulp.task('theme-lang', ['languages'], function() {
 
 
 // All the theme tasks in one
-gulp.task('theme', ['theme-lang', 'theme-php', 'theme-fonts', 'theme-readme', 'theme-acf']);
+gulp.task('theme', ['theme-lang', 'theme-php', 'theme-fonts', 'theme-documents', 'theme-acf']);

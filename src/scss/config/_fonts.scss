@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @font-face {
   font-family: "uwc-website";
   src: url("fonts/uwc-website.eot");
@@ -6,7 +8,7 @@
   font-style: normal;
 }
 
-[data-icon]:before {
+[data-icon]::before {
   font-family: "uwc-website" !important;
   content: attr(data-icon);
   font-style: normal !important;
@@ -19,8 +21,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
   font-family: "uwc-website" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -32,82 +34,62 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-google:before {
+.icon-google::before {
   content: "\61";
 }
 
-.icon-whatsapp:before {
+.icon-whatsapp::before {
   content: "\62";
 }
 
-.icon-wordpress:before {
+.icon-wordpress::before {
   content: "\63";
 }
 
-.icon-close:before {
-  content: "\64";
-}
-
-.icon-chevron-down:before {
-  content: "\65";
-}
-
-.icon-chevron-up:before {
-  content: "\66";
-}
-
-.icon-linkedin:before {
+.icon-linkedin::before {
   content: "\67";
 }
 
-.icon-facebook:before {
+.icon-facebook::before {
   content: "\68";
 }
 
-.icon-twitter:before {
+.icon-twitter::before {
   content: "\69";
 }
 
-.icon-youtube:before {
+.icon-youtube::before {
   content: "\6a";
 }
 
-.icon-instagram:before {
+.icon-instagram::before {
   content: "\6b";
 }
 
-.icon-vimeo:before {
+.icon-vimeo::before {
   content: "\6c";
 }
 
-.icon-tumblr:before {
+.icon-tumblr::before {
   content: "\6d";
 }
 
-.icon-rss:before {
+.icon-rss::before {
   content: "\6e";
 }
 
-.icon-envelope:before {
+.icon-envelope::before {
   content: "\6f";
 }
 
-.icon-github:before {
+.icon-github::before {
   content: "\70";
 }
 
-.icon-pinterest:before {
+.icon-pinterest::before {
   content: "\71";
 }
 
-.icon-flickr:before {
+.icon-flickr::before {
   content: "\72";
-}
-
-.icon-search:before {
-  content: "\73";
-}
-
-.icon-navicon:before {
-  content: "\74";
 }
