@@ -16,6 +16,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: src/404.php:18
 msgid "404: Page not found."
 msgstr ""

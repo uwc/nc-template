@@ -25,7 +25,7 @@ Requires at least: WordPress 4.5, PHP 5.5
 
 Tested up to: WordPress 4.6.1, PHP 7.0
 
-Version: 1.4.5
+Version: 1.4.6
 
 License: [GPL-3.0](#Copyright)
 
