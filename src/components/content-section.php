@@ -37,7 +37,7 @@
 								'container_class' => 'header-links',
 								'fallback_cb'     => 'false',
 							) );
-					} ?>
+} ?>
 					</nav>
 				<?php endif; ?>
 			</div>
@@ -71,6 +71,10 @@
 				elseif ( get_row_layout() === 'google_maps' ) :
 
 					get_template_part( 'components/module', 'googlemaps' );
+
+				elseif ( get_row_layout() === 'logo' ) :
+
+					get_template_part( 'components/module', 'logo' );
 
 				endif;
 

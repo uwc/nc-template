@@ -1,11 +1,12 @@
 // ==== SECTION ==== //
 
 /**
- * 1. Text+Image
+ * 1. Text + Image
  * 2. Quote
  * 3. Call To Action
  * 4. Video + Google Maps
- * 5. Newsfeed
+ * 5. Logo
+ * 6. Newsfeed
  */
 
 .section-quote,
@@ -17,14 +18,14 @@
   margin-bottom: vr(1.5);
 }
 
-// 1. Text+Image //
+// 1. Text + Image //
 
 .section-textimage {
   @include ctnr(wide);
 
+  display: flex;
   margin-top: vr(0.5);
   margin-bottom: vr(0.5);
-  display: flex;
 
   .section-image {
     background-repeat: no-repeat;
@@ -200,7 +201,43 @@
   max-width: inherit !important;
 }
 
-// 5. Newsfeed //
+// 5. Logo //
+
+.section-logos {
+  @include ctnr(wide);
+
+  @include clearfix;
+
+  .section-headline {
+    @include font(header2);
+
+    color: palette(blue);
+
+    + .section-logoWrapper {
+      text-align: left;
+    }
+  }
+
+  .section-logoWrapper {
+    text-align: center;
+  }
+
+  .section-link {
+    display: inline-block;
+    margin-top: vr(1);
+    margin-right: vr(1);
+  }
+
+  .section-logo {
+    max-width: 100%;
+    max-height: vr(2);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+// 6. Newsfeed //
 
 .section-newsfeed {
   @include ctnr(full);

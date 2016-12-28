@@ -25,7 +25,7 @@ Requires at least: WordPress 4.5, PHP 5.5
 
 Tested up to: WordPress 4.6.1, PHP 7.0
 
-Version: 1.4.6
+Version: 1.4.7
 
 License: [GPL-3.0](#Copyright)
 
@@ -51,7 +51,7 @@ Interested in contributing to the development of this theme? I look forward to y
 
 # Copyright
 
-UWC Website Theme, Copyright 2016 [Made by Connor](http://madebyconnor.io). UWC Website is distributed under the terms of the [GNU GPL-3.0 License](https://github.com/uwc/uwcde-website/blob/master/LICENSE.md).
+UWC Website Theme, Copyright 2016 [Made by Connor](http://madebyconnor.io). UWC Website is distributed under the terms of the [GNU GPL-3.0 License](https://github.com/uwc/uwc-website/blob/master/LICENSE.md).
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
