@@ -72,6 +72,10 @@
 
 					get_template_part( 'components/module', 'googlemaps' );
 
+				elseif ( get_row_layout() === 'logo' ) :
+
+					get_template_part( 'components/module', 'logo' );
+
 				endif;
 
 				endwhile;
