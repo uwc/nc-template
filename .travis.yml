@@ -99,4 +99,4 @@ script:
 notifications:
     email:
       email:
-        - uwc@connorbaer.io
+        - uwc@connorbaer.co

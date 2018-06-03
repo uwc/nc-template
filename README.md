@@ -46,7 +46,7 @@ Tags: custom-menu, editor-style, featured-image-header, featured-images, post-fo
 
 # Contribute
 
-Interested in contributing to the development of this theme? I look forward to your pull requests und issues. Or drop me a line at [hello@connorbaer.io](mailto:hello@connorbaer.io).
+Interested in contributing to the development of this theme? I look forward to your pull requests und issues. Or drop me a line at [hello@connorbaer.co](mailto:hello@connorbaer.co).
 
 
 # Copyright

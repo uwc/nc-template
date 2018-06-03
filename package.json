@@ -17,7 +17,7 @@
     "education",
     "translation-ready"
   ],
-  "author": "Connor Bär <hello@connorbaer.io>",
+  "author": "Connor Bär <hello@connorbaer.co>",
   "license": "GPL-3.0",
   "main": "gulpfile.js",
   "private": true,
