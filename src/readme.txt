@@ -22,7 +22,7 @@ Requires at least: WordPress 4.5, PHP 5.5
 
 Tested up to: WordPress 4.9.2, PHP 7.0
 
-Version: 1.4.8
+Version: 1.5.0
 
 License: [GPL-3.0](#Copyright)
 
