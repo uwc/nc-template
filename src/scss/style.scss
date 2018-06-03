@@ -1,3 +1,21 @@
+// Designed, built, and released under GPL-3.0 license by Connor Baer (madebyconnor.co).
+
+/*!
+Theme Name: UWC Website
+Theme URI: https://github.com/uwc/uwc-website
+Author: Connor Baer
+Author URI: http://madebyconnor.co
+Description: An open-source website template for UWC. Deprecated.
+Version: 1.4.8
+License: GPL-3.0
+License URI: https://opensource.org/licenses/MIT
+Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
+Text Domain: uwc-website
+Domain Path: /languages/
+GitHub Theme URI: https://github.com/uwc/uwc-website
+GitHub Branch: master
+*/
+
 // ==== IMPORTS ==== //
 
 // 1. Dependencies
@@ -12,55 +30,55 @@
 // 1. Dependencies //
 
 // Modular scale calculator built into your Sass, from http://www.modularscale.com/.
-@import "modular-scale/stylesheets/modular-scale";
+@import 'modular-scale/stylesheets/modular-scale';
 
 // Typi: a sass mixin to make responsive typography easy, from https://github.com/zellwk/typi.
-@import "typi/scss/typi";
+@import 'typi/scss/typi';
 
 // Mappy Breakpoints: a breakpoint mixin that uses Sass maps, from https://github.com/zellwk/mappy-breakpoints.
-@import "mappy-breakpoints/mappy-breakpoints";
+@import 'mappy-breakpoints/mappy-breakpoints';
 
 // Normalize: make browsers render things more consistently, from https://necolas.github.io/normalize.css/.
-@import "deps/normalize";
+@import 'deps/normalize';
 
 // Reset: a reset stylesheet to reduce browser inconsistencies, http://meyerweb.com/eric/tools/css/reset/.
-@import "deps/reset";
+@import 'deps/reset';
 
 // A lightbox wrapper for Ken's amazing slick carousel, https://mreq.github.io/slick-lightbox/.
-@import "deps/slick";
-@import "deps/slick-theme";
-@import "deps/slick-lightbox";
+@import 'deps/slick';
+@import 'deps/slick-theme';
+@import 'deps/slick-lightbox';
 
 // 2. Configuration //
 
-@import "config/layout";
-@import "config/color";
-@import "config/fonts";
-@import "config/type";
-@import "config/animation";
+@import 'config/layout';
+@import 'config/color';
+@import 'config/fonts';
+@import 'config/type';
+@import 'config/animation';
 
 // 3. Patterns //
 
 //  Styles required by WordPress core.
-@import "patterns/wordpress";
-@import "patterns/buttons";
-@import "patterns/forms";
-@import "patterns/menus";
-@import "patterns/overlays";
+@import 'patterns/wordpress';
+@import 'patterns/buttons';
+@import 'patterns/forms';
+@import 'patterns/menus';
+@import 'patterns/overlays';
 
 // 4. Sections //
 
-@import "sections/search";
-@import "sections/widgets";
-@import "sections/navigation";
-@import "sections/header";
-@import "sections/section";
-@import "sections/article";
-@import "sections/category";
+@import 'sections/search';
+@import 'sections/widgets';
+@import 'sections/navigation';
+@import 'sections/header';
+@import 'sections/section';
+@import 'sections/article';
+@import 'sections/category';
 
 .entry-content {
-  @import "sections/content";
+  @import 'sections/content';
 }
 
-@import "sections/contact";
-@import "sections/footer";
+@import 'sections/contact';
+@import 'sections/footer';
