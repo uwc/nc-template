@@ -14,22 +14,26 @@ function uwc_website_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	$wp_customize->add_setting( 'comments', array(
-		'default' => false,
-		'sanitize_callback' => 'esc_html',
-	) );
-	$wp_customize->add_section( 'uwc_website_theme_options' , array(
-		'title'       => __( 'Theme Options', 'uwc-website' ),
-		'priority'    => 30,
-	) );
+	$wp_customize->add_setting(
+		'comments', array(
+			'default' => false,
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+	$wp_customize->add_section(
+		'uwc_website_theme_options', array(
+			'title'       => __( 'Theme Options', 'uwc-website' ),
+			'priority'    => 30,
+		)
+	);
 	$wp_customize->add_control(
 		'comments',
 		array(
-		'label'       => __( 'Disable comments', 'uwc-website' ),
-		'section'     => 'uwc_website_theme_options',
-		'settings'    => 'comments',
-		'type'        => 'checkbox',
-		'description' => __( 'Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time.', 'uwc-website' ),
+			'label'       => __( 'Disable comments', 'uwc-website' ),
+			'section'     => 'uwc_website_theme_options',
+			'settings'    => 'comments',
+			'type'        => 'checkbox',
+			'description' => __( 'Check the box to hide comments on the frontend. Comments are NOT deleted and can thus be unhidden at any time.', 'uwc-website' ),
 		)
 	);
 }

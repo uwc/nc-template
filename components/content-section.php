@@ -24,20 +24,24 @@
 						<h2 class="header-summary">
 							<?php the_excerpt(); ?>
 						</h2>
-						<a href="<?php the_field( 'cta_url' ) ?>" class="header-button"><?php the_field( 'cta_text' ) ?></a>
+						<a href="<?php the_field( 'cta_url' ); ?>" class="header-button"><?php the_field( 'cta_text' ); ?></a>
 					</div>
 				<?php else : ?>
 					<nav class="header-navigation">
-						<?php if ( has_nav_menu( 'primary' ) ) {
-							wp_nav_menu( array(
-								'theme_location'  => 'primary',
-								'sub_menu'		    => true,
-								'depth'           => '2',
-								'container'       => 'nav',
-								'container_class' => 'header-links',
-								'fallback_cb'     => 'false',
-							) );
-} ?>
+						<?php
+						if ( has_nav_menu( 'primary' ) ) {
+							wp_nav_menu(
+								array(
+									'theme_location'  => 'primary',
+									'sub_menu'          => true,
+									'depth'           => '2',
+									'container'       => 'nav',
+									'container_class' => 'header-links',
+									'fallback_cb'     => 'false',
+								)
+							);
+						}
+?>
 					</nav>
 				<?php endif; ?>
 			</div>
@@ -51,7 +55,8 @@
 		if ( have_rows( 'modules' ) ) :
 
 			// Loop through the rows of data.
-			while ( have_rows( 'modules' ) ) : the_row();
+			while ( have_rows( 'modules' ) ) :
+				the_row();
 
 				if ( get_row_layout() === 'text_image' ) :
 					get_template_part( 'components/module', 'textimage' );

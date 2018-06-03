@@ -13,7 +13,9 @@
 	<div class="section-wrapper">
 	<?php if ( have_rows( 'locations' ) ) : ?>
 		<div class="acf-map">
-		<?php while ( have_rows( 'locations' ) ) : the_row();
+		<?php
+		while ( have_rows( 'locations' ) ) :
+			the_row();
 
 			$location = get_sub_field( 'location' );
 

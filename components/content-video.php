@@ -21,7 +21,8 @@
 		<div class="header-outer">
 			<div class="header-inner">
 				<?php
-					the_title( '<h1 class="header-title">', '</h1>' ); ?>
+					the_title( '<h1 class="header-title">', '</h1>' );
+					?>
 				<h2 class="header-summary"><?php the_excerpt(); ?></h2>
 			</div>
 		</div>
@@ -35,26 +36,32 @@
 	<div class="entry-content">
 		<?php
 
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uwc-website' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			the_content(
+				sprintf(
+					/* translators: %s: Name of current post. */
+					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uwc-website' ), array( 'span' => array( 'class' => array() ) ) ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				)
+			);
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uwc-website' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uwc-website' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div>
 
-	<?php if ( $tags = get_the_tags() ) {
+	<?php
+	if ( $tags = get_the_tags() ) {
 		echo '<p class="post-tags">';
 		foreach ( $tags as $tag ) {
 			$sep = ( end( $tags ) === $tag ) ? '' : ', ';
 			echo '<a href="' . esc_url( get_term_link( $tag, $tag->taxonomy ) ) . '">#' . esc_html( $tag->name ) . '</a>' . esc_html( $sep );
 		}
 		echo '</p>';
-} ?>
+	}
+?>
 	
 </article><!-- #post-## -->

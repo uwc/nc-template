@@ -16,9 +16,11 @@ get_header(); ?>
 				<header class="header -entry -no-featured">
 					<div class="header-outer">
 						<h1 class="header-title"><?php esc_html_e( '404: Page not found.', 'uwc-website' ); ?></h1>
-						<h2 class="header-summary"><p><?php
+						<h2 class="header-summary"><p>
+						<?php
 							echo esc_html_e( 'Sorry, the page you’re looking for doesn’t exist. Check the URL for errors or try searching for it below.', 'uwc-website' );
-						?></p></h2>
+						?>
+						</p></h2>
 					</div>
 				</header>
 

@@ -29,7 +29,7 @@
 			<?php endif; ?>
 		</div>
 		<div class="footer-info">
-			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'uwc-website' ); ?> <a href="http://connorbaer.io/" rel="designer" target="_blank">Made by Connor.</a></p>
+			<p>&#xa9; <?php bloginfo( 'name' ); ?>. <?php echo esc_html__( 'All rights reserved.', 'uwc-website' ); ?> <a href="https://madebyconnor.co/" rel="designer" target="_blank">Made by Connor.</a></p>
 		</div>
 
 	</footer>

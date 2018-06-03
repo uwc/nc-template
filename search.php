@@ -13,7 +13,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
+		?>
 
 			<header class="search-header">
 				<div class="search-wrapper">
@@ -23,7 +24,8 @@ get_header(); ?>
 			</header>
 			<?php
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+				the_post();
 
 				/**
 				 * Run the loop for the search to output the results.
@@ -40,7 +42,8 @@ get_header(); ?>
 
 			get_template_part( 'components/content', 'none' );
 
-		endif; ?>
+		endif;
+		?>
 
 		</main>
 	</section>

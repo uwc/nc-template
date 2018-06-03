@@ -13,7 +13,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) :
+			the_post();
 
 			/*
 			 * Include the Post-Format-specific template for the content.
@@ -23,11 +24,13 @@ get_header(); ?>
 			$format = get_post_format() ? : 'standard';
 			get_template_part( 'components/content', $format );
 
-			the_post_navigation( array(
-				'in_same_term' => true,
-				'prev_text' => '%title',
-				'next_text' => '%title',
-			));
+			the_post_navigation(
+				array(
+					'in_same_term' => true,
+					'prev_text' => '%title',
+					'next_text' => '%title',
+				)
+			);
 
 			// Only show comments if they are not disabled in customizer.
 			if ( ! get_theme_mod( 'comments' ) ) :

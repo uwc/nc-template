@@ -1,4 +1,4 @@
-# Copyright (C) 2016 uwc-website
+# Copyright (C) 2018 uwc-website
 # This file is distributed under the same license as the uwc-website package.
 msgid ""
 msgstr ""
@@ -7,8 +7,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Connor Bär <hello@connorbaer.io>\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Connor Bär <hello@connorbaer.co>\n"
 "Language-Team: Made by Connor. <hi@madebyconnor.co>\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"

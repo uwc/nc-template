@@ -73,14 +73,16 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 		$big = 99999999; // This needs to be an unlikely integer.
 
 		// For more options and info view the docs for paginate_links(): http://codex.wordpress.org/Function_Reference/paginate_links.
-		$paginate_numbers = paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var( 'paged' ) ),
-			'total' => $wp_query -> max_num_pages,
-			'prev_next' => false,
-			'mid_size' => 1,
-		) );
+		$paginate_numbers = paginate_links(
+			array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var( 'paged' ) ),
+				'total' => $wp_query->max_num_pages,
+				'prev_next' => false,
+				'mid_size' => 1,
+			)
+		);
 
 		$paginate_previous = get_previous_posts_link( __( 'Previous page', 'uwc-website' ) );
 
@@ -91,26 +93,32 @@ if ( ! function_exists( 'uwc_website_paginated' ) ) :
 			echo '<nav class="post-navigation">';
 			echo '<h2 class="screen-reader-text">Beitragsnavigation</h2>';
 			if ( ! empty( $paginate_previous ) ) {
-				echo '<div class="nav-previous">' . wp_kses( $paginate_previous, array(
-					'a' => array(
-					'href' => array(),
-					'title' => array(),
-					),
-				) ) . '</div>';
+				echo '<div class="nav-previous">' . wp_kses(
+					$paginate_previous, array(
+						'a' => array(
+							'href' => array(),
+							'title' => array(),
+						),
+					)
+				) . '</div>';
 			}
-			echo '<div class="nav-numbers">' . wp_kses( $paginate_numbers, array(
-				'a' => array(
-					'href' => array(),
-					'title' => array(),
-				),
-			) ) . '</div>';
-			if ( ! empty( $paginate_next ) ) {
-				echo '<div class="nav-next">' . wp_kses( $paginate_next, array(
+			echo '<div class="nav-numbers">' . wp_kses(
+				$paginate_numbers, array(
 					'a' => array(
-					'href' => array(),
-					'title' => array(),
+						'href' => array(),
+						'title' => array(),
 					),
-				) ) . '</div>';
+				)
+			) . '</div>';
+			if ( ! empty( $paginate_next ) ) {
+				echo '<div class="nav-next">' . wp_kses(
+					$paginate_next, array(
+						'a' => array(
+							'href' => array(),
+							'title' => array(),
+						),
+					)
+				) . '</div>';
 			}
 			echo '</nav>';
 		}
@@ -127,12 +135,12 @@ if ( ! function_exists( 'uwc_website_content_navigation' ) ) :
 	function uwc_website_content_navigation( $text ) {
 
 		$dom = new DOMDocument();
-		$dom -> loadHTML( '<?xml encoding="utf-8" ?>' . $text );
+		$dom->loadHTML( '<?xml encoding="utf-8" ?>' . $text );
 		$nodes = $dom->getElementsByTagName( 'a' );
 		$items = array();
 		foreach ( $nodes as $node ) {
-			if ( $node -> hasAttribute( 'id' ) === true ) {
-				$id = $node -> getAttribute( 'id' );
+			if ( $node->hasAttribute( 'id' ) === true ) {
+				$id = $node->getAttribute( 'id' );
 				$items[] = html_entity_decode( $id );
 			}
 		}
@@ -156,7 +164,8 @@ if ( ! function_exists( 'uwc_website_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -186,12 +195,14 @@ endif;
 function uwc_website_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'uwc_website_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
+		$all_the_cool_cats = get_categories(
+			array(
+				'fields'     => 'ids',
+				'hide_empty' => 1,
+				// We only need to know if there is more than one category.
+				'number'     => 2,
+			)
+		);
 
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
@@ -218,4 +229,4 @@ function uwc_website_category_transient_flusher() {
 	delete_transient( 'uwc_website_categories' );
 }
 add_action( 'edit_category', 'uwc_website_category_transient_flusher' );
-add_action( 'save_post',     'uwc_website_category_transient_flusher' );
+add_action( 'save_post', 'uwc_website_category_transient_flusher' );

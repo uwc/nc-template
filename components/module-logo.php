@@ -14,7 +14,8 @@
 <?php
 $headline = get_sub_field( 'lo_headline' );
 
-if ( ! empty( $headline ) ) : ?>
+if ( ! empty( $headline ) ) :
+?>
 
 	<h2 class="section-headline"><?php the_sub_field( 'lo_headline' ); ?></h2>
 
@@ -22,11 +23,14 @@ if ( ! empty( $headline ) ) : ?>
 
 	<div class="section-logoWrapper">
 
-	<?php while ( have_rows( 'lo_logos' ) ) : the_row();
+	<?php
+	while ( have_rows( 'lo_logos' ) ) :
+		the_row();
 
 		$image = get_sub_field( 'lo_logo' );
 
-		if ( ! empty( $image ) ) : ?>
+		if ( ! empty( $image ) ) :
+		?>
 
 			<a class="section-link" href="<?php echo esc_url( the_sub_field( 'lo_url' ) ); ?>" title="<?php echo esc_attr( $image['alt'] ); ?>">
 

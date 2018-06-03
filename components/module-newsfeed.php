@@ -11,13 +11,15 @@
 
 $taxonomies = get_field( 'newsfeed' );
 
-$posts = get_posts(array(
-	'posts_per_page' => 4,
-	'category'       => $taxonomies,
-	'orderby'        => 'date',
-	'order'          => 'DESC',
-	'post_status'    => 'publish',
-));
+$posts = get_posts(
+	array(
+		'posts_per_page' => 4,
+		'category'       => $taxonomies,
+		'orderby'        => 'date',
+		'order'          => 'DESC',
+		'post_status'    => 'publish',
+	)
+);
 $count = count( $posts );
 
 if ( $taxonomies && $count >= 4 ) {

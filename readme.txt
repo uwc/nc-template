@@ -1,21 +1,18 @@
 [![Build Status](https://travis-ci.org/uwc/uwc-website.svg?branch=development)](https://travis-ci.org/uwc/uwc-website)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c8129049d7374429b9fa6c88fff60376)](https://www.codacy.com/app/connor_baer/uwc-website)
 
-
 # UWC Website
 
-**This theme is depreciated and no longer maintained. Use the [UWC WordPress](https://github.com/uwc/uwc-wordpress) theme instead.**
+**This theme is deprecated and no longer maintained. Use the [UWC WordPress](https://github.com/uwc/uwc-wordpress) theme instead.**
 
 A WordPress theme for [UWC](http://uwc.org) websites.
 
-
 # Contents
 
-- [Overview](#Overview)
-- [Installation](#Installation)
-- [Contribute](#Contribute)
-- [Copyright](#Copyright)
-
+* [Overview](#Overview)
+* [Installation](#Installation)
+* [Contribute](#Contribute)
+* [Copyright](#Copyright)
 
 # Overview
 
@@ -23,31 +20,28 @@ Contributors: [Connor Bär](http://madebyconnor.de)
 
 Requires at least: WordPress 4.5, PHP 5.5
 
-Tested up to: WordPress 4.6.1, PHP 7.0
+Tested up to: WordPress 4.9.2, PHP 7.0
 
-Version: 1.4.6
+Version: 1.5.0
 
 License: [GPL-3.0](#Copyright)
 
 Tags: custom-menu, editor-style, featured-image-header, featured-images, post-formats, sticky-post, theme-options, education, translation-ready
 
-
 # Installation
 
-*This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com.* I provide managed hosting for UWC websites. Drop me a line at [hello@madebyconnor.io](mailto:hello@madebyconnor.io) if you're interested.
+_This theme can only be installed on self-hosted WordPress installations and not on sites that are hosted on wordpress.com._ I provide managed hosting for UWC websites. Drop me a line at [hello@madebyconnor.io](mailto:hello@madebyconnor.io) if you're interested.
 
-1. UWCde Website is not listed publicly on wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
-2. In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top.
-3. Paste the url `https://github.com/uwc/uwcde-website` into the field 'Theme URI'. You can leave the other fields as they are and click on the 'Install Theme' button.
-4. Click on the 'Activate' button to use your new theme right away.
-5. Go to the [UWC Documentation](https://docs.uwc.io) for a guide on how to use this theme.
-6. Navigate to Appearance > Customize in your admin panel and customize to taste.
-
+1.  UWCde Website is not listed publicly on wordpress.org. Therefore you have to install the [GitHub Updater](https://github.com/afragen/github-updater) plugin to install the theme and receive future updates. Follow the instructions in the [readme file](https://github.com/afragen/github-updater#upload) to install the plugin, then come back here.
+2.  In WordPress, navigate to 'Settings' > 'GitHub Updater', then select 'Install Theme' from the tabs at the top.
+3.  Paste the url `https://github.com/uwc/uwc-website` into the field 'Theme URI'. You can leave the other fields as they are and click on the 'Install Theme' button.
+4.  Click on the 'Activate' button to use your new theme right away.
+5.  Go to the [UWC Documentation](https://docs.uwc.io) for a guide on how to use this theme.
+6.  Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 # Contribute
 
-Interested in contributing to the development of this theme? I look forward to your pull requests und issues. Or drop me a line at [hello@connorbaer.io](mailto:hello@connorbaer.io).
-
+Interested in contributing to the development of this theme? I look forward to your pull requests und issues. Or drop me a line at [hello@connorbaer.co](mailto:hello@connorbaer.co).
 
 # Copyright
 

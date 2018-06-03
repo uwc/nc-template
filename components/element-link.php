@@ -23,14 +23,16 @@
 		<?php the_title( '<h2 class="category-title"><a href="' . esc_url( get_field( 'link_url' ) ) . '" rel="bookmark" target="_blank">', '</a></h2>' ); ?>
 		</header>
 
-		<?php if ( $tags = get_the_tags() ) {
+		<?php
+		if ( $tags = get_the_tags() ) {
 			echo '<p class="category-tags">';
 			foreach ( $tags as $tag ) {
 				$sep = ( end( $tags ) === $tag ) ? '' : ', ';
 				echo '<a href="' . esc_url( get_term_link( $tag, $tag->taxonomy ) ) . '">#' . esc_html( $tag->name ) . '</a>' . esc_html( $sep );
 			}
 			echo '</p>';
-} ?>
+		}
+	?>
 
 		<p class="category-body"><?php the_excerpt(); ?></p>
 

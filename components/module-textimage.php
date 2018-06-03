@@ -10,7 +10,8 @@
 ?>
 
 <section class="section-textimage">
-	<div class="section-image" style="background-image: url(<?php
+	<div class="section-image" style="background-image: url(
+	<?php
 
 	$image = get_sub_field( 'image' );
 	$size = 'medium'; // (thumbnail, medium, large, full or custom size)
@@ -22,7 +23,8 @@
 
 	}
 
-?>)"></div>
+?>
+)"></div>
 	<div class="section-card">
 		<h2 class="section-headline"><?php the_sub_field( 'headline' ); ?></h2>
 		<p class="section-text"><?php the_sub_field( 'text' ); ?></p>

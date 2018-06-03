@@ -10,5 +10,5 @@
 ?>
 
 <section class="section-cta">
-	<a href="<?php the_sub_field( 'cta_url' ) ?>"><?php the_sub_field( 'cta_text' ) ?></a>
+	<a href="<?php the_sub_field( 'cta_url' ); ?>"><?php the_sub_field( 'cta_text' ); ?></a>
 </section>

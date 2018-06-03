@@ -47,41 +47,49 @@ if ( ! function_exists( 'uwc_website_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// Enable support for custom logo.
-		add_theme_support( 'custom-logo', array(
-			'height'      => 28,
-			'width'       => 220,
-			'flex-width'  => true,
-			'header-text' => array( 'site-title' ),
-		) );
+		add_theme_support(
+			'custom-logo', array(
+				'height'      => 28,
+				'width'       => 220,
+				'flex-width'  => true,
+				'header-text' => array( 'site-title' ),
+			)
+		);
 
 		// This theme uses wp_nav_menu() in two locations.
-		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'uwc-website' ),
-			'social' => __( 'Social Links Menu', 'uwc-website' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Menu', 'uwc-website' ),
+				'social' => __( 'Social Links Menu', 'uwc-website' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		/*
 		 * Enable support for Post Formats.
 		 *
 		 * See: https://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support( 'post-formats', array(
-			'video',
-			'link',
-			'gallery',
-		) );
+		add_theme_support(
+			'post-formats', array(
+				'video',
+				'link',
+				'gallery',
+			)
+		);
 
 		/*
 		 * Add support for Post Formats and Excerpts to pages.
@@ -117,42 +125,50 @@ add_action( 'after_setup_theme', 'uwc_website_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function uwc_website_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'uwc-website' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer left', 'uwc-website' ),
-		'id'            => 'footer-left',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer center', 'uwc-website' ),
-		'id'            => 'footer-center',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer right', 'uwc-website' ),
-		'id'            => 'footer-right',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'uwc-website' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer left', 'uwc-website' ),
+			'id'            => 'footer-left',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer center', 'uwc-website' ),
+			'id'            => 'footer-center',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer right', 'uwc-website' ),
+			'id'            => 'footer-right',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'uwc_website_widgets_init' );
 
@@ -171,10 +187,12 @@ if ( ! function_exists( 'uwc_website_fonts_url' ) ) :
 			$fonts[] = 'Source+Sans+Pro:400,500,700';
 		}
 		if ( $fonts ) {
-			$fonts_url = add_query_arg( array(
-				'family' => implode( '|', $fonts ),
-				'subset' => $subsets,
-			), 'https://fonts.googleapis.com/css' );
+			$fonts_url = add_query_arg(
+				array(
+					'family' => implode( '|', $fonts ),
+					'subset' => $subsets,
+				), 'https://fonts.googleapis.com/css'
+			);
 		}
 		return $fonts_url;
 	}
