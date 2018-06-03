@@ -132,7 +132,7 @@ module.exports = {
       ],
       navigation: [
         bower + 'responsive-nav/responsive-nav.js',
-        bower + 'headroom.js/dist/headroom.js',
+        modules + 'headroom.js/dist/headroom.js',
         bower + 'smooth-scroll/dist/js/smooth-scroll.js'
       ],
       lightbox: [
